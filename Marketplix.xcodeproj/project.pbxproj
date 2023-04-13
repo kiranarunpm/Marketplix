@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		828BE2C229E7B98A00B0C838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C129E7B98A00B0C838 /* AppDelegate.swift */; };
+		828BE2C429E7B98A00B0C838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */; };
+		828BE2C629E7B98A00B0C838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C529E7B98A00B0C838 /* ViewController.swift */; };
+		828BE2C929E7B98A00B0C838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828BE2C729E7B98A00B0C838 /* Main.storyboard */; };
+		828BE2CC29E7B98A00B0C838 /* Marketplix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2CA29E7B98A00B0C838 /* Marketplix.xcdatamodeld */; };
+		828BE2CE29E7B98B00B0C838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828BE2CD29E7B98B00B0C838 /* Assets.xcassets */; };
+		828BE2D129E7B98B00B0C838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828BE2CF29E7B98B00B0C838 /* LaunchScreen.storyboard */; };
+		828BE2DC29E7B98B00B0C838 /* MarketplixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2DB29E7B98B00B0C838 /* MarketplixTests.swift */; };
+		828BE2E629E7B98B00B0C838 /* MarketplixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */; };
+		828BE2E829E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		828BE2D829E7B98B00B0C838 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 828BE2B629E7B98A00B0C838 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 828BE2BD29E7B98A00B0C838;
+			remoteInfo = Marketplix;
+		};
+		828BE2E229E7B98B00B0C838 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 828BE2B629E7B98A00B0C838 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 828BE2BD29E7B98A00B0C838;
+			remoteInfo = Marketplix;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		828BE2BE29E7B98A00B0C838 /* Marketplix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		828BE2C129E7B98A00B0C838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		828BE2C529E7B98A00B0C838 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		828BE2C829E7B98A00B0C838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		828BE2CB29E7B98A00B0C838 /* Marketplix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Marketplix.xcdatamodel; sourceTree = "<group>"; };
+		828BE2CD29E7B98B00B0C838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		828BE2D029E7B98B00B0C838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		828BE2D229E7B98B00B0C838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		828BE2D729E7B98B00B0C838 /* MarketplixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		828BE2DB29E7B98B00B0C838 /* MarketplixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixTests.swift; sourceTree = "<group>"; };
+		828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITests.swift; sourceTree = "<group>"; };
+		828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		828BE2BB29E7B98A00B0C838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828BE2D429E7B98B00B0C838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828BE2DE29E7B98B00B0C838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		828BE2B529E7B98A00B0C838 = {
+			isa = PBXGroup;
+			children = (
+				828BE2C029E7B98A00B0C838 /* Marketplix */,
+				828BE2DA29E7B98B00B0C838 /* MarketplixTests */,
+				828BE2E429E7B98B00B0C838 /* MarketplixUITests */,
+				828BE2BF29E7B98A00B0C838 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		828BE2BF29E7B98A00B0C838 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				828BE2BE29E7B98A00B0C838 /* Marketplix.app */,
+				828BE2D729E7B98B00B0C838 /* MarketplixTests.xctest */,
+				828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		828BE2C029E7B98A00B0C838 /* Marketplix */ = {
+			isa = PBXGroup;
+			children = (
+				828BE2C129E7B98A00B0C838 /* AppDelegate.swift */,
+				828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */,
+				828BE2C529E7B98A00B0C838 /* ViewController.swift */,
+				828BE2C729E7B98A00B0C838 /* Main.storyboard */,
+				828BE2CD29E7B98B00B0C838 /* Assets.xcassets */,
+				828BE2CF29E7B98B00B0C838 /* LaunchScreen.storyboard */,
+				828BE2D229E7B98B00B0C838 /* Info.plist */,
+				828BE2CA29E7B98A00B0C838 /* Marketplix.xcdatamodeld */,
+			);
+			path = Marketplix;
+			sourceTree = "<group>";
+		};
+		828BE2DA29E7B98B00B0C838 /* MarketplixTests */ = {
+			isa = PBXGroup;
+			children = (
+				828BE2DB29E7B98B00B0C838 /* MarketplixTests.swift */,
+			);
+			path = MarketplixTests;
+			sourceTree = "<group>";
+		};
+		828BE2E429E7B98B00B0C838 /* MarketplixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */,
+				828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */,
+			);
+			path = MarketplixUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		828BE2BD29E7B98A00B0C838 /* Marketplix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828BE2EB29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "Marketplix" */;
+			buildPhases = (
+				828BE2BA29E7B98A00B0C838 /* Sources */,
+				828BE2BB29E7B98A00B0C838 /* Frameworks */,
+				828BE2BC29E7B98A00B0C838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marketplix;
+			productName = Marketplix;
+			productReference = 828BE2BE29E7B98A00B0C838 /* Marketplix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		828BE2D629E7B98B00B0C838 /* MarketplixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828BE2EE29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "MarketplixTests" */;
+			buildPhases = (
+				828BE2D329E7B98B00B0C838 /* Sources */,
+				828BE2D429E7B98B00B0C838 /* Frameworks */,
+				828BE2D529E7B98B00B0C838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				828BE2D929E7B98B00B0C838 /* PBXTargetDependency */,
+			);
+			name = MarketplixTests;
+			productName = MarketplixTests;
+			productReference = 828BE2D729E7B98B00B0C838 /* MarketplixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		828BE2E029E7B98B00B0C838 /* MarketplixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828BE2F129E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "MarketplixUITests" */;
+			buildPhases = (
+				828BE2DD29E7B98B00B0C838 /* Sources */,
+				828BE2DE29E7B98B00B0C838 /* Frameworks */,
+				828BE2DF29E7B98B00B0C838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				828BE2E329E7B98B00B0C838 /* PBXTargetDependency */,
+			);
+			name = MarketplixUITests;
+			productName = MarketplixUITests;
+			productReference = 828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		828BE2B629E7B98A00B0C838 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					828BE2BD29E7B98A00B0C838 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					828BE2D629E7B98B00B0C838 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 828BE2BD29E7B98A00B0C838;
+					};
+					828BE2E029E7B98B00B0C838 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 828BE2BD29E7B98A00B0C838;
+					};
+				};
+			};
+			buildConfigurationList = 828BE2B929E7B98A00B0C838 /* Build configuration list for PBXProject "Marketplix" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 828BE2B529E7B98A00B0C838;
+			productRefGroup = 828BE2BF29E7B98A00B0C838 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				828BE2BD29E7B98A00B0C838 /* Marketplix */,
+				828BE2D629E7B98B00B0C838 /* MarketplixTests */,
+				828BE2E029E7B98B00B0C838 /* MarketplixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		828BE2BC29E7B98A00B0C838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828BE2D129E7B98B00B0C838 /* LaunchScreen.storyboard in Resources */,
+				828BE2CE29E7B98B00B0C838 /* Assets.xcassets in Resources */,
+				828BE2C929E7B98A00B0C838 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828BE2D529E7B98B00B0C838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828BE2DF29E7B98B00B0C838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		828BE2BA29E7B98A00B0C838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828BE2CC29E7B98A00B0C838 /* Marketplix.xcdatamodeld in Sources */,
+				828BE2C629E7B98A00B0C838 /* ViewController.swift in Sources */,
+				828BE2C229E7B98A00B0C838 /* AppDelegate.swift in Sources */,
+				828BE2C429E7B98A00B0C838 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828BE2D329E7B98B00B0C838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828BE2DC29E7B98B00B0C838 /* MarketplixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828BE2DD29E7B98B00B0C838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828BE2E629E7B98B00B0C838 /* MarketplixUITests.swift in Sources */,
+				828BE2E829E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		828BE2D929E7B98B00B0C838 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 828BE2BD29E7B98A00B0C838 /* Marketplix */;
+			targetProxy = 828BE2D829E7B98B00B0C838 /* PBXContainerItemProxy */;
+		};
+		828BE2E329E7B98B00B0C838 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 828BE2BD29E7B98A00B0C838 /* Marketplix */;
+			targetProxy = 828BE2E229E7B98B00B0C838 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		828BE2C729E7B98A00B0C838 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828BE2C829E7B98A00B0C838 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		828BE2CF29E7B98B00B0C838 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828BE2D029E7B98B00B0C838 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		828BE2E929E7B98B00B0C838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		828BE2EA29E7B98B00B0C838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		828BE2EC29E7B98B00B0C838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3QY6298JM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marketplix/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.Marketplix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		828BE2ED29E7B98B00B0C838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3QY6298JM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marketplix/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.Marketplix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		828BE2EF29E7B98B00B0C838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3QY6298JM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.MarketplixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marketplix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Marketplix";
+			};
+			name = Debug;
+		};
+		828BE2F029E7B98B00B0C838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3QY6298JM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.MarketplixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marketplix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Marketplix";
+			};
+			name = Release;
+		};
+		828BE2F229E7B98B00B0C838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3QY6298JM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.MarketplixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Marketplix;
+			};
+			name = Debug;
+		};
+		828BE2F329E7B98B00B0C838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3QY6298JM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.MarketplixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Marketplix;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		828BE2B929E7B98A00B0C838 /* Build configuration list for PBXProject "Marketplix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828BE2E929E7B98B00B0C838 /* Debug */,
+				828BE2EA29E7B98B00B0C838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828BE2EB29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "Marketplix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828BE2EC29E7B98B00B0C838 /* Debug */,
+				828BE2ED29E7B98B00B0C838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828BE2EE29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "MarketplixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828BE2EF29E7B98B00B0C838 /* Debug */,
+				828BE2F029E7B98B00B0C838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828BE2F129E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "MarketplixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828BE2F229E7B98B00B0C838 /* Debug */,
+				828BE2F329E7B98B00B0C838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		828BE2CA29E7B98A00B0C838 /* Marketplix.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				828BE2CB29E7B98A00B0C838 /* Marketplix.xcdatamodel */,
+			);
+			currentVersion = 828BE2CB29E7B98A00B0C838 /* Marketplix.xcdatamodel */;
+			path = Marketplix.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 828BE2B629E7B98A00B0C838 /* Project object */;
+}
