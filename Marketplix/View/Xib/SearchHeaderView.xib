@@ -19,10 +19,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="63"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyQ-N1-tV6" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                            <rect key="frame" x="15" y="9" width="271" height="45"/>
+                            <rect key="frame" x="15" y="9" width="268" height="45"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vD-3c-dCJ">
-                                    <rect key="frame" x="15" y="8" width="236" height="29"/>
+                                    <rect key="frame" x="15" y="8" width="233" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -59,8 +59,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="97e-yQ-vtj">
-                            <rect key="frame" x="291" y="6.6666666666666679" width="82" height="50"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="97e-yQ-vtj">
+                            <rect key="frame" x="293" y="6.6666666666666679" width="85" height="50"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0i-vg-6cy" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
@@ -80,13 +80,25 @@
                                         <constraint firstItem="c1v-xT-IRs" firstAttribute="centerX" secondItem="S0i-vg-6cy" secondAttribute="centerX" id="aZs-Qe-WA8"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="0.86017628205128194" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                             <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="1"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwg-HO-pCX" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                                    <rect key="frame" x="42" y="0.0" width="40" height="50"/>
+                                    <rect key="frame" x="45" y="0.0" width="40" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XU-k3-c2n">
                                             <rect key="frame" x="10" y="15" width="20" height="20"/>
@@ -107,18 +119,30 @@
                                         <constraint firstAttribute="height" constant="50" id="fwl-Uc-CRE"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="0.86017628209999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                             <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="1"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="BackGroundColor"/>
                     <constraints>
-                        <constraint firstItem="97e-yQ-vtj" firstAttribute="leading" secondItem="FyQ-N1-tV6" secondAttribute="trailing" constant="5" id="H1Q-t4-JTV"/>
-                        <constraint firstAttribute="trailing" secondItem="97e-yQ-vtj" secondAttribute="trailing" constant="20" id="RGD-2W-uu9"/>
+                        <constraint firstItem="97e-yQ-vtj" firstAttribute="leading" secondItem="FyQ-N1-tV6" secondAttribute="trailing" constant="10" id="H1Q-t4-JTV"/>
+                        <constraint firstAttribute="trailing" secondItem="97e-yQ-vtj" secondAttribute="trailing" constant="15" id="RGD-2W-uu9"/>
                         <constraint firstItem="FyQ-N1-tV6" firstAttribute="leading" secondItem="aGp-Md-nHW" secondAttribute="leading" constant="15" id="Vkq-gS-qmo"/>
                         <constraint firstItem="FyQ-N1-tV6" firstAttribute="centerY" secondItem="aGp-Md-nHW" secondAttribute="centerY" id="m8H-H7-iCA"/>
                         <constraint firstItem="FyQ-N1-tV6" firstAttribute="centerY" secondItem="97e-yQ-vtj" secondAttribute="centerY" id="unL-Hv-jvF"/>

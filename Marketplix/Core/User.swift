@@ -34,7 +34,6 @@ class User{
     
     // ********* Save Data **********
     
-    
     func saveData(with key: SaveData, value: String){
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()

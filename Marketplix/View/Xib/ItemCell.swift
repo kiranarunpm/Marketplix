@@ -13,6 +13,8 @@ class ItemCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.layer.cornerRadius = 7
+        
 
     }
 

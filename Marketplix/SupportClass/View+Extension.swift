@@ -10,15 +10,6 @@ import Foundation
 import Foundation
 import UIKit
 @IBDesignable class R_UIView: UIView {
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }
-    }
     
     @IBInspectable var borderWidth: CGFloat {
         get {
@@ -79,6 +70,16 @@ import UIKit
         }
         set {
             layer.shadowRadius = newValue
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
         }
     }
     

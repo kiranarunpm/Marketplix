@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zXo-pk-1Fv">
-                        <rect key="frame" x="15" y="15" width="290" height="90"/>
+                        <rect key="frame" x="15" y="0.0" width="290" height="90"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="uvI-3V-wnU"/>
@@ -35,7 +35,7 @@
                 <constraints>
                     <constraint firstItem="zXo-pk-1Fv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="3EV-fw-c7r"/>
                     <constraint firstAttribute="trailing" secondItem="zXo-pk-1Fv" secondAttribute="trailing" constant="15" id="9Iw-Xs-EhZ"/>
-                    <constraint firstItem="zXo-pk-1Fv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="RR3-5R-rXd"/>
+                    <constraint firstItem="zXo-pk-1Fv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RR3-5R-rXd"/>
                     <constraint firstAttribute="bottom" secondItem="zXo-pk-1Fv" secondAttribute="bottom" constant="15" id="rAg-LG-ylB"/>
                 </constraints>
             </tableViewCellContentView>

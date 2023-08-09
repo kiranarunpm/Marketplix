@@ -10,7 +10,8 @@ import ImageSlideshow
 import MBProgressHUD
 
 
-class HomeVC: BaseVC {
+class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
+
     let names = ["Searh Land", "Search Property", "Search Car", "Search Laptops"]
     let sectionArr = ["banner", "header","Main categories", "header", "Featured Listing", "header", "New Listing", "header", "Recommendations"]
     
@@ -101,6 +102,10 @@ class HomeVC: BaseVC {
         super.viewDidAppear(animated)
        
     }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+           return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+       }
 
 }
 
@@ -112,25 +117,8 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0{
-            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SearchHeaderView") as! SearchHeaderView
-            return headerView
-        }else{
-            let view = UIView()
-            view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-            view.backgroundColor = UIColor.red
-            return view
-        }
 
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0{
-            return 70
-        }else{
-            return 0
-        }
-    }
+    
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if self.sectionArr[indexPath.section] == "New Listing"{
@@ -200,18 +188,32 @@ extension HomeVC: TitleHeaaderCellDelegate{
         if header == "Featured Listing"{
             let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             storyboard.titleSting = "Featured Listing"
-            storyboard.modalPresentationStyle = .pageSheet
+            storyboard.modalPresentationStyle = .currentContext
             if #available(iOS 15.0, *) {
                 if let presentationController = storyboard.presentationController as? UISheetPresentationController {
+                    
                     presentationController.detents = [.medium(),.large()] /// change to [.medium(), .large()] for a half *and* full screen sheet
+                    ///
                 }
             } else {
                 // Fallback on earlier versions
             }
-                    
             self.navigationController?.present(storyboard, animated: true)
         }
     }
     
     
+}
+
+
+
+
+extension UIView {
+  func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+      let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners,
+                              cornerRadii: CGSize(width: radius, height: radius))
+      let mask = CAShapeLayer()
+      mask.path = path.cgPath
+      layer.mask = mask
+  }
 }
