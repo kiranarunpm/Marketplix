@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemCell" customModule="Marketplix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="196" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="196" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-AP-tDE">
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="250"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-g0-BO8">
+                                <rect key="frame" x="0.0" y="0.0" width="196" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1Re-cM-W4e"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lQp-Qz-iRI">
+                                <rect key="frame" x="0.0" y="165" width="196" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUILDING CONTRACTORS in Bangalore A4D " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-wc-8aU" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="196" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3BHK, Car porch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10F-c6-2Z0" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="47" width="196" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEl-VV-Jim" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                                <rect key="frame" x="136" y="10" width="50" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRx-ku-As2" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="10.333333333333345" y="13" width="29.666666666666671" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="primaryColor"/>
+                                <constraints>
+                                    <constraint firstItem="KRx-ku-As2" firstAttribute="centerY" secondItem="lEl-VV-Jim" secondAttribute="centerY" id="8eJ-i4-yYN"/>
+                                    <constraint firstAttribute="width" constant="50" id="Abt-Ps-Aj8"/>
+                                    <constraint firstItem="KRx-ku-As2" firstAttribute="centerX" secondItem="lEl-VV-Jim" secondAttribute="centerX" id="DyG-iO-WGq"/>
+                                    <constraint firstAttribute="height" constant="50" id="FBV-CO-5rM"/>
+                                    <constraint firstItem="KRx-ku-As2" firstAttribute="centerX" secondItem="lEl-VV-Jim" secondAttribute="centerX" id="XEx-W3-8Ro"/>
+                                    <constraint firstItem="KRx-ku-As2" firstAttribute="centerY" secondItem="lEl-VV-Jim" secondAttribute="centerY" id="zaE-A1-LhO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nx-nM-lku">
+                                <rect key="frame" x="134" y="101" width="54" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="delete-svgrepo-com"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xwi-g0-BO8" secondAttribute="trailing" id="3yU-jD-gk1"/>
+                            <constraint firstItem="lQp-Qz-iRI" firstAttribute="top" secondItem="xwi-g0-BO8" secondAttribute="bottom" constant="15" id="BwO-jv-bub"/>
+                            <constraint firstAttribute="trailing" secondItem="4nx-nM-lku" secondAttribute="trailing" constant="8" id="GS6-vk-aRQ"/>
+                            <constraint firstItem="xwi-g0-BO8" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="KW2-qf-h7j"/>
+                            <constraint firstAttribute="trailing" secondItem="lEl-VV-Jim" secondAttribute="trailing" constant="10" id="On9-jN-DbF"/>
+                            <constraint firstItem="xwi-g0-BO8" firstAttribute="top" secondItem="6Ru-AP-tDE" secondAttribute="top" id="af8-jQ-gNB"/>
+                            <constraint firstItem="lQp-Qz-iRI" firstAttribute="top" secondItem="4nx-nM-lku" secondAttribute="bottom" constant="20" id="e0g-bQ-wJF"/>
+                            <constraint firstItem="lEl-VV-Jim" firstAttribute="top" secondItem="6Ru-AP-tDE" secondAttribute="top" constant="10" id="ozN-T3-fQG"/>
+                            <constraint firstItem="lQp-Qz-iRI" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="wfh-qe-9Wi"/>
+                            <constraint firstAttribute="trailing" secondItem="lQp-Qz-iRI" secondAttribute="trailing" id="xFx-wJ-o8f"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6Ru-AP-tDE" secondAttribute="bottom" id="H4X-e9-Lmv"/>
+                <constraint firstItem="6Ru-AP-tDE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="K53-wz-tHG"/>
+                <constraint firstItem="6Ru-AP-tDE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dHd-aE-jLj"/>
+                <constraint firstAttribute="trailing" secondItem="6Ru-AP-tDE" secondAttribute="trailing" id="uTX-iN-HcR"/>
+            </constraints>
+            <size key="customSize" width="196" height="352"/>
+            <point key="canvasLocation" x="229.00763358778624" y="126.05633802816902"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="10F-c6-2Z0">
+            <size key="intrinsicContentSize" width="96" height="17"/>
+        </designable>
+        <designable name="4B7-wc-8aU">
+            <size key="intrinsicContentSize" width="322.66666666666669" height="21"/>
+        </designable>
+        <designable name="KRx-ku-As2">
+            <size key="intrinsicContentSize" width="29.666666666666668" height="24"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" width="821" height="669"/>
+        <image name="delete-svgrepo-com" width="30" height="30"/>
+        <namedColor name="primaryColor">
+            <color red="0.058823529411764705" green="0.45882352941176469" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E86127A418CD05782106DF /* Pods_Marketplix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83135C9449654DD09D38517A /* Pods_Marketplix.framework */; };
+		8207E90C2A38607B00725507 /* ListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207E90B2A38607B00725507 /* ListingVC.swift */; };
+		822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */; };
+		822F7CE42A08F0FF00898465 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */; };
+		824506C92A55326A0099331F /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506C72A55326A0099331F /* ChatCell.swift */; };
+		824506CA2A55326A0099331F /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824506C82A55326A0099331F /* ChatCell.xib */; };
+		824506CD2A553A730099331F /* ChatBubbleLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506CB2A553A730099331F /* ChatBubbleLeft.swift */; };
+		824506CE2A553A730099331F /* ChatBubbleLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824506CC2A553A730099331F /* ChatBubbleLeft.xib */; };
+		824506D02A553E010099331F /* OpenChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506CF2A553E010099331F /* OpenChatVC.swift */; };
+		824506D32A55407C0099331F /* ChatBubbleRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506D12A55407B0099331F /* ChatBubbleRight.swift */; };
+		824506D42A55426D0099331F /* ChatBubbleRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824506D22A55407B0099331F /* ChatBubbleRight.xib */; };
+		824506D72A55643B0099331F /* ARServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506D62A55643B0099331F /* ARServiceManager.swift */; };
+		824506DA2A55659E0099331F /* CommonServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506D92A55659E0099331F /* CommonServiceHelper.swift */; };
+		824506DC2A5566030099331F /* ARBusinessServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506DB2A5566030099331F /* ARBusinessServiceHelper.swift */; };
+		8249E54B2A1CC32100B9361C /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8249E54A2A1CC32100B9361C /* SideMenuVC.swift */; };
+		8249E54D2A1CCFF100B9361C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8249E54C2A1CCFF100B9361C /* BaseVC.swift */; };
+		8249E54F2A1CD0D100B9361C /* DrawerMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8249E54E2A1CD0D100B9361C /* DrawerMenu.storyboard */; };
+		8276391729FB9961009D6CFA /* AR-Extenstion+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */; };
+		8276391929FBA5A2009D6CFA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391829FBA5A2009D6CFA /* HomeVC.swift */; };
+		8276391B29FBA643009D6CFA /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391A29FBA643009D6CFA /* MainTabVC.swift */; };
+		8276391D29FBB841009D6CFA /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391C29FBB841009D6CFA /* MapVC.swift */; };
+		8276391F29FBB851009D6CFA /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391E29FBB851009D6CFA /* FavouriteVC.swift */; };
+		8276392129FBB870009D6CFA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276392029FBB870009D6CFA /* ChatVC.swift */; };
+		8276392329FBB899009D6CFA /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276392229FBB899009D6CFA /* AccountVC.swift */; };
+		8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276392629FBEC37009D6CFA /* CategoryCell.swift */; };
+		8276392929FBEC37009D6CFA /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276392729FBEC37009D6CFA /* CategoryCell.xib */; };
+		82831B5829EBD72000ABC75B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B5729EBD72000ABC75B /* View+Extension.swift */; };
+		82831B6029EBD89000ABC75B /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5B29EBD7DB00ABC75B /* Poppins-Bold.ttf */; };
+		82831B6129EBD89000ABC75B /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5F29EBD80000ABC75B /* Poppins-Light.ttf */; };
+		82831B6229EBD89000ABC75B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5D29EBD80000ABC75B /* Poppins-Medium.ttf */; };
+		82831B6329EBD89000ABC75B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5E29EBD80000ABC75B /* Poppins-Regular.ttf */; };
+		82831B6429EBD89000ABC75B /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5C29EBD80000ABC75B /* Poppins-SemiBold.ttf */; };
+		82831B6729EBD90600ABC75B /* MPUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B6629EBD90600ABC75B /* MPUILabel.swift */; };
+		82831B6929EBD96B00ABC75B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B6829EBD96B00ABC75B /* Color+Extension.swift */; };
+		82831B6B29EBDA2B00ABC75B /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B6A29EBDA2B00ABC75B /* Font+Extension.swift */; };
+		82831B6D29EBE98A00ABC75B /* MPUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B6C29EBE98A00ABC75B /* MPUIButton.swift */; };
 		828BE2C229E7B98A00B0C838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C129E7B98A00B0C838 /* AppDelegate.swift */; };
 		828BE2C429E7B98A00B0C838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */; };
 		828BE2C629E7B98A00B0C838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C529E7B98A00B0C838 /* ViewController.swift */; };
@@ -17,6 +53,31 @@
 		828BE2DC29E7B98B00B0C838 /* MarketplixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2DB29E7B98B00B0C838 /* MarketplixTests.swift */; };
 		828BE2E629E7B98B00B0C838 /* MarketplixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */; };
 		828BE2E829E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */; };
+		82A168C529EE977600504745 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A168C429EE977600504745 /* RegisterVC.swift */; };
+		82C96B8F2A30413800574065 /* AdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C96B8E2A30413800574065 /* AdsVC.swift */; };
+		82C96B912A30471700574065 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C96B902A30471700574065 /* CategoryVC.swift */; };
+		82D2ADDF2A15E1A6003AA0E8 /* HomeSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADDD2A15E1A6003AA0E8 /* HomeSearchCell.swift */; };
+		82D2ADE02A15E1A6003AA0E8 /* HomeSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADDE2A15E1A6003AA0E8 /* HomeSearchCell.xib */; };
+		82D2ADE32A15E5D9003AA0E8 /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADE12A15E5D9003AA0E8 /* HomeBannerCell.swift */; };
+		82D2ADE42A15E5D9003AA0E8 /* HomeBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADE22A15E5D9003AA0E8 /* HomeBannerCell.xib */; };
+		82D2ADE72A15E914003AA0E8 /* TitleHeaaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADE52A15E914003AA0E8 /* TitleHeaaderCell.swift */; };
+		82D2ADE82A15E914003AA0E8 /* TitleHeaaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADE62A15E914003AA0E8 /* TitleHeaaderCell.xib */; };
+		82D2ADED2A15F58C003AA0E8 /* HomeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADEB2A15F58C003AA0E8 /* HomeCategoryCell.swift */; };
+		82D2ADEE2A15F58C003AA0E8 /* HomeCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADEC2A15F58C003AA0E8 /* HomeCategoryCell.xib */; };
+		82D2ADF02A15F898003AA0E8 /* Screen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADEF2A15F898003AA0E8 /* Screen+Extension.swift */; };
+		82D2ADF32A15F9D5003AA0E8 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADF12A15F9D5003AA0E8 /* ItemCell.swift */; };
+		82D2ADF42A15F9D5003AA0E8 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADF22A15F9D5003AA0E8 /* ItemCell.xib */; };
+		82D2ADF72A1600DC003AA0E8 /* ItemViewTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADF52A1600DC003AA0E8 /* ItemViewTabCell.swift */; };
+		82D2ADF82A1600DC003AA0E8 /* ItemViewTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADF62A1600DC003AA0E8 /* ItemViewTabCell.xib */; };
+		82F1B02E2A6FC3C500E7DE1B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1B02D2A6FC3C500E7DE1B /* User.swift */; };
+		82F1B0302A6FC4E700E7DE1B /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1B02F2A6FC4E700E7DE1B /* AuthenticationVM.swift */; };
+		82F1B0332A6FC56500E7DE1B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1B0322A6FC56500E7DE1B /* LoginModel.swift */; };
+		82F5CAEA29F1422A00A7FB16 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5CAE929F1422A00A7FB16 /* LoginVC.swift */; };
+		82F5CAEC29F1423D00A7FB16 /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5CAEB29F1423D00A7FB16 /* VerificationVC.swift */; };
+		9F6BA63D2A7E276D002E685E /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BA63C2A7E276D002E685E /* HomeVM.swift */; };
+		9F6BA63F2A7E27AF002E685E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BA63E2A7E27AF002E685E /* HomeModel.swift */; };
+		BDCCFA72B0648581AB17DA6A /* Pods_MarketplixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C81EB096D2B20D8C4F655E /* Pods_MarketplixTests.framework */; };
+		E6961D014A2CD90F02FBEEF2 /* Pods_Marketplix_MarketplixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D948276EC5EDF7FEFD6784 /* Pods_Marketplix_MarketplixUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +98,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19A677D3A1044B2F80E7557D /* Pods-Marketplix-MarketplixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplix-MarketplixUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E08E2596409A3E66FAD8306 /* Pods-Marketplix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplix.release.xcconfig"; path = "Target Support Files/Pods-Marketplix/Pods-Marketplix.release.xcconfig"; sourceTree = "<group>"; };
+		756293CDF7D90ECB96776BA3 /* Pods-MarketplixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketplixTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketplixTests/Pods-MarketplixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8207E90B2A38607B00725507 /* ListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVC.swift; sourceTree = "<group>"; };
+		822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
+		822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
+		824506C72A55326A0099331F /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		824506C82A55326A0099331F /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		824506CB2A553A730099331F /* ChatBubbleLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleLeft.swift; sourceTree = "<group>"; };
+		824506CC2A553A730099331F /* ChatBubbleLeft.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatBubbleLeft.xib; sourceTree = "<group>"; };
+		824506CF2A553E010099331F /* OpenChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatVC.swift; sourceTree = "<group>"; };
+		824506D12A55407B0099331F /* ChatBubbleRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleRight.swift; sourceTree = "<group>"; };
+		824506D22A55407B0099331F /* ChatBubbleRight.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatBubbleRight.xib; sourceTree = "<group>"; };
+		824506D62A55643B0099331F /* ARServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARServiceManager.swift; sourceTree = "<group>"; };
+		824506D92A55659E0099331F /* CommonServiceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonServiceHelper.swift; sourceTree = "<group>"; };
+		824506DB2A5566030099331F /* ARBusinessServiceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARBusinessServiceHelper.swift; sourceTree = "<group>"; };
+		8249E54A2A1CC32100B9361C /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		8249E54C2A1CCFF100B9361C /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		8249E54E2A1CD0D100B9361C /* DrawerMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerMenu.storyboard; sourceTree = "<group>"; };
+		8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AR-Extenstion+Storyboard.swift"; sourceTree = "<group>"; };
+		8276391829FBA5A2009D6CFA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		8276391A29FBA643009D6CFA /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		8276391C29FBB841009D6CFA /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		8276391E29FBB851009D6CFA /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
+		8276392029FBB870009D6CFA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		8276392229FBB899009D6CFA /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		8276392629FBEC37009D6CFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8276392729FBEC37009D6CFA /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		82831B5729EBD72000ABC75B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		82831B5B29EBD7DB00ABC75B /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		82831B5C29EBD80000ABC75B /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		82831B5D29EBD80000ABC75B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		82831B5E29EBD80000ABC75B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		82831B5F29EBD80000ABC75B /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		82831B6629EBD90600ABC75B /* MPUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPUILabel.swift; sourceTree = "<group>"; };
+		82831B6829EBD96B00ABC75B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		82831B6A29EBDA2B00ABC75B /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		82831B6C29EBE98A00ABC75B /* MPUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPUIButton.swift; sourceTree = "<group>"; };
 		828BE2BE29E7B98A00B0C838 /* Marketplix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BE2C129E7B98A00B0C838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +150,35 @@
 		828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITests.swift; sourceTree = "<group>"; };
 		828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82A168C429EE977600504745 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		82C96B8E2A30413800574065 /* AdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsVC.swift; sourceTree = "<group>"; };
+		82C96B902A30471700574065 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		82D2ADDD2A15E1A6003AA0E8 /* HomeSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchCell.swift; sourceTree = "<group>"; };
+		82D2ADDE2A15E1A6003AA0E8 /* HomeSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSearchCell.xib; sourceTree = "<group>"; };
+		82D2ADE12A15E5D9003AA0E8 /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
+		82D2ADE22A15E5D9003AA0E8 /* HomeBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCell.xib; sourceTree = "<group>"; };
+		82D2ADE52A15E914003AA0E8 /* TitleHeaaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaaderCell.swift; sourceTree = "<group>"; };
+		82D2ADE62A15E914003AA0E8 /* TitleHeaaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleHeaaderCell.xib; sourceTree = "<group>"; };
+		82D2ADEB2A15F58C003AA0E8 /* HomeCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCell.swift; sourceTree = "<group>"; };
+		82D2ADEC2A15F58C003AA0E8 /* HomeCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCell.xib; sourceTree = "<group>"; };
+		82D2ADEF2A15F898003AA0E8 /* Screen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screen+Extension.swift"; sourceTree = "<group>"; };
+		82D2ADF12A15F9D5003AA0E8 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		82D2ADF22A15F9D5003AA0E8 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		82D2ADF52A1600DC003AA0E8 /* ItemViewTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewTabCell.swift; sourceTree = "<group>"; };
+		82D2ADF62A1600DC003AA0E8 /* ItemViewTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewTabCell.xib; sourceTree = "<group>"; };
+		82F1B02D2A6FC3C500E7DE1B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		82F1B02F2A6FC4E700E7DE1B /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
+		82F1B0322A6FC56500E7DE1B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		82F5CAE929F1422A00A7FB16 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		82F5CAEB29F1423D00A7FB16 /* VerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
+		83135C9449654DD09D38517A /* Pods_Marketplix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marketplix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D948276EC5EDF7FEFD6784 /* Pods_Marketplix_MarketplixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marketplix_MarketplixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		908DE33C3F4B0B512BED2452 /* Pods-Marketplix-MarketplixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplix-MarketplixUITests.release.xcconfig"; path = "Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9F6BA63C2A7E276D002E685E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		9F6BA63E2A7E27AF002E685E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		A372FB10549346319E7F1320 /* Pods-MarketplixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketplixTests.release.xcconfig"; path = "Target Support Files/Pods-MarketplixTests/Pods-MarketplixTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC95B59D0220E284878E0829 /* Pods-Marketplix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplix.debug.xcconfig"; path = "Target Support Files/Pods-Marketplix/Pods-Marketplix.debug.xcconfig"; sourceTree = "<group>"; };
+		F2C81EB096D2B20D8C4F655E /* Pods_MarketplixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketplixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E86127A418CD05782106DF /* Pods_Marketplix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCCFA72B0648581AB17DA6A /* Pods_MarketplixTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +202,109 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6961D014A2CD90F02FBEEF2 /* Pods_Marketplix_MarketplixUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		824506D52A5564250099331F /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				824506D62A55643B0099331F /* ARServiceManager.swift */,
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		824506D82A55655D0099331F /* ServiceHelper */ = {
+			isa = PBXGroup;
+			children = (
+				824506D92A55659E0099331F /* CommonServiceHelper.swift */,
+				824506DB2A5566030099331F /* ARBusinessServiceHelper.swift */,
+			);
+			path = ServiceHelper;
+			sourceTree = "<group>";
+		};
+		8276392429FBEC08009D6CFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8276392529FBEC13009D6CFA /* Xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8276392529FBEC13009D6CFA /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				8276392629FBEC37009D6CFA /* CategoryCell.swift */,
+				8276392729FBEC37009D6CFA /* CategoryCell.xib */,
+				822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */,
+				822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */,
+				82D2ADDD2A15E1A6003AA0E8 /* HomeSearchCell.swift */,
+				82D2ADDE2A15E1A6003AA0E8 /* HomeSearchCell.xib */,
+				82D2ADE12A15E5D9003AA0E8 /* HomeBannerCell.swift */,
+				82D2ADE22A15E5D9003AA0E8 /* HomeBannerCell.xib */,
+				82D2ADE52A15E914003AA0E8 /* TitleHeaaderCell.swift */,
+				82D2ADE62A15E914003AA0E8 /* TitleHeaaderCell.xib */,
+				82D2ADEB2A15F58C003AA0E8 /* HomeCategoryCell.swift */,
+				82D2ADEC2A15F58C003AA0E8 /* HomeCategoryCell.xib */,
+				82D2ADF12A15F9D5003AA0E8 /* ItemCell.swift */,
+				82D2ADF22A15F9D5003AA0E8 /* ItemCell.xib */,
+				82D2ADF52A1600DC003AA0E8 /* ItemViewTabCell.swift */,
+				82D2ADF62A1600DC003AA0E8 /* ItemViewTabCell.xib */,
+				824506C72A55326A0099331F /* ChatCell.swift */,
+				824506C82A55326A0099331F /* ChatCell.xib */,
+				824506CB2A553A730099331F /* ChatBubbleLeft.swift */,
+				824506CC2A553A730099331F /* ChatBubbleLeft.xib */,
+				824506D12A55407B0099331F /* ChatBubbleRight.swift */,
+				824506D22A55407B0099331F /* ChatBubbleRight.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		82831B5629EBD6D300ABC75B /* SupportClass */ = {
+			isa = PBXGroup;
+			children = (
+				82831B5729EBD72000ABC75B /* View+Extension.swift */,
+				82831B6829EBD96B00ABC75B /* Color+Extension.swift */,
+				82831B6A29EBDA2B00ABC75B /* Font+Extension.swift */,
+				8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */,
+				82D2ADEF2A15F898003AA0E8 /* Screen+Extension.swift */,
+			);
+			path = SupportClass;
+			sourceTree = "<group>";
+		};
+		82831B5929EBD7BA00ABC75B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				82831B5A29EBD7C300ABC75B /* Fonts */,
+				82F1B02D2A6FC3C500E7DE1B /* User.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		82831B5A29EBD7C300ABC75B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				82831B5B29EBD7DB00ABC75B /* Poppins-Bold.ttf */,
+				82831B5F29EBD80000ABC75B /* Poppins-Light.ttf */,
+				82831B5D29EBD80000ABC75B /* Poppins-Medium.ttf */,
+				82831B5E29EBD80000ABC75B /* Poppins-Regular.ttf */,
+				82831B5C29EBD80000ABC75B /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		82831B6529EBD8DB00ABC75B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				82831B6629EBD90600ABC75B /* MPUILabel.swift */,
+				82831B6C29EBE98A00ABC75B /* MPUIButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		828BE2B529E7B98A00B0C838 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +312,8 @@
 				828BE2DA29E7B98B00B0C838 /* MarketplixTests */,
 				828BE2E429E7B98B00B0C838 /* MarketplixUITests */,
 				828BE2BF29E7B98A00B0C838 /* Products */,
+				9B4065DC2D897B2F5DAE9703 /* Pods */,
+				E6CC7BC6750835FF3F1D7EE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +330,20 @@
 		828BE2C029E7B98A00B0C838 /* Marketplix */ = {
 			isa = PBXGroup;
 			children = (
+				82F1B0312A6FC54600E7DE1B /* Model */,
+				82F1B02C2A6FC3AC00E7DE1B /* ViewModel */,
+				824506D82A55655D0099331F /* ServiceHelper */,
+				824506D52A5564250099331F /* ServiceManager */,
+				8276392429FBEC08009D6CFA /* View */,
+				82A168C329EE975400504745 /* ViewController */,
+				82831B6529EBD8DB00ABC75B /* CustomViews */,
+				82831B5929EBD7BA00ABC75B /* Core */,
+				82831B5629EBD6D300ABC75B /* SupportClass */,
 				828BE2C129E7B98A00B0C838 /* AppDelegate.swift */,
 				828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */,
 				828BE2C529E7B98A00B0C838 /* ViewController.swift */,
 				828BE2C729E7B98A00B0C838 /* Main.storyboard */,
+				8249E54E2A1CD0D100B9361C /* DrawerMenu.storyboard */,
 				828BE2CD29E7B98B00B0C838 /* Assets.xcassets */,
 				828BE2CF29E7B98B00B0C838 /* LaunchScreen.storyboard */,
 				828BE2D229E7B98B00B0C838 /* Info.plist */,
@@ -130,6 +369,69 @@
 			path = MarketplixUITests;
 			sourceTree = "<group>";
 		};
+		82A168C329EE975400504745 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82A168C429EE977600504745 /* RegisterVC.swift */,
+				82F5CAE929F1422A00A7FB16 /* LoginVC.swift */,
+				82F5CAEB29F1423D00A7FB16 /* VerificationVC.swift */,
+				8276391829FBA5A2009D6CFA /* HomeVC.swift */,
+				8276391A29FBA643009D6CFA /* MainTabVC.swift */,
+				8276391C29FBB841009D6CFA /* MapVC.swift */,
+				8276391E29FBB851009D6CFA /* FavouriteVC.swift */,
+				8276392029FBB870009D6CFA /* ChatVC.swift */,
+				8276392229FBB899009D6CFA /* AccountVC.swift */,
+				8249E54A2A1CC32100B9361C /* SideMenuVC.swift */,
+				8249E54C2A1CCFF100B9361C /* BaseVC.swift */,
+				82C96B8E2A30413800574065 /* AdsVC.swift */,
+				82C96B902A30471700574065 /* CategoryVC.swift */,
+				8207E90B2A38607B00725507 /* ListingVC.swift */,
+				824506CF2A553E010099331F /* OpenChatVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		82F1B02C2A6FC3AC00E7DE1B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82F1B02F2A6FC4E700E7DE1B /* AuthenticationVM.swift */,
+				9F6BA63C2A7E276D002E685E /* HomeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82F1B0312A6FC54600E7DE1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82F1B0322A6FC56500E7DE1B /* LoginModel.swift */,
+				9F6BA63E2A7E27AF002E685E /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B4065DC2D897B2F5DAE9703 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC95B59D0220E284878E0829 /* Pods-Marketplix.debug.xcconfig */,
+				5E08E2596409A3E66FAD8306 /* Pods-Marketplix.release.xcconfig */,
+				19A677D3A1044B2F80E7557D /* Pods-Marketplix-MarketplixUITests.debug.xcconfig */,
+				908DE33C3F4B0B512BED2452 /* Pods-Marketplix-MarketplixUITests.release.xcconfig */,
+				756293CDF7D90ECB96776BA3 /* Pods-MarketplixTests.debug.xcconfig */,
+				A372FB10549346319E7F1320 /* Pods-MarketplixTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E6CC7BC6750835FF3F1D7EE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83135C9449654DD09D38517A /* Pods_Marketplix.framework */,
+				83D948276EC5EDF7FEFD6784 /* Pods_Marketplix_MarketplixUITests.framework */,
+				F2C81EB096D2B20D8C4F655E /* Pods_MarketplixTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +439,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 828BE2EB29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "Marketplix" */;
 			buildPhases = (
+				C5119FEB606F92B293EAF22B /* [CP] Check Pods Manifest.lock */,
 				828BE2BA29E7B98A00B0C838 /* Sources */,
 				828BE2BB29E7B98A00B0C838 /* Frameworks */,
 				828BE2BC29E7B98A00B0C838 /* Resources */,
+				9042EE056161DABB1A3943FE /* [CP] Embed Pods Frameworks */,
+				EF9BC50A4A893C4FAAFFC87E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +459,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 828BE2EE29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "MarketplixTests" */;
 			buildPhases = (
+				83D7CA3489AE4B3C11D6EC2B /* [CP] Check Pods Manifest.lock */,
 				828BE2D329E7B98B00B0C838 /* Sources */,
 				828BE2D429E7B98B00B0C838 /* Frameworks */,
 				828BE2D529E7B98B00B0C838 /* Resources */,
@@ -172,9 +478,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 828BE2F129E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "MarketplixUITests" */;
 			buildPhases = (
+				7B2C5FE8ADB6FEF598DC6D54 /* [CP] Check Pods Manifest.lock */,
 				828BE2DD29E7B98B00B0C838 /* Sources */,
 				828BE2DE29E7B98B00B0C838 /* Frameworks */,
 				828BE2DF29E7B98B00B0C838 /* Resources */,
+				CB2C04581C2A810F90DE3F35 /* [CP] Embed Pods Frameworks */,
+				4809214F4B6208ADFFA53F4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +543,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824506D42A55426D0099331F /* ChatBubbleRight.xib in Resources */,
+				82831B6029EBD89000ABC75B /* Poppins-Bold.ttf in Resources */,
+				82831B6129EBD89000ABC75B /* Poppins-Light.ttf in Resources */,
+				82D2ADF42A15F9D5003AA0E8 /* ItemCell.xib in Resources */,
+				82831B6229EBD89000ABC75B /* Poppins-Medium.ttf in Resources */,
+				82D2ADE82A15E914003AA0E8 /* TitleHeaaderCell.xib in Resources */,
+				82D2ADF82A1600DC003AA0E8 /* ItemViewTabCell.xib in Resources */,
+				82831B6329EBD89000ABC75B /* Poppins-Regular.ttf in Resources */,
+				824506CA2A55326A0099331F /* ChatCell.xib in Resources */,
+				8249E54F2A1CD0D100B9361C /* DrawerMenu.storyboard in Resources */,
+				82831B6429EBD89000ABC75B /* Poppins-SemiBold.ttf in Resources */,
+				822F7CE42A08F0FF00898465 /* HomeHeaderCell.xib in Resources */,
+				82D2ADE42A15E5D9003AA0E8 /* HomeBannerCell.xib in Resources */,
+				82D2ADEE2A15F58C003AA0E8 /* HomeCategoryCell.xib in Resources */,
 				828BE2D129E7B98B00B0C838 /* LaunchScreen.storyboard in Resources */,
 				828BE2CE29E7B98B00B0C838 /* Assets.xcassets in Resources */,
+				82D2ADE02A15E1A6003AA0E8 /* HomeSearchCell.xib in Resources */,
+				8276392929FBEC37009D6CFA /* CategoryCell.xib in Resources */,
 				828BE2C929E7B98A00B0C838 /* Main.storyboard in Resources */,
+				824506CE2A553A730099331F /* ChatBubbleLeft.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +582,193 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4809214F4B6208ADFFA53F4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B2C5FE8ADB6FEF598DC6D54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Marketplix-MarketplixUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83D7CA3489AE4B3C11D6EC2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarketplixTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9042EE056161DABB1A3943FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix/Pods-Marketplix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix/Pods-Marketplix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marketplix/Pods-Marketplix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5119FEB606F92B293EAF22B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Marketplix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2C04581C2A810F90DE3F35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF9BC50A4A893C4FAAFFC87E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix/Pods-Marketplix-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marketplix/Pods-Marketplix-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marketplix/Pods-Marketplix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		828BE2BA29E7B98A00B0C838 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824506DC2A5566030099331F /* ARBusinessServiceHelper.swift in Sources */,
+				8276392129FBB870009D6CFA /* ChatVC.swift in Sources */,
+				82F5CAEA29F1422A00A7FB16 /* LoginVC.swift in Sources */,
+				82C96B912A30471700574065 /* CategoryVC.swift in Sources */,
+				824506C92A55326A0099331F /* ChatCell.swift in Sources */,
+				82D2ADF32A15F9D5003AA0E8 /* ItemCell.swift in Sources */,
+				8276391929FBA5A2009D6CFA /* HomeVC.swift in Sources */,
 				828BE2CC29E7B98A00B0C838 /* Marketplix.xcdatamodeld in Sources */,
+				824506DA2A55659E0099331F /* CommonServiceHelper.swift in Sources */,
+				82831B6929EBD96B00ABC75B /* Color+Extension.swift in Sources */,
+				82F1B0302A6FC4E700E7DE1B /* AuthenticationVM.swift in Sources */,
+				82D2ADED2A15F58C003AA0E8 /* HomeCategoryCell.swift in Sources */,
+				824506CD2A553A730099331F /* ChatBubbleLeft.swift in Sources */,
+				82F5CAEC29F1423D00A7FB16 /* VerificationVC.swift in Sources */,
 				828BE2C629E7B98A00B0C838 /* ViewController.swift in Sources */,
+				82831B5829EBD72000ABC75B /* View+Extension.swift in Sources */,
+				82831B6729EBD90600ABC75B /* MPUILabel.swift in Sources */,
+				824506D72A55643B0099331F /* ARServiceManager.swift in Sources */,
 				828BE2C229E7B98A00B0C838 /* AppDelegate.swift in Sources */,
+				82F1B02E2A6FC3C500E7DE1B /* User.swift in Sources */,
+				82831B6D29EBE98A00ABC75B /* MPUIButton.swift in Sources */,
+				82D2ADF72A1600DC003AA0E8 /* ItemViewTabCell.swift in Sources */,
+				82D2ADE32A15E5D9003AA0E8 /* HomeBannerCell.swift in Sources */,
+				9F6BA63D2A7E276D002E685E /* HomeVM.swift in Sources */,
+				82831B6B29EBDA2B00ABC75B /* Font+Extension.swift in Sources */,
+				8276391729FB9961009D6CFA /* AR-Extenstion+Storyboard.swift in Sources */,
+				82D2ADF02A15F898003AA0E8 /* Screen+Extension.swift in Sources */,
+				8276392329FBB899009D6CFA /* AccountVC.swift in Sources */,
+				8249E54D2A1CCFF100B9361C /* BaseVC.swift in Sources */,
 				828BE2C429E7B98A00B0C838 /* SceneDelegate.swift in Sources */,
+				8276391D29FBB841009D6CFA /* MapVC.swift in Sources */,
+				824506D32A55407C0099331F /* ChatBubbleRight.swift in Sources */,
+				8249E54B2A1CC32100B9361C /* SideMenuVC.swift in Sources */,
+				8276391B29FBA643009D6CFA /* MainTabVC.swift in Sources */,
+				8276391F29FBB851009D6CFA /* FavouriteVC.swift in Sources */,
+				82D2ADDF2A15E1A6003AA0E8 /* HomeSearchCell.swift in Sources */,
+				8207E90C2A38607B00725507 /* ListingVC.swift in Sources */,
+				82A168C529EE977600504745 /* RegisterVC.swift in Sources */,
+				9F6BA63F2A7E27AF002E685E /* HomeModel.swift in Sources */,
+				82F1B0332A6FC56500E7DE1B /* LoginModel.swift in Sources */,
+				82D2ADE72A15E914003AA0E8 /* TitleHeaaderCell.swift in Sources */,
+				822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */,
+				82C96B8F2A30413800574065 /* AdsVC.swift in Sources */,
+				824506D02A553E010099331F /* OpenChatVC.swift in Sources */,
+				8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +940,7 @@
 		};
 		828BE2EC29E7B98B00B0C838 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC95B59D0220E284878E0829 /* Pods-Marketplix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -447,8 +952,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +961,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.Marketplix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,6 +972,7 @@
 		};
 		828BE2ED29E7B98B00B0C838 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E08E2596409A3E66FAD8306 /* Pods-Marketplix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,8 +984,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,6 +993,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.market.plix.Marketplix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -492,6 +1004,7 @@
 		};
 		828BE2EF29E7B98B00B0C838 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 756293CDF7D90ECB96776BA3 /* Pods-MarketplixTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +1025,7 @@
 		};
 		828BE2F029E7B98B00B0C838 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A372FB10549346319E7F1320 /* Pods-MarketplixTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +1046,7 @@
 		};
 		828BE2F229E7B98B00B0C838 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19A677D3A1044B2F80E7557D /* Pods-Marketplix-MarketplixUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +1065,7 @@
 		};
 		828BE2F329E7B98B00B0C838 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 908DE33C3F4B0B512BED2452 /* Pods-Marketplix-MarketplixUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

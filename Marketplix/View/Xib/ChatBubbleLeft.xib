@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="KGk-i7-Jjw" customClass="ChatBubbleLeft" customModule="Marketplix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1L0-Md-diw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-ym-oHc">
+                                <rect key="frame" x="40" y="25" width="262" height="72"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7n-tq-xPy" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="72"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to reach you location?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jx-9S-CMI" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="15.000000000000002" width="186" height="22.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04.44 PM" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-fT-s69" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="49.666666666666671" width="70" height="14.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="vzG-Ss-cMV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="primaryColor"/>
+                                        <constraints>
+                                            <constraint firstItem="QNx-fT-s69" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="6ft-Hp-0Tq"/>
+                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="J5J-se-fO5"/>
+                                            <constraint firstAttribute="trailing" secondItem="6jx-9S-CMI" secondAttribute="trailing" constant="8" id="OSe-QC-ZKA"/>
+                                            <constraint firstAttribute="trailing" secondItem="6jx-9S-CMI" secondAttribute="trailing" constant="8" id="a7G-yM-u1E"/>
+                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="top" secondItem="V7n-tq-xPy" secondAttribute="top" constant="15" id="clN-Pu-Nkn"/>
+                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="cnm-cW-lMJ"/>
+                                            <constraint firstItem="QNx-fT-s69" firstAttribute="top" secondItem="6jx-9S-CMI" secondAttribute="bottom" constant="12" id="gI2-uf-ZKU"/>
+                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="top" secondItem="V7n-tq-xPy" secondAttribute="top" constant="15" id="l0Y-b1-VrJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="QNx-fT-s69" secondAttribute="bottom" constant="8" id="mbB-Ow-fmI"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="72" id="ysZ-KY-sgK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="618-4l-dqz" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="212" y="0.0" width="50" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="qHh-XN-Tjt">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="0sk-8d-Lyc"/>
+                                            <constraint firstAttribute="height" constant="50" id="3n6-8q-6sc"/>
+                                            <constraint firstItem="qHh-XN-Tjt" firstAttribute="top" secondItem="618-4l-dqz" secondAttribute="top" id="Ue9-qr-rDd"/>
+                                            <constraint firstAttribute="bottom" secondItem="qHh-XN-Tjt" secondAttribute="bottom" id="eGR-gy-3ZM"/>
+                                            <constraint firstItem="qHh-XN-Tjt" firstAttribute="leading" secondItem="618-4l-dqz" secondAttribute="leading" id="pJP-Ny-fmp"/>
+                                            <constraint firstAttribute="trailing" secondItem="qHh-XN-Tjt" secondAttribute="trailing" id="ybj-jH-ObP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zfu-ym-oHc" firstAttribute="top" secondItem="1L0-Md-diw" secondAttribute="top" constant="25" id="47w-hZ-Zpn"/>
+                            <constraint firstAttribute="bottom" secondItem="zfu-ym-oHc" secondAttribute="bottom" constant="25" id="5YO-de-pf4"/>
+                            <constraint firstAttribute="trailing" secondItem="zfu-ym-oHc" secondAttribute="trailing" constant="18" id="E2S-rq-Qsd"/>
+                            <constraint firstItem="zfu-ym-oHc" firstAttribute="leading" secondItem="1L0-Md-diw" secondAttribute="leading" constant="40" id="PDg-Av-0qJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1L0-Md-diw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="O7b-BV-SqE"/>
+                    <constraint firstItem="1L0-Md-diw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PDh-ep-85f"/>
+                    <constraint firstAttribute="trailing" secondItem="1L0-Md-diw" secondAttribute="trailing" id="rSt-Nn-uKB"/>
+                    <constraint firstAttribute="bottom" secondItem="1L0-Md-diw" secondAttribute="bottom" id="vkn-9L-MuT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="30.534351145038165" y="67.605633802816911"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="6jx-9S-CMI">
+            <size key="intrinsicContentSize" width="174.66666666666666" height="17"/>
+        </designable>
+        <designable name="QNx-fT-s69">
+            <size key="intrinsicContentSize" width="55.333333333333336" height="14.333333333333334"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="man" width="128" height="128"/>
+        <namedColor name="primaryColor">
+            <color red="0.058823529411764705" green="0.45882352941176469" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
