@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx3-Wf-6qG" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                        <rect key="frame" x="15.000000000000007" y="12" width="102.66666666666669" height="21"/>
+                        <rect key="frame" x="15.000000000000007" y="8" width="102.66666666666669" height="31"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,25 +36,26 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKD-ix-l0E">
-                        <rect key="frame" x="280" y="15.666666666666664" width="20" height="14"/>
+                        <rect key="frame" x="290" y="16.666666666666668" width="10" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="8rP-2V-Mhk"/>
-                            <constraint firstAttribute="width" constant="20" id="rhh-xv-PAs"/>
+                            <constraint firstAttribute="width" constant="10" id="rhh-xv-PAs"/>
                         </constraints>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="arrow-right-336-svgrepo-com 1"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Button" image="arrow-right-336-svgrepo-com 1"/>
                         <connections>
                             <action selector="View_btn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K46-6a-A9P"/>
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" name="BackGroundColor"/>
                 <constraints>
-                    <constraint firstItem="Gx3-Wf-6qG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="2fC-Do-v2c"/>
+                    <constraint firstItem="Gx3-Wf-6qG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2fC-Do-v2c"/>
                     <constraint firstAttribute="trailing" secondItem="LKD-ix-l0E" secondAttribute="trailing" constant="20" id="M1G-A6-rRZ"/>
                     <constraint firstItem="LKD-ix-l0E" firstAttribute="centerY" secondItem="Gx3-Wf-6qG" secondAttribute="centerY" id="Xzi-v5-9AT"/>
                     <constraint firstItem="Gx3-Wf-6qG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="aIl-tH-6yn"/>
-                    <constraint firstAttribute="bottom" secondItem="Gx3-Wf-6qG" secondAttribute="bottom" constant="11" id="xCq-h2-SxS"/>
+                    <constraint firstAttribute="bottom" secondItem="Gx3-Wf-6qG" secondAttribute="bottom" constant="5" id="xCq-h2-SxS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -69,5 +72,8 @@
     </designables>
     <resources>
         <image name="arrow-right-336-svgrepo-com 1" width="25" height="25"/>
+        <namedColor name="BackGroundColor">
+            <color red="0.94901960784313721" green="0.95294117647058818" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

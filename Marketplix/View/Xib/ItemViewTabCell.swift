@@ -9,11 +9,13 @@ import UIKit
 
 class ItemViewTabCell: UITableViewCell {
     static let identifire = "ItemViewTabCell"
-
+    var type: String = ""
     @IBOutlet weak var colView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         colView.register(UINib(nibName: ItemCell.identifire, bundle: nil), forCellWithReuseIdentifier: ItemCell.identifire)
+        self.colView.register(UINib(nibName: HomeNewItems.identifire, bundle: nil), forCellWithReuseIdentifier: HomeNewItems.identifire)
+        
         colView.dataSource = self
         colView.delegate = self
         
@@ -35,23 +37,33 @@ extension ItemViewTabCell: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
-        return cell
+        if type == "New Listing"{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeNewItems.identifire, for: indexPath) as! HomeNewItems
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
+            return cell
+        }
+
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        
         let screenSize = ScreenSize.SCREEN_MAX_LENGTH
         let screen_width = ScreenSize.SCREEN_WIDTH
+        
+        if type == "New Listing"{
+            return CGSize(width: screen_width - 60, height: 130)
+        }else{
+           
 
-        if screenSize >= 1024{
+            if screenSize >= 1024{
+                return CGSize(width: screen_width / 4 - 20, height: 260)
+            }
+            else{
 
-            return CGSize(width: screen_width / 4 - 20, height: 250)
-        }
-        else{
-
-            return CGSize(width: screen_width / 2 - 20, height: 250)
+                return CGSize(width: screen_width / 2 - 20, height: 260)
+            }
         }
     }
     

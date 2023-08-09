@@ -63,10 +63,10 @@ extension HomeCategoryCell: UICollectionViewDelegate, UICollectionViewDataSource
         let screenSize = ScreenSize.SCREEN_MAX_LENGTH
         let screen_width = ScreenSize.SCREEN_WIDTH
         if screenSize >= 1024{
-            return CGSize(width: screen_width / 6 - 20, height: 60)
+            return CGSize(width: screen_width / 6 - 20, height: 100)
         }
         else{
-            return CGSize(width: screen_width / 3 - 20, height: 60)
+            return CGSize(width: screen_width / 5 - 20, height: 100)
         }
     }
     

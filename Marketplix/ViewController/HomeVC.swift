@@ -12,7 +12,7 @@ import MBProgressHUD
 
 class HomeVC: BaseVC {
     let names = ["Searh Land", "Search Property", "Search Car", "Search Laptops"]
-    let sectionArr = ["search","banner", "header","Main categories", "header", "Featured Listing", "header", "New Listing", "header", "Recommendations"]
+    let sectionArr = ["banner", "header","Main categories", "header", "Featured Listing", "header", "New Listing", "header", "Recommendations"]
     
     lazy var viewModel: HomeVM = {
         return HomeVM()
@@ -31,6 +31,9 @@ class HomeVC: BaseVC {
         self.tableView.register(UINib(nibName: TitleHeaaderCell.identifire, bundle: nil), forCellReuseIdentifier: TitleHeaaderCell.identifire)
         self.tableView.register(UINib(nibName: HomeCategoryCell.identifire, bundle: nil), forCellReuseIdentifier: HomeCategoryCell.identifire)
         self.tableView.register(UINib(nibName: ItemViewTabCell.identifire, bundle: nil), forCellReuseIdentifier: ItemViewTabCell.identifire)
+
+        
+        tableView.register(UINib(nibName: "SearchHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "SearchHeaderView")
         
         initViewModel()
     }
@@ -48,10 +51,10 @@ class HomeVC: BaseVC {
                     _self.flashArr.append(item)
                 })
                 
-                let storyboard = AdsVC.instantiate(fromAppStoryboard: .Main)
-                storyboard.modalPresentationStyle = .overCurrentContext
-                storyboard.flashArr = _self.flashArr
-                _self.navigationController?.present(storyboard, animated: true)
+//                let storyboard = AdsVC.instantiate(fromAppStoryboard: .Main)
+//                storyboard.modalPresentationStyle = .overCurrentContext
+//                storyboard.flashArr = _self.flashArr
+//                _self.navigationController?.present(storyboard, animated: true)
  
             }
         }
@@ -109,6 +112,32 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0{
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SearchHeaderView") as! SearchHeaderView
+            return headerView
+        }else{
+            let view = UIView()
+            view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            view.backgroundColor = UIColor.red
+            return view
+        }
+
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0{
+            return 70
+        }else{
+            return 0
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if self.sectionArr[indexPath.section] == "New Listing"{
+            return 140
+        }
+        return UITableView.automaticDimension
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = sectionArr[indexPath.section]
@@ -143,6 +172,7 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
 
         case "New Listing":
             let cell = tableView.dequeueReusableCell(withIdentifier: ItemViewTabCell.identifire, for: indexPath) as! ItemViewTabCell
+            cell.type = "New Listing"
             cell.selectionStyle = .none
             return cell
             
@@ -158,8 +188,6 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
             return UITableViewCell()
         }
     }
-    
-   
 }
 
 extension HomeVC: TitleHeaaderCellDelegate{
@@ -172,6 +200,15 @@ extension HomeVC: TitleHeaaderCellDelegate{
         if header == "Featured Listing"{
             let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             storyboard.titleSting = "Featured Listing"
+            storyboard.modalPresentationStyle = .pageSheet
+            if #available(iOS 15.0, *) {
+                if let presentationController = storyboard.presentationController as? UISheetPresentationController {
+                    presentationController.detents = [.medium(),.large()] /// change to [.medium(), .large()] for a half *and* full screen sheet
+                }
+            } else {
+                // Fallback on earlier versions
+            }
+                    
             self.navigationController?.present(storyboard, animated: true)
         }
     }

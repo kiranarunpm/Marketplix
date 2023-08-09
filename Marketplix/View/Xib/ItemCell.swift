@@ -8,11 +8,12 @@
 import UIKit
 
 class ItemCell: UICollectionViewCell {
+    @IBOutlet weak var bgView: UIView!
     static let identifire = "ItemCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
 }

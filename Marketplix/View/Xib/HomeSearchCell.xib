@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,40 +20,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUj-1k-2hY" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                        <rect key="frame" x="15" y="15" width="290" height="50"/>
+                        <rect key="frame" x="15" y="15" width="219" height="40"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eke-LQ-VHH">
-                                <rect key="frame" x="50" y="8" width="220" height="34"/>
+                                <rect key="frame" x="15" y="8" width="184" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s7A-cS-ObG">
-                                <rect key="frame" x="13" y="15.666666666666668" width="29" height="19.333333333333332"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="29" id="OQL-bZ-1KY"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Rh6-Bc-cHc"/>
-                                    <constraint firstAttribute="width" constant="29" id="gHv-bn-OaK"/>
-                                    <constraint firstAttribute="height" constant="21" id="xOZ-yJ-evZ"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Eke-LQ-VHH" secondAttribute="trailing" constant="20" id="13N-2S-5cJ"/>
-                            <constraint firstItem="s7A-cS-ObG" firstAttribute="leading" secondItem="WUj-1k-2hY" secondAttribute="leading" constant="13" id="Mcq-r1-dr9"/>
                             <constraint firstItem="Eke-LQ-VHH" firstAttribute="top" secondItem="WUj-1k-2hY" secondAttribute="top" constant="8" id="TDf-qj-t3f"/>
                             <constraint firstAttribute="bottom" secondItem="Eke-LQ-VHH" secondAttribute="bottom" constant="8" id="dqt-xL-Lc1"/>
-                            <constraint firstAttribute="height" constant="50" id="hgc-44-Xk6"/>
-                            <constraint firstItem="s7A-cS-ObG" firstAttribute="centerY" secondItem="WUj-1k-2hY" secondAttribute="centerY" id="qtx-gJ-rDg"/>
-                            <constraint firstItem="Eke-LQ-VHH" firstAttribute="leading" secondItem="WUj-1k-2hY" secondAttribute="leading" constant="50" id="r2U-kf-JwD"/>
+                            <constraint firstAttribute="height" constant="40" id="hgc-44-Xk6"/>
+                            <constraint firstItem="Eke-LQ-VHH" firstAttribute="leading" secondItem="WUj-1k-2hY" secondAttribute="leading" constant="15" id="r2U-kf-JwD"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="25"/>
+                                <real key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
+                                <real key="value" value="0.5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,11 +60,51 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UZK-0r-Wml">
+                        <rect key="frame" x="239" y="10" width="73" height="50"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txb-xw-uNd" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3H-am-TEe">
+                                        <rect key="frame" x="9.9999999999999982" y="14" width="20.333333333333329" height="22"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9614476143699332" green="0.9614476143699332" blue="0.9614476143699332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="g3H-am-TEe" firstAttribute="centerX" secondItem="txb-xw-uNd" secondAttribute="centerX" id="13V-c6-6SY"/>
+                                    <constraint firstItem="g3H-am-TEe" firstAttribute="centerY" secondItem="txb-xw-uNd" secondAttribute="centerY" id="UYZ-Ec-Bc4"/>
+                                    <constraint firstAttribute="width" constant="40" id="xQu-PC-qjD"/>
+                                    <constraint firstAttribute="height" constant="50" id="yda-k4-F5e"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lc-zz-sTN">
+                                <rect key="frame" x="48" y="12.666666666666668" width="25" height="25.000000000000004"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="2a7-JQ-v7p"/>
+                                    <constraint firstAttribute="height" constant="25" id="ejv-fm-jZB"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="bell"/>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
+                <color key="backgroundColor" name="BackGroundColor"/>
                 <constraints>
                     <constraint firstItem="WUj-1k-2hY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="BeM-o4-WrK"/>
                     <constraint firstItem="WUj-1k-2hY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="DRz-du-NWF"/>
-                    <constraint firstAttribute="trailing" secondItem="WUj-1k-2hY" secondAttribute="trailing" constant="15" id="Wu4-9x-tQv"/>
+                    <constraint firstItem="UZK-0r-Wml" firstAttribute="leading" secondItem="WUj-1k-2hY" secondAttribute="trailing" constant="5" id="HU7-Uu-aTX"/>
+                    <constraint firstAttribute="trailing" secondItem="UZK-0r-Wml" secondAttribute="trailing" constant="8" id="h9d-u9-VHU"/>
+                    <constraint firstItem="UZK-0r-Wml" firstAttribute="centerY" secondItem="WUj-1k-2hY" secondAttribute="centerY" id="uRb-u0-z3s"/>
                     <constraint firstAttribute="bottom" secondItem="WUj-1k-2hY" secondAttribute="bottom" id="xVw-nD-HjR"/>
                 </constraints>
             </tableViewCellContentView>
@@ -86,7 +116,11 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bell" width="32" height="32"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="BackGroundColor">
+            <color red="0.94901960784313721" green="0.95294117647058818" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,0 +1,42 @@
+PODS:
+  - GoogleMaps (8.1.0):
+    - GoogleMaps/Maps (= 8.1.0)
+  - GoogleMaps/Base (8.1.0)
+  - GoogleMaps/Maps (8.1.0):
+    - GoogleMaps/Base
+  - ImageSlideshow/Core (1.9.2)
+  - ImageSlideshow/Kingfisher (1.9.2):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
+  - IQKeyboardManagerSwift (6.5.12)
+  - Kingfisher (7.9.0)
+  - MBProgressHUD (1.2.0)
+  - SideMenu (6.5.0)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - ImageSlideshow/Kingfisher
+  - IQKeyboardManagerSwift
+  - MBProgressHUD (~> 1.2.0)
+  - SideMenu (~> 6.5)
+
+SPEC REPOS:
+  trunk:
+    - GoogleMaps
+    - ImageSlideshow
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MBProgressHUD
+    - SideMenu
+
+SPEC CHECKSUMS:
+  GoogleMaps: 97300a4b89a3641563782c52228c4530f5fe0d89
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
+  Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+
+PODFILE CHECKSUM: c91d48265cd6543b9a244a292ae2bafc3233e376
+
+COCOAPODS: 1.12.1

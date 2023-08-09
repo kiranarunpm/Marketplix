@@ -1,0 +1,6 @@
+framework module Pods_Marketplix_MarketplixUITests {
+  umbrella header "Pods-Marketplix-MarketplixUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

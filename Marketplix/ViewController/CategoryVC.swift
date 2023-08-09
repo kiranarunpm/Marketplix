@@ -46,10 +46,10 @@ extension CategoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         let screenSize = ScreenSize.SCREEN_MAX_LENGTH
         let screen_width = ScreenSize.SCREEN_WIDTH
         if screenSize >= 1024{
-            return CGSize(width: screen_width / 6 - 20, height: 60)
+            return CGSize(width: screen_width / 6 - 20, height: 100)
         }
         else{
-            return CGSize(width: screen_width / 4 - 20, height: 60)
+            return CGSize(width: screen_width / 5 - 20, height: 100)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -98,6 +98,8 @@ enum FontType: Int {
         case 4: textColor = UIColor.white
 
         case 5: textColor = UIColor.red
+            
+        case 6: textColor = UIColor(named: "PriceGreenColor")
 
         default: textColor = UIColor.primaryColor
             
@@ -123,6 +125,7 @@ enum FontType: Int {
 
         case 5: textColor = UIColor.red
 
+        case 6: textColor = UIColor(named: "PriceGreenColor")
 
         default: textColor = UIColor.primaryColor
             

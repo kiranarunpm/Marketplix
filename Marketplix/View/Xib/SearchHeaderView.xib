@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchHeaderView" customModule="Marketplix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="63"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-Md-nHW">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="63"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyQ-N1-tV6" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                            <rect key="frame" x="15" y="9" width="271" height="45"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vD-3c-dCJ">
+                                    <rect key="frame" x="15" y="8" width="236" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="4vD-3c-dCJ" firstAttribute="leading" secondItem="FyQ-N1-tV6" secondAttribute="leading" constant="15" id="63v-hi-91Q"/>
+                                <constraint firstAttribute="trailing" secondItem="4vD-3c-dCJ" secondAttribute="trailing" constant="20" id="9PB-9M-WAQ"/>
+                                <constraint firstItem="4vD-3c-dCJ" firstAttribute="top" secondItem="FyQ-N1-tV6" secondAttribute="top" constant="8" id="JX8-Uw-ZtJ"/>
+                                <constraint firstAttribute="height" constant="45" id="R1d-Qm-rpJ"/>
+                                <constraint firstAttribute="bottom" secondItem="4vD-3c-dCJ" secondAttribute="bottom" constant="8" id="xpl-B2-aj9"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="0.0" height="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="97e-yQ-vtj">
+                            <rect key="frame" x="291" y="6.6666666666666679" width="82" height="50"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0i-vg-6cy" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-xT-IRs">
+                                            <rect key="frame" x="9.9999999999999982" y="14" width="20.333333333333329" height="22"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" name="BackGroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="c1v-xT-IRs" firstAttribute="centerY" secondItem="S0i-vg-6cy" secondAttribute="centerY" id="EOV-pA-6hX"/>
+                                        <constraint firstAttribute="width" constant="40" id="Xdv-oL-IBi"/>
+                                        <constraint firstAttribute="height" constant="50" id="YbN-eb-xcV"/>
+                                        <constraint firstItem="c1v-xT-IRs" firstAttribute="centerX" secondItem="S0i-vg-6cy" secondAttribute="centerX" id="aZs-Qe-WA8"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwg-HO-pCX" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                                    <rect key="frame" x="42" y="0.0" width="40" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XU-k3-c2n">
+                                            <rect key="frame" x="10" y="15" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="n3m-pc-ZOs"/>
+                                                <constraint firstAttribute="height" constant="20" id="wSP-no-0Se"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bell"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" name="BackGroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="Dtz-yb-F8M"/>
+                                        <constraint firstItem="4XU-k3-c2n" firstAttribute="centerY" secondItem="Uwg-HO-pCX" secondAttribute="centerY" id="Ma0-Ge-EFd"/>
+                                        <constraint firstItem="4XU-k3-c2n" firstAttribute="centerX" secondItem="Uwg-HO-pCX" secondAttribute="centerX" id="X3h-Jp-qZC"/>
+                                        <constraint firstAttribute="height" constant="50" id="fwl-Uc-CRE"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="97e-yQ-vtj" firstAttribute="leading" secondItem="FyQ-N1-tV6" secondAttribute="trailing" constant="5" id="H1Q-t4-JTV"/>
+                        <constraint firstAttribute="trailing" secondItem="97e-yQ-vtj" secondAttribute="trailing" constant="20" id="RGD-2W-uu9"/>
+                        <constraint firstItem="FyQ-N1-tV6" firstAttribute="leading" secondItem="aGp-Md-nHW" secondAttribute="leading" constant="15" id="Vkq-gS-qmo"/>
+                        <constraint firstItem="FyQ-N1-tV6" firstAttribute="centerY" secondItem="aGp-Md-nHW" secondAttribute="centerY" id="m8H-H7-iCA"/>
+                        <constraint firstItem="FyQ-N1-tV6" firstAttribute="centerY" secondItem="97e-yQ-vtj" secondAttribute="centerY" id="unL-Hv-jvF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aGp-Md-nHW" secondAttribute="trailing" id="At0-Xz-ZC5"/>
+                <constraint firstAttribute="bottom" secondItem="aGp-Md-nHW" secondAttribute="bottom" id="ErI-sF-q4k"/>
+                <constraint firstItem="aGp-Md-nHW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GsM-Kg-Xsz"/>
+                <constraint firstItem="aGp-Md-nHW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="frA-Gv-FDE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="180.91603053435114" y="198.94366197183101"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bell" width="32" height="32"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="BackGroundColor">
+            <color red="0.94901960784313721" green="0.95294117647058818" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
