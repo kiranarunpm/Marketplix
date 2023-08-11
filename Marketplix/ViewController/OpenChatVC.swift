@@ -56,8 +56,5 @@ extension OpenChatVC : UITableViewDelegate, UITableViewDataSource{
         }
 
     }
-    
-    
-    
-    
+
 }

@@ -24,7 +24,6 @@ class ChatVC: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: ChatCell.identifre, bundle: nil), forCellReuseIdentifier: ChatCell.identifre)
-        
     }
     
 }

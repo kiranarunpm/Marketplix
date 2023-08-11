@@ -1,0 +1,99 @@
+{
+    "cities": [
+        {
+            "id": 2140,
+            "title": "Delhi",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Delhi",
+                "latitude": 28.6100,
+                "longitude": 77.2300
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Mumbai",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Mumbai",
+                "latitude": 19.0761,
+                "longitude": 72.8775
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Kolkāta",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Kolkāta",
+                "latitude": 22.5675,
+                "longitude": 88.3700
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Bangalore",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Bangalore",
+                "latitude": 12.9789,
+                "longitude": 77.5917
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Chennai",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Chennai",
+                "latitude": 13.0825,
+                "longitude": 80.2750
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Hyderābād",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Hyderābād",
+                "latitude": 17.3850,
+                "longitude": 78.4867
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Pune",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Pune",
+                "latitude": 18.5203,
+                "longitude": 73.8567
+            }
+        },
+        
+        {
+            "id": 2140,
+            "title": "Ahmedabad",
+            "cord":
+            {
+                "id": 3240,
+                "name": "Ahmedabad",
+                "latitude": 23.0300,
+                "longitude": 72.5800
+            }
+        }
+    ]
+}

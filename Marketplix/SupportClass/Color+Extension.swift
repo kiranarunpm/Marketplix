@@ -14,7 +14,6 @@ extension UIColor {
     
     static var primaryColor  : UIColor { return UIColor.colorWithHexString("#0F75BC")}
     static var secondaryColor  : UIColor { return UIColor.colorWithHexString("#1C174C")}
-
     static var arBorderColor  : UIColor { return UIColor.colorWithHexString("#E5E5E5")}
     
     

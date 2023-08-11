@@ -7,17 +7,80 @@
 
 import UIKit
 import SideMenu
-class BaseVC: UIViewController {
-
+import CoreLocation
+class BaseVC: UIViewController, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     //MARK: setupSideMenu
     public func setupSideMenu() {
     }
+    
+    public func initiateLocation(){
+        locationManager.delegate = self
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+    }
+    
+    func checkUsersLocationServicesAuthorization()->Bool{
+        var access = false
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                switch self.locationManager.authorizationStatus{
+                case .restricted, .denied:
+                    print("No access")
+                    break
+                case .notDetermined:
+                    self.locationManager.requestWhenInUseAuthorization()
+                    self.initiateLocation()
+                    access = true
+                    break
+                case .authorizedAlways:
+                    self.locationManager.requestAlwaysAuthorization()
+                    print("access available")
+                    self.initiateLocation()
+                    access = true
+                    break
+                case .authorizedWhenInUse:
+                    self.locationManager.requestWhenInUseAuthorization()
+                    self.initiateLocation()
+                    access = true
+                    break
+                    
+                default:
+                    print("unknown")
+                }
+                
+            }
+        }
+
+        return access
+    }
+    
+    public func locationManager(_ manager: CLLocationManager,
+                          didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+     }
+
+     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         locationManager.stopUpdatingLocation()
+     }
+    
+     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch status {
+            case .notDetermined:
+                print("not determined - hence ask for Permission")
+                manager.requestWhenInUseAuthorization()
+            case .restricted, .denied:
+                print("permission denied")
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Apple delegate gives the call back here once user taps Allow option, Make sure delegate is set to self")
+            }
+        }
     
     
     @IBAction func openMenuBtnAction(_ sender: Any) {

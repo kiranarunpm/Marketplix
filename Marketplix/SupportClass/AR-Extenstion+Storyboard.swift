@@ -13,7 +13,7 @@ class RootVC: UINavigationController{
     
     public func GetRootVC()->UINavigationController{
         if !User.shared.hasToken {
-            let storyboard = MainTabVC.instantiate(fromAppStoryboard: .Main)
+            let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             let rootNC = UINavigationController(rootViewController: storyboard)
             storyboard.navigationController?.navigationBar.isHidden = true
             return rootNC
@@ -76,5 +76,21 @@ extension UINavigationController {
     
     public func goBack(animated: Bool = true){
         self.popViewController(animated: animated)
+    }
+}
+
+extension UITableView{
+    func registerCell(_ cellName : String){
+        register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+    }
+    
+    func indexPathExists(indexPath:IndexPath) -> Bool {
+        if indexPath.section >= self.numberOfSections {
+            return false
+        }
+        if indexPath.row >= self.numberOfRows(inSection: indexPath.section) {
+            return false
+        }
+        return true
     }
 }

@@ -45,11 +45,23 @@ import UIKit
             
         case 0:
             if shadowLayer == nil {
-                
+                shadowLayer = nil
+
                 addShadowPathLayer(fillColor: UIColor.primaryColor)
                 self.setTitleColor(UIColor.white, for: .normal)
             }
             
+        case 1:
+            
+            if shadowLayer != nil {
+                shadowLayer.removeFromSuperlayer()
+                shadowLayer = nil
+            }
+            layer.cornerRadius = frame.height/2
+            backgroundColor = UIColor(named: "BackGroundColor")
+            setTitleColor(UIColor.black, for: .normal)
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.lightGray.cgColor
        
             
             
@@ -67,11 +79,25 @@ import UIKit
         case 0:
             
             if shadowLayer != nil {
+                shadowLayer = nil
+
                 addShadowPathLayer(fillColor: UIColor.primaryColor)
                 self.setTitleColor(UIColor.white, for: .normal)
                 self.titleLabel?.font =  UIFont.MPfont(.semibold, size: 14)
 
             }
+            
+        case 1:
+            
+            if shadowLayer != nil {
+                shadowLayer.removeFromSuperlayer()
+                shadowLayer = nil
+            }
+            layer.cornerRadius = frame.height/2
+            backgroundColor = UIColor(named: "BackGroundColor")
+            setTitleColor(UIColor.black, for: .normal)
+            layer.borderWidth = 1
+            layer.borderColor = UIColor.lightGray.cgColor
             
         
             

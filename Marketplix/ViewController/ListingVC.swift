@@ -15,20 +15,21 @@ class HalfSizePresentationController: UIPresentationController {
 }
 
 class ListingVC: UIViewController {
-
+    
+    @IBOutlet weak var filterBtn: UIButton!
     static let identifire = "ItemViewTabCell"
-
+    
     @IBOutlet weak var title_Txt: UILabel!
     @IBOutlet weak var colView: UICollectionView!
-    var titleSting : String = ""
+    var titleSting : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title_Txt.text = titleSting
+        self.title_Txt.text = titleSting ?? "Featured Listing"
         colView.register(UINib(nibName: ItemCell.identifire, bundle: nil), forCellWithReuseIdentifier: ItemCell.identifire)
         colView.dataSource = self
         colView.delegate = self
         let screen_width = ScreenSize.SCREEN_WIDTH
-
+        
         var screenSize = CGSize(width: 0, height: 0)
         if screenSize.height >= 1024{
             screenSize =  CGSize(width: screen_width / 4 - 20, height: 250)
@@ -45,7 +46,7 @@ class ListingVC: UIViewController {
         layout1.minimumInteritemSpacing = 10
         colView.setCollectionViewLayout(layout1, animated: true)
         colView.reloadData()
-    
+        
     }
     @IBAction func back_btn(_ sender: Any) {
         self.navigationController?.goBack()
@@ -54,6 +55,20 @@ class ListingVC: UIViewController {
     func getScreenSize() -> CGSize {
         let screenSize = UIScreen.main.bounds.size
         return screenSize
+    }
+    
+    
+    @IBAction func filterActionBtn(_ sender: Any) {
+        let storyboard = FilterVC.instantiate(fromAppStoryboard: .Main)
+        if #available(iOS 15.0, *) {
+            if let presentationController = storyboard.presentationController as? UISheetPresentationController {
+                
+                presentationController.detents = [.medium()]
+            } else {
+            }
+            storyboard.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(storyboard, animated: true)
+        }
     }
 }
 extension ListingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -65,5 +80,6 @@ extension ListingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
         return cell
     }
-
+    
+    
 }

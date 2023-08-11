@@ -1,0 +1,52 @@
+{
+  "flter": [
+    {
+      "key": "BedRoom",
+      "value": [
+        {
+          "id": 1,
+          "name": "1"
+        },
+        {
+          "id": 1,
+          "name": "2"
+        },
+        {
+          "id": 1,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "key": "Bathroom",
+      "value": [
+        {
+          "id": 1,
+          "name": "1"
+        },
+        {
+          "id": 1,
+          "name": "2"
+        },
+        {
+          "id": 1,
+          "name": "3"
+        }
+      ]
+    },
+    {
+      "key": "Kitchen",
+      "value": [
+        {
+          "id": 1,
+          "name": "1"
+        },
+        {
+          "id": 1,
+          "name": "2"
+        }
+      ]
+    },
+
+  ]
+}
