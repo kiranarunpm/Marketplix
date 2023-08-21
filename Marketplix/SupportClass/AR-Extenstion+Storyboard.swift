@@ -13,7 +13,7 @@ class RootVC: UINavigationController{
     
     public func GetRootVC()->UINavigationController{
         if !User.shared.hasToken {
-            let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
+            let storyboard = MainTabVC.instantiate(fromAppStoryboard: .Main)
             let rootNC = UINavigationController(rootViewController: storyboard)
             storyboard.navigationController?.navigationBar.isHidden = true
             return rootNC
@@ -59,17 +59,7 @@ enum AppStoryboard : String {
 }
 
 
-extension UIViewController {
-    
-    // Not using static as it wont be possible to override to provide custom storyboardID then
-    class var storyboardID : String {
-        return "\(self)"
-    }
-    
-    static func instantiate(fromAppStoryboard appStoryboard: AppStoryboard) -> Self {
-        return appStoryboard.viewController(viewControllerClass: self)
-    }
-}
+
 
 
 extension UINavigationController {

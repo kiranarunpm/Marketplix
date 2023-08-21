@@ -43,6 +43,8 @@ enum ARServiceManager {
     case login(request: LoginRequest)
     case getOtp(request: GetOtpRequest)
     case flashBanner
+    case mainCategory(mainCategory: String)
+    case dashboard
 
     var scheme: String {
         switch self {
@@ -50,6 +52,8 @@ enum ARServiceManager {
         case .login: return API.scheme
         case .getOtp: return API.scheme
         case .flashBanner: return API.scheme
+        case .mainCategory: return API.scheme
+        case .dashboard: return API.scheme
 
         }
     }
@@ -58,7 +62,7 @@ enum ARServiceManager {
         switch self {
             
         case .basecase: return ""
-        case .login, .getOtp, .flashBanner: return API.baseURL
+        case .login, .getOtp, .flashBanner, .mainCategory, .dashboard: return API.baseURL
 
 
 
@@ -72,6 +76,8 @@ enum ARServiceManager {
         case .login: return "/api/login"
         case .getOtp: return "/api/get-otp"
         case .flashBanner: return "/api/flash-banners"
+        case .mainCategory: return "/api/category"
+        case .dashboard: return "/api/dashboard"
 
         }
     }
@@ -82,16 +88,20 @@ enum ARServiceManager {
         case .login: return HttpMethod.post.rawValue
         case .getOtp: return HttpMethod.post.rawValue
         case .flashBanner: return HttpMethod.get.rawValue
+        case .mainCategory: return HttpMethod.get.rawValue
+        case .dashboard: return HttpMethod.get.rawValue
 
         }
     }
-    
+
     var parameters: [URLQueryItem]? {
         switch self {
         case .basecase: return nil
         case .login: return nil
         case .getOtp: return nil
         case .flashBanner: return nil
+        case .mainCategory(let mainCategory): return [URLQueryItem(name: "main_category", value: mainCategory)]
+        case .dashboard: return nil
 
         }
         
@@ -111,6 +121,8 @@ enum ARServiceManager {
             let encoder = JSONEncoder()
             return try? encoder.encode(request)
         case .flashBanner: return nil
+        case .mainCategory: return nil
+        case .dashboard: return nil
 
         }
     }
@@ -122,6 +134,8 @@ enum ARServiceManager {
         case .login : return nil
         case .getOtp : return nil
         case .flashBanner : return nil
+        case .mainCategory : return nil
+        case .dashboard : return nil
 
         }
     }
@@ -134,6 +148,8 @@ enum ARServiceManager {
         case .login: return ["Content-Type": ContentType.json.rawValue, "Accept":"*/*"]
         case .getOtp: return ["Content-Type": ContentType.json.rawValue, "Accept":"*/*"]
         case .flashBanner: return commonHeader
+        case .mainCategory: return commonHeader
+        case .dashboard: return commonHeader
 
         }
     }

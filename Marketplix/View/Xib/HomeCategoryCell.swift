@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 struct CategoryModel{
     let name: String
     let image: String
@@ -16,12 +17,7 @@ protocol HomeCategoryCellDelegate {
 }
 class HomeCategoryCell: UITableViewCell {
     static let identifire = "HomeCategoryCell"
-    var categoryModelArray = [CategoryModel(name: "Car", image: "bike-svgrepo-com"),
-                              CategoryModel(name: "Mobile", image: "bike-svgrepo-com"),
-                              CategoryModel(name: "Property", image: "bike-svgrepo-com"),
-                              CategoryModel(name: "Flat", image: "bike-svgrepo-com"),
-                              CategoryModel(name: "Bike", image: "bike-svgrepo-com"),
-                              CategoryModel(name: "Cycle", image: "bike-svgrepo-com"),]
+    var categoryArr =  [Category]()
     @IBOutlet weak var categoryColView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,19 +38,26 @@ class HomeCategoryCell: UITableViewCell {
         return screenSize
     }
 
+    func reloadData(){
+        DispatchQueue.main.async {
+            self.categoryColView.reloadData()
+        }
+    }
 
     
 }
 
 extension HomeCategoryCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryModelArray.count
+        return categoryArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifire, for: indexPath) as! CategoryCell
-        let index = categoryModelArray[indexPath.row]
+        let index = categoryArr[indexPath.row]
         cell.nameTxt.text = index.name
+        let image = index.image_url
+        cell.img.image = UIImage(url: image)
         return cell
     }
     

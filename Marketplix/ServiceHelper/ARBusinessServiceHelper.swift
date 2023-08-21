@@ -15,7 +15,7 @@ class ARBusinessServiceHelper {
         components.scheme = router.scheme
         components.host = router.host
         components.path = router.path
-        // components.queryItems = router.parameters
+         components.queryItems = router.parameters
         
         guard let url = components.url else {
             completion(.failure(.invalidURL))
@@ -54,12 +54,19 @@ class ARBusinessServiceHelper {
                                 completion(.success(responseObject))
                                 
                             }else {
+                                do {
+                                    let response = try JSONDecoder().decode(T.self, from: data)
+                                    print(response)
+                                } catch {
+                                    print(error) //here.....
+                                }
                                 completion(.failure(.inValidResponseFormat))
                             }
                             
                         }else {
                             
                             if let responseObject = try? JSONDecoder().decode(T.self, from: data){
+                                print("responseObject :", responseObject)
                                 completion(.success(responseObject))
                                 
                             }else {

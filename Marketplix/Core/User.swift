@@ -29,7 +29,7 @@ class User{
 
     var token: String {
         print("token: ",defaults.string(forKey: SaveData.accessToken.rawValue) ?? "")
-        return defaults.string(forKey: tokenKey) ?? ""
+        return defaults.string(forKey: tokenKey) ?? "20|JztTeqtsMmh1qQc5QYbxf32NTwCeLVo4kDlp2prA"
     }
     
     // ********* Save Data **********

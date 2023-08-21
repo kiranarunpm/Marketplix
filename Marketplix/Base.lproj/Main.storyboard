@@ -1023,8 +1023,9 @@
                                             <constraint firstAttribute="width" constant="24" id="GbO-C1-uHS"/>
                                             <constraint firstAttribute="height" constant="24" id="ht0-NU-QYv"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="close (1)"/>
+                                        <state key="normal" image="close"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BackGroundColor"/>
@@ -1099,7 +1100,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-Tk-dGM">
                                 <rect key="frame" x="0.0" y="209" width="393" height="220"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="S57-N3-f0x"/>
                                 </constraints>
@@ -1120,6 +1121,9 @@
                                         <color key="tintColor" systemColor="systemPinkColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Auto Detect Location"/>
+                                        <connections>
+                                            <action selector="currentLocBtn:" destination="dMs-ho-aeA" eventType="touchUpInside" id="73B-q6-FWn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1129,11 +1133,38 @@
                                     <constraint firstAttribute="height" constant="40" id="uP8-l2-EUg"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-Zy-AMi">
+                                <rect key="frame" x="0.0" y="434" width="393" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-Ar-9CV">
+                                        <rect key="frame" x="15" y="5" width="235" height="30"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="  Recently searched cities" image="history">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="w2O-Ar-9CV" firstAttribute="centerY" secondItem="Wkx-Zy-AMi" secondAttribute="centerY" id="Jws-t9-fhW"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZjX-iT-l5Y"/>
+                                    <constraint firstItem="w2O-Ar-9CV" firstAttribute="leading" secondItem="Wkx-Zy-AMi" secondAttribute="leading" constant="15" id="iE4-eg-558"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Oqr-LU-WMz">
+                                <rect key="frame" x="0.0" y="474" width="393" height="344"/>
+                                <color key="backgroundColor" name="BackGroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jC0-l1-cHt"/>
                         <color key="backgroundColor" name="BackGroundColor"/>
                         <constraints>
+                            <constraint firstItem="Wkx-Zy-AMi" firstAttribute="leading" secondItem="Uii-RN-ab4" secondAttribute="leading" id="0QQ-4A-gzP"/>
                             <constraint firstItem="jC0-l1-cHt" firstAttribute="trailing" secondItem="gSv-yf-x7L" secondAttribute="trailing" id="Bw8-xr-qAA"/>
+                            <constraint firstItem="jC0-l1-cHt" firstAttribute="bottom" secondItem="Oqr-LU-WMz" secondAttribute="bottom" id="DDb-Pf-w2W"/>
+                            <constraint firstItem="Wkx-Zy-AMi" firstAttribute="top" secondItem="DTM-Tk-dGM" secondAttribute="bottom" constant="5" id="IPu-ZS-5nC"/>
+                            <constraint firstItem="Oqr-LU-WMz" firstAttribute="top" secondItem="Wkx-Zy-AMi" secondAttribute="bottom" id="IcQ-PJ-5Mj"/>
                             <constraint firstItem="lWo-kr-qlR" firstAttribute="top" secondItem="pAQ-tg-NlC" secondAttribute="bottom" constant="10" id="Kle-bV-42q"/>
                             <constraint firstItem="lWo-kr-qlR" firstAttribute="leading" secondItem="jC0-l1-cHt" secondAttribute="leading" id="N0O-fS-i9f"/>
                             <constraint firstItem="pAQ-tg-NlC" firstAttribute="top" secondItem="gSv-yf-x7L" secondAttribute="bottom" id="Nlm-2d-Ohv"/>
@@ -1141,14 +1172,18 @@
                             <constraint firstAttribute="trailing" secondItem="pAQ-tg-NlC" secondAttribute="trailing" id="TWY-Bz-aV2"/>
                             <constraint firstItem="gSv-yf-x7L" firstAttribute="top" secondItem="jC0-l1-cHt" secondAttribute="top" id="ZPD-Yd-6yA"/>
                             <constraint firstItem="jC0-l1-cHt" firstAttribute="trailing" secondItem="lWo-kr-qlR" secondAttribute="trailing" id="cj0-Io-XSp"/>
+                            <constraint firstItem="Oqr-LU-WMz" firstAttribute="leading" secondItem="jC0-l1-cHt" secondAttribute="leading" id="d2S-5A-2cI"/>
                             <constraint firstItem="DTM-Tk-dGM" firstAttribute="top" secondItem="lWo-kr-qlR" secondAttribute="bottom" constant="10" id="dWe-RB-Xg2"/>
                             <constraint firstItem="pAQ-tg-NlC" firstAttribute="leading" secondItem="jC0-l1-cHt" secondAttribute="leading" id="gMo-Eu-Y2B"/>
+                            <constraint firstItem="jC0-l1-cHt" firstAttribute="trailing" secondItem="Oqr-LU-WMz" secondAttribute="trailing" id="hs1-XP-oqS"/>
+                            <constraint firstItem="jC0-l1-cHt" firstAttribute="trailing" secondItem="Wkx-Zy-AMi" secondAttribute="trailing" id="ifi-fp-xMl"/>
                             <constraint firstItem="gSv-yf-x7L" firstAttribute="leading" secondItem="Uii-RN-ab4" secondAttribute="leading" id="lu5-kQ-fHO"/>
                             <constraint firstItem="jC0-l1-cHt" firstAttribute="trailing" secondItem="DTM-Tk-dGM" secondAttribute="trailing" id="rVn-pT-mb9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="colView" destination="DTM-Tk-dGM" id="uWJ-BI-IVF"/>
+                        <outlet property="tabView" destination="Oqr-LU-WMz" id="dOM-qF-Adw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtd-OM-DW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1351,6 +1386,9 @@
                                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="mappin.and.ellipse" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="getLocationBtn:" destination="bG9-Im-dEk" eventType="touchUpInside" id="ONj-gf-i8U"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="BackGroundColor"/>
@@ -1410,6 +1448,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="29p-ap-dRl"/>
                     <connections>
                         <outlet property="tableView" destination="sVc-Vb-XK5" id="Zjg-j8-t9i"/>
+                        <outlet property="wishesTxt" destination="dQU-Td-LXf" id="tOx-8J-AI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B86-da-JqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1843,6 +1882,9 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="applyBtn:" destination="uj8-nf-9DT" eventType="touchUpInside" id="Vbu-8x-gv9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1919,7 +1961,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="634"/>
                                         <color key="backgroundColor" name="BackGroundColor"/>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-8X-JJA">
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-8X-JJA">
                                         <rect key="frame" x="186" y="0.0" width="0.66666666666665719" height="634"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1952,6 +1994,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="79S-UD-1d4" id="dgk-HJ-Nip"/>
+                        <outlet property="tableView2" destination="EMj-J9-4ks" id="EY3-MH-yMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCp-Xt-sLv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2528,7 +2571,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="238" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82W-SV-ZId" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="53.666666666666671" y="8" width="130.33333333333331" height="24"/>
+                                                <rect key="frame" x="61.999999999999979" y="9.3333333333333144" width="113.66666666666669" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2537,10 +2580,10 @@
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
+                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                        <integer key="value" value="1"/>
+                                                        <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
@@ -2557,7 +2600,7 @@
                                         <rect key="frame" x="0.0" y="48" width="238" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My ads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7r-VU-V56" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="87.999999999999986" y="8" width="61.666666666666671" height="24"/>
+                                                <rect key="frame" x="91.666666666666671" y="9.3333333333333144" width="54.333333333333329" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2566,7 +2609,7 @@
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
+                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
                                                         <integer key="value" value="1"/>
@@ -2586,7 +2629,7 @@
                                         <rect key="frame" x="0.0" y="96" width="238" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently viewed ads " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dX-aa-45a" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="29" y="8" width="180" height="24"/>
+                                                <rect key="frame" x="39.333333333333329" y="9.3333333333333144" width="159" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2595,7 +2638,7 @@
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
+                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
                                                         <integer key="value" value="1"/>
@@ -2615,7 +2658,7 @@
                                         <rect key="frame" x="0.0" y="144" width="238" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roM-ud-thC" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="64.999999999999972" y="8" width="107.66666666666666" height="24"/>
+                                                <rect key="frame" x="71.333333333333329" y="9.3333333333333144" width="94.999999999999986" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2624,7 +2667,7 @@
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
+                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
                                                         <integer key="value" value="1"/>
@@ -2644,7 +2687,7 @@
                                         <rect key="frame" x="0.0" y="192" width="238" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIl-1J-v7Y" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="40.666666666666657" y="8" width="156.66666666666666" height="24"/>
+                                                <rect key="frame" x="49.666666666666657" y="9.3333333333333712" width="138.33333333333334" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2653,7 +2696,7 @@
                                                         <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
+                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
                                                         <integer key="value" value="1"/>
@@ -2673,7 +2716,7 @@
                                         <rect key="frame" x="0.0" y="240" width="238" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm4-1H-BRN" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="89.666666666666671" y="8" width="58.333333333333329" height="24"/>
+                                                <rect key="frame" x="93.333333333333329" y="9.3333333333333712" width="51.333333333333329" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2682,7 +2725,7 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
+                                                        <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
                                                         <integer key="value" value="1"/>
@@ -2727,10 +2770,10 @@
             <size key="intrinsicContentSize" width="50" height="30"/>
         </designable>
         <designable name="3dX-aa-45a">
-            <size key="intrinsicContentSize" width="180" height="24"/>
+            <size key="intrinsicContentSize" width="159" height="21"/>
         </designable>
         <designable name="82W-SV-ZId">
-            <size key="intrinsicContentSize" width="130.33333333333334" height="24"/>
+            <size key="intrinsicContentSize" width="113.66666666666667" height="21"/>
         </designable>
         <designable name="8Qx-Xm-zlE">
             <size key="intrinsicContentSize" width="385.66666666666669" height="17"/>
@@ -2754,7 +2797,7 @@
             <size key="intrinsicContentSize" width="174" height="24"/>
         </designable>
         <designable name="M7r-VU-V56">
-            <size key="intrinsicContentSize" width="61.666666666666664" height="24"/>
+            <size key="intrinsicContentSize" width="54.333333333333336" height="21"/>
         </designable>
         <designable name="Oyy-3i-iV9">
             <size key="intrinsicContentSize" width="85" height="28"/>
@@ -2784,7 +2827,7 @@
             <size key="intrinsicContentSize" width="120.66666666666667" height="28"/>
         </designable>
         <designable name="bIl-1J-v7Y">
-            <size key="intrinsicContentSize" width="156.66666666666666" height="24"/>
+            <size key="intrinsicContentSize" width="138.33333333333334" height="21"/>
         </designable>
         <designable name="cPP-Rq-EgF">
             <size key="intrinsicContentSize" width="45.333333333333336" height="28"/>
@@ -2814,10 +2857,10 @@
             <size key="intrinsicContentSize" width="85" height="25.333333333333332"/>
         </designable>
         <designable name="roM-ud-thC">
-            <size key="intrinsicContentSize" width="107.66666666666667" height="24"/>
+            <size key="intrinsicContentSize" width="95" height="21"/>
         </designable>
         <designable name="wm4-1H-BRN">
-            <size key="intrinsicContentSize" width="58.333333333333336" height="24"/>
+            <size key="intrinsicContentSize" width="51.333333333333336" height="21"/>
         </designable>
         <designable name="zRX-9m-U4C">
             <size key="intrinsicContentSize" width="140" height="17"/>
@@ -2827,11 +2870,13 @@
         <image name="LOGO-1024X1024" width="1024" height="1024"/>
         <image name="bell" width="32" height="32"/>
         <image name="chat" width="24" height="24"/>
+        <image name="close" width="30" height="30"/>
         <image name="close (1)" width="24" height="24"/>
         <image name="email-svgrepo-com" width="64" height="64"/>
-        <image name="favorite" width="24" height="24"/>
+        <image name="favorite" width="20" height="20"/>
         <image name="filter-svgrepo-com" width="30" height="30"/>
         <image name="google (1)" width="32" height="32"/>
+        <image name="history" width="30" height="30"/>
         <image name="home" width="24" height="24"/>
         <image name="left-arrow-backup-2-svgrepo-com" width="25" height="25"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>

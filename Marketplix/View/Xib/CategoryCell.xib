@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-bJ-O5z">
-                                <rect key="frame" x="24" y="8.3333333333333357" width="46" height="75.666666666666657"/>
+                                <rect key="frame" x="24" y="9" width="46" height="74.333333333333329"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-ou-vN2" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="56"/>
@@ -51,7 +51,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0D6-Ae-nEV" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="59.999999999999993" width="46" height="15.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="60.000000000000007" width="46" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -92,6 +92,7 @@
             </constraints>
             <size key="customSize" width="94" height="92"/>
             <connections>
+                <outlet property="img" destination="899-Ou-knw" id="vO3-6t-mMm"/>
                 <outlet property="nameTxt" destination="0D6-Ae-nEV" id="8AS-MN-urX"/>
             </connections>
             <point key="canvasLocation" x="271.75572519083971" y="3.5211267605633805"/>
@@ -99,7 +100,7 @@
     </objects>
     <designables>
         <designable name="0D6-Ae-nEV">
-            <size key="intrinsicContentSize" width="36.333333333333336" height="15.666666666666666"/>
+            <size key="intrinsicContentSize" width="38" height="14.333333333333334"/>
         </designable>
     </designables>
     <resources>

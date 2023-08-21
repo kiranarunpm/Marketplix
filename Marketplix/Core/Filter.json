@@ -2,6 +2,7 @@
   "flter": [
     {
       "key": "BedRoom",
+      "type": "Checkbox",
       "value": [
         {
           "id": 1,
@@ -19,6 +20,7 @@
     },
     {
       "key": "Bathroom",
+      "type": "Checkbox",
       "value": [
         {
           "id": 1,
@@ -30,12 +32,13 @@
         },
         {
           "id": 1,
-          "name": "3"
+          "name": "5"
         }
       ]
     },
     {
       "key": "Kitchen",
+      "type": "Checkbox",
       "value": [
         {
           "id": 1,
@@ -47,6 +50,25 @@
         }
       ]
     },
+    
+    {
+      "key": "Budget",
+      "type": "Checkbox",
+      "value": [
+        {
+          "id": 1,
+          "name": "10L-20L"
+        },
+        {
+          "id": 1,
+          "name": "20L-40L"
+        },
+        {
+          "id": 1,
+          "name": "40L-60L"
+        }
+      ]
+    }
 
   ]
 }

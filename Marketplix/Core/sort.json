@@ -1,0 +1,19 @@
+{
+  "sort": [
+    {
+      "key": "Budget",
+      "type": "Checkbox",
+      "value": [
+        {
+          "id": 1,
+          "name": "low to high"
+        },
+        {
+          "id": 1,
+          "name": "high to low"
+        },
+      ]
+    }
+
+  ]
+}

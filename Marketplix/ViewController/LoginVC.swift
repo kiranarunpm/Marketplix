@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
         return AuthenticationVM()
     }()
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewModel()

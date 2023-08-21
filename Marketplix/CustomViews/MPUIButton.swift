@@ -62,9 +62,7 @@ import UIKit
             setTitleColor(UIColor.black, for: .normal)
             layer.borderWidth = 1
             layer.borderColor = UIColor.lightGray.cgColor
-       
-            
-            
+
         default: break
             
         }

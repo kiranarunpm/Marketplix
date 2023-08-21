@@ -1,17 +1,18 @@
 //
-//  FilterMainItems.swift
+//  CheckBoxCell.swift
 //  Marketplix
 //
-//  Created by Kiran P M on 11/08/23.
+//  Created by Kiran P M on 14/08/23.
 //
 
 import UIKit
 
-class FilterMainItems: UITableViewCell {
+class CheckBoxCell: UITableViewCell {
+    @IBOutlet weak var nameTxt: MPUILabel!
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var img: UIImageView!
 
-    @IBOutlet weak var filterNameTxt: MPUILabel!
-    static let identifire = "FilterMainItems"
+    static let identifire = "CheckBoxCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

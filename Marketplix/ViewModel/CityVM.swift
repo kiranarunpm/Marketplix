@@ -24,6 +24,14 @@ class CityVM{
         }
     }
     
+    public var sortArr: [Flter] = [] {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
+    
+    
     public var alertMessage: String? {
         didSet{
             self.failureClosure?()
@@ -43,7 +51,7 @@ extension CityVM {
     func callCityNames(filename fileName: String) {
         self.isLoading = true
 
-        call(filename: fileName) { [weak self] (result : Result<CitiesResponse, ARFetchError>) in
+        ConvertJsonFile.call(filename: fileName) { [weak self] (result : Result<CitiesResponse, ARFetchError>) in
             switch result {
 
             case .success(let response): self?.cityArr = response.cities
@@ -57,7 +65,7 @@ extension CityVM {
     func callFilterValues(filename fileName: String) {
         self.isLoading = true
 
-        call(filename: fileName) { [weak self] (result : Result<FilterModel, ARFetchError>) in
+        ConvertJsonFile.call(filename: fileName) { [weak self] (result : Result<FilterModel, ARFetchError>) in
             self?.isLoading = false
 
             switch result {
@@ -70,10 +78,30 @@ extension CityVM {
         }
     }
     
-    
-    
-    func call<T: Decodable>(filename fileName: String, completion: @escaping (Result<T, ARFetchError>) -> ()) {
+    func callSortOptions(filename fileName: String) {
         self.isLoading = true
+
+        ConvertJsonFile.call(filename: fileName) { [weak self] (result : Result<FilterModel, ARFetchError>) in
+            self?.isLoading = false
+
+            switch result {
+
+            case .success(let response): self?.sortArr = response.flter ?? []
+                
+            case .failure(let errorMessage): self?.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+    }
+    
+    
+    
+    
+
+    }
+
+class ConvertJsonFile{
+    static func call<T: Decodable>(filename fileName: String, completion: @escaping (Result<T, ARFetchError>) -> ()) {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
@@ -86,10 +114,7 @@ extension CityVM {
             }
         }
         }
-
-    }
-
-
+}
 
 
 

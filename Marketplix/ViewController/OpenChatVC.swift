@@ -23,8 +23,6 @@ class OpenChatVC: UIViewController,UITextViewDelegate {
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: ChatBubbleLeft.identifire, bundle: nil), forCellReuseIdentifier:  ChatBubbleLeft.identifire)
         self.tableView.register(UINib(nibName: ChatBubbleRight.identifire, bundle: nil), forCellReuseIdentifier:  ChatBubbleRight.identifire)
-
-        
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {

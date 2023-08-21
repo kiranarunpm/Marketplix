@@ -11,7 +11,7 @@ import MBProgressHUD
 
 
 class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
-
+    
     let names = ["Searh Land", "Search Property", "Search Car", "Search Laptops"]
     let sectionArr = ["banner", "header","Main categories", "header", "Featured Listing", "header", "New Listing", "header", "Recommendations"]
     
@@ -19,7 +19,14 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         return HomeVM()
     }()
     
+    lazy var categoryVM: HomeVM = {
+        return HomeVM()
+    }()
+    lazy var dashboardVM: HomeVM = {
+        return HomeVM()
+    }()
     var flashArr = [Flash]()
+    @IBOutlet weak var wishesTxt: MPUILabel!
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -32,11 +39,22 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         self.tableView.register(UINib(nibName: TitleHeaaderCell.identifire, bundle: nil), forCellReuseIdentifier: TitleHeaaderCell.identifire)
         self.tableView.register(UINib(nibName: HomeCategoryCell.identifire, bundle: nil), forCellReuseIdentifier: HomeCategoryCell.identifire)
         self.tableView.register(UINib(nibName: ItemViewTabCell.identifire, bundle: nil), forCellReuseIdentifier: ItemViewTabCell.identifire)
-
+        
         
         tableView.register(UINib(nibName: "SearchHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "SearchHeaderView")
-        
+        setupUI()
         initViewModel()
+    }
+    
+    func setupUI(){
+        let hour = Calendar.current.component(.hour, from: Date())
+        switch hour {
+        case 6..<12 : self.wishesTxt.text = "Good Morning"
+        case 12..<17 : self.wishesTxt.text = "Good Afternoon"
+        case 17..<22 : self.wishesTxt.text = "Good Evening"
+        default: self.wishesTxt.text = "Good Evening"
+        }
+        
     }
     
     // MARK: InitViewModel
@@ -52,11 +70,6 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
                     _self.flashArr.append(item)
                 })
                 
-//                let storyboard = AdsVC.instantiate(fromAppStoryboard: .Main)
-//                storyboard.modalPresentationStyle = .overCurrentContext
-//                storyboard.flashArr = _self.flashArr
-//                _self.navigationController?.present(storyboard, animated: true)
- 
             }
         }
         
@@ -68,7 +81,7 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
                 
                 if let alertMessage = _self.viewModel.alertMessage {
                     print("alertMessage", alertMessage)
-    
+                    
                 }
             }
         }
@@ -90,7 +103,31 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
             }
         }
         
+        categoryVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                let details = _self.categoryVM.categoryArr
+                _self.tableView.reloadData()
+                
+            }
+        }
+        dashboardVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                _self.tableView.reloadData()
+                
+            }
+        }
+        
         viewModel.callFlashBanner()
+        categoryVM.callMainCategory(mainCategory: "1")
+        dashboardVM.callDashboard()
         
     }
     
@@ -100,13 +137,19 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
+        
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-           return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
-       }
-
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    }
+    
+    @IBAction func getLocationBtn(_ sender: Any) {
+        let vc = LocationPickVC.instantiate(fromAppStoryboard: .Main)
+        vc.delegate = self
+        navigationController?.present(vc, animated: true)
+    }
+    
 }
 
 extension HomeVC : UITableViewDataSource, UITableViewDelegate{
@@ -117,9 +160,9 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
     
-
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if self.sectionArr[indexPath.section] == "New Listing"{
             return 140
@@ -151,16 +194,19 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
         case "Main categories":
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeCategoryCell.identifire, for: indexPath) as! HomeCategoryCell
             cell.selectionStyle = .none
+            cell.categoryArr = categoryVM.categoryArr
+            cell.reloadData()
             return cell
             
         case "Featured Listing":
             let cell = tableView.dequeueReusableCell(withIdentifier: ItemViewTabCell.identifire, for: indexPath) as! ItemViewTabCell
             cell.selectionStyle = .none
             return cell
-
+            
         case "New Listing":
             let cell = tableView.dequeueReusableCell(withIdentifier: ItemViewTabCell.identifire, for: indexPath) as! ItemViewTabCell
             cell.type = "New Listing"
+            cell.new_listing = dashboardVM.dashboardResponse?.new_listing ?? []
             cell.selectionStyle = .none
             return cell
             
@@ -169,7 +215,7 @@ extension HomeVC : UITableViewDataSource, UITableViewDelegate{
             let cell = tableView.dequeueReusableCell(withIdentifier: ItemViewTabCell.identifire, for: indexPath) as! ItemViewTabCell
             cell.selectionStyle = .none
             return cell
-
+            
             
             
         default:
@@ -209,11 +255,20 @@ extension HomeVC: TitleHeaaderCellDelegate{
 
 
 extension UIView {
-  func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-      let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners,
-                              cornerRadii: CGSize(width: radius, height: radius))
-      let mask = CAShapeLayer()
-      mask.path = path.cgPath
-      layer.mask = mask
-  }
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
+
+
+extension HomeVC: LocationPickDelegate{
+    func getLocation(_ location: String) {
+        print("Location ", location)
+    }
+    
+    
 }

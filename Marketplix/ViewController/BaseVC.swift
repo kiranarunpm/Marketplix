@@ -33,11 +33,14 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
                 switch self.locationManager.authorizationStatus{
                 case .restricted, .denied:
                     print("No access")
+                    DispatchQueue.main.async {
+                        self.showAlert()
+                    }
                     break
                 case .notDetermined:
                     self.locationManager.requestWhenInUseAuthorization()
                     self.initiateLocation()
-                    access = true
+                    access = false
                     break
                 case .authorizedAlways:
                     self.locationManager.requestAlwaysAuthorization()
@@ -48,6 +51,7 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
                 case .authorizedWhenInUse:
                     self.locationManager.requestWhenInUseAuthorization()
                     self.initiateLocation()
+                    print("authorizedWhenInUse")
                     access = true
                     break
                     
@@ -61,6 +65,22 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
         return access
     }
     
+    func showAlert(){
+        
+        showPopupAlert(title: "Enable location services?", message: "For us to be able to help you the best we recommend that you enable location tracking.", actionTitles: ["Cancel", "Setting"], actions: [ {action1 in
+            
+        }, {action2 in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)")
+                })
+            }
+        }])
+    }
+    
     public func locationManager(_ manager: CLLocationManager,
                           didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
@@ -70,17 +90,7 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
          locationManager.stopUpdatingLocation()
      }
     
-     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        switch status {
-            case .notDetermined:
-                print("not determined - hence ask for Permission")
-                manager.requestWhenInUseAuthorization()
-            case .restricted, .denied:
-                print("permission denied")
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("Apple delegate gives the call back here once user taps Allow option, Make sure delegate is set to self")
-            }
-        }
+
     
     
     @IBAction func openMenuBtnAction(_ sender: Any) {

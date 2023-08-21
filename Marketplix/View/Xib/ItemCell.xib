@@ -31,8 +31,15 @@
                                             <constraint firstAttribute="height" constant="125" id="1Re-cM-W4e"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-cX-dKc">
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="125"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.086654974489795922" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="0qA-vb-iLc"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lQp-Qz-iRI">
-                                        <rect key="frame" x="0.0" y="140" width="172" height="79"/>
+                                        <rect key="frame" x="0.0" y="140" width="172" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUILDING CONTRACTORS in Bangalore A4D " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-wc-8aU" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="33.666666666666664"/>
@@ -52,7 +59,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3BHK, Car porch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10F-c6-2Z0" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="38.666666666666657" width="172" height="12.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666657" width="172" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -69,10 +76,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-gD-eQm">
-                                                <rect key="frame" x="0.0" y="56.333333333333336" width="172" height="22.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="58" width="172" height="18"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13Miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cga-hq-0Oe" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="22.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.69803921568627447" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -89,7 +96,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$30,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-YR-kHq" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                        <rect key="frame" x="86" y="0.0" width="86" height="22.666666666666668"/>
+                                                        <rect key="frame" x="86" y="0.0" width="86" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -109,21 +116,16 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nx-nM-lku">
-                                        <rect key="frame" x="110" y="76" width="54" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="delete-svgrepo-com"/>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-cb-luT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-cb-luT">
                                         <rect key="frame" x="140" y="8" width="24" height="27"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="Oq2-sC-wPA"/>
                                             <constraint firstAttribute="width" constant="24" id="i6S-ay-Kv4"/>
                                         </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="favorite"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="favorite-filled"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,11 +133,13 @@
                                     <constraint firstAttribute="trailing" secondItem="xwi-g0-BO8" secondAttribute="trailing" id="3yU-jD-gk1"/>
                                     <constraint firstItem="lQf-cb-luT" firstAttribute="top" secondItem="6Ru-AP-tDE" secondAttribute="top" constant="8" id="7Kj-rI-xdX"/>
                                     <constraint firstItem="lQp-Qz-iRI" firstAttribute="top" secondItem="xwi-g0-BO8" secondAttribute="bottom" constant="15" id="BwO-jv-bub"/>
-                                    <constraint firstAttribute="trailing" secondItem="4nx-nM-lku" secondAttribute="trailing" constant="8" id="GS6-vk-aRQ"/>
                                     <constraint firstItem="xwi-g0-BO8" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="KW2-qf-h7j"/>
+                                    <constraint firstItem="fCv-cX-dKc" firstAttribute="bottom" secondItem="xwi-g0-BO8" secondAttribute="bottom" id="Qpc-up-mVu"/>
                                     <constraint firstAttribute="trailing" secondItem="lQf-cb-luT" secondAttribute="trailing" constant="8" id="Ym2-0e-7CQ"/>
+                                    <constraint firstItem="fCv-cX-dKc" firstAttribute="leading" secondItem="xwi-g0-BO8" secondAttribute="leading" id="ZeG-jX-SHF"/>
                                     <constraint firstItem="xwi-g0-BO8" firstAttribute="top" secondItem="6Ru-AP-tDE" secondAttribute="top" id="af8-jQ-gNB"/>
-                                    <constraint firstItem="lQp-Qz-iRI" firstAttribute="top" secondItem="4nx-nM-lku" secondAttribute="bottom" constant="20" id="e0g-bQ-wJF"/>
+                                    <constraint firstItem="fCv-cX-dKc" firstAttribute="top" secondItem="xwi-g0-BO8" secondAttribute="top" id="ig5-rE-bnj"/>
+                                    <constraint firstItem="fCv-cX-dKc" firstAttribute="trailing" secondItem="xwi-g0-BO8" secondAttribute="trailing" id="ntK-O8-YBl"/>
                                     <constraint firstItem="lQp-Qz-iRI" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="wfh-qe-9Wi"/>
                                     <constraint firstAttribute="trailing" secondItem="lQp-Qz-iRI" secondAttribute="trailing" id="xFx-wJ-o8f"/>
                                 </constraints>
@@ -182,27 +186,29 @@
     </objects>
     <designables>
         <designable name="10F-c6-2Z0">
-            <size key="intrinsicContentSize" width="72" height="12.666666666666666"/>
+            <size key="intrinsicContentSize" width="95" height="14.333333333333334"/>
         </designable>
         <designable name="4B7-wc-8aU">
-            <size key="intrinsicContentSize" width="258.33333333333331" height="17"/>
+            <size key="intrinsicContentSize" width="292" height="17"/>
         </designable>
         <designable name="Cga-hq-0Oe">
-            <size key="intrinsicContentSize" width="41" height="17"/>
+            <size key="intrinsicContentSize" width="52" height="18"/>
         </designable>
         <designable name="ftX-YR-kHq">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="22.666666666666668"/>
+            <size key="intrinsicContentSize" width="49.333333333333336" height="18"/>
         </designable>
     </designables>
     <resources>
         <image name="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" width="821" height="669"/>
-        <image name="delete-svgrepo-com" width="30" height="30"/>
-        <image name="favorite" width="24" height="24"/>
+        <image name="favorite-filled" width="20" height="20"/>
         <namedColor name="BackGroundColor">
             <color red="0.94900000095367432" green="0.95300000905990601" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

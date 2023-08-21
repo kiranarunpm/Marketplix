@@ -32,7 +32,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0zJ-AP-RkY">
-                                        <rect key="frame" x="135" y="0.0" width="181" height="84"/>
+                                        <rect key="frame" x="135" y="0.0" width="181" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUILDING CONTRACTORS in Bangalore A4" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOm-gr-Mwj" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="181" height="33.666666666666664"/>
@@ -52,10 +52,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IQa-zX-XDG">
-                                                <rect key="frame" x="0.0" y="38.666666666666657" width="181" height="45.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666657" width="181" height="42.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3BHK, Car porch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsQ-7e-ZFA" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="12.666666666666666"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$30,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFy-Zz-xGt" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="22.666666666666664" width="181" height="22.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="24.333333333333336" width="181" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.69803921570000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -129,6 +129,9 @@
             <size key="customSize" width="274" height="176"/>
             <connections>
                 <outlet property="bgView" destination="vxR-IA-b0B" id="tKi-Zs-Fku"/>
+                <outlet property="descriptions" destination="YsQ-7e-ZFA" id="ZwA-8X-zgv"/>
+                <outlet property="img" destination="N07-NZ-Qp9" id="zjZ-nZ-wuT"/>
+                <outlet property="name" destination="xOm-gr-Mwj" id="DUr-qX-KIu"/>
             </connections>
             <point key="canvasLocation" x="540.4580152671756" y="422.53521126760563"/>
         </collectionViewCell>

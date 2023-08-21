@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckBoxCell" id="KGk-i7-Jjw" customClass="CheckBoxCell" customModule="Marketplix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-mp-Y0u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Agp-OS-FkD">
+                                <rect key="frame" x="19.999999999999996" y="11.666666666666664" width="32.666666666666657" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox-check" translatesAutoresizingMaskIntoConstraints="NO" id="m5e-D9-eeB">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="Qgl-7D-oLC"/>
+                                            <constraint firstAttribute="height" constant="20" id="SaV-4U-a2a"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYH-s3-eA5" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="28" y="0.0" width="4.6666666666666643" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="BackGroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Agp-OS-FkD" firstAttribute="centerY" secondItem="cxb-mp-Y0u" secondAttribute="centerY" id="aOm-vv-BYk"/>
+                            <constraint firstAttribute="height" constant="43" id="cZK-nt-ydY"/>
+                            <constraint firstItem="Agp-OS-FkD" firstAttribute="leading" secondItem="cxb-mp-Y0u" secondAttribute="leading" constant="20" id="po7-6l-ffe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cxb-mp-Y0u" secondAttribute="trailing" id="8Pm-5A-t2A"/>
+                    <constraint firstItem="cxb-mp-Y0u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MFe-xA-gNt"/>
+                    <constraint firstItem="cxb-mp-Y0u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SBq-fP-AIM"/>
+                    <constraint firstAttribute="bottom" secondItem="cxb-mp-Y0u" secondAttribute="bottom" id="skX-7j-RWw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="cxb-mp-Y0u" id="dMf-dy-3KM"/>
+                <outlet property="img" destination="m5e-D9-eeB" id="zIk-7G-zUs"/>
+                <outlet property="nameTxt" destination="iYH-s3-eA5" id="vtO-bb-Q25"/>
+            </connections>
+            <point key="canvasLocation" x="79" y="17"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="iYH-s3-eA5">
+            <size key="intrinsicContentSize" width="4.666666666666667" height="19.666666666666668"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="checkbox-check" width="30" height="30"/>
+        <namedColor name="BackGroundColor">
+            <color red="0.94900000095367432" green="0.95300000905990601" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -16,13 +16,15 @@ struct Flter: Codable {
 
   var key   : String?  = nil
   var value : [Value]? = []
-
+  var type: String? = nil
+  var selected: [String]? = []
 }
 
 struct Value: Codable {
 
   var id   : Int?    = nil
   var name : String? = nil
+    
 
 
 }

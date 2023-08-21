@@ -107,9 +107,5 @@ class VerificationVC: UIViewController {
         let code = code1.text! + code2.text! + code3.text! + code4.text!
         let request = LoginRequest(email: "test2@gmail.com", otp: code)
         viewModel.callLogin(request)
-//        let storyboard = MainTabVC.instantiate(fromAppStoryboard: .Main)
-//        self.navigationController?.pushViewController(storyboard, animated: true)
     }
-    
-
 }

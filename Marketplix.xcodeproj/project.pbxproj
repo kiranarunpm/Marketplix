@@ -10,6 +10,7 @@
 		19E86127A418CD05782106DF /* Pods_Marketplix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83135C9449654DD09D38517A /* Pods_Marketplix.framework */; };
 		822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */; };
 		822F7CE42A08F0FF00898465 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */; };
+		823703652A93190D005777AC /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823703642A93190D005777AC /* CategoryModel.swift */; };
 		824506C92A55326A0099331F /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506C72A55326A0099331F /* ChatCell.swift */; };
 		824506CA2A55326A0099331F /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824506C82A55326A0099331F /* ChatCell.xib */; };
 		824506CD2A553A730099331F /* ChatBubbleLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506CB2A553A730099331F /* ChatBubbleLeft.swift */; };
@@ -25,6 +26,11 @@
 		8249F9E22A84B92B00FB1C0E /* loaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8249F9E02A84B92B00FB1C0E /* loaderCell.swift */; };
 		8249F9E32A84B92B00FB1C0E /* loaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8249F9E12A84B92B00FB1C0E /* loaderCell.xib */; };
 		8249F9E92A850C5000FB1C0E /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8249F9E82A850C5000FB1C0E /* Cities.json */; };
+		824E4FFC2A93579100C64F37 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4FFB2A93579100C64F37 /* BannerModel.swift */; };
+		8262EFC72A89D9E8002C66AE /* CheckBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8262EFC52A89D9E8002C66AE /* CheckBoxCell.swift */; };
+		8262EFC82A89D9E8002C66AE /* CheckBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8262EFC62A89D9E8002C66AE /* CheckBoxCell.xib */; };
+		8262EFCA2A89EDD7002C66AE /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8262EFC92A89EDD7002C66AE /* Image+Extension.swift */; };
+		8262EFCD2A8A278B002C66AE /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8262EFCC2A8A278B002C66AE /* ViewController+Extension.swift */; };
 		8276391729FB9961009D6CFA /* AR-Extenstion+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */; };
 		8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276392629FBEC37009D6CFA /* CategoryCell.swift */; };
 		8276392929FBEC37009D6CFA /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276392729FBEC37009D6CFA /* CategoryCell.xib */; };
@@ -124,6 +130,7 @@
 		756293CDF7D90ECB96776BA3 /* Pods-MarketplixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketplixTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketplixTests/Pods-MarketplixTests.debug.xcconfig"; sourceTree = "<group>"; };
 		822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
+		823703642A93190D005777AC /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010CategoryModel.swift"; sourceTree = "<group>"; };
 		824506C72A55326A0099331F /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		824506C82A55326A0099331F /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		824506CB2A553A730099331F /* ChatBubbleLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleLeft.swift; sourceTree = "<group>"; };
@@ -139,6 +146,12 @@
 		8249F9E02A84B92B00FB1C0E /* loaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loaderCell.swift; sourceTree = "<group>"; };
 		8249F9E12A84B92B00FB1C0E /* loaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loaderCell.xib; sourceTree = "<group>"; };
 		8249F9E82A850C5000FB1C0E /* Cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		824E4FFB2A93579100C64F37 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		8262EFC52A89D9E8002C66AE /* CheckBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCell.swift; sourceTree = "<group>"; };
+		8262EFC62A89D9E8002C66AE /* CheckBoxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxCell.xib; sourceTree = "<group>"; };
+		8262EFC92A89EDD7002C66AE /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		8262EFCB2A89FE91002C66AE /* sort.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sort.json; sourceTree = "<group>"; };
+		8262EFCC2A8A278B002C66AE /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AR-Extenstion+Storyboard.swift"; sourceTree = "<group>"; };
 		8276392629FBEC37009D6CFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8276392729FBEC37009D6CFA /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
@@ -268,6 +281,13 @@
 			path = ServiceHelper;
 			sourceTree = "<group>";
 		};
+		824E4FFA2A93577D00C64F37 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		8276392429FBEC08009D6CFA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +332,8 @@
 				82D1C5A22A85EF4A00A10F02 /* CityCell.xib */,
 				82D1C5CE2A863A6F00A10F02 /* FilterMainItems.swift */,
 				82D1C5CF2A863A6F00A10F02 /* FilterMainItems.xib */,
+				8262EFC52A89D9E8002C66AE /* CheckBoxCell.swift */,
+				8262EFC62A89D9E8002C66AE /* CheckBoxCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -325,6 +347,8 @@
 				8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */,
 				82D2ADEF2A15F898003AA0E8 /* Screen+Extension.swift */,
 				82D1C5CA2A85FA2C00A10F02 /* GetLocation.swift */,
+				8262EFC92A89EDD7002C66AE /* Image+Extension.swift */,
+				8262EFCC2A8A278B002C66AE /* ViewController+Extension.swift */,
 			);
 			path = SupportClass;
 			sourceTree = "<group>";
@@ -335,6 +359,7 @@
 				82831B5A29EBD7C300ABC75B /* Fonts */,
 				82F1B02D2A6FC3C500E7DE1B /* User.swift */,
 				8249F9E82A850C5000FB1C0E /* Cities.json */,
+				8262EFCB2A89FE91002C66AE /* sort.json */,
 				82D1C5D22A86422100A10F02 /* Filter.json */,
 			);
 			path = Core;
@@ -463,11 +488,14 @@
 		82F1B0312A6FC54600E7DE1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				824E4FFA2A93577D00C64F37 /* New Group */,
 				82F1B0322A6FC56500E7DE1B /* LoginModel.swift */,
 				9F6BA63E2A7E27AF002E685E /* HomeModel.swift */,
 				8249F9DC2A84AECD00FB1C0E /* PaginationModel.swift */,
 				82D1C59B2A85EBAD00A10F02 /* CityModel.swift */,
 				82D1C5D42A86519100A10F02 /* FilterModel.swift */,
+				823703642A93190D005777AC /* CategoryModel.swift */,
+				824E4FFB2A93579100C64F37 /* BannerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -630,6 +658,7 @@
 				82D2ADE02A15E1A6003AA0E8 /* HomeSearchCell.xib in Resources */,
 				8249F9E32A84B92B00FB1C0E /* loaderCell.xib in Resources */,
 				82D1C5A42A85EF4A00A10F02 /* CityCell.xib in Resources */,
+				8262EFC82A89D9E8002C66AE /* CheckBoxCell.xib in Resources */,
 				8276392929FBEC37009D6CFA /* CategoryCell.xib in Resources */,
 				828BE2C929E7B98A00B0C838 /* Main.storyboard in Resources */,
 				824506CE2A553A730099331F /* ChatBubbleLeft.xib in Resources */,
@@ -794,6 +823,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8262EFC72A89D9E8002C66AE /* CheckBoxCell.swift in Sources */,
 				82D1C5A32A85EF4A00A10F02 /* CityCell.swift in Sources */,
 				824506DC2A5566030099331F /* ARBusinessServiceHelper.swift in Sources */,
 				824506C92A55326A0099331F /* ChatCell.swift in Sources */,
@@ -811,6 +841,7 @@
 				82D1C5CD2A86260D00A10F02 /* FilterVC.swift in Sources */,
 				82831B6929EBD96B00ABC75B /* Color+Extension.swift in Sources */,
 				82F1B0302A6FC4E700E7DE1B /* AuthenticationVM.swift in Sources */,
+				8262EFCA2A89EDD7002C66AE /* Image+Extension.swift in Sources */,
 				82D2ADED2A15F58C003AA0E8 /* HomeCategoryCell.swift in Sources */,
 				824506CD2A553A730099331F /* ChatBubbleLeft.swift in Sources */,
 				828BE2C629E7B98A00B0C838 /* ViewController.swift in Sources */,
@@ -840,8 +871,10 @@
 				82D1C5C52A85F0AA00A10F02 /* LocationPickVC.swift in Sources */,
 				824506D32A55407C0099331F /* ChatBubbleRight.swift in Sources */,
 				82D1C5BF2A85F0AA00A10F02 /* ChatVC.swift in Sources */,
+				8262EFCD2A8A278B002C66AE /* ViewController+Extension.swift in Sources */,
 				82D1C59E2A85ECA300A10F02 /* CityVM.swift in Sources */,
 				82D1C5C62A85F0AA00A10F02 /* ListingVC.swift in Sources */,
+				824E4FFC2A93579100C64F37 /* BannerModel.swift in Sources */,
 				82D1C5BC2A85F0AA00A10F02 /* SideMenuVC.swift in Sources */,
 				8249F9DF2A84B7B900FB1C0E /* Cell.swift in Sources */,
 				82D2ADDF2A15E1A6003AA0E8 /* HomeSearchCell.swift in Sources */,
@@ -849,6 +882,7 @@
 				82D1C5BD2A85F0AA00A10F02 /* CategoryVC.swift in Sources */,
 				9F6BA63F2A7E27AF002E685E /* HomeModel.swift in Sources */,
 				82F1B0332A6FC56500E7DE1B /* LoginModel.swift in Sources */,
+				823703652A93190D005777AC /* CategoryModel.swift in Sources */,
 				82D2ADE72A15E914003AA0E8 /* TitleHeaaderCell.swift in Sources */,
 				82D1C5C72A85F0AA00A10F02 /* HomeVC.swift in Sources */,
 				822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */,

@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,40 +19,61 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5K-b9-ESD" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                        <rect key="frame" x="14.999999999999996" y="13.666666666666664" width="58.666666666666657" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="style">
-                                <integer key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                <real key="value" value="14"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                <integer key="value" value="0"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wah-td-Pti">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5K-b9-ESD" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                <rect key="frame" x="19.999999999999996" y="13.666666666666664" width="58.666666666666657" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B5K-b9-ESD" firstAttribute="centerY" secondItem="Wah-td-Pti" secondAttribute="centerY" id="XbU-6n-8f0"/>
+                            <constraint firstItem="B5K-b9-ESD" firstAttribute="leading" secondItem="Wah-td-Pti" secondAttribute="leading" constant="20" id="wCm-DX-yRu"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" name="BackGroundColor"/>
                 <constraints>
-                    <constraint firstItem="B5K-b9-ESD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bPK-AH-tmR"/>
-                    <constraint firstItem="B5K-b9-ESD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xnU-yF-6dt"/>
+                    <constraint firstAttribute="trailing" secondItem="Wah-td-Pti" secondAttribute="trailing" id="8Fn-cI-M0e"/>
+                    <constraint firstAttribute="bottom" secondItem="Wah-td-Pti" secondAttribute="bottom" id="LCu-bB-eqP"/>
+                    <constraint firstItem="Wah-td-Pti" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="T73-Qt-Mpt"/>
+                    <constraint firstItem="Wah-td-Pti" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="o94-hX-gWq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bgView" destination="Wah-td-Pti" id="qKP-S6-IEi"/>
                 <outlet property="filterNameTxt" destination="B5K-b9-ESD" id="LjX-d8-ZCP"/>
             </connections>
             <point key="canvasLocation" x="75" y="-11"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="B5K-b9-ESD">
+            <size key="intrinsicContentSize" width="58.666666666666664" height="17"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="BackGroundColor">
             <color red="0.94900000095367432" green="0.95300000905990601" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
