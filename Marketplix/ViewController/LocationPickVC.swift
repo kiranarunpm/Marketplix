@@ -42,17 +42,14 @@ class LocationPickVC: BaseVC {
             screenSize =  CGSize(width: screen_width / 6 - 20, height: 100)
         }
         else{
-            screenSize = CGSize(width: screen_width / 4 - 8, height: 100)
+            screenSize = CGSize(width: screen_width / 4, height: 100)
         }
         let layout1 = UICollectionViewFlowLayout()
         layout1.scrollDirection = .vertical
         layout1.itemSize = screenSize
-        //        layout1.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
-        
-        //        layout1.minimumLineSpacing = 10
-        layout1.minimumInteritemSpacing = 10
         colView.setCollectionViewLayout(layout1, animated: true)
         colView.reloadData()
+        view.layoutIfNeeded()
         
     }
     
@@ -98,6 +95,10 @@ class LocationPickVC: BaseVC {
         }
     }
     
+    @IBAction func dismissBtn(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     
 }
 extension LocationPickVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -130,7 +131,6 @@ extension LocationPickVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = "Kochi"
-        cell.contentView.backgroundColor = UIColor.bgColor
         return cell
     }
     

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XId-QZ-8kx" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                <rect key="frame" x="15" y="15" width="290" height="23"/>
+                                <rect key="frame" x="15" y="14.999999999999998" width="290" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,10 +39,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qGt-Us-Lm7">
-                                <rect key="frame" x="15" y="44" width="290" height="17"/>
+                                <rect key="frame" x="15" y="41.333333333333336" width="290" height="19.666666666666664"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, This product still there" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-rL-dtS" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, This product still there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-rL-dtS" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="19.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -58,10 +59,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04.44 PM" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-az-RBC" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                        <rect key="frame" x="220" y="0.0" width="70" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="Llr-HC-B0h"/>
-                                        </constraints>
+                                        <rect key="frame" x="202" y="0.0" width="88" height="19.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -84,6 +82,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qGt-Us-Lm7" secondAttribute="bottom" constant="15" id="0o6-BU-uZG"/>
                             <constraint firstItem="qGt-Us-Lm7" firstAttribute="top" secondItem="XId-QZ-8kx" secondAttribute="bottom" constant="6" id="7kr-mx-Eda"/>
+                            <constraint firstItem="8kO-rL-dtS" firstAttribute="width" secondItem="WnC-8s-vt9" secondAttribute="width" multiplier="0.6" id="D7X-oB-mCx"/>
                             <constraint firstItem="XId-QZ-8kx" firstAttribute="leading" secondItem="WnC-8s-vt9" secondAttribute="leading" constant="15" id="Fit-P9-RSF"/>
                             <constraint firstAttribute="trailing" secondItem="qGt-Us-Lm7" secondAttribute="trailing" constant="15" id="K4R-Jb-0Rb"/>
                             <constraint firstAttribute="trailing" secondItem="XId-QZ-8kx" secondAttribute="trailing" constant="15" id="Ro3-ko-hjk"/>
@@ -101,6 +100,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dateLbl" destination="6Nc-az-RBC" id="G2I-e5-AQF"/>
                 <outlet property="msgTxt" destination="8kO-rL-dtS" id="nyc-O8-h05"/>
                 <outlet property="nameTxt" destination="XId-QZ-8kx" id="YRC-lS-YDn"/>
             </connections>
@@ -109,13 +109,13 @@
     </objects>
     <designables>
         <designable name="6Nc-az-RBC">
-            <size key="intrinsicContentSize" width="55" height="17"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="14.333333333333334"/>
         </designable>
         <designable name="8kO-rL-dtS">
-            <size key="intrinsicContentSize" width="151" height="17"/>
+            <size key="intrinsicContentSize" width="195.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="XId-QZ-8kx">
-            <size key="intrinsicContentSize" width="33.333333333333336" height="22.666666666666668"/>
+            <size key="intrinsicContentSize" width="32.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>

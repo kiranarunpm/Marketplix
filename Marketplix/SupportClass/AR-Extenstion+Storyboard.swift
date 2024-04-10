@@ -11,9 +11,10 @@ import UIKit
 
 class RootVC: UINavigationController{
     
+    
     public func GetRootVC()->UINavigationController{
         if !User.shared.hasToken {
-            let storyboard = MainTabVC.instantiate(fromAppStoryboard: .Main)
+            let storyboard = LoginVC.instantiate(fromAppStoryboard: .Main)
             let rootNC = UINavigationController(rootViewController: storyboard)
             storyboard.navigationController?.navigationBar.isHidden = true
             return rootNC

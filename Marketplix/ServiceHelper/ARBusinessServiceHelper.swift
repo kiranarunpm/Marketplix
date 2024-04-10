@@ -15,7 +15,7 @@ class ARBusinessServiceHelper {
         components.scheme = router.scheme
         components.host = router.host
         components.path = router.path
-         components.queryItems = router.parameters
+        components.queryItems = router.parameters
         
         guard let url = components.url else {
             completion(.failure(.invalidURL))

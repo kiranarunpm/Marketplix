@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.0)
   - GoogleMaps (8.1.0):
     - GoogleMaps/Maps (= 8.1.0)
   - GoogleMaps/Base (8.1.0)
@@ -10,33 +11,44 @@ PODS:
     - Kingfisher (> 3.0)
   - IQKeyboardManagerSwift (6.5.12)
   - Kingfisher (7.9.0)
+  - LocationPicker (1.4.2)
   - MBProgressHUD (1.2.0)
+  - ReadMoreTextView (3.0.1)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
+  - Alamofire
   - GoogleMaps
   - ImageSlideshow/Kingfisher
   - IQKeyboardManagerSwift
+  - LocationPicker
   - MBProgressHUD (~> 1.2.0)
+  - ReadMoreTextView (~> 3.0)
   - SideMenu (~> 6.5)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - GoogleMaps
     - ImageSlideshow
     - IQKeyboardManagerSwift
     - Kingfisher
+    - LocationPicker
     - MBProgressHUD
+    - ReadMoreTextView
     - SideMenu
 
 SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   GoogleMaps: 97300a4b89a3641563782c52228c4530f5fe0d89
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
   Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
+  LocationPicker: 9af49409ec3ca13fdf4bf6b39e1a3c7dec029f4a
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: c91d48265cd6543b9a244a292ae2bafc3233e376
+PODFILE CHECKSUM: b080b4f8c1e35fb4c0e6a092724941c4c31e7e1c
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0

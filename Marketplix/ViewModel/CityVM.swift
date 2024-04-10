@@ -107,6 +107,7 @@ class ConvertJsonFile{
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
                 let jsonData = try decoder.decode(T.self, from: data)
+                print(jsonData)
                 completion(.success(jsonData))
             }
             catch {

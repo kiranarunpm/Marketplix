@@ -6,12 +6,20 @@
 //
 
 import UIKit
+protocol ItemViewTabDelegate {
+    func toDetail(_ id: Int)
+}
 
 class ItemViewTabCell: UITableViewCell {
     static let identifire = "ItemViewTabCell"
     var type: String = ""
     @IBOutlet weak var colView: UICollectionView!
     var new_listing: [NewListing]?
+    var featuredListingArr = [DataList]()
+    var recommendationArr = [DataList]()
+    var recentlyViewArr = [DataList]()
+    var delegate: ItemViewTabDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         colView.register(UINib(nibName: ItemCell.identifire, bundle: nil), forCellWithReuseIdentifier: ItemCell.identifire)
@@ -28,24 +36,61 @@ class ItemViewTabCell: UITableViewCell {
         return screenSize
     }
 
+    func reloadData(){
+        colView.reloadData()
+    }
     
 }
 
 
 extension ItemViewTabCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return new_listing?.count ?? 0
+        if type == "New Listing"{
+            return new_listing?.count ?? 0
+
+        }else if type == "Featured Listing"{
+            return featuredListingArr.count
+
+        }else if type == "Recommendations"{
+            return recommendationArr.count
+
+        }
+        else if type == "Recently Viewed"{
+            return recentlyViewArr.count
+
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if type == "New Listing"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeNewItems.identifire, for: indexPath) as! HomeNewItems
             let index = new_listing?[indexPath.row]
+            cell.name.text = index?.title ?? ""
+            cell.descriptions.text = "Created: \(index?.created_at?.convertDateFormat(dateFormat: "dd MMM yyyy") ?? "")"
             if let url = URL(string:  index?.classified_images?.first?.image_url ?? ""){
-                cell.img.downloaded(from: url)
+                cell.loadImage(url: url)
 
             }
             return cell
+        }else if type == "Featured Listing"{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
+            let index = featuredListingArr[indexPath.row]
+            cell.homeIndexList = index
+            return cell
+            
+        }else if type == "Recommendations"{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
+            let index = recommendationArr[indexPath.row]
+            cell.homeIndexList = index
+            return cell
+            
+        }else if type == "Recently Viewed"{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
+            let index = recentlyViewArr[indexPath.row]
+            cell.homeIndexList = index
+            return cell
+            
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
             return cell
@@ -73,6 +118,22 @@ extension ItemViewTabCell: UICollectionViewDelegate, UICollectionViewDataSource,
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if type == "New Listing"{
+            let index = new_listing?[indexPath.row]
+            self.delegate?.toDetail(index?.id ?? 0)
+        }else if type == "Featured Listing"{
+            let index = featuredListingArr[indexPath.row]
+            self.delegate?.toDetail(index.classifieds?.id ?? 0)
+        }else if type == "Recommendations"{
+            let index = recommendationArr[indexPath.row]
+            self.delegate?.toDetail(index.classifieds?.id ?? 0)
+        }else if type == "Recently Viewed"{
+            let index = recentlyViewArr[indexPath.row]
+            self.delegate?.toDetail(index.classifieds?.id ?? 0)
+        }
+        
+    }
     
     
     

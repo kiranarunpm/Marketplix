@@ -9,6 +9,8 @@ import UIKit
 
 class ChatCell: UITableViewCell {
 
+    @IBOutlet weak var dateLbl: MPUILabel!
+
     @IBOutlet weak var msgTxt: MPUILabel!
     @IBOutlet weak var nameTxt: MPUILabel!
     static var identifre : String = "ChatCell"

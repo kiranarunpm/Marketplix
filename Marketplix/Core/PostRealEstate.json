@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Let's tell some informations",
+        "key": "",
+        "value": "",
+        "type": "",
+        "results": [
+            {
+                "name": "RentOrSell",
+                "key": "type",
+                "value": "1",
+                "type": "radio",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            {
+                "name": "Title",
+                "key": "title",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "text"
+
+
+            },
+            {
+                "name": "Description",
+                "key": "description",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            {
+                "name": "Price",
+                "key": "price",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "number"
+
+            },
+            {
+                "name": "Type",
+                "key": "",
+                "value": "",
+                "type": "select",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            
+            {
+                "name": "Category",
+                "key": "category_id",
+                "value": "",
+                "type": "select",
+                "required": true,
+                "id" : "",
+                "keyboard" : "text"
+
+            },
+        ]
+    },
+    {
+        "name": "Location Details",
+        "key": "",
+        "value": "",
+        "type": "",
+        "results": [
+                        
+            {
+                "name": "Building Name",
+                "key": "building_name",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            {
+                "name": "Street Name",
+                "key": "street_name",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            {
+                "name": "Sector",
+                "key": "sector",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            {
+                "name": "Sub Sector",
+                "key": "sub_sector",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "text"
+
+            },
+            {
+                "name": "Pincode",
+                "key": "pincode",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "number"
+
+            }
+        ]
+    }
+    
+]

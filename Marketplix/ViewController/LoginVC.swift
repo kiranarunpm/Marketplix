@@ -8,17 +8,19 @@
 import UIKit
 import MBProgressHUD
 
-class LoginVC: UIViewController {
-
+class LoginVC: BaseVC {
+    
+    @IBOutlet weak var emailTxt: UITextField!
     
     lazy var viewModel: AuthenticationVM = {
         return AuthenticationVM()
     }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewModel()
+//        self.emailTxt.text = "q@gm.com"
     }
     
     // MARK: InitViewModel
@@ -30,13 +32,20 @@ class LoginVC: UIViewController {
             
             DispatchQueue.main.async {
                 
-                let details = _self.viewModel.getOtpResponse?.message ?? ""
-                
-                print("message: : \(details)")
-                DispatchQueue.main.async {
-                            let storyboard = VerificationVC.instantiate(fromAppStoryboard: .Main)
-                            _self.navigationController?.pushViewController(storyboard, animated: true)
+                let details = _self.viewModel.getOtpResponse
+                if details?.exist_user ?? 0 == 0{
+                    let storyboard = RegisterVC.instantiate(fromAppStoryboard: .Main)
+                    storyboard.email = _self.emailTxt.text ?? ""
+                    _self.navigationController?.pushViewController(storyboard, animated: true)
+                    return
                 }
+                
+                print("message: : \(details?.message)")
+                    let storyboard = VerificationVC.instantiate(fromAppStoryboard: .Main)
+                    storyboard.email = _self.emailTxt.text ?? ""
+                    storyboard.isFromLogin = true
+                    _self.navigationController?.pushViewController(storyboard, animated: true)
+                
                 
             }
         }
@@ -49,7 +58,7 @@ class LoginVC: UIViewController {
                 
                 if let alertMessage = _self.viewModel.alertMessage {
                     print("alertMessage", alertMessage)
-    
+                    
                 }
             }
         }
@@ -73,13 +82,17 @@ class LoginVC: UIViewController {
     }
     
     
-
+    
     @IBAction func signInBtn(_ sender: Any) {
+        guard let email = self.emailTxt.text, email != "" else {
+            showToastLogIn(message: "Please enter email address")
+            return
+        }
         
-        let request = GetOtpRequest(email: "test3@gmail.com")
+        let request = GetOtpRequest(email: email)
         viewModel.callGenerateOTP(request)
-
+        
     }
     
-
+    
 }

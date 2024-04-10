@@ -14,7 +14,6 @@ class CityCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bgView.layer.cornerRadius = 8
         // Initialization code
     }
 

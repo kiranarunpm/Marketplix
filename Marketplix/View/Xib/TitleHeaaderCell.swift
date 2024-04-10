@@ -15,6 +15,8 @@ class TitleHeaaderCell: UITableViewCell {
     static let identifire = "TitleHeaaderCell"
     var delegate: TitleHeaaderCellDelegate?
     @IBOutlet weak var titleTxt: MPUILabel!
+    @IBOutlet weak var seeMoreBtn: UIButton!
+
     var header: String = ""
     
     override func awakeFromNib() {

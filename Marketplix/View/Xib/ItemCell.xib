@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-AP-tDE">
                                 <rect key="frame" x="8" y="8" width="172" height="218"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-g0-BO8">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-g0-BO8">
                                         <rect key="frame" x="0.0" y="0.0" width="172" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="1Re-cM-W4e"/>
@@ -154,7 +154,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="0.0" height="4"/>
+                                <size key="value" width="0.0" height="2"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="0.66666666666666663" alpha="0.59101296768707479" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,6 +180,12 @@
             <size key="customSize" width="196" height="352"/>
             <connections>
                 <outlet property="bgView" destination="gMv-aY-EzA" id="iW3-9U-sqP"/>
+                <outlet property="favImg" destination="lQf-cb-luT" id="eZy-8u-e5d"/>
+                <outlet property="img" destination="xwi-g0-BO8" id="k31-ad-AEX"/>
+                <outlet property="mileTxt" destination="Cga-hq-0Oe" id="TMl-8B-ymJ"/>
+                <outlet property="nameTxt" destination="4B7-wc-8aU" id="KSP-kh-aZ6"/>
+                <outlet property="priceTxt" destination="ftX-YR-kHq" id="m19-KT-UUL"/>
+                <outlet property="subTxt" destination="10F-c6-2Z0" id="KFA-5W-1pN"/>
             </connections>
             <point key="canvasLocation" x="229.00763358778624" y="126.05633802816902"/>
         </collectionViewCell>

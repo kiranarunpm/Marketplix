@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tlb-mA-F3f">
                                 <rect key="frame" x="8" y="8" width="316" height="144"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="N07-NZ-Qp9">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="N07-NZ-Qp9">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="Byn-h0-PYb"/>
@@ -104,7 +104,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="0.0" height="4"/>
+                                <size key="value" width="0.0" height="2"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="0.66666666669999997" alpha="0.5910129677" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,6 +132,7 @@
                 <outlet property="descriptions" destination="YsQ-7e-ZFA" id="ZwA-8X-zgv"/>
                 <outlet property="img" destination="N07-NZ-Qp9" id="zjZ-nZ-wuT"/>
                 <outlet property="name" destination="xOm-gr-Mwj" id="DUr-qX-KIu"/>
+                <outlet property="price" destination="aFy-Zz-xGt" id="rUI-Vp-OwC"/>
             </connections>
             <point key="canvasLocation" x="540.4580152671756" y="422.53521126760563"/>
         </collectionViewCell>
@@ -148,7 +149,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" width="821" height="669"/>
+        <image name="no-image" width="1280" height="822"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -30,6 +30,14 @@ class HomeVM{
         }
     }
     
+    public var dataListArr: [DataList] = [] {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
+    
+    
     public var alertMessage: String? {
         didSet{
             self.failureClosure?()
@@ -99,6 +107,46 @@ extension HomeVM {
             switch result {
                 
             case .success(let response): _self.dashboardResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    func callListing(_ request: ListRequest) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.listAdds(request)) { [weak self] (result : Result<ListItemResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.dataListArr = response.classifields?.data ?? []
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    func callCategory(_ main_category: String) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.category(main_category)) { [weak self] (result : Result<CategoryModels, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.categoryArr = response.categories
                 
             case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
                 

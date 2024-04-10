@@ -9,6 +9,8 @@ import UIKit
 
 class ChatBubbleLeft: UITableViewCell {
 
+    @IBOutlet weak var dateTxt: MPUILabel!
+    @IBOutlet weak var txxt: MPUILabel!
     static var identifire : String = "ChatBubbleLeft"
     override func awakeFromNib() {
         super.awakeFromNib()

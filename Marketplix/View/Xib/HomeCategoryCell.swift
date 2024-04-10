@@ -13,11 +13,12 @@ struct CategoryModel{
 }
 
 protocol HomeCategoryCellDelegate {
-
+    func callSubCategory(id: Int)
 }
 class HomeCategoryCell: UITableViewCell {
     static let identifire = "HomeCategoryCell"
     var categoryArr =  [Category]()
+    var delegate: HomeCategoryCellDelegate?
     @IBOutlet weak var categoryColView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,7 +74,11 @@ extension HomeCategoryCell: UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = categoryArr[indexPath.row]
+
+        self.delegate?.callSubCategory(id: index.id ?? 0)
+    }
     
 
 }

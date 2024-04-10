@@ -9,6 +9,17 @@ import UIKit
 
 extension UIViewController{
     
+    func toHome() {
+        guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else {
+            return
+        }
+        let navigationController = UINavigationController(rootViewController: rootVC)
+        navigationController.navigationBar.isHidden = true
+        
+        UIApplication.shared.windows.first?.rootViewController = navigationController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
     func showPopupAlert( title: String,  message: String, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

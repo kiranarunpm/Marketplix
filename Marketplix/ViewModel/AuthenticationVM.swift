@@ -95,4 +95,25 @@ extension AuthenticationVM {
             }
         }
     }
+    
+    func callRegister(_ request: RegisterRequest) {
+       self.isLoading = true
+
+       
+        ARBusinessServiceHelper.request(router: ARServiceManager.register(request)) { [weak self] (result : Result<LoginModel, ARFetchError>) in
+           
+           guard let _self = self else { return }
+           
+           _self.isLoading = false
+           
+           switch result {
+               
+           case .success(let response):
+           _self.loginResponse = response
+               
+           case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+               
+           }
+       }
+   }
 }

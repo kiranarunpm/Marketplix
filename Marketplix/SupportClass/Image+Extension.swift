@@ -47,3 +47,20 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
+
+
+extension String{
+    
+    func convertDateFormat(dateFormat: String) -> String {
+        
+        let olDateFormatter = DateFormatter()
+        olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+        
+        let oldDate = olDateFormatter.date(from: self)
+        
+        let convertDateFormatter = DateFormatter()
+        convertDateFormatter.dateFormat = dateFormat
+        
+        return convertDateFormatter.string(from: oldDate!)
+    }
+}
