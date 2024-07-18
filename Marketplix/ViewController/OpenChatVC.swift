@@ -7,7 +7,7 @@
 
 import UIKit
 import MBProgressHUD
-class OpenChatVC: UIViewController,UITextViewDelegate {
+class OpenChatVC: BaseVC,UITextViewDelegate {
 
     @IBOutlet weak var placeHolder: MPUILabel!
     @IBOutlet weak var msgTxt: UITextView!
@@ -23,6 +23,7 @@ class OpenChatVC: UIViewController,UITextViewDelegate {
     }()
     var chatsArr : [Chats] = []
     var id : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.msgTxt.delegate = self
@@ -99,7 +100,7 @@ class OpenChatVC: UIViewController,UITextViewDelegate {
 
             DispatchQueue.main.async {
                 _self.viewModel.callChatDetails(_self.id)
-
+                _self.msgTxt.text = ""
                 
             }
         }
@@ -148,7 +149,7 @@ extension OpenChatVC : UITableViewDelegate, UITableViewDataSource{
             cell.txxt.text = index?.message ?? ""
             cell.dateTxt.text = index?.created_at?.convertDateFormat(dateFormat: "dd MMM YYYY")
             cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-
+            cell.nameTxt.text = index?.sender?.first_name?.capitalized ?? "Anonymous"
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatBubbleRight.identifire, for:indexPath) as! ChatBubbleRight
@@ -157,6 +158,7 @@ extension OpenChatVC : UITableViewDelegate, UITableViewDataSource{
             cell.transform = CGAffineTransform(rotationAngle: (-.pi))
 
             cell.dateTxt.text = index?.created_at?.convertDateFormat(dateFormat: "dd MMM YYYY")
+            cell.nameTxt.text = index?.sender?.first_name?.capitalized ?? "Anonymous"
             return cell
             
           

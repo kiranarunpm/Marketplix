@@ -7,10 +7,12 @@
 
 import UIKit
 import MBProgressHUD
-class MyAdsVC: UIViewController {
+class MyAdsVC: BaseVC {
     lazy var viewModel: PostAdsVM = {
         return PostAdsVM()
     }()
+    var dataList = [DataList]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewModel()
@@ -41,8 +43,7 @@ class MyAdsVC: UIViewController {
     }
     
     @IBAction func postAdsVC(_ sender: Any) {
-        let vc = PostAdsVC.instantiate(fromAppStoryboard: .Main)
-        self.navigationController?.pushViewController(vc, animated:    true)
+        self.navigationController?.tabBarController?.selectedIndex = 2
     }
     
     // MARK: InitViewModel
@@ -51,6 +52,8 @@ class MyAdsVC: UIViewController {
             
             guard let _self = self else { return }
             
+            let data = _self.viewModel.listItemResponse?.classifields?.data ?? []
+            self?.dataList = data
             DispatchQueue.main.async {
                 
                 _self.colView.reloadData()
@@ -95,13 +98,13 @@ class MyAdsVC: UIViewController {
 
 extension MyAdsVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.listItemResponse?.classifields?.data?.count ?? 0
+        return self.dataList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeNewItems.identifire, for: indexPath) as! HomeNewItems
-        let index = viewModel.listItemResponse?.classifields?.data?[indexPath.row]
-        if let url = index?.classified_images?.first?.image_url{
+        let index = self.dataList[indexPath.row]
+        if let url = index.classified_images?.first?.image_url{
             if let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
                 let url = URL(string: urlString)
                 cell.img.kf.setImage(with: url, placeholder: UIImage(named: "no-image"))
@@ -109,16 +112,22 @@ extension MyAdsVC: UICollectionViewDelegate, UICollectionViewDataSource{
             }
         }
        
-        cell.name.text = index?.title ?? ""
-        cell.descriptions.text = index?.description ?? ""
-        cell.price.text = "₹\(index?.price ?? "")"
+        cell.name.text = index.title ?? ""
+        cell.descriptions.text = index.addresses?.sector ?? ""
+        let dateFormat = "".dateFormat(index.created_at ?? "")
+        cell.createdAtLbl.text = "Posted on: \(dateFormat)"
+        cell.categoryLbl.text = "\(index.category?.name ?? "")"
+        let price : Double = Double(index.price ?? "") ?? 0
+        cell.price.text = Constants.currencySymbol + "\(price.roundedDecimal(to: 0))"
+        cell.distanceStack.isHidden = true
+        cell.favBtn.isHidden = true
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = viewModel.listItemResponse?.classifields?.data?[indexPath.row]
-        let vc = DetailVC.instantiate(fromAppStoryboard: .Main)
-        vc.id = String(index?.id ?? 0)
+        let vc = PostAdsVC.instantiate(fromAppStoryboard: .Main)
+        vc.editData = index
         self.navigationController?.pushViewController(vc, animated: true)
 
     }

@@ -12,8 +12,11 @@ class PostAdsVC: BaseVC {
     
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     var postRealEstateArr  = [PostRealEstateModel]()
+    var editData : DataList?
 
     var imageData = [UIImage]()
+    
+    var isOnEdit = false
 
     @IBOutlet weak var tableView: UITableView!{
         didSet{
@@ -22,8 +25,10 @@ class PostAdsVC: BaseVC {
             tableView.registerCell(ChooseTextCell.identifire)
             tableView.registerCell(TextCell.identifire)
             tableView.registerCell(RadioButtonCell.identifire)
-            tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+            tableView.registerCell(DescriptionTextCell.identifire)
 
+            tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+            
         }
     }
 
@@ -103,6 +108,8 @@ class PostAdsVC: BaseVC {
             DispatchQueue.main.async {
                 _self.tableView.reloadData()
             }
+            
+            
         }
         
         categoryVM.callMainCategory(mainCategory: "")
@@ -113,10 +120,15 @@ class PostAdsVC: BaseVC {
 
             }
         })
+        
+
+        
 
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+        
+        
         
     }
     
@@ -135,11 +147,21 @@ class PostAdsVC: BaseVC {
                     if item.name == "Category" || item.name == "Type"{
                         
                     }else{
-                        if item.value == "" {
-                            print("validation", "Please Enter \(item.name)")
-                            validation = false
-                            return
+                        if item.name == "Title" || item.name == "Description" || item.name == "Price"{
+                            if item.value == "" {
+                                print("validation", "Please Enter \(item.name)")
+                                self.showToastLogIn(message: "Please Enter \(item.name ?? "")")
+
+                                validation = false
+                                return
+                            }
                         }
+                        
+//                        if item.value == "" {
+//                            print("validation", "Please Enter \(item.name)")
+//                            validation = false
+//                            return
+//                        }
                     }
                     
                 })
@@ -151,7 +173,7 @@ class PostAdsVC: BaseVC {
             storyboard.postRealEstateArr = self.postRealEstateArr
             self.navigationController?.pushViewController(storyboard, animated: true)
         }else{
-            self.showToastLogIn(message: "Please enter All the fields")
+//            self.showToastLogIn(message: "Please enter All the fields")
         }
         
        
@@ -247,6 +269,18 @@ extension PostAdsVC: UITableViewDataSource, UITableViewDelegate{
             cell.index = indexPath
             return cell
         }
+        
+        else if index?.type == "textView"{
+            let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTextCell.identifire, for: indexPath) as! DescriptionTextCell
+            cell.nameTxt.text = index?.name
+            cell.valueTxt.text = index?.value
+//            cell.valueTxt.placeholder = index?.name
+            cell.delegate = self
+            cell.selectionStyle = .none
+            cell.valueTxt.keyboardType = index?.type ?? "" == "textView" ? .default : .numberPad
+            cell.index = indexPath
+            return cell
+        }
         else if index?.type == "select"{
             let cell = tableView.dequeueReusableCell(withIdentifier: ChooseTextCell.identifire, for: indexPath) as! ChooseTextCell
             cell.nameTxt.text = index?.name
@@ -256,6 +290,8 @@ extension PostAdsVC: UITableViewDataSource, UITableViewDelegate{
         }
         
         else if index?.type == "radio"{
+            return UITableViewCell()
+
             let cell = tableView.dequeueReusableCell(withIdentifier: RadioButtonCell.identifire, for: indexPath) as! RadioButtonCell
             if index?.value == "1"{
                 cell.sellImg.image = UIImage(named: "radio-active")
@@ -281,29 +317,30 @@ extension PostAdsVC: UITableViewDataSource, UITableViewDelegate{
                 return true
             }
         }
-        let index = filter?[indexPath.row]
-        if index?.type == "select"{
-            let vc = SelectVC.instantiate(fromAppStoryboard: .Main)
-            vc.modalPresentationStyle = .overCurrentContext
-            if index?.name == "Type"{
-                vc.categoryArr = categoryVM.categoryArr
-            }else{
-                vc.categoryArr = homeVM.categoryArr
-            }
-            vc.delegate = self
-            vc.index = indexPath
-            vc.nameString = index?.name ?? ""
-            self.navigationController?.present(vc, animated: true)
-        }
+//        let index = filter?[indexPath.row]
+//        if index?.type == "select"{
+//            let vc = SelectVC.instantiate(fromAppStoryboard: .Main)
+//            vc.modalPresentationStyle = .overCurrentContext
+//            if index?.name == "Type"{
+//                vc.categoryArr = categoryVM.categoryArr
+//            }else{
+//                vc.categoryArr = homeVM.categoryArr
+//            }
+//            vc.delegate = self
+//            vc.index = indexPath
+//            vc.nameString = index?.name ?? ""
+//            self.navigationController?.present(vc, animated: true)
+//        }
     }
     
     
 }
 
-extension PostAdsVC: TextCellDelegate, SelectVCDelegate, RadioButtonDelegate{
+extension PostAdsVC: TextCellDelegate, SelectVCDelegate, RadioButtonDelegate, DescriptionTextDelegate{
     func radioHandler(value: String, index: IndexPath) {
         print("value", value)
         var i = 0
+    
         postRealEstateArr[index.section].results?.forEach { item in
             if i == index.row{
                 postRealEstateArr[index.section].results?[i].value = value
@@ -320,16 +357,15 @@ extension PostAdsVC: TextCellDelegate, SelectVCDelegate, RadioButtonDelegate{
         print("value", value)
         var i = 0
 
-        
-        postRealEstateArr[index.section].results?.forEach { item in
+        for _ in postRealEstateArr[index.section].results ?? []{
             if i == index.row{
                 postRealEstateArr[index.section].results?[index.row].value = value
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    
                 }
-                return
+                break
             }
-            
             i += 1
         }
     }

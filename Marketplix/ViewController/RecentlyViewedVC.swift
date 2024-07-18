@@ -8,7 +8,7 @@
 import UIKit
 import MBProgressHUD
 
-class RecentlyViewedVC: UIViewController {
+class RecentlyViewedVC: BaseVC {
     @IBOutlet weak var colView: UICollectionView!
     lazy var viewModel: DetailVM = {
         return DetailVM()
@@ -23,10 +23,10 @@ class RecentlyViewedVC: UIViewController {
 
         var screenSize = CGSize(width: 0, height: 0)
         if screenSize.height >= 1024{
-            screenSize =  CGSize(width: screen_width / 4 - 20, height: 250)
+            screenSize =  CGSize(width: screen_width / 4 - 20, height: 280)
         }
         else{
-            screenSize = CGSize(width: screen_width / 2 - 20, height: 250)
+            screenSize = CGSize(width: screen_width / 2 - 20, height: 280)
         }
         let layout1 = UICollectionViewFlowLayout()
         layout1.scrollDirection = .vertical
@@ -83,7 +83,9 @@ class RecentlyViewedVC: UIViewController {
             }
         }
         
-        viewModel.callListingRecentlyViewed()
+        let lat = User.shared.getSavedData(with: .lat)
+        let lng = User.shared.getSavedData(with: .long)
+        viewModel.callListingRecentlyViewed(lat: lat == "" ? "12.956467" : lat, lng: lng == "" ? "77.597915" : lng)
     }
     
 

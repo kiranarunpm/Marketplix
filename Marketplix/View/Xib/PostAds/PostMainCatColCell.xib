@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,8 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JV3-BA-aDI">
                         <rect key="frame" x="0.0" y="0.0" width="121" height="114"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Estate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clS-th-eXa" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                <rect key="frame" x="5" y="87" width="111" height="14.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Estate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clS-th-eXa" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                <rect key="frame" x="5" y="97" width="111" height="14.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,22 +37,23 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="Rrw-ma-030">
+                                <rect key="frame" x="25.666666666666671" y="22" width="70" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="AXs-0Q-asi"/>
+                                    <constraint firstAttribute="height" constant="70" id="hy2-WY-Q5D"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-circle-svgrepo-com" translatesAutoresizingMaskIntoConstraints="NO" id="yH2-8n-iPA">
-                                <rect key="frame" x="75.666666666666671" y="17" width="20" height="20"/>
+                                <rect key="frame" x="85.666666666666671" y="7" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="0Ex-UA-UY9"/>
                                     <constraint firstAttribute="width" constant="20" id="YUc-ZR-gVv"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="Rrw-ma-030">
-                                <rect key="frame" x="35.666666666666664" y="32" width="49.999999999999993" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="AXs-0Q-asi"/>
-                                    <constraint firstAttribute="height" constant="50" id="hy2-WY-Q5D"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="clS-th-eXa" firstAttribute="top" secondItem="Rrw-ma-030" secondAttribute="bottom" constant="5" id="B2q-jB-flg"/>
                             <constraint firstItem="Rrw-ma-030" firstAttribute="centerX" secondItem="JV3-BA-aDI" secondAttribute="centerX" id="Jcc-YN-jrm"/>
@@ -67,6 +67,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="JV3-BA-aDI" secondAttribute="trailing" id="0az-BA-So9"/>
                 <constraint firstItem="JV3-BA-aDI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="36X-t0-1pl"/>
@@ -90,8 +91,5 @@
     <resources>
         <image name="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" width="821" height="669"/>
         <image name="tick-circle-svgrepo-com" width="20" height="20"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

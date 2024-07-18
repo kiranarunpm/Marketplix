@@ -18,8 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx3-Wf-6qG" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx3-Wf-6qG" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
                         <rect key="frame" x="15.000000000000007" y="12" width="102.66666666666669" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102.67" id="QFD-sh-ePK"/>
+                            <constraint firstAttribute="height" constant="27" id="Sqe-Kc-5RU"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +37,8 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="style">
                                 <integer key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKD-ix-l0E">
@@ -46,6 +52,9 @@
                         <state key="normal" title="See More">
                             <color key="titleColor" name="primaryColor"/>
                         </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="View_btn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K46-6a-A9P"/>
                         </connections>
@@ -59,8 +68,16 @@
                     <constraint firstItem="Gx3-Wf-6qG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="aIl-tH-6yn"/>
                     <constraint firstAttribute="bottom" secondItem="Gx3-Wf-6qG" secondAttribute="bottom" constant="5" id="xCq-h2-SxS"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="seeMoreBtn" destination="LKD-ix-l0E" id="ruC-ly-Oih"/>
                 <outlet property="titleTxt" destination="Gx3-Wf-6qG" id="n5b-8I-TfA"/>
@@ -69,9 +86,7 @@
         </tableViewCell>
     </objects>
     <designables>
-        <designable name="Gx3-Wf-6qG">
-            <size key="intrinsicContentSize" width="102.66666666666667" height="20.333333333333332"/>
-        </designable>
+        <designable name="Gx3-Wf-6qG"/>
     </designables>
     <resources>
         <namedColor name="BackGroundColor">

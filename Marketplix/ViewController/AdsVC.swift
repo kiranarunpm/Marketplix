@@ -8,11 +8,14 @@
 import UIKit
 import ImageSlideshow
  
+protocol AdsDelegate{
+    func openReportView()
+}
 class AdsVC: UIViewController {
 
     @IBOutlet weak var slideShow: ImageSlideshow!
     var flashArr = [Flash]()
-
+    var delegate: AdsDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -34,5 +37,11 @@ class AdsVC: UIViewController {
         slideShow.slideshowInterval = 8
     }
     
-
+    
+    @IBAction func reportAd(_ sender: Any) {
+        dismiss(animated: true){
+            self.delegate?.openReportView()
+        }
+    }
+    
 }

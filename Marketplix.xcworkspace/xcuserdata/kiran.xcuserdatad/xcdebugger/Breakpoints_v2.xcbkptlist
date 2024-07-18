@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F0CF4FF6-B79E-4F02-85ED-FB82BD9C33EA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Marketplix/ViewController/LoginVC.swift"
@@ -49,6 +49,21 @@
                   endingLineNumber = "35"
                   offsetFromSymbolStart = "152">
                </Location>
+               <Location
+                  uuid = "F0CF4FF6-B79E-4F02-85ED-FB82BD9C33EA - 77bc62a001c9fdf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in Marketplix.LoginVC.initViewModel() -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/LoginVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "152">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -72,7 +87,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "827FC333-9346-4F03-A968-9B5104DB8908"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Marketplix/ViewController/LoginVC.swift"
@@ -96,8 +111,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "registerBtn(_:)"
-            landmarkType = "7">
+            landmarkName = "RegisterVC"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "84683741-F00E-4251-8AA3-04B3C3B78AD8 - f2485fdbf7eb4009"
@@ -129,6 +144,21 @@
                   endingLineNumber = "47"
                   offsetFromSymbolStart = "1520">
                </Location>
+               <Location
+                  uuid = "84683741-F00E-4251-8AA3-04B3C3B78AD8 - 4b5b48fbeaceffe0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.RegisterVC.registerBtn(Any) -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/RegisterVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "180">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -144,8 +174,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "registerBtn(_:)"
-            landmarkType = "7">
+            landmarkName = "RegisterVC"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "F771F736-EBEF-47EE-A2B8-25B1A2ED1F36 - f2485fdbf7eb4239"
@@ -192,7 +222,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "registerBtn(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -225,6 +255,21 @@
                   endingLineNumber = "30"
                   offsetFromSymbolStart = "548">
                </Location>
+               <Location
+                  uuid = "7520D4B5-48B1-4120-B6BD-15E9369E9A00 - 973749a3cdd2feca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.RegisterVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/RegisterVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "616">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,56 +285,455 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "registerBtn(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7ADAEDBF-D2E9-419C-8A6F-D7E1C9FD05B7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Marketplix/Core/User.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "token"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7E05D8A4-D866-4382-8785-D5D37CF576E5"
+            uuid = "C12860DC-D7A6-4FD7-9F68-E176DDABFB09"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marketplix/Core/User.swift"
+            filePath = "Marketplix/ViewController/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "isSkipped"
-            landmarkType = "24">
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "presentationController(forPresented:presenting:source:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CDE89D08-3DDC-462E-85B1-B84093DC6105"
+            uuid = "373E1E49-458B-4276-BBC2-797CDB09C110"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/AllowAccessVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "cancelBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B69CBF1-E58E-4FD8-899E-4E2E6DB912D7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/AllowAccessVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "setupLocation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8B69CBF1-E58E-4FD8-899E-4E2E6DB912D7 - ba6228ee690af5d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.AllowAccessVC.setupLocation() -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/AllowAccessVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "8B69CBF1-E58E-4FD8-899E-4E2E6DB912D7 - ba6228ee690af5d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.AllowAccessVC.setupLocation() -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/AllowAccessVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D2FF040-CD31-4C51-BA86-19E35D492FE3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marketplix/Core/User.swift"
+            filePath = "Marketplix/ViewController/AllowAccessVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "hasToken"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D2FF040-CD31-4C51-BA86-19E35D492FE3 - c3f50723fa7c1fd8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.AllowAccessVC.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/AllowAccessVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "3D2FF040-CD31-4C51-BA86-19E35D492FE3 - c3f50723fa7c1fd8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.AllowAccessVC.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/AllowAccessVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3E9CB78-1931-4357-8784-EE625AF4318C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LocationPickVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B3E9CB78-1931-4357-8784-EE625AF4318C - c66fca2d02323596"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Marketplix.LocationPickVC.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/LocationPickVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "2604">
+               </Location>
+               <Location
+                  uuid = "B3E9CB78-1931-4357-8784-EE625AF4318C - d1632227d159745c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Marketplix.LocationPickVC.locationManager(_: __C.CLLocationManager, didUpdateLocations: Swift.Array&lt;__C.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/ViewController/LocationPickVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A35BA8AE-93D5-4AB2-8E1C-358D9CEC15E4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LocationPickVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CAB2476-446E-48F5-BB4E-1E6A0FD07521"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LocationPickVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "setupLocation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A518A622-FE2D-4638-AE4D-BE1974EF9D25"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LocationPickVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39C79DAF-AC51-4E44-81FC-2D341BC0AEB5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "shareBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07CA8CC7-2A19-4E78-813A-AB683AEC0897"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "signInBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4AF9EDA9-7EAE-4E3C-BE1C-E5967C041F93"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "signInBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20BBDF12-F959-48C1-B2B6-C7C93CE8D24E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/ViewController/LoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "signInBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE3BA3D4-8802-4A8A-882D-3C0ECFDA9F40"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/View/Xib/NewListingBaseTabCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE3BA3D4-8802-4A8A-882D-3C0ECFDA9F40 - f62143b5ada2fa9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.NewListingBaseTabCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/NewListingBaseTabCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "5356">
+               </Location>
+               <Location
+                  uuid = "BE3BA3D4-8802-4A8A-882D-3C0ECFDA9F40 - f62143b5ada2fa9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.NewListingBaseTabCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/NewListingBaseTabCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "5452">
+               </Location>
+               <Location
+                  uuid = "BE3BA3D4-8802-4A8A-882D-3C0ECFDA9F40 - f62143b5ada2fa9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.NewListingBaseTabCell.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/NewListingBaseTabCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "5400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9B02691-DFE5-4C17-94C5-665114E6884E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/View/Xib/ItemCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "recommentedList"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "E9B02691-DFE5-4C17-94C5-665114E6884E - a56c86ff1db69d3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.ItemCell.recommentedList.didset : Swift.Optional&lt;Marketplix.DataList&gt;"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/ItemCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "3440">
+               </Location>
+               <Location
+                  uuid = "E9B02691-DFE5-4C17-94C5-665114E6884E - a56c86ff1db69d3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.ItemCell.recommentedList.didset : Swift.Optional&lt;Marketplix.DataList&gt;"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/ItemCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "3432">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4BE4838-2BC3-44CA-A3C3-822D09F5FB17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marketplix/View/Xib/ItemCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "recommentedList"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A4BE4838-2BC3-44CA-A3C3-822D09F5FB17 - a56c86ff1db69df8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.ItemCell.recommentedList.didset : Swift.Optional&lt;Marketplix.DataList&gt;"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/ItemCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "2460">
+               </Location>
+               <Location
+                  uuid = "A4BE4838-2BC3-44CA-A3C3-822D09F5FB17 - a56c86ff1db69df8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Marketplix.ItemCell.recommentedList.didset : Swift.Optional&lt;Marketplix.DataList&gt;"
+                  moduleName = "Marketplix"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kiran/Downloads/Marketplix%203/Marketplix/View/Xib/ItemCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "2452">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

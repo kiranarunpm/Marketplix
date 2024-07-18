@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,21 +11,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryPickerCell" id="gTV-IL-0wX" customClass="GalleryPickerCell" customModule="Prima_luxury" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryPickerCell" id="gTV-IL-0wX" customClass="GalleryPickerCell" customModule="Marketplix" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkr-Z7-tH5" customClass="R_UIView" customModule="Prima_luxury" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkr-Z7-tH5" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="30" height="30"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus-icon" translatesAutoresizingMaskIntoConstraints="NO" id="HKp-FH-ksu">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.9443473193473193" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeM-5x-yv1">
-                                <rect key="frame" x="25" y="0.0" width="15" height="15"/>
+                                <rect key="frame" x="10" y="5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="6wQ-kZ-8WG"/>
                                     <constraint firstAttribute="width" constant="15" id="8Hg-ep-KJi"/>
@@ -42,8 +43,8 @@
                             <constraint firstAttribute="trailing" secondItem="HKp-FH-ksu" secondAttribute="trailing" id="2qE-zu-TNv"/>
                             <constraint firstItem="HKp-FH-ksu" firstAttribute="top" secondItem="fkr-Z7-tH5" secondAttribute="top" id="HzC-7M-04d"/>
                             <constraint firstItem="HKp-FH-ksu" firstAttribute="leading" secondItem="fkr-Z7-tH5" secondAttribute="leading" id="S2m-Vf-xpP"/>
-                            <constraint firstItem="ZeM-5x-yv1" firstAttribute="top" secondItem="fkr-Z7-tH5" secondAttribute="top" id="mkL-lt-Id5"/>
-                            <constraint firstAttribute="trailing" secondItem="ZeM-5x-yv1" secondAttribute="trailing" id="poA-4Y-gy0"/>
+                            <constraint firstItem="ZeM-5x-yv1" firstAttribute="top" secondItem="fkr-Z7-tH5" secondAttribute="top" constant="5" id="mkL-lt-Id5"/>
+                            <constraint firstAttribute="trailing" secondItem="ZeM-5x-yv1" secondAttribute="trailing" constant="5" id="poA-4Y-gy0"/>
                             <constraint firstAttribute="bottom" secondItem="HKp-FH-ksu" secondAttribute="bottom" id="yuN-wd-V1W"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -56,10 +57,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="fkr-Z7-tH5" secondAttribute="bottom" id="UXu-Wg-3V5"/>
-                <constraint firstItem="fkr-Z7-tH5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XiG-3N-CXS"/>
-                <constraint firstItem="fkr-Z7-tH5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gb8-T8-3SS"/>
-                <constraint firstAttribute="trailing" secondItem="fkr-Z7-tH5" secondAttribute="trailing" id="hZo-U7-al6"/>
+                <constraint firstAttribute="bottom" secondItem="fkr-Z7-tH5" secondAttribute="bottom" constant="5" id="UXu-Wg-3V5"/>
+                <constraint firstItem="fkr-Z7-tH5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="XiG-3N-CXS"/>
+                <constraint firstItem="fkr-Z7-tH5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="gb8-T8-3SS"/>
+                <constraint firstAttribute="trailing" secondItem="fkr-Z7-tH5" secondAttribute="trailing" constant="5" id="hZo-U7-al6"/>
             </constraints>
             <size key="customSize" width="108" height="100"/>
             <connections>

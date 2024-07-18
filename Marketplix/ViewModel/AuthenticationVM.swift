@@ -8,12 +8,14 @@
 import UIKit
 
 protocol AuthenticationDelegate{
-     func callGenerateOTP(_ request: GetOtpRequest)
-     func callLogin(_ request: LoginRequest) 
+    func callGenerateOTP(_ request: [String: String])
+    func callLogin(_ request: [String: String]) 
 }
 
 
 class AuthenticationVM: AuthenticationDelegate {
+   
+    
 
     public var successClosure: (() -> ())?
     public var failureClosure:(() -> ())?
@@ -54,7 +56,7 @@ class AuthenticationVM: AuthenticationDelegate {
 
 extension AuthenticationVM {
     
-     func callGenerateOTP(_ request: GetOtpRequest) {
+    func callGenerateOTP(_ request: [String: String]) {
         self.isLoading = true
 
         
@@ -74,7 +76,7 @@ extension AuthenticationVM {
         }
     }
     
-     func callLogin(_ request: LoginRequest) {
+    func callLogin(_ request: [String: String]) {
         self.isLoading = true
 
         
@@ -101,6 +103,27 @@ extension AuthenticationVM {
 
        
         ARBusinessServiceHelper.request(router: ARServiceManager.register(request)) { [weak self] (result : Result<LoginModel, ARFetchError>) in
+           
+           guard let _self = self else { return }
+           
+           _self.isLoading = false
+           
+           switch result {
+               
+           case .success(let response):
+           _self.loginResponse = response
+               
+           case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+               
+           }
+       }
+   }
+    
+    func calllogout() {
+       self.isLoading = true
+
+       
+        ARBusinessServiceHelper.request(router: ARServiceManager.logout) { [weak self] (result : Result<LoginModel, ARFetchError>) in
            
            guard let _self = self else { return }
            

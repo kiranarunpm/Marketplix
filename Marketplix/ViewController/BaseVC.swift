@@ -8,11 +8,12 @@
 import UIKit
 import SideMenu
 import CoreLocation
-class BaseVC: UIViewController, CLLocationManagerDelegate {
+class BaseVC: UIViewController {
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+     //   setGradientBackground()
     }
     
     //MARK: setupSideMenu
@@ -20,10 +21,8 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
     }
     
     public func initiateLocation(){
-        locationManager.delegate = self
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+
     }
     
     func checkUsersLocationServicesAuthorization()->Bool{
@@ -81,17 +80,17 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
         }])
     }
     
-    public func locationManager(_ manager: CLLocationManager,
-                          didUpdateLocations locations: [CLLocation]) {
-        locationManager.stopUpdatingLocation()
-     }
-
-     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-         locationManager.stopUpdatingLocation()
-     }
-    
-
-    
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 128/255.0, green: 177/255.0, blue: 219/255.0, alpha: 0.7).cgColor
+                    
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.bounds
+                
+        self.view.layer.insertSublayer(gradientLayer, at:0)
+    }
     
     @IBAction func openMenuBtnAction(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "DrawerMenu", bundle: nil)
@@ -131,20 +130,27 @@ class BaseVC: UIViewController, CLLocationManagerDelegate {
         SideMenuManager.default.leftMenuNavigationController?.settings = settings
     }
     
-    func showToastLogIn(message: String ) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 125, y: self.view.frame.size.height/2 - 36, width: 250, height: 72))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    func showToastLogIn(message: String, tobottom: Int = 0) {
+        let toastLabel = UILabel()
+         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+         toastLabel.translatesAutoresizingMaskIntoConstraints = false
          toastLabel.textColor = UIColor.white
          toastLabel.font = UIFont.boldSystemFont(ofSize: 12)
          toastLabel.textAlignment = .center
          toastLabel.text = message
          toastLabel.alpha = 1.0
          toastLabel.numberOfLines = 0
-         toastLabel.layer.cornerRadius = 10
          toastLabel.clipsToBounds  =  true
          self.view.addSubview(toastLabel)
-       
-         UIView.animate(withDuration: 3, delay: 0.1, options: .curveLinear, animations: {
+         NSLayoutConstraint.activate([
+            toastLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+            toastLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -0),
+            toastLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -CGFloat(tobottom)),
+            toastLabel.heightAnchor.constraint(equalToConstant: 70)
+
+        ])
+
+         UIView.animate(withDuration: 3, delay: 5, options: .curveLinear, animations: {
              toastLabel.alpha = 0.0
          }, completion: {(isCompleted) in
              toastLabel.removeFromSuperview()

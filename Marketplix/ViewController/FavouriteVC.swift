@@ -13,6 +13,10 @@ class FavouriteVC: BaseVC {
     lazy var viewModel: DetailVM = {
         return DetailVM()
     }()
+    lazy var favVM: DetailVM = {
+        return DetailVM()
+    }()
+    @IBOutlet weak var dataStack: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,10 +27,10 @@ class FavouriteVC: BaseVC {
 
         var screenSize = CGSize(width: 0, height: 0)
         if screenSize.height >= 1024{
-            screenSize =  CGSize(width: screen_width / 4 - 20, height: 250)
+            screenSize =  CGSize(width: screen_width / 4 - 20, height: 270)
         }
         else{
-            screenSize = CGSize(width: screen_width / 2 - 20, height: 250)
+            screenSize = CGSize(width: screen_width / 2 - 20, height: 280)
         }
         let layout1 = UICollectionViewFlowLayout()
         layout1.scrollDirection = .vertical
@@ -37,8 +41,13 @@ class FavouriteVC: BaseVC {
         layout1.minimumInteritemSpacing = 10
         colView.setCollectionViewLayout(layout1, animated: true)
         colView.reloadData()
-        initViewModel()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initViewModel()
+
     }
     
     // MARK: InitViewModel
@@ -50,6 +59,16 @@ class FavouriteVC: BaseVC {
             DispatchQueue.main.async {
                 
                 _self.colView.reloadData()
+                let dataListArr = _self.viewModel.dataListArr
+                if dataListArr.isEmpty{
+                    _self.colView.isHidden = true
+                    _self.dataStack.isHidden = false
+                }else{
+                    _self.colView.isHidden = false
+                    _self.dataStack.isHidden = true
+
+
+                }
                 
             }
         }
@@ -84,6 +103,18 @@ class FavouriteVC: BaseVC {
             }
         }
         
+        favVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                let data = _self.favVM.successResponse?.message ?? ""
+                self?.colView.reloadData()
+                _self.viewModel.callListingFav()
+
+            }
+        }
+        
         viewModel.callListingFav()
     }
 
@@ -98,6 +129,9 @@ extension FavouriteVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
         let index = viewModel.dataListArr[indexPath.row]
         cell.indexVal = index
+        cell.id = index.id?.description ?? "0"
+        cell.favImg.setImage(UIImage(named: "favorite-filled"), for: .normal)
+        cell.delegete = self
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -107,5 +141,12 @@ extension FavouriteVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
+    
+}
+extension FavouriteVC: ItemDelegate{
+    func favActionHander(indexPath: IndexPath, type: String, id: String) {
+        favVM.callAddFav(id)
+    }
+    
     
 }

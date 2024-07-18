@@ -27,10 +27,12 @@ struct Classifield : Codable {
     let created_at : String?
     let updated_at : String?
     var spec_groups : [Spec_groups]?
-    let brief_specs : [String]?
     let is_fav : Int?
     let addresses : Addresses?
     let classified_images : [Classified_images]?
+    let share_url: String?
+    let category: CategoryItem?
+
     
     
     

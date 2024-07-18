@@ -8,6 +8,8 @@
 import UIKit
 import MBProgressHUD
 import Alamofire
+import BSImagePicker
+import Photos
 class PostImageVC: BaseVC {
     
     @IBOutlet weak var colView: UICollectionView!{
@@ -15,18 +17,12 @@ class PostImageVC: BaseVC {
             self.colView.delegate = self
             self.colView.dataSource = self
             self.colView.register(UINib(nibName: GalleryPickerCell.identifire, bundle: nil), forCellWithReuseIdentifier: GalleryPickerCell.identifire)
-            let width = 50
-            let height = 50
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal //.horizontal
-            layout.itemSize = CGSize(width: width, height: height)
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            layout.minimumLineSpacing = 20
-            layout.minimumInteritemSpacing = 0
-            colView.setCollectionViewLayout(layout, animated: true)
-            colView.reloadData()
+
+          
         }
     }
+    var SelectedAssets = [PHAsset]()
+
     var postRealEstateArr  = [PostRealEstateModel]()
     private lazy var imagePicker: ImagePicker = {
         let imagePicker = ImagePicker()
@@ -36,103 +32,103 @@ class PostImageVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageData.append(UIImage(named: "plus-icon")!)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //.horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 0
+        colView.setCollectionViewLayout(layout, animated: true)
+        colView.reloadData()
+        
     }
     var imageData = [UIImage]()
 
-    func randomString(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0..<length).map{ _ in letters.randomElement()! })
-    }
-    
+   
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.goBack()
     }
     
     @IBAction func postPropertyBtn(_ sender: Any) {
-        self.imageData.remove(at: 0)
+        if imageData.count >= 1{
+            self.imageData.remove(at: 0)
+        }
         upLoadProfilePhoto(images: self.imageData)
     }
     
     @IBAction func previewBtn(_ sender: Any) {
         let storyboard = DetailVC.instantiate(fromAppStoryboard: .Main)
         storyboard.postRealEstateArr = self.postRealEstateArr
+        storyboard.imageData = imageData
+        storyboard.isActivatePreview = true
         self.navigationController?.pushViewController(storyboard, animated: true)
         
     }
     
     func upLoadProfilePhoto(images :[UIImage]?){
-        if var image = images{
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            var parameters = [String: String]()
-            self.postRealEstateArr.forEach { item in
-                item.results?.forEach({ content in
-                    if content.key != ""{
-                        parameters.updateValue(content.value ?? "", forKey: content.key ?? "")
-                    }
-                    if content.key == "category_id"{
-                        parameters.updateValue(content.value ?? "", forKey: content.key ?? "")
-                        
-                    }
-                    
-                })
-                
-            }
-            print("parameters", parameters)
-            
-            let token = "Bearer " + User.shared.token
-            let headers = ["Content-Type": "application/x-www-form-urlencoded", "Accept":"application/json","Authorization":token]
-            Alamofire.upload(multipartFormData: { multipartFormData in
-                if image.count != 0{
-                    for img in image {
-                        if let imgData = img.jpeg(.lowest){
-                            multipartFormData.append(imgData, withName: "images[]",fileName: "\(self.randomString(length: 10)).jpg", mimeType: "image/jpg")
-                        }
-                    }
-                }
-                
-                for (key, value) in parameters {
-                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-                } //Optional for extra parameters
-            },
-                             to:"https://marketplix.com/api/post-ad",method: .post,headers: headers)
-            { (result) in
-                switch result {
-                case .success(let upload, _, _):
-                    
-                    upload.uploadProgress(closure: { (progress) in
-                        print("Upload Progress: \(progress.fractionCompleted)")
-                    })
-                    
-                    upload.responseJSON { response in
-                        switch response.result {
-                        case .success(let JSON):
-                            print(response.result)
-                            let data = JSON as AnyObject
-                            print("data : ", data)
-                            MBProgressHUD.hide(for: self.view, animated: true)
-                            let storyboard = HomeVC.instantiate(fromAppStoryboard: .Main)
-                            self.navigationController?.pushViewController(storyboard, animated: true)
-                        
-                            
-                            break
-                        case .failure(let error):
-                            print(error)
-                            self.showToastLogIn(message: error.localizedDescription)
-                            MBProgressHUD.hide(for: self.view, animated: true)
-                            
-                        }
-                        
-                    }
-                    
-                case .failure(let encodingError):
-                    print(encodingError)
-                }
-            }
+        if images?.count ?? 0 <= 0{
+            self.showToastLogIn(message: "Please choose image")
+            return
         }
+        
+        let storyboard = PostAddSuccesssVC.instantiate(fromAppStoryboard: .Main)
+        storyboard.postRealEstateArr = self.postRealEstateArr
+        storyboard.imageData = imageData
+        
+        self.navigationController?.pushViewController(storyboard, animated: true)
+    }
+    
+    func loadImagePicker(){
+        let imagePicker = ImagePickerController()
+
+        presentImagePicker(imagePicker, select: { (asset) in
+            // User selected an asset. Do something with it. Perhaps begin processing/upload?
+        }, deselect: { (asset) in
+            // User deselected an asset. Cancel whatever you did when asset was selected.
+        }, cancel: { (assets) in
+            // User canceled selection.
+        }, finish: { (assets) in
+            for i in 0..<assets.count
+            {
+                                self.SelectedAssets.append(assets[i])
+                        }
+                        self.convertAssetToImages()
+
+        })
+    }
+    
+    
+    func convertAssetToImages() -> Void {
+
+        if SelectedAssets.count != 0{
+
+            for i in 0..<SelectedAssets.count{
+
+                let manager = PHImageManager.default()
+                let option = PHImageRequestOptions()
+
+                var thumbnail = UIImage()
+
+                option.isSynchronous = true
+
+                manager.requestImage(for: SelectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: option, resultHandler: {(result,info) -> Void in
+                    thumbnail = result!
+                })
+
+                let data = thumbnail.pngData()
+                let newImage = UIImage(data: data!)
+                self.imageData.append(newImage! as UIImage)
+                self.colView.reloadData()
+                self.colView.isHidden = false
+
+            }
+
+        }
+
     }
 }
-extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource{
+extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageData.count
     }
@@ -158,6 +154,7 @@ extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource{
             return
 
         }
+        self.SelectedAssets.removeAll()
         let alert = UIAlertController(title: "Select Media", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
             switch action.style{
@@ -177,7 +174,7 @@ extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource{
             switch action.style{
                 case .default:
                 print("default")
-                self.imagePicker.photoGalleryAsscessRequest()
+                self.loadImagePicker()
                 case .cancel:
                 print("cancel")
                 
@@ -190,6 +187,12 @@ extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource{
         self.present(alert, animated: true, completion: nil)
     }
     
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.colView.frame.width / 3
+        return CGSize(width: width, height: width)
+    }
+    
     
 }
 
@@ -197,6 +200,7 @@ extension PostImageVC: GalleryPickerDelegate
 {
     func delete(row: Int) {
         self.imageData.remove(at: row)
+        self.SelectedAssets.removeAll()
         self.colView.reloadData()
         if imageData.count <= 0{
             self.colView.isHidden = true
@@ -210,7 +214,7 @@ extension PostImageVC: ImagePickerDelegate {
     func imagePicker(_ imagePicker: ImagePicker, didSelect image: UIImage) {
         self.imageData.append(image)
         
-        let imageData = image.jpegData(compressionQuality: 0.10)
+        let imageData = image.jpegData(compressionQuality: 1)
         if imageData != nil {
         }
         imagePicker.dismiss()

@@ -29,12 +29,19 @@ class HomeVM{
             self.successClosure?()
         }
     }
-    
-    public var dataListArr: [DataList] = [] {
+    public var classifields : Classifields? {
         didSet{
             self.successClosure?()
         }
     }
+    
+    
+    public var versionResponse : VersionResponse? {
+        didSet{
+            self.successClosure?()
+        }
+    }
+
     
     
     
@@ -95,10 +102,10 @@ extension HomeVM {
         
     }
     
-    func callDashboard() {
+    func callDashboard(lat: String, lng: String) {
         self.isLoading = true
         
-        ARBusinessServiceHelper.request(router: ARServiceManager.dashboard) { [weak self] (result : Result<DashboardResponse, ARFetchError>) in
+        ARBusinessServiceHelper.request(router: ARServiceManager.dashboard(lat: lat, lng: lng)) { [weak self] (result : Result<DashboardResponse, ARFetchError>) in
             
             guard let _self = self else { return }
             
@@ -126,7 +133,7 @@ extension HomeVM {
             
             switch result {
                 
-            case .success(let response): _self.dataListArr = response.classifields?.data ?? []
+            case .success(let response): _self.classifields = response.classifields
                 
             case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
                 
@@ -154,4 +161,47 @@ extension HomeVM {
         }
         
     }
+    
+    func callUpdatetoken(_ token: String) {
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.update_token(token)) { [weak self] (result : Result<CategoryModels, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            
+          
+        }
+        
+    }
+    
+    func callVersionUpdate(_ version: String) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.versionUpdate(version)) { [weak self] (result : Result<VersionResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.versionResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+}
+
+struct VersionResponse: Codable{
+    let versions: [Versions]?
+}
+struct Versions: Codable{
+    let id: Int?
+    let os: String?
+    let version: Double?
+    let mandatory: Int
+    
 }

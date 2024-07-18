@@ -11,6 +11,8 @@ class ChatBubbleLeft: UITableViewCell {
 
     @IBOutlet weak var dateTxt: MPUILabel!
     @IBOutlet weak var txxt: MPUILabel!
+    @IBOutlet weak var nameTxt: MPUILabel!
+
     static var identifire : String = "ChatBubbleLeft"
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -18,3 +18,12 @@ struct ListItemResponse : Codable {
 	
 
 }
+
+struct FavListItemResponse : Codable {
+    let classifields : dataLis?
+
+}
+
+struct dataLis : Codable{
+    let data : [DataList]?
+}

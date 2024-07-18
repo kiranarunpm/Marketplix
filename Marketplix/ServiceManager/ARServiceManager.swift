@@ -13,6 +13,7 @@ struct API {
     
     static var baseURL = "marketplix.com" //dev
 
+    static var mapURl = "maps.googleapis.com"
     static var path = ""
     static var port = 0
 }
@@ -36,11 +37,11 @@ enum ContentType : String {
 enum ARServiceManager {
     
     case basecase
-    case login(request: LoginRequest)
-    case getOtp(request: GetOtpRequest)
+    case login(request: [String: String])
+    case getOtp(request: [String:String])
     case flashBanner
     case mainCategory(mainCategory: String)
-    case dashboard
+    case dashboard(lat: String, lng: String)
     case listAdds(_ request: ListRequest)
     case category(_ main_category: String)
     case specGroup(_ request: String)
@@ -48,15 +49,20 @@ enum ARServiceManager {
     case viewAd(_ id: String)
     case addFavAd(_ id: String)
     case listFavAd
-    case listRecentlyViewedAd
+    case listRecentlyViewedAd(lat: String, lng: String)
     case listSubscription
     case register(_ request: RegisterRequest)
     case chatList
     case chatinitiate(_ request: [String: String])
     case chatDetails(_ id: String)
     case chatSend(_ request: [String: String])
+    case logout
+    case queryautocomplete(input: String,key: String)
+    case placeDetail(placeID: String,key: String)
+    case reportAds(_ request: [String: String])
+    case update_token(_ request: String)
+    case versionUpdate(_ request: String)
 
-    
 
     var scheme: String {
         switch self {
@@ -80,6 +86,12 @@ enum ARServiceManager {
         case .chatinitiate: return API.scheme
         case .chatDetails: return API.scheme
         case .chatSend: return API.scheme
+        case .logout: return API.scheme
+        case .queryautocomplete: return API.scheme
+        case .placeDetail: return API.scheme
+        case .reportAds: return API.scheme
+        case .update_token: return API.scheme
+        case .versionUpdate: return API.scheme
 
         }
     }
@@ -100,7 +112,12 @@ enum ARServiceManager {
         case .chatinitiate: return API.baseURL
         case .chatDetails: return API.baseURL
         case .chatSend: return API.baseURL
-
+        case .logout: return API.baseURL
+        case .queryautocomplete: return API.mapURl
+        case .placeDetail: return API.mapURl
+        case .reportAds: return API.baseURL
+        case .update_token: return API.baseURL
+        case .versionUpdate: return API.baseURL
 
         }
     }
@@ -121,13 +138,19 @@ enum ARServiceManager {
         case .viewAd(let id): return "/api/view-ad/\(id)"
         case .addFavAd(let id): return "/api/add-fav-ad/\(id)"
         case .listFavAd: return "/api/list-fav-ad"
-        case .listRecentlyViewedAd: return "/api/list-fav-ad"
+        case .listRecentlyViewedAd: return "/api/list-recently-viewed-ad"
         case .listSubscription: return "/api/list-subscription"
         case .register: return "/api/register"
         case .chatList: return "/api/chat-list"
         case .chatinitiate: return "/api/chat-initiate"
         case .chatDetails(let id): return "/api/chat-details/\(id)"
         case .chatSend: return "/api/chat-send"
+        case .logout: return "/api/logout"
+        case .queryautocomplete: return "/maps/api/place/autocomplete/json"
+        case .placeDetail: return "/maps/api/place/details/json"
+        case .reportAds: return "/api/report-ad"
+        case .update_token: return "/api/update-token"
+        case .versionUpdate(let type): return "/api/app-version/\(type)"
 
         }
     }
@@ -154,32 +177,47 @@ enum ARServiceManager {
         case .chatinitiate: return HttpMethod.post.rawValue
         case .chatDetails: return HttpMethod.get.rawValue
         case .chatSend: return HttpMethod.post.rawValue
+        case .logout: return HttpMethod.get.rawValue
+        case .queryautocomplete: return HttpMethod.get.rawValue
+        case .placeDetail: return HttpMethod.get.rawValue
+        case .reportAds: return HttpMethod.post.rawValue
+        case .update_token: return HttpMethod.post.rawValue
+        case .versionUpdate: return HttpMethod.get.rawValue
 
         }
     }
 
     var parameters: [URLQueryItem]? {
+        let encodedURLString = "country:in"
+
         switch self {
         case .basecase: return nil
         case .login: return nil
         case .getOtp: return nil
         case .flashBanner: return nil
         case .mainCategory(let mainCategory): return [URLQueryItem(name: "main_category", value: mainCategory)]
-        case .dashboard: return nil
-        case .listAdds: return nil
+        case .dashboard(let lat, let lng):  return [URLQueryItem(name: "lat", value: lat), URLQueryItem(name: "lng", value: lng)]
+        case .listAdds(let list): return [URLQueryItem(name: "page", value: list.page), URLQueryItem(name: "search", value: list.search ?? ""), URLQueryItem(name: "category_id", value: list.category_id  ), URLQueryItem(name: "lat", value: list.lat  ), URLQueryItem(name: "lng", value: list.lng)]
         case .category(let main_category) : return  [URLQueryItem(name: "main_category", value: main_category)]
         case .specGroup(let category) : return  [URLQueryItem(name: "category", value: category)]
         case .myAds: return nil
         case .viewAd: return nil
         case .addFavAd: return nil
         case .listFavAd: return nil
-        case .listRecentlyViewedAd: return nil
+        case .listRecentlyViewedAd(let lat, let lng): return [URLQueryItem(name: "lat", value: lat), URLQueryItem(name: "lng",value: lng)]
         case .listSubscription: return nil
         case .register: return nil
         case .chatList: return nil
         case .chatinitiate: return nil
         case .chatDetails: return nil
         case .chatSend: return nil
+        case .logout: return nil
+        case .queryautocomplete(let input, let key): return  [URLQueryItem(name: "input", value: input), URLQueryItem(name: "key", value: key), URLQueryItem(name: "components", value: encodedURLString),]
+        case .placeDetail(let placeID, let key): return  [URLQueryItem(name: "place_id", value: placeID), URLQueryItem(name: "key", value: key)]
+        case .reportAds: return nil
+        case .update_token(let device_token): return  [URLQueryItem(name: "device_token", value: device_token)]
+        case .versionUpdate: return nil
+
 
         }
         
@@ -225,6 +263,15 @@ enum ARServiceManager {
             print(request)
             let encoder = JSONEncoder()
             return try? encoder.encode(request)
+        case .logout: return nil
+        case .queryautocomplete: return nil
+        case .placeDetail: return nil
+        case .reportAds(let request):
+            print(request)
+            let encoder = JSONEncoder()
+            return try? encoder.encode(request)
+        case .update_token: return nil
+        case .versionUpdate: return nil
 
         }
     }
@@ -252,17 +299,23 @@ enum ARServiceManager {
         case .chatinitiate : return nil
         case .chatDetails : return nil
         case .chatSend : return nil
+        case .logout : return nil
+        case .queryautocomplete : return nil
+        case .placeDetail : return nil
+        case .reportAds : return nil
+        case .update_token : return nil
+        case .versionUpdate : return nil
 
         }
     }
     
     var headerFields: [String : String] {
-        let commonHeader : [String:String] = ["content-type" : ContentType.json.rawValue,"Authorization": "Bearer \(User.shared.token)"]
+        let commonHeader : [String:String] = ["content-type" : ContentType.json.rawValue,"Authorization": "Bearer \(User.shared.token)", "Accept":"application/json"]
         switch self {
             
-        case .basecase: return ["content-Type" : ContentType.json.rawValue, "Accept":"*/*"]
-        case .login: return ["content-type": ContentType.json.rawValue, "Accept":"*/*"]
-        case .getOtp: return ["content-type": ContentType.json.rawValue, "Accept":"*/*"]
+        case .basecase: return ["content-Type" : ContentType.json.rawValue, "Accept":"application/json"]
+        case .login: return ["content-type": ContentType.json.rawValue, "Accept":"application/json"]
+        case .getOtp: return ["content-type": ContentType.json.rawValue, "Accept":"application/json"]
         case .flashBanner: return commonHeader
         case .mainCategory: return commonHeader
         case .dashboard: return commonHeader
@@ -280,6 +333,12 @@ enum ARServiceManager {
         case .chatinitiate: return commonHeader
         case .chatDetails: return commonHeader
         case .chatSend: return commonHeader
+        case .logout: return commonHeader
+        case .queryautocomplete: return ["content-type": ContentType.json.rawValue, "Accept":"application/json"]
+        case .placeDetail: return ["content-type": ContentType.json.rawValue, "Accept":"application/json"]
+        case .reportAds: return commonHeader
+        case .update_token: return commonHeader
+        case .versionUpdate: return commonHeader
 
         }
     }

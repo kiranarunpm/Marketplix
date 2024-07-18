@@ -30,9 +30,14 @@ struct DataList : Codable {
 	let addresses : Addresses?
 	let classified_images : [Classified_images]?
     let classifieds: NewListing?
-    let is_fav: Int?
+    var is_fav: Int?
+    let category: CategoryItem?
+    
 }
-
+struct CategoryItem: Codable{
+    let id : Int?
+    let name : String?
+}
 struct Spec_groups : Codable {
     let id : Int?
     var name : String?

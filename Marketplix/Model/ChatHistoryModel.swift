@@ -24,6 +24,7 @@ struct Chats : Codable {
     let classifieds : Classifieds?
     let chats : [Chats]?
     let sender : Sender?
+    let chats_count: Int?
     
 }
 

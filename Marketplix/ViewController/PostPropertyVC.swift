@@ -10,6 +10,8 @@ import MBProgressHUD
 class PostPropertyVC: BaseVC {
 
     var categoryArr = [Category]()
+    var subCategoryArr = [Category]()
+
     var selectedIndex : Int = -1
     var selectedCategoryIndex : Int = -1
 
@@ -17,8 +19,12 @@ class PostPropertyVC: BaseVC {
     lazy var getPostValues: PostAdsVM = {
         return PostAdsVM()
     }()
+    lazy var homeVM: HomeVM = {
+        return HomeVM()
+    }()
     @IBOutlet weak var selectCatTxt: MPUILabel!
     
+    @IBOutlet weak var col2Height: NSLayoutConstraint!
     @IBOutlet weak var colView: UICollectionView!{
         didSet{
             self.colView.delegate = self
@@ -26,11 +32,11 @@ class PostPropertyVC: BaseVC {
             self.colView.register(UINib(nibName: PostMainCatColCell.identifire, bundle: nil), forCellWithReuseIdentifier: PostMainCatColCell.identifire)
             
             
-            let screenSize = CGSize(width: 100, height: 100)
+            let screenSize = CGSize(width: 100, height: 120)
             let layout1 = UICollectionViewFlowLayout()
             layout1.scrollDirection = .horizontal
             layout1.itemSize = screenSize
-            layout1.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
+            layout1.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
             
             layout1.minimumLineSpacing = 15
             layout1.minimumInteritemSpacing = 0
@@ -44,18 +50,21 @@ class PostPropertyVC: BaseVC {
             self.colView2.delegate = self
             self.colView2.dataSource = self
             self.colView2.register(UINib(nibName: PostMainCatColCell.identifire, bundle: nil), forCellWithReuseIdentifier: PostMainCatColCell.identifire)
-            
-            
-            let screenSize = CGSize(width: 100, height: 100)
+
+            let screen_width = ScreenSize.SCREEN_WIDTH
+
+            let screenSize = CGSize(width: screen_width / 3 - 20, height: 140)
             let layout1 = UICollectionViewFlowLayout()
-            layout1.scrollDirection = .horizontal
+            layout1.scrollDirection = .vertical
             layout1.itemSize = screenSize
-            layout1.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:15)
+            layout1.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0)
             
-            layout1.minimumLineSpacing = 15
+            layout1.minimumLineSpacing = 0
             layout1.minimumInteritemSpacing = 0
             colView2.setCollectionViewLayout(layout1, animated: true)
             colView2.reloadData()
+            
+
         }
     }
 
@@ -68,6 +77,7 @@ class PostPropertyVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewModel()
+        colView2.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
 
     }
     
@@ -120,18 +130,61 @@ class PostPropertyVC: BaseVC {
 
         categoryVM.callMainCategory(mainCategory: "")
         getPostValues.callPostValues()
+        
+        
+        homeVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            let categoryArr = _self.homeVM.categoryArr
+            _self.subCategoryArr = categoryArr
+            DispatchQueue.main.async {
+                
+                _self.colView2.reloadData()
+                
+            }
+        }
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if(keyPath == "contentSize"){
+            if let newvalue = change?[.newKey]
+            {
+                let newsize  = newvalue as! CGSize
+//                col2Height.constant = newsize.height
+            }
+        }
     }
-    */
+    @IBAction func moveForwardBtn(_ sender: Any) {
+        let visibleItems: NSArray = self.colView.indexPathsForVisibleItems as NSArray
+            let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+            let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
+                   if nextItem.row < categoryArr.count {
+                   self.colView.scrollToItem(at: nextItem, at: .left, animated: true)
+                       print(nextItem.row)
+                       if nextItem.row > 0{
+                           self.moveBackwardBtn.isHidden = false
+                       }else{
+                           self.moveBackwardBtn.isHidden = true
+                       }
+            }
+        
+    }
+    
+    @IBOutlet weak var moveBackwardBtn: R_UIView!
+    @IBAction func moveBackwardBtn(_ sender: Any) {
+        let visibleItems: NSArray = self.colView.indexPathsForVisibleItems as NSArray
+           let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+           let nextItem: IndexPath = IndexPath(item: currentItem.item - 1, section: 0)
+           if nextItem.row < categoryArr.count && nextItem.row >= 0{
+               self.colView.scrollToItem(at: nextItem, at: .right, animated: true)
+               print(nextItem.row)
+
+           }
+        
+    }
+    
 
 }
 extension PostPropertyVC: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -140,7 +193,14 @@ extension PostPropertyVC: UICollectionViewDelegate, UICollectionViewDataSource{
             return self.categoryArr.count
         }else{
             if selectedIndex != -1{
-                return self.categoryArr[selectedIndex].sub_category?.count ?? 0
+                let count = subCategoryArr.count ?? 0
+                if count == 0{
+                    self.colView2.isHidden = true
+                }else{
+                    self.colView2.isHidden = false
+
+                }
+                return count
             }else{
                 return 0
             }
@@ -163,9 +223,9 @@ extension PostPropertyVC: UICollectionViewDelegate, UICollectionViewDataSource{
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostMainCatColCell.identifire, for: indexPath) as! PostMainCatColCell
-            let index = self.categoryArr[selectedIndex].sub_category?[indexPath.row]
-            cell.lbl.text = index?.name
-            let image = index?.image_url ?? ""
+            let index = subCategoryArr[indexPath.row]
+            cell.lbl.text = index.name
+            let image = index.image_url ?? ""
             cell.loadImage(url: image)
             if selectedCategoryIndex == indexPath.row{
                 cell.tick.isHidden = false
@@ -179,7 +239,11 @@ extension PostPropertyVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == colView{
+            let index = categoryArr[indexPath.row]
+
             self.selectedIndex = indexPath.row
+            self.homeVM.callCategory("\(index.id ?? 0)")
+            selectedCategoryIndex = -1
             selectCatTxt.isHidden = false
             self.colView.reloadData()
             

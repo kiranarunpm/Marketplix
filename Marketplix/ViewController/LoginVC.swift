@@ -36,6 +36,7 @@ class LoginVC: BaseVC {
                 if details?.exist_user ?? 0 == 0{
                     let storyboard = RegisterVC.instantiate(fromAppStoryboard: .Main)
                     storyboard.email = _self.emailTxt.text ?? ""
+                    storyboard.otpMessage = details?.message ?? ""
                     _self.navigationController?.pushViewController(storyboard, animated: true)
                     return
                 }
@@ -44,6 +45,7 @@ class LoginVC: BaseVC {
                     let storyboard = VerificationVC.instantiate(fromAppStoryboard: .Main)
                     storyboard.email = _self.emailTxt.text ?? ""
                     storyboard.isFromLogin = true
+                     storyboard.otpMessage = details?.message ?? ""
                     _self.navigationController?.pushViewController(storyboard, animated: true)
                 
                 
@@ -84,15 +86,41 @@ class LoginVC: BaseVC {
     
     
     @IBAction func signInBtn(_ sender: Any) {
+
+        
         guard let email = self.emailTxt.text, email != "" else {
-            showToastLogIn(message: "Please enter email address")
             return
         }
+        var key = "phone"
+        if email.isValidPhone(phone: email){
+            
+        }else{
+            if email.isValidEmail(email: email){
+                key = "email"
+            }else{
+                showToastLogIn(message: "Please enter email address")
+
+            }
+        }
         
-        let request = GetOtpRequest(email: email)
+        let request = [key: email]
         viewModel.callGenerateOTP(request)
         
     }
     
     
+}
+
+extension String{
+    func isValidPhone(phone: String) -> Bool {
+            let phoneRegex = "^[0-9+]{0,1}+[0-9]{5,16}$"
+            let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+            return phoneTest.evaluate(with: phone)
+        }
+    
+    func isValidEmail(email: String) -> Bool {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluate(with: email)
+        }
 }

@@ -30,6 +30,12 @@ class PostAdsVM{
         }
     }
     
+    public var commonWordArray: [String]? {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
     
     public var alertMessage: String? {
         didSet{
@@ -103,6 +109,19 @@ extension PostAdsVM {
     }
     
     
+    func callCommonWords() {
+        self.isLoading = true
+        
+        ConvertJsonFile.call(filename: "common-words") { [weak self] (result : Result<[String], ARFetchError>) in
+            switch result {
+                
+            case .success(let response): self?.commonWordArray = response
+                
+            case .failure(let errorMessage): self?.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+    }
     
     
 }

@@ -11,42 +11,12 @@ extension UIImage{
     
     static var checkBox : UIImage {return UIImage(named: "checkbox-check") ?? UIImage()}
     static var un_checkBox : UIImage {return UIImage(named: "checkbox-unchecked") ?? UIImage()}
-
+    
 }
 
-extension UIImage {
-  convenience init?(url: String?) {
-    guard let url = url else { return nil }
-            
-    do {
-        self.init(data: try Data(contentsOf: URL(string: url)!))
-    } catch {
-      print("Cannot load image from url: \(url) with error: \(error)")
-      return nil
-    }
-  }
-}
 
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
+
+
 
 
 extension String{
@@ -63,4 +33,45 @@ extension String{
         
         return convertDateFormatter.string(from: oldDate!)
     }
+    
+    func dateFormat(_ date: String)->String{
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        // Replace with your input date string
+        let inputDateString = date
+        if let inputDate = dateFormatter.date(from: inputDateString) {
+            let timeAgo = daysAndHoursAgo(from: inputDate)
+            print("\(inputDateString) was \(timeAgo)")
+            return timeAgo
+        } else {
+            print("Invalid input date format")
+            return ""
+        }
+    }
+    func daysAndHoursAgo(from inputDate: Date) -> String {
+        let currentDate = Date()
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: "UTC")! 
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: inputDate, to: currentDate)
+        if let years = components.year, years > 0 {
+            return years == 1 ? "1 year ago" : "\(years) years ago"
+        }
+        else if let months = components.month, months > 0 {
+            return months == 1 ? "1 month ago" : "\(months) months ago"
+        } else if let days = components.day, days > 0 {
+            return days == 1 ? "1 day ago" : "\(days) days ago"
+        } else if let hours = components.hour, hours > 0 {
+            return hours == 1 ? "1 hour ago" : "\(hours) hours ago"
+        } else if let minutes = components.minute, minutes > 0 {
+            return minutes == 1 ? "1 minute ago" : "\(minutes) minutes ago"
+        } else if let seconds = components.second, seconds > 0 {
+            return seconds == 1 ? "1 second ago" : "\(seconds) seconds ago"
+        } else {
+            return "Just now"
+        } }
+    
 }
+
+

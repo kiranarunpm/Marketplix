@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMR-K4-yTj" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                        <rect key="frame" x="15" y="15" width="290" height="100"/>
+                        <rect key="frame" x="15" y="15" width="290" height="180"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vU4-v4-5IE" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -32,25 +32,32 @@
                             <constraint firstAttribute="trailing" secondItem="vU4-v4-5IE" secondAttribute="trailing" id="0Qx-Ar-NAP"/>
                             <constraint firstItem="vU4-v4-5IE" firstAttribute="top" secondItem="xMR-K4-yTj" secondAttribute="top" id="0Sr-Pe-bgg"/>
                             <constraint firstAttribute="bottom" secondItem="vU4-v4-5IE" secondAttribute="bottom" id="aNo-Y9-8yP"/>
-                            <constraint firstAttribute="height" constant="100" id="ao1-X0-rGY"/>
+                            <constraint firstAttribute="height" constant="180" id="ao1-X0-rGY"/>
                             <constraint firstItem="vU4-v4-5IE" firstAttribute="leading" secondItem="xMR-K4-yTj" secondAttribute="leading" id="scd-Vw-5Xp"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <color key="backgroundColor" name="BackGroundColor"/>
                 <constraints>
                     <constraint firstItem="xMR-K4-yTj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="7HV-Zi-clm"/>
-                    <constraint firstAttribute="bottom" secondItem="xMR-K4-yTj" secondAttribute="bottom" constant="15" id="Grr-Ez-vjd"/>
+                    <constraint firstAttribute="bottom" secondItem="xMR-K4-yTj" secondAttribute="bottom" id="Grr-Ez-vjd"/>
                     <constraint firstAttribute="trailing" secondItem="xMR-K4-yTj" secondAttribute="trailing" constant="15" id="dXn-vN-r5E"/>
                     <constraint firstItem="xMR-K4-yTj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="f3J-VB-RDr"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="imageSideShow" destination="vU4-v4-5IE" id="d2w-ap-Ipx"/>
             </connections>
@@ -59,7 +66,7 @@
     </objects>
     <resources>
         <namedColor name="BackGroundColor">
-            <color red="0.94901960784313721" green="0.95294117647058818" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

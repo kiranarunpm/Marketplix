@@ -11,10 +11,15 @@ target 'Marketplix' do
   pod "ImageSlideshow/Kingfisher"
   pod 'ReadMoreTextView', '~> 3.0'
   pod 'Alamofire'
-  pod 'LocationPicker'
-
-  # Pods for Marketplix
-
+  pod 'SkeletonView', '~> 1.30'
+  pod "ImageSlideshow/Kingfisher"
+  pod 'DatePickerDialog'
+  pod 'BSImagePicker'
+  pod 'Hero'
+  pod 'Firebase', '~> 10.16'
+  pod 'FirebaseMessaging'
+  pod 'CircleProgressBar', '~> 0.32'
+  pod 'DropDown'
   target 'MarketplixTests' do
     inherit! :search_paths
     # Pods for testing

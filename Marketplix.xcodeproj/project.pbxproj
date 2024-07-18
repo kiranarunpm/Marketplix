@@ -14,10 +14,18 @@
 		0401EE552B4A960C0096CA78 /* PostImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401EE542B4A960C0096CA78 /* PostImageVC.swift */; };
 		0401EE572B4AE0890096CA78 /* ChatHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401EE562B4AE0890096CA78 /* ChatHistoryModel.swift */; };
 		0401EE592B4AE17A0096CA78 /* ChatHistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401EE582B4AE17A0096CA78 /* ChatHistoryVM.swift */; };
+		0477AC8D2C0CD03A009F2698 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0477AC8C2C0CD03A009F2698 /* GoogleService-Info.plist */; };
+		0477AC8F2C0CE736009F2698 /* ReportAdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477AC8E2C0CE736009F2698 /* ReportAdVC.swift */; };
+		0494CDC72BE55BBB0053E86F /* DescriptionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494CDC52BE55BBB0053E86F /* DescriptionTextCell.swift */; };
+		0494CDC82BE55BBB0053E86F /* DescriptionTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0494CDC62BE55BBB0053E86F /* DescriptionTextCell.xib */; };
+		04BDAF902BE68F3E00A5D611 /* NewListingBaseTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAF8E2BE68F3E00A5D611 /* NewListingBaseTabCell.swift */; };
+		04BDAF912BE68F3E00A5D611 /* NewListingBaseTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BDAF8F2BE68F3E00A5D611 /* NewListingBaseTabCell.xib */; };
+		04BDAF932BE7B90000A5D611 /* PostAddSuccesssVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAF922BE7B90000A5D611 /* PostAddSuccesssVC.swift */; };
+		04BDAF952BE7C83300A5D611 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAF942BE7C83300A5D611 /* CircularProgressView.swift */; };
+		04FC32A62BCAE10500E72964 /* LocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC32A52BCAE10500E72964 /* LocationResponse.swift */; };
 		19E86127A418CD05782106DF /* Pods_Marketplix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83135C9449654DD09D38517A /* Pods_Marketplix.framework */; };
 		822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */; };
 		822F7CE42A08F0FF00898465 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */; };
-		823703652A93190D005777AC /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823703642A93190D005777AC /* CategoryModel.swift */; };
 		824506C92A55326A0099331F /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506C72A55326A0099331F /* ChatCell.swift */; };
 		824506CA2A55326A0099331F /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824506C82A55326A0099331F /* ChatCell.xib */; };
 		824506CD2A553A730099331F /* ChatBubbleLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824506CB2A553A730099331F /* ChatBubbleLeft.swift */; };
@@ -33,6 +41,8 @@
 		8249F9E22A84B92B00FB1C0E /* loaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8249F9E02A84B92B00FB1C0E /* loaderCell.swift */; };
 		8249F9E32A84B92B00FB1C0E /* loaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8249F9E12A84B92B00FB1C0E /* loaderCell.xib */; };
 		8249F9E92A850C5000FB1C0E /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8249F9E82A850C5000FB1C0E /* Cities.json */; };
+		824A017D2C35D71E003D902B /* UpdateAvailableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A017C2C35D71E003D902B /* UpdateAvailableVC.swift */; };
+		824A017F2C36576A003D902B /* common-words.json in Resources */ = {isa = PBXBuildFile; fileRef = 824A017E2C36576A003D902B /* common-words.json */; };
 		824E4FFC2A93579100C64F37 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E4FFB2A93579100C64F37 /* BannerModel.swift */; };
 		8262EFC72A89D9E8002C66AE /* CheckBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8262EFC52A89D9E8002C66AE /* CheckBoxCell.swift */; };
 		8262EFC82A89D9E8002C66AE /* CheckBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8262EFC62A89D9E8002C66AE /* CheckBoxCell.xib */; };
@@ -41,6 +51,9 @@
 		8276391729FB9961009D6CFA /* AR-Extenstion+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */; };
 		8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276392629FBEC37009D6CFA /* CategoryCell.swift */; };
 		8276392929FBEC37009D6CFA /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276392729FBEC37009D6CFA /* CategoryCell.xib */; };
+		827A94C32C462888003E073A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A94C22C462888003E073A /* NotificationService.swift */; };
+		827A94C72C462888003E073A /* Service.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 827A94C02C462888003E073A /* Service.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		827A94D52C48CE83003E073A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A94D42C48CE83003E073A /* CategoryModel.swift */; };
 		82831B5829EBD72000ABC75B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B5729EBD72000ABC75B /* View+Extension.swift */; };
 		82831B6029EBD89000ABC75B /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5B29EBD7DB00ABC75B /* Poppins-Bold.ttf */; };
 		82831B6129EBD89000ABC75B /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82831B5F29EBD80000ABC75B /* Poppins-Light.ttf */; };
@@ -52,7 +65,6 @@
 		82831B6B29EBDA2B00ABC75B /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B6A29EBDA2B00ABC75B /* Font+Extension.swift */; };
 		82831B6D29EBE98A00ABC75B /* MPUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831B6C29EBE98A00ABC75B /* MPUIButton.swift */; };
 		828BE2C229E7B98A00B0C838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C129E7B98A00B0C838 /* AppDelegate.swift */; };
-		828BE2C429E7B98A00B0C838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */; };
 		828BE2C629E7B98A00B0C838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2C529E7B98A00B0C838 /* ViewController.swift */; };
 		828BE2C929E7B98A00B0C838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828BE2C729E7B98A00B0C838 /* Main.storyboard */; };
 		828BE2CC29E7B98A00B0C838 /* Marketplix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2CA29E7B98A00B0C838 /* Marketplix.xcdatamodeld */; };
@@ -61,6 +73,7 @@
 		828BE2DC29E7B98B00B0C838 /* MarketplixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2DB29E7B98B00B0C838 /* MarketplixTests.swift */; };
 		828BE2E629E7B98B00B0C838 /* MarketplixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */; };
 		828BE2E829E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */; };
+		82A05E502C3F05A1005ACE94 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 82A05E4F2C3F05A0005ACE94 /* PrivacyInfo.xcprivacy */; };
 		82D1C59C2A85EBAD00A10F02 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C59B2A85EBAD00A10F02 /* CityModel.swift */; };
 		82D1C59E2A85ECA300A10F02 /* CityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C59D2A85ECA300A10F02 /* CityVM.swift */; };
 		82D1C5A32A85EF4A00A10F02 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C5A12A85EF4A00A10F02 /* CityCell.swift */; };
@@ -101,6 +114,8 @@
 		82D2ADF42A15F9D5003AA0E8 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADF22A15F9D5003AA0E8 /* ItemCell.xib */; };
 		82D2ADF72A1600DC003AA0E8 /* ItemViewTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2ADF52A1600DC003AA0E8 /* ItemViewTabCell.swift */; };
 		82D2ADF82A1600DC003AA0E8 /* ItemViewTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D2ADF62A1600DC003AA0E8 /* ItemViewTabCell.xib */; };
+		82DF46B52C2ED58A00AB1666 /* SearchFilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF46B42C2ED58A00AB1666 /* SearchFilterHeader.swift */; };
+		82DF46B72C2ED59500AB1666 /* SearchFilterHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82DF46B62C2ED59500AB1666 /* SearchFilterHeader.xib */; };
 		82F1B02E2A6FC3C500E7DE1B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1B02D2A6FC3C500E7DE1B /* User.swift */; };
 		82F1B0302A6FC4E700E7DE1B /* AuthenticationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1B02F2A6FC4E700E7DE1B /* AuthenticationVM.swift */; };
 		82F1B0332A6FC56500E7DE1B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1B0322A6FC56500E7DE1B /* LoginModel.swift */; };
@@ -129,6 +144,7 @@
 		9F6C91A52AD2901F00B0AE9F /* SubscriptionPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C91A32AD2901F00B0AE9F /* SubscriptionPlanCell.swift */; };
 		9F6C91A62AD2901F00B0AE9F /* SubscriptionPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C91A42AD2901F00B0AE9F /* SubscriptionPlanCell.xib */; };
 		9F6C91A82AD29B5D00B0AE9F /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C91A72AD29B5D00B0AE9F /* SubscriptionModel.swift */; };
+		9F724C112C1427EB00596E3E /* AllowAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F724C102C1427EB00596E3E /* AllowAccessVC.swift */; };
 		9F7E157D2A9BCA280094DAFE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7E157B2A9BCA280094DAFE /* ImageCell.swift */; };
 		9F7E157E2A9BCA280094DAFE /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7E157C2A9BCA280094DAFE /* ImageCell.xib */; };
 		9FE5DCBF2AD1D35B00C28507 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE5DCBE2AD1D35B00C28507 /* Constants.swift */; };
@@ -154,6 +170,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		827A94C52C462888003E073A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 828BE2B629E7B98A00B0C838 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 827A94BF2C462888003E073A;
+			remoteInfo = Service;
+		};
 		828BE2D829E7B98B00B0C838 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 828BE2B629E7B98A00B0C838 /* Project object */;
@@ -170,6 +193,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		82D60B2F2C39416900A52416 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				827A94C72C462888003E073A /* Service.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0401EE4C2B4A69950096CA78 /* PostMainCatColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMainCatColCell.swift; sourceTree = "<group>"; };
 		0401EE4D2B4A69950096CA78 /* PostMainCatColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostMainCatColCell.xib; sourceTree = "<group>"; };
@@ -178,12 +215,21 @@
 		0401EE542B4A960C0096CA78 /* PostImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageVC.swift; sourceTree = "<group>"; };
 		0401EE562B4AE0890096CA78 /* ChatHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryModel.swift; sourceTree = "<group>"; };
 		0401EE582B4AE17A0096CA78 /* ChatHistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryVM.swift; sourceTree = "<group>"; };
+		0477AC8C2C0CD03A009F2698 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0477AC8E2C0CE736009F2698 /* ReportAdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAdVC.swift; sourceTree = "<group>"; };
+		0494CDC52BE55BBB0053E86F /* DescriptionTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextCell.swift; sourceTree = "<group>"; };
+		0494CDC62BE55BBB0053E86F /* DescriptionTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTextCell.xib; sourceTree = "<group>"; };
+		04BDAF8E2BE68F3E00A5D611 /* NewListingBaseTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListingBaseTabCell.swift; sourceTree = "<group>"; };
+		04BDAF8F2BE68F3E00A5D611 /* NewListingBaseTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewListingBaseTabCell.xib; sourceTree = "<group>"; };
+		04BDAF922BE7B90000A5D611 /* PostAddSuccesssVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAddSuccesssVC.swift; sourceTree = "<group>"; };
+		04BDAF942BE7C83300A5D611 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		04BDAF962BE7CAF500A5D611 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCircularProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FC32A52BCAE10500E72964 /* LocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponse.swift; sourceTree = "<group>"; };
 		19A677D3A1044B2F80E7557D /* Pods-Marketplix-MarketplixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplix-MarketplixUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marketplix-MarketplixUITests/Pods-Marketplix-MarketplixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E08E2596409A3E66FAD8306 /* Pods-Marketplix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marketplix.release.xcconfig"; path = "Target Support Files/Pods-Marketplix/Pods-Marketplix.release.xcconfig"; sourceTree = "<group>"; };
 		756293CDF7D90ECB96776BA3 /* Pods-MarketplixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketplixTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketplixTests/Pods-MarketplixTests.debug.xcconfig"; sourceTree = "<group>"; };
 		822F7CE12A08F0FF00898465 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
 		822F7CE22A08F0FF00898465 /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
-		823703642A93190D005777AC /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010CategoryModel.swift"; sourceTree = "<group>"; };
 		824506C72A55326A0099331F /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		824506C82A55326A0099331F /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		824506CB2A553A730099331F /* ChatBubbleLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleLeft.swift; sourceTree = "<group>"; };
@@ -199,6 +245,204 @@
 		8249F9E02A84B92B00FB1C0E /* loaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loaderCell.swift; sourceTree = "<group>"; };
 		8249F9E12A84B92B00FB1C0E /* loaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loaderCell.xib; sourceTree = "<group>"; };
 		8249F9E82A850C5000FB1C0E /* Cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		824A017C2C35D71E003D902B /* UpdateAvailableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvailableVC.swift; sourceTree = "<group>"; };
+		824A017E2C36576A003D902B /* common-words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "common-words.json"; path = "../../../common-words.json"; sourceTree = "<group>"; };
+		824AFD5F2C351579003D902B /* config_dev.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config_dev.yml; sourceTree = "<group>"; };
+		824AFD602C351579003D902B /* config_prod.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config_prod.yml; sourceTree = "<group>"; };
+		824AFD612C351579003D902B /* config_test.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config_test.yml; sourceTree = "<group>"; };
+		824AFD622C351579003D902B /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
+		824AFD632C351579003D902B /* parameters.yml.dist */ = {isa = PBXFileReference; lastKnownFileType = text; path = parameters.yml.dist; sourceTree = "<group>"; };
+		824AFD642C351579003D902B /* routing_dev.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = routing_dev.yml; sourceTree = "<group>"; };
+		824AFD652C351579003D902B /* routing.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = routing.yml; sourceTree = "<group>"; };
+		824AFD662C351579003D902B /* security.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = security.yml; sourceTree = "<group>"; };
+		824AFD672C351579003D902B /* services.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = services.yml; sourceTree = "<group>"; };
+		824AFD692C351579003D902B /* _category.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = _category.html.twig; sourceTree = "<group>"; };
+		824AFD6A2C351579003D902B /* category.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = category.html.twig; sourceTree = "<group>"; };
+		824AFD6B2C351579003D902B /* index.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = index.html.twig; sourceTree = "<group>"; };
+		824AFD6D2C351579003D902B /* view.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = view.html.twig; sourceTree = "<group>"; };
+		824AFD702C351579003D902B /* address.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = address.html.twig; sourceTree = "<group>"; };
+		824AFD712C351579003D902B /* items.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = items.html.twig; sourceTree = "<group>"; };
+		824AFD732C351579003D902B /* billing.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = billing.html.twig; sourceTree = "<group>"; };
+		824AFD742C351579003D902B /* cart.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = cart.html.twig; sourceTree = "<group>"; };
+		824AFD752C351579003D902B /* payment.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = payment.html.twig; sourceTree = "<group>"; };
+		824AFD762C351579003D902B /* review.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = review.html.twig; sourceTree = "<group>"; };
+		824AFD772C351579003D902B /* shipping_method.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = shipping_method.html.twig; sourceTree = "<group>"; };
+		824AFD782C351579003D902B /* shipping.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = shipping.html.twig; sourceTree = "<group>"; };
+		824AFD792C351579003D902B /* success.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = success.html.twig; sourceTree = "<group>"; };
+		824AFD7B2C351579003D902B /* addresses.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = addresses.html.twig; sourceTree = "<group>"; };
+		824AFD7C2C351579003D902B /* orders.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = orders.html.twig; sourceTree = "<group>"; };
+		824AFD7E2C351579003D902B /* address.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = address.html.twig; sourceTree = "<group>"; };
+		824AFD802C351579003D902B /* index.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = index.html.twig; sourceTree = "<group>"; };
+		824AFD812C351579003D902B /* orders.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = orders.html.twig; sourceTree = "<group>"; };
+		824AFD832C351579003D902B /* index.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = index.html.twig; sourceTree = "<group>"; };
+		824AFD852C351579003D902B /* knp_menu.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = knp_menu.html.twig; sourceTree = "<group>"; };
+		824AFD872C351579003D902B /* confirmed.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = confirmed.html.twig; sourceTree = "<group>"; };
+		824AFD882C351579003D902B /* register.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = register.html.twig; sourceTree = "<group>"; };
+		824AFD8A2C351579003D902B /* base.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = base.html.twig; sourceTree = "<group>"; };
+		824AFD8B2C351579003D902B /* blank.html.twig */ = {isa = PBXFileReference; lastKnownFileType = text; path = blank.html.twig; sourceTree = "<group>"; };
+		824AFD8E2C351579003D902B /* .htaccess */ = {isa = PBXFileReference; lastKnownFileType = text; path = .htaccess; sourceTree = "<group>"; };
+		824AFD8F2C351579003D902B /* AppCache.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AppCache.php; sourceTree = "<group>"; };
+		824AFD902C351579003D902B /* AppKernel.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AppKernel.php; sourceTree = "<group>"; };
+		824AFD912C351579003D902B /* autoload.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = autoload.php; sourceTree = "<group>"; };
+		824AFD932C351579003D902B /* console */ = {isa = PBXFileReference; lastKnownFileType = text; path = console; sourceTree = "<group>"; };
+		824AFD942C351579003D902B /* symfony_requirements */ = {isa = PBXFileReference; lastKnownFileType = text; path = symfony_requirements; sourceTree = "<group>"; };
+		824AFD962C351579003D902B /* parameters.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parameters.jpg; sourceTree = "<group>"; };
+		824AFD992C351579003D902B /* FFAIP.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = FFAIP.php; sourceTree = "<group>"; };
+		824AFD9C2C351579003D902B /* FFAIP.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = FFAIP.php; sourceTree = "<group>"; };
+		824AFDA02C351579003D902B /* init.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = init.sh; sourceTree = "<group>"; };
+		824AFDA52C351579003D902B /* magedev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = magedev.json; sourceTree = "<group>"; };
+		824AFDA62C351579003D902B /* parameters.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = parameters.yml; sourceTree = "<group>"; };
+		824AFDA82C351579003D902B /* CartController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CartController.php; sourceTree = "<group>"; };
+		824AFDA92C351579003D902B /* CheckoutController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CheckoutController.php; sourceTree = "<group>"; };
+		824AFDAA2C351579003D902B /* CustomerController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CustomerController.php; sourceTree = "<group>"; };
+		824AFDAB2C351579003D902B /* ProductController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = ProductController.php; sourceTree = "<group>"; };
+		824AFDAD2C351579003D902B /* CatalogController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CatalogController.php; sourceTree = "<group>"; };
+		824AFDAE2C351579003D902B /* CheckoutController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CheckoutController.php; sourceTree = "<group>"; };
+		824AFDAF2C351579003D902B /* CustomerController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CustomerController.php; sourceTree = "<group>"; };
+		824AFDB02C351579003D902B /* DefaultController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = DefaultController.php; sourceTree = "<group>"; };
+		824AFDB12C351579003D902B /* RegistrationController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = RegistrationController.php; sourceTree = "<group>"; };
+		824AFDB22C351579003D902B /* SecurityController.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = SecurityController.php; sourceTree = "<group>"; };
+		824AFDB42C351579003D902B /* RegisterStrategyPass.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = RegisterStrategyPass.php; sourceTree = "<group>"; };
+		824AFDB62C351579003D902B /* AppExtension.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AppExtension.php; sourceTree = "<group>"; };
+		824AFDB72C351579003D902B /* StrategyConfiguration.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = StrategyConfiguration.php; sourceTree = "<group>"; };
+		824AFDB92C351579003D902B /* Address.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Address.php; sourceTree = "<group>"; };
+		824AFDBB2C351579003D902B /* AddressFormType.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AddressFormType.php; sourceTree = "<group>"; };
+		824AFDBC2C351579003D902B /* PaymentFormType.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PaymentFormType.php; sourceTree = "<group>"; };
+		824AFDBD2C351579003D902B /* ShippingMethodFormType.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = ShippingMethodFormType.php; sourceTree = "<group>"; };
+		824AFDBE2C351579003D902B /* UserRegisterType.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = UserRegisterType.php; sourceTree = "<group>"; };
+		824AFDC02C351579003D902B /* AddToCartRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AddToCartRequest.php; sourceTree = "<group>"; };
+		824AFDC12C351579003D902B /* CartItemRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CartItemRequest.php; sourceTree = "<group>"; };
+		824AFDC22C351579003D902B /* CartRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CartRequest.php; sourceTree = "<group>"; };
+		824AFDC42C351579003D902B /* AttributeRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AttributeRequest.php; sourceTree = "<group>"; };
+		824AFDC52C351579003D902B /* CategoriesRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CategoriesRequest.php; sourceTree = "<group>"; };
+		824AFDC62C351579003D902B /* CategoryRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CategoryRequest.php; sourceTree = "<group>"; };
+		824AFDC72C351579003D902B /* ProductRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = ProductRequest.php; sourceTree = "<group>"; };
+		824AFDC92C351579003D902B /* PaymentInformationRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PaymentInformationRequest.php; sourceTree = "<group>"; };
+		824AFDCB2C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDCC2C351579003D902B /* PostRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PostRequest.php; sourceTree = "<group>"; };
+		824AFDCE2C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDCF2C351579003D902B /* PostResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PostResource.php; sourceTree = "<group>"; };
+		824AFDD32C351579003D902B /* GetListResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetListResource.php; sourceTree = "<group>"; };
+		824AFDD42C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDD62C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDD92C351579003D902B /* GetChildrenResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetChildrenResource.php; sourceTree = "<group>"; };
+		824AFDDC2C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDDF2C351579003D902B /* GetPaymentResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetPaymentResource.php; sourceTree = "<group>"; };
+		824AFDE12C351579003D902B /* GetPaymentResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetPaymentResource.php; sourceTree = "<group>"; };
+		824AFDE42C351579003D902B /* AbstractFixtureResourceStrategy.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AbstractFixtureResourceStrategy.php; sourceTree = "<group>"; };
+		824AFDE62C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDE72C351579003D902B /* PostRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PostRequest.php; sourceTree = "<group>"; };
+		824AFDE92C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDEA2C351579003D902B /* PostResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PostResource.php; sourceTree = "<group>"; };
+		824AFDED2C351579003D902B /* PutResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PutResource.php; sourceTree = "<group>"; };
+		824AFDF12C351579003D902B /* GetListResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetListResource.php; sourceTree = "<group>"; };
+		824AFDF22C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDF42C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDF62C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDF82C351579003D902B /* GetChildrenResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetChildrenResource.php; sourceTree = "<group>"; };
+		824AFDFB2C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFDFE2C351579003D902B /* GetPaymentResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetPaymentResource.php; sourceTree = "<group>"; };
+		824AFDFF2C351579003D902B /* GetShippingMethodsResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetShippingMethodsResource.php; sourceTree = "<group>"; };
+		824AFE012C351579003D902B /* GetPaymentResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetPaymentResource.php; sourceTree = "<group>"; };
+		824AFE022C351579003D902B /* GetShippingMethodsResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetShippingMethodsResource.php; sourceTree = "<group>"; };
+		824AFE052C351579003D902B /* GetCustomerResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetCustomerResource.php; sourceTree = "<group>"; };
+		824AFE072C351579003D902B /* GetResource.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = GetResource.php; sourceTree = "<group>"; };
+		824AFE0A2C351579003D902B /* AbstractAdminResourceStrategy.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AbstractAdminResourceStrategy.php; sourceTree = "<group>"; };
+		824AFE0B2C351579003D902B /* AbstractCustomerResourceStrategy.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AbstractCustomerResourceStrategy.php; sourceTree = "<group>"; };
+		824AFE0C2C351579003D902B /* AbstractResourceStrategy.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AbstractResourceStrategy.php; sourceTree = "<group>"; };
+		824AFE0D2C351579003D902B /* PostRequestInterface.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PostRequestInterface.php; sourceTree = "<group>"; };
+		824AFE0E2C351579003D902B /* PutRequestInterface.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = PutRequestInterface.php; sourceTree = "<group>"; };
+		824AFE0F2C351579003D902B /* ResourceStrategyInterface.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = ResourceStrategyInterface.php; sourceTree = "<group>"; };
+		824AFE112C351579003D902B /* OrderRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = OrderRequest.php; sourceTree = "<group>"; };
+		824AFE132C351579003D902B /* AdminTokenRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AdminTokenRequest.php; sourceTree = "<group>"; };
+		824AFE142C351579003D902B /* MagentoResourceGenerator.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = MagentoResourceGenerator.php; sourceTree = "<group>"; };
+		824AFE152C351579003D902B /* RequestFactory.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = RequestFactory.php; sourceTree = "<group>"; };
+		824AFE162C351579003D902B /* RequestGeneratorInterface.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = RequestGeneratorInterface.php; sourceTree = "<group>"; };
+		824AFE182C351579003D902B /* CategoryMenuBuilder.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CategoryMenuBuilder.php; sourceTree = "<group>"; };
+		824AFE1A2C351579003D902B /* fixtures.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = fixtures.yml; sourceTree = "<group>"; };
+		824AFE1B2C351579003D902B /* magento.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = magento.yml; sourceTree = "<group>"; };
+		824AFE1D2C351579003D902B /* controller.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = controller.yml; sourceTree = "<group>"; };
+		824AFE1E2C351579003D902B /* menu.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = menu.yml; sourceTree = "<group>"; };
+		824AFE1F2C351579003D902B /* services.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = services.yml; sourceTree = "<group>"; };
+		824AFE212C351579003D902B /* 93.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 93.json; sourceTree = "<group>"; };
+		824AFE222C351579003D902B /* 142.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 142.json; sourceTree = "<group>"; };
+		824AFE242C351579003D902B /* children.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = children.json; sourceTree = "<group>"; };
+		824AFE272C351579003D902B /* WS01.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS01.json; sourceTree = "<group>"; };
+		824AFE282C351579003D902B /* WS02.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS02.json; sourceTree = "<group>"; };
+		824AFE292C351579003D902B /* WS03.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS03.json; sourceTree = "<group>"; };
+		824AFE2A2C351579003D902B /* WS04.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS04.json; sourceTree = "<group>"; };
+		824AFE2B2C351579003D902B /* WS05.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS05.json; sourceTree = "<group>"; };
+		824AFE2C2C351579003D902B /* WS06.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS06.json; sourceTree = "<group>"; };
+		824AFE2D2C351579003D902B /* WS07.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS07.json; sourceTree = "<group>"; };
+		824AFE2E2C351579003D902B /* WS08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS08.json; sourceTree = "<group>"; };
+		824AFE2F2C351579003D902B /* WS09.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS09.json; sourceTree = "<group>"; };
+		824AFE302C351579003D902B /* WS10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS10.json; sourceTree = "<group>"; };
+		824AFE312C351579003D902B /* WS11.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS11.json; sourceTree = "<group>"; };
+		824AFE322C351579003D902B /* WS12.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WS12.json; sourceTree = "<group>"; };
+		824AFE342C351579003D902B /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		824AFE352C351579003D902B /* categoryProducts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categoryProducts.json; sourceTree = "<group>"; };
+		824AFE372C351579003D902B /* cart.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cart.json; sourceTree = "<group>"; };
+		824AFE3B2C351579003D902B /* Api.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Api.php; sourceTree = "<group>"; };
+		824AFE3D2C351579003D902B /* CustomerProvider.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CustomerProvider.php; sourceTree = "<group>"; };
+		824AFE3F2C351579003D902B /* MagentoToken.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = MagentoToken.php; sourceTree = "<group>"; };
+		824AFE402C351579003D902B /* MagentoTokenFactory.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = MagentoTokenFactory.php; sourceTree = "<group>"; };
+		824AFE422C351579003D902B /* Customer.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Customer.php; sourceTree = "<group>"; };
+		824AFE452C351579003D902B /* Categories.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Categories.php; sourceTree = "<group>"; };
+		824AFE462C351579003D902B /* Product.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Product.php; sourceTree = "<group>"; };
+		824AFE472C351579003D902B /* ProductHelper.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = ProductHelper.php; sourceTree = "<group>"; };
+		824AFE492C351579003D902B /* Cart.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Cart.php; sourceTree = "<group>"; };
+		824AFE4A2C351579003D902B /* Shipping.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Shipping.php; sourceTree = "<group>"; };
+		824AFE4C2C351579003D902B /* Order.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Order.php; sourceTree = "<group>"; };
+		824AFE4E2C351579003D902B /* AbstractAdminRequest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AbstractAdminRequest.php; sourceTree = "<group>"; };
+		824AFE4F2C351579003D902B /* Address.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Address.php; sourceTree = "<group>"; };
+		824AFE502C351579003D902B /* CustomerCreate.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CustomerCreate.php; sourceTree = "<group>"; };
+		824AFE512C351579003D902B /* CustomerData.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CustomerData.php; sourceTree = "<group>"; };
+		824AFE522C351579003D902B /* CustomerLogin.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = CustomerLogin.php; sourceTree = "<group>"; };
+		824AFE532C351579003D902B /* Scope.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = Scope.php; sourceTree = "<group>"; };
+		824AFE552C351579003D902B /* AppBundle.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = AppBundle.php; sourceTree = "<group>"; };
+		824AFE572C351579003D902B /* .htaccess */ = {isa = PBXFileReference; lastKnownFileType = text; path = .htaccess; sourceTree = "<group>"; };
+		824AFE592C351579003D902B /* DefaultControllerTest.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = DefaultControllerTest.php; sourceTree = "<group>"; };
+		824AFE5D2C351579003D902B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		824AFE5F2C351579003D902B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		824AFE612C351579003D902B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		824AFE632C351579003D902B /* SymfonyRequirements.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = SymfonyRequirements.php; sourceTree = "<group>"; };
+		824AFE652C351579003D902B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		824AFE672C351579003D902B /* AddButton.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = AddButton.js; sourceTree = "<group>"; };
+		824AFE682C351579003D902B /* ShoppingCart.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ShoppingCart.js; sourceTree = "<group>"; };
+		824AFE6A2C351579003D902B /* AddressSelect.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = AddressSelect.js; sourceTree = "<group>"; };
+		824AFE6B2C351579003D902B /* ShippingMethodSelect.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ShippingMethodSelect.js; sourceTree = "<group>"; };
+		824AFE6D2C351579003D902B /* Payment.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Payment.js; sourceTree = "<group>"; };
+		824AFE6E2C351579003D902B /* Shipping.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Shipping.js; sourceTree = "<group>"; };
+		824AFE702C351579003D902B /* Checkout.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Checkout.js; sourceTree = "<group>"; };
+		824AFE722C351579003D902B /* Registry.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Registry.js; sourceTree = "<group>"; };
+		824AFE732C351579003D902B /* Select.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Select.js; sourceTree = "<group>"; };
+		824AFE742C351579003D902B /* Spinner.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Spinner.js; sourceTree = "<group>"; };
+		824AFE762C351579003D902B /* Address.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Address.js; sourceTree = "<group>"; };
+		824AFE782C351579003D902B /* Dropdown.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Dropdown.js; sourceTree = "<group>"; };
+		824AFE792C351579003D902B /* Item.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Item.js; sourceTree = "<group>"; };
+		824AFE7A2C351579003D902B /* ItemList.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ItemList.js; sourceTree = "<group>"; };
+		824AFE7B2C351579003D902B /* Minicart.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Minicart.js; sourceTree = "<group>"; };
+		824AFE7C2C351579003D902B /* NavIcon.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = NavIcon.js; sourceTree = "<group>"; };
+		824AFE7D2C351579003D902B /* NoItems.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = NoItems.js; sourceTree = "<group>"; };
+		824AFE7F2C351579003D902B /* ConfigurableAttributes.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ConfigurableAttributes.js; sourceTree = "<group>"; };
+		824AFE802C351579003D902B /* Image.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Image.js; sourceTree = "<group>"; };
+		824AFE822C351579003D902B /* Client.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Client.js; sourceTree = "<group>"; };
+		824AFE842C351579003D902B /* main.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		824AFE862C351579003D902B /* .htaccess */ = {isa = PBXFileReference; lastKnownFileType = text; path = .htaccess; sourceTree = "<group>"; };
+		824AFE872C351579003D902B /* app_dev.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = app_dev.php; sourceTree = "<group>"; };
+		824AFE882C351579003D902B /* app.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = app.php; sourceTree = "<group>"; };
+		824AFE892C351579003D902B /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
+		824AFE8A2C351579003D902B /* config.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = config.php; sourceTree = "<group>"; };
+		824AFE8B2C351579003D902B /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
+		824AFE8C2C351579003D902B /* robots.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = robots.txt; sourceTree = "<group>"; };
+		824AFE8E2C351579003D902B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		824AFE8F2C351579003D902B /* address.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
+		824AFE902C351579003D902B /* composer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = composer.json; sourceTree = "<group>"; };
+		824AFE912C351579003D902B /* composer.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = composer.lock; sourceTree = "<group>"; };
+		824AFE922C351579003D902B /* grumphp.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = grumphp.yml; sourceTree = "<group>"; };
+		824AFE932C351579003D902B /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		824AFE942C351579003D902B /* phpunit.xml.dist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = phpunit.xml.dist; sourceTree = "<group>"; };
+		824AFE952C351579003D902B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		824E4FFB2A93579100C64F37 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		8262EFC52A89D9E8002C66AE /* CheckBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCell.swift; sourceTree = "<group>"; };
 		8262EFC62A89D9E8002C66AE /* CheckBoxCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxCell.xib; sourceTree = "<group>"; };
@@ -208,6 +452,10 @@
 		8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AR-Extenstion+Storyboard.swift"; sourceTree = "<group>"; };
 		8276392629FBEC37009D6CFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8276392729FBEC37009D6CFA /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		827A94C02C462888003E073A /* Service.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Service.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		827A94C22C462888003E073A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		827A94C42C462888003E073A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827A94D42C48CE83003E073A /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		82831B5729EBD72000ABC75B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		82831B5B29EBD7DB00ABC75B /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		82831B5C29EBD80000ABC75B /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -220,7 +468,6 @@
 		82831B6C29EBE98A00ABC75B /* MPUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPUIButton.swift; sourceTree = "<group>"; };
 		828BE2BE29E7B98A00B0C838 /* Marketplix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marketplix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BE2C129E7B98A00B0C838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		828BE2C529E7B98A00B0C838 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		828BE2C829E7B98A00B0C838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		828BE2CB29E7B98A00B0C838 /* Marketplix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Marketplix.xcdatamodel; sourceTree = "<group>"; };
@@ -232,6 +479,8 @@
 		828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITests.swift; sourceTree = "<group>"; };
 		828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82A05E4F2C3F05A0005ACE94 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		82D0BD4C2C30673A00769810 /* Marketplix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Marketplix.entitlements; sourceTree = "<group>"; };
 		82D1C59B2A85EBAD00A10F02 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		82D1C59D2A85ECA300A10F02 /* CityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityVM.swift; sourceTree = "<group>"; };
 		82D1C5A12A85EF4A00A10F02 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
@@ -272,6 +521,10 @@
 		82D2ADF22A15F9D5003AA0E8 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		82D2ADF52A1600DC003AA0E8 /* ItemViewTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewTabCell.swift; sourceTree = "<group>"; };
 		82D2ADF62A1600DC003AA0E8 /* ItemViewTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewTabCell.xib; sourceTree = "<group>"; };
+		82D60B212C39416800A52416 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		82D60B232C39416800A52416 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		82DF46B42C2ED58A00AB1666 /* SearchFilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterHeader.swift; sourceTree = "<group>"; };
+		82DF46B62C2ED59500AB1666 /* SearchFilterHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterHeader.xib; sourceTree = "<group>"; };
 		82F1B02D2A6FC3C500E7DE1B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		82F1B02F2A6FC4E700E7DE1B /* AuthenticationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationVM.swift; sourceTree = "<group>"; };
 		82F1B0322A6FC56500E7DE1B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -303,6 +556,7 @@
 		9F6C91A32AD2901F00B0AE9F /* SubscriptionPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlanCell.swift; sourceTree = "<group>"; };
 		9F6C91A42AD2901F00B0AE9F /* SubscriptionPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionPlanCell.xib; sourceTree = "<group>"; };
 		9F6C91A72AD29B5D00B0AE9F /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
+		9F724C102C1427EB00596E3E /* AllowAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowAccessVC.swift; sourceTree = "<group>"; };
 		9F7E157B2A9BCA280094DAFE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		9F7E157C2A9BCA280094DAFE /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		9FE5DCBE2AD1D35B00C28507 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -329,6 +583,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		827A94BD2C462888003E073A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		828BE2BB29E7B98A00B0C838 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,6 +634,1130 @@
 			path = ServiceHelper;
 			sourceTree = "<group>";
 		};
+		824AFD682C351579003D902B /* config */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD5F2C351579003D902B /* config_dev.yml */,
+				824AFD602C351579003D902B /* config_prod.yml */,
+				824AFD612C351579003D902B /* config_test.yml */,
+				824AFD622C351579003D902B /* config.yml */,
+				824AFD632C351579003D902B /* parameters.yml.dist */,
+				824AFD642C351579003D902B /* routing_dev.yml */,
+				824AFD652C351579003D902B /* routing.yml */,
+				824AFD662C351579003D902B /* security.yml */,
+				824AFD672C351579003D902B /* services.yml */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		824AFD6C2C351579003D902B /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD692C351579003D902B /* _category.html.twig */,
+				824AFD6A2C351579003D902B /* category.html.twig */,
+				824AFD6B2C351579003D902B /* index.html.twig */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
+		824AFD6E2C351579003D902B /* product */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD6D2C351579003D902B /* view.html.twig */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		824AFD6F2C351579003D902B /* catalog */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD6C2C351579003D902B /* categories */,
+				824AFD6E2C351579003D902B /* product */,
+			);
+			path = catalog;
+			sourceTree = "<group>";
+		};
+		824AFD722C351579003D902B /* _partial */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD702C351579003D902B /* address.html.twig */,
+				824AFD712C351579003D902B /* items.html.twig */,
+			);
+			path = _partial;
+			sourceTree = "<group>";
+		};
+		824AFD7A2C351579003D902B /* checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD722C351579003D902B /* _partial */,
+				824AFD732C351579003D902B /* billing.html.twig */,
+				824AFD742C351579003D902B /* cart.html.twig */,
+				824AFD752C351579003D902B /* payment.html.twig */,
+				824AFD762C351579003D902B /* review.html.twig */,
+				824AFD772C351579003D902B /* shipping_method.html.twig */,
+				824AFD782C351579003D902B /* shipping.html.twig */,
+				824AFD792C351579003D902B /* success.html.twig */,
+			);
+			path = checkout;
+			sourceTree = "<group>";
+		};
+		824AFD7D2C351579003D902B /* _partials */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD7B2C351579003D902B /* addresses.html.twig */,
+				824AFD7C2C351579003D902B /* orders.html.twig */,
+			);
+			path = _partials;
+			sourceTree = "<group>";
+		};
+		824AFD7F2C351579003D902B /* orders */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD7E2C351579003D902B /* address.html.twig */,
+			);
+			path = orders;
+			sourceTree = "<group>";
+		};
+		824AFD822C351579003D902B /* customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD7D2C351579003D902B /* _partials */,
+				824AFD7F2C351579003D902B /* orders */,
+				824AFD802C351579003D902B /* index.html.twig */,
+				824AFD812C351579003D902B /* orders.html.twig */,
+			);
+			path = customer;
+			sourceTree = "<group>";
+		};
+		824AFD842C351579003D902B /* default */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD832C351579003D902B /* index.html.twig */,
+			);
+			path = default;
+			sourceTree = "<group>";
+		};
+		824AFD862C351579003D902B /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD852C351579003D902B /* knp_menu.html.twig */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		824AFD892C351579003D902B /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD872C351579003D902B /* confirmed.html.twig */,
+				824AFD882C351579003D902B /* register.html.twig */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
+		824AFD8C2C351579003D902B /* views */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD6F2C351579003D902B /* catalog */,
+				824AFD7A2C351579003D902B /* checkout */,
+				824AFD822C351579003D902B /* customer */,
+				824AFD842C351579003D902B /* default */,
+				824AFD862C351579003D902B /* menu */,
+				824AFD892C351579003D902B /* registration */,
+				824AFD8A2C351579003D902B /* base.html.twig */,
+				824AFD8B2C351579003D902B /* blank.html.twig */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		824AFD8D2C351579003D902B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD8C2C351579003D902B /* views */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		824AFD922C351579003D902B /* app */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD682C351579003D902B /* config */,
+				824AFD8D2C351579003D902B /* Resources */,
+				824AFD8E2C351579003D902B /* .htaccess */,
+				824AFD8F2C351579003D902B /* AppCache.php */,
+				824AFD902C351579003D902B /* AppKernel.php */,
+				824AFD912C351579003D902B /* autoload.php */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		824AFD952C351579003D902B /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD932C351579003D902B /* console */,
+				824AFD942C351579003D902B /* symfony_requirements */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		824AFD972C351579003D902B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD962C351579003D902B /* parameters.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		824AFD982C351579003D902B /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD972C351579003D902B /* images */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		824AFD9A2C351579003D902B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD992C351579003D902B /* FFAIP.php */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		824AFD9B2C351579003D902B /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD9A2C351579003D902B /* Repository */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		824AFD9D2C351579003D902B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD9C2C351579003D902B /* FFAIP.php */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		824AFD9E2C351579003D902B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD9D2C351579003D902B /* Repository */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		824AFD9F2C351579003D902B /* Docker */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD9B2C351579003D902B /* Container */,
+				824AFD9E2C351579003D902B /* Image */,
+			);
+			path = Docker;
+			sourceTree = "<group>";
+		};
+		824AFDA12C351579003D902B /* FFAIP */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDA02C351579003D902B /* init.sh */,
+			);
+			path = FFAIP;
+			sourceTree = "<group>";
+		};
+		824AFDA22C351579003D902B /* Docker */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDA12C351579003D902B /* FFAIP */,
+			);
+			path = Docker;
+			sourceTree = "<group>";
+		};
+		824AFDA32C351579003D902B /* var */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDA22C351579003D902B /* Docker */,
+			);
+			path = var;
+			sourceTree = "<group>";
+		};
+		824AFDA42C351579003D902B /* .magedev */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD9F2C351579003D902B /* Docker */,
+				824AFDA32C351579003D902B /* var */,
+			);
+			path = .magedev;
+			sourceTree = "<group>";
+		};
+		824AFDA72C351579003D902B /* setup */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDA42C351579003D902B /* .magedev */,
+				824AFDA52C351579003D902B /* magedev.json */,
+				824AFDA62C351579003D902B /* parameters.yml */,
+			);
+			path = setup;
+			sourceTree = "<group>";
+		};
+		824AFDAC2C351579003D902B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDA82C351579003D902B /* CartController.php */,
+				824AFDA92C351579003D902B /* CheckoutController.php */,
+				824AFDAA2C351579003D902B /* CustomerController.php */,
+				824AFDAB2C351579003D902B /* ProductController.php */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		824AFDB32C351579003D902B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDAC2C351579003D902B /* Api */,
+				824AFDAD2C351579003D902B /* CatalogController.php */,
+				824AFDAE2C351579003D902B /* CheckoutController.php */,
+				824AFDAF2C351579003D902B /* CustomerController.php */,
+				824AFDB02C351579003D902B /* DefaultController.php */,
+				824AFDB12C351579003D902B /* RegistrationController.php */,
+				824AFDB22C351579003D902B /* SecurityController.php */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		824AFDB52C351579003D902B /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDB42C351579003D902B /* RegisterStrategyPass.php */,
+			);
+			path = Compiler;
+			sourceTree = "<group>";
+		};
+		824AFDB82C351579003D902B /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDB52C351579003D902B /* Compiler */,
+				824AFDB62C351579003D902B /* AppExtension.php */,
+				824AFDB72C351579003D902B /* StrategyConfiguration.php */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		824AFDBA2C351579003D902B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDB92C351579003D902B /* Address.php */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		824AFDBF2C351579003D902B /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDBB2C351579003D902B /* AddressFormType.php */,
+				824AFDBC2C351579003D902B /* PaymentFormType.php */,
+				824AFDBD2C351579003D902B /* ShippingMethodFormType.php */,
+				824AFDBE2C351579003D902B /* UserRegisterType.php */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		824AFDC32C351579003D902B /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDC02C351579003D902B /* AddToCartRequest.php */,
+				824AFDC12C351579003D902B /* CartItemRequest.php */,
+				824AFDC22C351579003D902B /* CartRequest.php */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		824AFDC82C351579003D902B /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDC42C351579003D902B /* AttributeRequest.php */,
+				824AFDC52C351579003D902B /* CategoriesRequest.php */,
+				824AFDC62C351579003D902B /* CategoryRequest.php */,
+				824AFDC72C351579003D902B /* ProductRequest.php */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		824AFDCA2C351579003D902B /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDC92C351579003D902B /* PaymentInformationRequest.php */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		824AFDCD2C351579003D902B /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDCB2C351579003D902B /* GetResource.php */,
+				824AFDCC2C351579003D902B /* PostRequest.php */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		824AFDD02C351579003D902B /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDCE2C351579003D902B /* GetResource.php */,
+				824AFDCF2C351579003D902B /* PostResource.php */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		824AFDD12C351579003D902B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDCD2C351579003D902B /* Customer */,
+				824AFDD02C351579003D902B /* Guest */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		824AFDD22C351579003D902B /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD12C351579003D902B /* Items */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		824AFDD52C351579003D902B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD32C351579003D902B /* GetListResource.php */,
+				824AFDD42C351579003D902B /* GetResource.php */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		824AFDD72C351579003D902B /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD62C351579003D902B /* GetResource.php */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		824AFDD82C351579003D902B /* Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD72C351579003D902B /* Options */,
+			);
+			path = Attribute;
+			sourceTree = "<group>";
+		};
+		824AFDDA2C351579003D902B /* Configurable */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD92C351579003D902B /* GetChildrenResource.php */,
+			);
+			path = Configurable;
+			sourceTree = "<group>";
+		};
+		824AFDDB2C351579003D902B /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDDA2C351579003D902B /* Configurable */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		824AFDDD2C351579003D902B /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD82C351579003D902B /* Attribute */,
+				824AFDDB2C351579003D902B /* Type */,
+				824AFDDC2C351579003D902B /* GetResource.php */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		824AFDDE2C351579003D902B /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD52C351579003D902B /* Categories */,
+				824AFDDD2C351579003D902B /* Product */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		824AFDE02C351579003D902B /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDDF2C351579003D902B /* GetPaymentResource.php */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		824AFDE22C351579003D902B /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDE12C351579003D902B /* GetPaymentResource.php */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		824AFDE32C351579003D902B /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDE02C351579003D902B /* Customer */,
+				824AFDE22C351579003D902B /* Guest */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		824AFDE52C351579003D902B /* Fixture */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDD22C351579003D902B /* Cart */,
+				824AFDDE2C351579003D902B /* Catalog */,
+				824AFDE32C351579003D902B /* Checkout */,
+				824AFDE42C351579003D902B /* AbstractFixtureResourceStrategy.php */,
+			);
+			path = Fixture;
+			sourceTree = "<group>";
+		};
+		824AFDE82C351579003D902B /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDE62C351579003D902B /* GetResource.php */,
+				824AFDE72C351579003D902B /* PostRequest.php */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		824AFDEB2C351579003D902B /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDE92C351579003D902B /* GetResource.php */,
+				824AFDEA2C351579003D902B /* PostResource.php */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		824AFDEC2C351579003D902B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDE82C351579003D902B /* Customer */,
+				824AFDEB2C351579003D902B /* Guest */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		824AFDEE2C351579003D902B /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDED2C351579003D902B /* PutResource.php */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		824AFDEF2C351579003D902B /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDEE2C351579003D902B /* Customer */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		824AFDF02C351579003D902B /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDEC2C351579003D902B /* Items */,
+				824AFDEF2C351579003D902B /* Order */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		824AFDF32C351579003D902B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF12C351579003D902B /* GetListResource.php */,
+				824AFDF22C351579003D902B /* GetResource.php */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		824AFDF52C351579003D902B /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF42C351579003D902B /* GetResource.php */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		824AFDF72C351579003D902B /* Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF52C351579003D902B /* Options */,
+				824AFDF62C351579003D902B /* GetResource.php */,
+			);
+			path = Attribute;
+			sourceTree = "<group>";
+		};
+		824AFDF92C351579003D902B /* Configurable */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF82C351579003D902B /* GetChildrenResource.php */,
+			);
+			path = Configurable;
+			sourceTree = "<group>";
+		};
+		824AFDFA2C351579003D902B /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF92C351579003D902B /* Configurable */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		824AFDFC2C351579003D902B /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF72C351579003D902B /* Attribute */,
+				824AFDFA2C351579003D902B /* Type */,
+				824AFDFB2C351579003D902B /* GetResource.php */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		824AFDFD2C351579003D902B /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF32C351579003D902B /* Categories */,
+				824AFDFC2C351579003D902B /* Product */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		824AFE002C351579003D902B /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDFE2C351579003D902B /* GetPaymentResource.php */,
+				824AFDFF2C351579003D902B /* GetShippingMethodsResource.php */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		824AFE032C351579003D902B /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE012C351579003D902B /* GetPaymentResource.php */,
+				824AFE022C351579003D902B /* GetShippingMethodsResource.php */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		824AFE042C351579003D902B /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE002C351579003D902B /* Customer */,
+				824AFE032C351579003D902B /* Guest */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		824AFE062C351579003D902B /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE052C351579003D902B /* GetCustomerResource.php */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		824AFE082C351579003D902B /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE072C351579003D902B /* GetResource.php */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		824AFE092C351579003D902B /* Magento */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDF02C351579003D902B /* Cart */,
+				824AFDFD2C351579003D902B /* Catalog */,
+				824AFE042C351579003D902B /* Checkout */,
+				824AFE062C351579003D902B /* Customer */,
+				824AFE082C351579003D902B /* Orders */,
+			);
+			path = Magento;
+			sourceTree = "<group>";
+		};
+		824AFE102C351579003D902B /* ResourceStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDE52C351579003D902B /* Fixture */,
+				824AFE092C351579003D902B /* Magento */,
+				824AFE0A2C351579003D902B /* AbstractAdminResourceStrategy.php */,
+				824AFE0B2C351579003D902B /* AbstractCustomerResourceStrategy.php */,
+				824AFE0C2C351579003D902B /* AbstractResourceStrategy.php */,
+				824AFE0D2C351579003D902B /* PostRequestInterface.php */,
+				824AFE0E2C351579003D902B /* PutRequestInterface.php */,
+				824AFE0F2C351579003D902B /* ResourceStrategyInterface.php */,
+			);
+			path = ResourceStrategy;
+			sourceTree = "<group>";
+		};
+		824AFE122C351579003D902B /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE112C351579003D902B /* OrderRequest.php */,
+			);
+			path = Sales;
+			sourceTree = "<group>";
+		};
+		824AFE172C351579003D902B /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDC32C351579003D902B /* Cart */,
+				824AFDC82C351579003D902B /* Catalog */,
+				824AFDCA2C351579003D902B /* Checkout */,
+				824AFE102C351579003D902B /* ResourceStrategy */,
+				824AFE122C351579003D902B /* Sales */,
+				824AFE132C351579003D902B /* AdminTokenRequest.php */,
+				824AFE142C351579003D902B /* MagentoResourceGenerator.php */,
+				824AFE152C351579003D902B /* RequestFactory.php */,
+				824AFE162C351579003D902B /* RequestGeneratorInterface.php */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		824AFE192C351579003D902B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE182C351579003D902B /* CategoryMenuBuilder.php */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		824AFE1C2C351579003D902B /* strategies */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE1A2C351579003D902B /* fixtures.yml */,
+				824AFE1B2C351579003D902B /* magento.yml */,
+			);
+			path = strategies;
+			sourceTree = "<group>";
+		};
+		824AFE202C351579003D902B /* config */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE1C2C351579003D902B /* strategies */,
+				824AFE1D2C351579003D902B /* controller.yml */,
+				824AFE1E2C351579003D902B /* menu.yml */,
+				824AFE1F2C351579003D902B /* services.yml */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		824AFE232C351579003D902B /* attributes */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE212C351579003D902B /* 93.json */,
+				824AFE222C351579003D902B /* 142.json */,
+			);
+			path = attributes;
+			sourceTree = "<group>";
+		};
+		824AFE252C351579003D902B /* configurable */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE242C351579003D902B /* children.json */,
+			);
+			path = configurable;
+			sourceTree = "<group>";
+		};
+		824AFE262C351579003D902B /* type */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE252C351579003D902B /* configurable */,
+			);
+			path = type;
+			sourceTree = "<group>";
+		};
+		824AFE332C351579003D902B /* product */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE232C351579003D902B /* attributes */,
+				824AFE262C351579003D902B /* type */,
+				824AFE272C351579003D902B /* WS01.json */,
+				824AFE282C351579003D902B /* WS02.json */,
+				824AFE292C351579003D902B /* WS03.json */,
+				824AFE2A2C351579003D902B /* WS04.json */,
+				824AFE2B2C351579003D902B /* WS05.json */,
+				824AFE2C2C351579003D902B /* WS06.json */,
+				824AFE2D2C351579003D902B /* WS07.json */,
+				824AFE2E2C351579003D902B /* WS08.json */,
+				824AFE2F2C351579003D902B /* WS09.json */,
+				824AFE302C351579003D902B /* WS10.json */,
+				824AFE312C351579003D902B /* WS11.json */,
+				824AFE322C351579003D902B /* WS12.json */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		824AFE362C351579003D902B /* catalog */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE332C351579003D902B /* product */,
+				824AFE342C351579003D902B /* categories.json */,
+				824AFE352C351579003D902B /* categoryProducts.json */,
+			);
+			path = catalog;
+			sourceTree = "<group>";
+		};
+		824AFE382C351579003D902B /* checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE372C351579003D902B /* cart.json */,
+			);
+			path = checkout;
+			sourceTree = "<group>";
+		};
+		824AFE392C351579003D902B /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE362C351579003D902B /* catalog */,
+				824AFE382C351579003D902B /* checkout */,
+			);
+			path = fixtures;
+			sourceTree = "<group>";
+		};
+		824AFE3A2C351579003D902B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE202C351579003D902B /* config */,
+				824AFE392C351579003D902B /* fixtures */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		824AFE3C2C351579003D902B /* Authenticator */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE3B2C351579003D902B /* Api.php */,
+			);
+			path = Authenticator;
+			sourceTree = "<group>";
+		};
+		824AFE3E2C351579003D902B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE3D2C351579003D902B /* CustomerProvider.php */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		824AFE412C351579003D902B /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE3F2C351579003D902B /* MagentoToken.php */,
+				824AFE402C351579003D902B /* MagentoTokenFactory.php */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		824AFE432C351579003D902B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE422C351579003D902B /* Customer.php */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		824AFE442C351579003D902B /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE3C2C351579003D902B /* Authenticator */,
+				824AFE3E2C351579003D902B /* Provider */,
+				824AFE412C351579003D902B /* Token */,
+				824AFE432C351579003D902B /* User */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		824AFE482C351579003D902B /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE452C351579003D902B /* Categories.php */,
+				824AFE462C351579003D902B /* Product.php */,
+				824AFE472C351579003D902B /* ProductHelper.php */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		824AFE4B2C351579003D902B /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE492C351579003D902B /* Cart.php */,
+				824AFE4A2C351579003D902B /* Shipping.php */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		824AFE4D2C351579003D902B /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE4C2C351579003D902B /* Order.php */,
+			);
+			path = Sales;
+			sourceTree = "<group>";
+		};
+		824AFE542C351579003D902B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE482C351579003D902B /* Catalog */,
+				824AFE4B2C351579003D902B /* Checkout */,
+				824AFE4D2C351579003D902B /* Sales */,
+				824AFE4E2C351579003D902B /* AbstractAdminRequest.php */,
+				824AFE4F2C351579003D902B /* Address.php */,
+				824AFE502C351579003D902B /* CustomerCreate.php */,
+				824AFE512C351579003D902B /* CustomerData.php */,
+				824AFE522C351579003D902B /* CustomerLogin.php */,
+				824AFE532C351579003D902B /* Scope.php */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		824AFE562C351579003D902B /* AppBundle */ = {
+			isa = PBXGroup;
+			children = (
+				824AFDB32C351579003D902B /* Controller */,
+				824AFDB82C351579003D902B /* DependencyInjection */,
+				824AFDBA2C351579003D902B /* Entity */,
+				824AFDBF2C351579003D902B /* Form */,
+				824AFE172C351579003D902B /* Http */,
+				824AFE192C351579003D902B /* Menu */,
+				824AFE3A2C351579003D902B /* Resources */,
+				824AFE442C351579003D902B /* Security */,
+				824AFE542C351579003D902B /* Service */,
+				824AFE552C351579003D902B /* AppBundle.php */,
+			);
+			path = AppBundle;
+			sourceTree = "<group>";
+		};
+		824AFE582C351579003D902B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE562C351579003D902B /* AppBundle */,
+				824AFE572C351579003D902B /* .htaccess */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		824AFE5A2C351579003D902B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE592C351579003D902B /* DefaultControllerTest.php */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		824AFE5B2C351579003D902B /* AppBundle */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE5A2C351579003D902B /* Controller */,
+			);
+			path = AppBundle;
+			sourceTree = "<group>";
+		};
+		824AFE5C2C351579003D902B /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE5B2C351579003D902B /* AppBundle */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		824AFE5E2C351579003D902B /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE5D2C351579003D902B /* .gitkeep */,
+			);
+			path = cache;
+			sourceTree = "<group>";
+		};
+		824AFE602C351579003D902B /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE5F2C351579003D902B /* .gitkeep */,
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		824AFE622C351579003D902B /* sessions */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE612C351579003D902B /* .gitkeep */,
+			);
+			path = sessions;
+			sourceTree = "<group>";
+		};
+		824AFE642C351579003D902B /* var */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE5E2C351579003D902B /* cache */,
+				824AFE602C351579003D902B /* logs */,
+				824AFE622C351579003D902B /* sessions */,
+				824AFE632C351579003D902B /* SymfonyRequirements.php */,
+			);
+			path = var;
+			sourceTree = "<group>";
+		};
+		824AFE662C351579003D902B /* build */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE652C351579003D902B /* .gitkeep */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		824AFE692C351579003D902B /* cart */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE672C351579003D902B /* AddButton.js */,
+				824AFE682C351579003D902B /* ShoppingCart.js */,
+			);
+			path = cart;
+			sourceTree = "<group>";
+		};
+		824AFE6C2C351579003D902B /* components */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE6A2C351579003D902B /* AddressSelect.js */,
+				824AFE6B2C351579003D902B /* ShippingMethodSelect.js */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		824AFE6F2C351579003D902B /* steps */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE6D2C351579003D902B /* Payment.js */,
+				824AFE6E2C351579003D902B /* Shipping.js */,
+			);
+			path = steps;
+			sourceTree = "<group>";
+		};
+		824AFE712C351579003D902B /* checkout */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE6C2C351579003D902B /* components */,
+				824AFE6F2C351579003D902B /* steps */,
+				824AFE702C351579003D902B /* Checkout.js */,
+			);
+			path = checkout;
+			sourceTree = "<group>";
+		};
+		824AFE752C351579003D902B /* component */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE722C351579003D902B /* Registry.js */,
+				824AFE732C351579003D902B /* Select.js */,
+				824AFE742C351579003D902B /* Spinner.js */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		824AFE772C351579003D902B /* customer */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE762C351579003D902B /* Address.js */,
+			);
+			path = customer;
+			sourceTree = "<group>";
+		};
+		824AFE7E2C351579003D902B /* minicart */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE782C351579003D902B /* Dropdown.js */,
+				824AFE792C351579003D902B /* Item.js */,
+				824AFE7A2C351579003D902B /* ItemList.js */,
+				824AFE7B2C351579003D902B /* Minicart.js */,
+				824AFE7C2C351579003D902B /* NavIcon.js */,
+				824AFE7D2C351579003D902B /* NoItems.js */,
+			);
+			path = minicart;
+			sourceTree = "<group>";
+		};
+		824AFE812C351579003D902B /* product */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE7F2C351579003D902B /* ConfigurableAttributes.js */,
+				824AFE802C351579003D902B /* Image.js */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		824AFE832C351579003D902B /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE822C351579003D902B /* Client.js */,
+			);
+			path = remote;
+			sourceTree = "<group>";
+		};
+		824AFE852C351579003D902B /* js */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE692C351579003D902B /* cart */,
+				824AFE712C351579003D902B /* checkout */,
+				824AFE752C351579003D902B /* component */,
+				824AFE772C351579003D902B /* customer */,
+				824AFE7E2C351579003D902B /* minicart */,
+				824AFE812C351579003D902B /* product */,
+				824AFE832C351579003D902B /* remote */,
+				824AFE842C351579003D902B /* main.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		824AFE8D2C351579003D902B /* web */ = {
+			isa = PBXGroup;
+			children = (
+				824AFE662C351579003D902B /* build */,
+				824AFE852C351579003D902B /* js */,
+				824AFE862C351579003D902B /* .htaccess */,
+				824AFE872C351579003D902B /* app_dev.php */,
+				824AFE882C351579003D902B /* app.php */,
+				824AFE892C351579003D902B /* apple-touch-icon.png */,
+				824AFE8A2C351579003D902B /* config.php */,
+				824AFE8B2C351579003D902B /* favicon.ico */,
+				824AFE8C2C351579003D902B /* robots.txt */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+		824AFE962C351579003D902B /* FFAIP-master */ = {
+			isa = PBXGroup;
+			children = (
+				824AFD922C351579003D902B /* app */,
+				824AFD952C351579003D902B /* bin */,
+				824AFD982C351579003D902B /* docs */,
+				824AFDA72C351579003D902B /* setup */,
+				824AFE582C351579003D902B /* src */,
+				824AFE5C2C351579003D902B /* tests */,
+				824AFE642C351579003D902B /* var */,
+				824AFE8D2C351579003D902B /* web */,
+				824AFE8E2C351579003D902B /* .gitignore */,
+				824AFE8F2C351579003D902B /* address.json */,
+				824AFE902C351579003D902B /* composer.json */,
+				824AFE912C351579003D902B /* composer.lock */,
+				824AFE922C351579003D902B /* grumphp.yml */,
+				824AFE932C351579003D902B /* package.json */,
+				824AFE942C351579003D902B /* phpunit.xml.dist */,
+				824AFE952C351579003D902B /* README.md */,
+			);
+			name = "FFAIP-master";
+			path = "../FFAIP-master";
+			sourceTree = "<group>";
+		};
 		824E4FFA2A93577D00C64F37 /* ListModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +1768,7 @@
 				9F4403542A9A515600F5A652 /* ListItemResponse.swift */,
 				9F4403552A9A515600F5A652 /* Links.swift */,
 				9F6C91A72AD29B5D00B0AE9F /* SubscriptionModel.swift */,
+				04FC32A52BCAE10500E72964 /* LocationResponse.swift */,
 			);
 			path = ListModel;
 			sourceTree = "<group>";
@@ -440,8 +1826,21 @@
 				9FE5DCC92AD1E21A00C28507 /* DetailSpecCell.xib */,
 				9F6C91A32AD2901F00B0AE9F /* SubscriptionPlanCell.swift */,
 				9F6C91A42AD2901F00B0AE9F /* SubscriptionPlanCell.xib */,
+				04BDAF8E2BE68F3E00A5D611 /* NewListingBaseTabCell.swift */,
+				04BDAF8F2BE68F3E00A5D611 /* NewListingBaseTabCell.xib */,
+				82DF46B62C2ED59500AB1666 /* SearchFilterHeader.xib */,
+				82DF46B42C2ED58A00AB1666 /* SearchFilterHeader.swift */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		827A94C12C462888003E073A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				827A94C22C462888003E073A /* NotificationService.swift */,
+				827A94C42C462888003E073A /* Info.plist */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		82831B5629EBD6D300ABC75B /* SupportClass */ = {
@@ -470,6 +1869,7 @@
 				8262EFCB2A89FE91002C66AE /* sort.json */,
 				82D1C5D22A86422100A10F02 /* Filter.json */,
 				9FEBD9C72ACB0220001FB339 /* PostRealEstate.json */,
+				824A017E2C36576A003D902B /* common-words.json */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -491,6 +1891,7 @@
 			children = (
 				82831B6629EBD90600ABC75B /* MPUILabel.swift */,
 				82831B6C29EBE98A00ABC75B /* MPUIButton.swift */,
+				04BDAF942BE7C83300A5D611 /* CircularProgressView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -498,9 +1899,11 @@
 		828BE2B529E7B98A00B0C838 = {
 			isa = PBXGroup;
 			children = (
+				82A05E4F2C3F05A0005ACE94 /* PrivacyInfo.xcprivacy */,
 				828BE2C029E7B98A00B0C838 /* Marketplix */,
 				828BE2DA29E7B98B00B0C838 /* MarketplixTests */,
 				828BE2E429E7B98B00B0C838 /* MarketplixUITests */,
+				827A94C12C462888003E073A /* Service */,
 				828BE2BF29E7B98A00B0C838 /* Products */,
 				9B4065DC2D897B2F5DAE9703 /* Pods */,
 				E6CC7BC6750835FF3F1D7EE8 /* Frameworks */,
@@ -513,6 +1916,7 @@
 				828BE2BE29E7B98A00B0C838 /* Marketplix.app */,
 				828BE2D729E7B98B00B0C838 /* MarketplixTests.xctest */,
 				828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */,
+				827A94C02C462888003E073A /* Service.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -520,6 +1924,7 @@
 		828BE2C029E7B98A00B0C838 /* Marketplix */ = {
 			isa = PBXGroup;
 			children = (
+				82D0BD4C2C30673A00769810 /* Marketplix.entitlements */,
 				82D1C5A52A85F08A00A10F02 /* ViewController */,
 				82F1B0312A6FC54600E7DE1B /* Model */,
 				82F1B02C2A6FC3AC00E7DE1B /* ViewModel */,
@@ -530,8 +1935,8 @@
 				82831B5929EBD7BA00ABC75B /* Core */,
 				82831B5629EBD6D300ABC75B /* SupportClass */,
 				828BE2C129E7B98A00B0C838 /* AppDelegate.swift */,
-				828BE2C329E7B98A00B0C838 /* SceneDelegate.swift */,
 				828BE2C529E7B98A00B0C838 /* ViewController.swift */,
+				0477AC8C2C0CD03A009F2698 /* GoogleService-Info.plist */,
 				828BE2C729E7B98A00B0C838 /* Main.storyboard */,
 				8249E54E2A1CD0D100B9361C /* DrawerMenu.storyboard */,
 				828BE2CD29E7B98B00B0C838 /* Assets.xcassets */,
@@ -589,6 +1994,10 @@
 				0401EE502B4A6BB30096CA78 /* PostPropertyVC.swift */,
 				0401EE522B4A7D990096CA78 /* PostProperty2VC.swift */,
 				0401EE542B4A960C0096CA78 /* PostImageVC.swift */,
+				04BDAF922BE7B90000A5D611 /* PostAddSuccesssVC.swift */,
+				0477AC8E2C0CE736009F2698 /* ReportAdVC.swift */,
+				9F724C102C1427EB00596E3E /* AllowAccessVC.swift */,
+				824A017C2C35D71E003D902B /* UpdateAvailableVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -615,12 +2024,12 @@
 				8249F9DC2A84AECD00FB1C0E /* PaginationModel.swift */,
 				82D1C59B2A85EBAD00A10F02 /* CityModel.swift */,
 				82D1C5D42A86519100A10F02 /* FilterModel.swift */,
-				823703642A93190D005777AC /* CategoryModel.swift */,
 				824E4FFB2A93579100C64F37 /* BannerModel.swift */,
 				9FEBD9C82ACB0483001FB339 /* PostRealEstateModel.swift */,
 				9FEBD9D72ACB2D09001FB339 /* SpecModel.swift */,
 				9FE5DCC22AD1D69C00C28507 /* DetailModel.swift */,
 				0401EE562B4AE0890096CA78 /* ChatHistoryModel.swift */,
+				827A94D42C48CE83003E073A /* CategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -655,6 +2064,8 @@
 				9F6248932ACD319A005DF450 /* GalleryPickerCell.xib */,
 				0401EE4C2B4A69950096CA78 /* PostMainCatColCell.swift */,
 				0401EE4D2B4A69950096CA78 /* PostMainCatColCell.xib */,
+				0494CDC52BE55BBB0053E86F /* DescriptionTextCell.swift */,
+				0494CDC62BE55BBB0053E86F /* DescriptionTextCell.xib */,
 			);
 			path = PostAds;
 			sourceTree = "<group>";
@@ -662,9 +2073,13 @@
 		E6CC7BC6750835FF3F1D7EE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				824AFE962C351579003D902B /* FFAIP-master */,
+				04BDAF962BE7CAF500A5D611 /* MBCircularProgressBar.framework */,
 				83135C9449654DD09D38517A /* Pods_Marketplix.framework */,
 				83D948276EC5EDF7FEFD6784 /* Pods_Marketplix_MarketplixUITests.framework */,
 				F2C81EB096D2B20D8C4F655E /* Pods_MarketplixTests.framework */,
+				82D60B212C39416800A52416 /* UserNotifications.framework */,
+				82D60B232C39416800A52416 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -672,6 +2087,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		827A94BF2C462888003E073A /* Service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 827A94C82C462888003E073A /* Build configuration list for PBXNativeTarget "Service" */;
+			buildPhases = (
+				827A94BC2C462888003E073A /* Sources */,
+				827A94BD2C462888003E073A /* Frameworks */,
+				827A94BE2C462888003E073A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Service;
+			productName = Service;
+			productReference = 827A94C02C462888003E073A /* Service.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		828BE2BD29E7B98A00B0C838 /* Marketplix */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 828BE2EB29E7B98B00B0C838 /* Build configuration list for PBXNativeTarget "Marketplix" */;
@@ -682,10 +2114,12 @@
 				828BE2BC29E7B98A00B0C838 /* Resources */,
 				9042EE056161DABB1A3943FE /* [CP] Embed Pods Frameworks */,
 				EF9BC50A4A893C4FAAFFC87E /* [CP] Copy Pods Resources */,
+				82D60B2F2C39416900A52416 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				827A94C62C462888003E073A /* PBXTargetDependency */,
 			);
 			name = Marketplix;
 			productName = Marketplix;
@@ -739,9 +2173,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					827A94BF2C462888003E073A = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					828BE2BD29E7B98A00B0C838 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -771,11 +2208,19 @@
 				828BE2BD29E7B98A00B0C838 /* Marketplix */,
 				828BE2D629E7B98B00B0C838 /* MarketplixTests */,
 				828BE2E029E7B98B00B0C838 /* MarketplixUITests */,
+				827A94BF2C462888003E073A /* Service */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		827A94BE2C462888003E073A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		828BE2BC29E7B98A00B0C838 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -783,15 +2228,19 @@
 				9F6248952ACD319B005DF450 /* GalleryPickerCell.xib in Resources */,
 				9FEBD9CC2ACB0867001FB339 /* PostRealEstate.json in Resources */,
 				824506D42A55426D0099331F /* ChatBubbleRight.xib in Resources */,
+				82A05E502C3F05A1005ACE94 /* PrivacyInfo.xcprivacy in Resources */,
+				82DF46B72C2ED59500AB1666 /* SearchFilterHeader.xib in Resources */,
 				9FEBD9D02ACB08DF001FB339 /* TextCell.xib in Resources */,
 				82831B6029EBD89000ABC75B /* Poppins-Bold.ttf in Resources */,
 				82831B6129EBD89000ABC75B /* Poppins-Light.ttf in Resources */,
 				82D2ADF42A15F9D5003AA0E8 /* ItemCell.xib in Resources */,
 				9F6C91A62AD2901F00B0AE9F /* SubscriptionPlanCell.xib in Resources */,
 				82831B6229EBD89000ABC75B /* Poppins-Medium.ttf in Resources */,
+				0494CDC82BE55BBB0053E86F /* DescriptionTextCell.xib in Resources */,
 				9FEBD9D62ACB1F3C001FB339 /* SelectCell.xib in Resources */,
 				9F7E157E2A9BCA280094DAFE /* ImageCell.xib in Resources */,
 				82D2ADE82A15E914003AA0E8 /* TitleHeaaderCell.xib in Resources */,
+				0477AC8D2C0CD03A009F2698 /* GoogleService-Info.plist in Resources */,
 				82D2ADF82A1600DC003AA0E8 /* ItemViewTabCell.xib in Resources */,
 				82831B6329EBD89000ABC75B /* Poppins-Regular.ttf in Resources */,
 				824506CA2A55326A0099331F /* ChatCell.xib in Resources */,
@@ -799,6 +2248,7 @@
 				82831B6429EBD89000ABC75B /* Poppins-SemiBold.ttf in Resources */,
 				9F62488E2ACD2930005DF450 /* RadioButtonCell.xib in Resources */,
 				82D1C5D12A863A6F00A10F02 /* FilterMainItems.xib in Resources */,
+				824A017F2C36576A003D902B /* common-words.json in Resources */,
 				82D1C5D32A86422100A10F02 /* Filter.json in Resources */,
 				822F7CE42A08F0FF00898465 /* HomeHeaderCell.xib in Resources */,
 				8249F9E92A850C5000FB1C0E /* Cities.json in Resources */,
@@ -809,6 +2259,7 @@
 				82D2ADEE2A15F58C003AA0E8 /* HomeCategoryCell.xib in Resources */,
 				828BE2D129E7B98B00B0C838 /* LaunchScreen.storyboard in Resources */,
 				0401EE4F2B4A69950096CA78 /* PostMainCatColCell.xib in Resources */,
+				04BDAF912BE68F3E00A5D611 /* NewListingBaseTabCell.xib in Resources */,
 				828BE2CE29E7B98B00B0C838 /* Assets.xcassets in Resources */,
 				82D2ADE02A15E1A6003AA0E8 /* HomeSearchCell.xib in Resources */,
 				8249F9E32A84B92B00FB1C0E /* loaderCell.xib in Resources */,
@@ -976,11 +2427,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		827A94BC2C462888003E073A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				827A94C32C462888003E073A /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		828BE2BA29E7B98A00B0C838 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BDAF902BE68F3E00A5D611 /* NewListingBaseTabCell.swift in Sources */,
 				8262EFC72A89D9E8002C66AE /* CheckBoxCell.swift in Sources */,
+				04BDAF952BE7C83300A5D611 /* CircularProgressView.swift in Sources */,
 				82D1C5A32A85EF4A00A10F02 /* CityCell.swift in Sources */,
 				824506DC2A5566030099331F /* ARBusinessServiceHelper.swift in Sources */,
 				0401EE552B4A960C0096CA78 /* PostImageVC.swift in Sources */,
@@ -994,6 +2455,7 @@
 				82D1C5BA2A85F0AA00A10F02 /* VerificationVC.swift in Sources */,
 				9FEBD9C12ACAFCCE001FB339 /* MyAdsVC.swift in Sources */,
 				82D2ADF32A15F9D5003AA0E8 /* ItemCell.swift in Sources */,
+				04FC32A62BCAE10500E72964 /* LocationResponse.swift in Sources */,
 				9FEBD9D52ACB1F3C001FB339 /* SelectCell.swift in Sources */,
 				9FE5DCCA2AD1E21A00C28507 /* DetailSpecCell.swift in Sources */,
 				82D1C5C22A85F0AA00A10F02 /* AdsVC.swift in Sources */,
@@ -1013,7 +2475,9 @@
 				9F4403582A9A515600F5A652 /* Classifields.swift in Sources */,
 				8262EFCA2A89EDD7002C66AE /* Image+Extension.swift in Sources */,
 				82D2ADED2A15F58C003AA0E8 /* HomeCategoryCell.swift in Sources */,
+				82DF46B52C2ED58A00AB1666 /* SearchFilterHeader.swift in Sources */,
 				9FEBD9C52ACAFF47001FB339 /* ChooseTextCell.swift in Sources */,
+				0477AC8F2C0CE736009F2698 /* ReportAdVC.swift in Sources */,
 				824506CD2A553A730099331F /* ChatBubbleLeft.swift in Sources */,
 				9F4403572A9A515600F5A652 /* Classified_images.swift in Sources */,
 				9F44035B2A9A515600F5A652 /* Links.swift in Sources */,
@@ -1024,6 +2488,7 @@
 				9FE5DCBF2AD1D35B00C28507 /* Constants.swift in Sources */,
 				0401EE592B4AE17A0096CA78 /* ChatHistoryVM.swift in Sources */,
 				9F7E157D2A9BCA280094DAFE /* ImageCell.swift in Sources */,
+				04BDAF932BE7B90000A5D611 /* PostAddSuccesssVC.swift in Sources */,
 				82D1C5C42A85F0AA00A10F02 /* RegisterVC.swift in Sources */,
 				82831B6729EBD90600ABC75B /* MPUILabel.swift in Sources */,
 				824506D72A55643B0099331F /* ARServiceManager.swift in Sources */,
@@ -1044,6 +2509,7 @@
 				8276391729FB9961009D6CFA /* AR-Extenstion+Storyboard.swift in Sources */,
 				82D2ADF02A15F898003AA0E8 /* Screen+Extension.swift in Sources */,
 				9F65E4912A9B136900370C7D /* DetailVC.swift in Sources */,
+				0494CDC72BE55BBB0053E86F /* DescriptionTextCell.swift in Sources */,
 				82D1C5C92A85F0AA00A10F02 /* BaseVC.swift in Sources */,
 				82F3CDB32A836B2400120BB7 /* SearchHeaderView.swift in Sources */,
 				82D1C5C02A85F0AA00A10F02 /* MainTabVC.swift in Sources */,
@@ -1052,7 +2518,6 @@
 				9F6C91A82AD29B5D00B0AE9F /* SubscriptionModel.swift in Sources */,
 				82D1C5B82A85F0AA00A10F02 /* MapVC.swift in Sources */,
 				9F4403592A9A515600F5A652 /* DataList.swift in Sources */,
-				828BE2C429E7B98A00B0C838 /* SceneDelegate.swift in Sources */,
 				82D1C5C52A85F0AA00A10F02 /* LocationPickVC.swift in Sources */,
 				824506D32A55407C0099331F /* ChatBubbleRight.swift in Sources */,
 				82D1C5BF2A85F0AA00A10F02 /* ChatVC.swift in Sources */,
@@ -1071,14 +2536,16 @@
 				9F6BA63F2A7E27AF002E685E /* HomeModel.swift in Sources */,
 				9FE5DCC12AD1D65700C28507 /* DetailVM.swift in Sources */,
 				9FEBD9CB2ACB0509001FB339 /* PostAdsVM.swift in Sources */,
+				824A017D2C35D71E003D902B /* UpdateAvailableVC.swift in Sources */,
 				82F1B0332A6FC56500E7DE1B /* LoginModel.swift in Sources */,
 				9F6C91A52AD2901F00B0AE9F /* SubscriptionPlanCell.swift in Sources */,
-				823703652A93190D005777AC /* CategoryModel.swift in Sources */,
 				82D2ADE72A15E914003AA0E8 /* TitleHeaaderCell.swift in Sources */,
+				827A94D52C48CE83003E073A /* CategoryModel.swift in Sources */,
 				82D1C5C72A85F0AA00A10F02 /* HomeVC.swift in Sources */,
 				822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */,
 				9F6248912ACD30B6005DF450 /* ImageTabCell.swift in Sources */,
 				8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */,
+				9F724C112C1427EB00596E3E /* AllowAccessVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,6 +2569,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		827A94C62C462888003E073A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 827A94BF2C462888003E073A /* Service */;
+			targetProxy = 827A94C52C462888003E073A /* PBXContainerItemProxy */;
+		};
 		828BE2D929E7B98B00B0C838 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 828BE2BD29E7B98A00B0C838 /* Marketplix */;
@@ -1134,6 +2606,69 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		827A94C92C462888003E073A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FZ2VF3S38W;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Service/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Service;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix.Service;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		827A94CA2C462888003E073A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FZ2VF3S38W;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Service/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Service;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix.Service;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		828BE2E929E7B98B00B0C838 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1252,15 +2787,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC95B59D0220E284878E0829 /* Pods-Marketplix.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Marketplix/Marketplix.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.10;
 				DEVELOPMENT_TEAM = FZ2VF3S38W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marketplix/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location for nearest marketplaces";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Description;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Will you allow this app to always know your location?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do you allow this app to know your current location?";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app does not require access to the microphone.";
@@ -1279,12 +2817,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1292,15 +2832,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E08E2596409A3E66FAD8306 /* Pods-Marketplix.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Marketplix/Marketplix.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.10;
 				DEVELOPMENT_TEAM = FZ2VF3S38W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marketplix/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location for nearest marketplaces";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Description;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Will you allow this app to always know your location?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do you allow this app to know your current location?";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app does not require access to the microphone.";
@@ -1319,12 +2862,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1411,6 +2956,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		827A94C82C462888003E073A /* Build configuration list for PBXNativeTarget "Service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827A94C92C462888003E073A /* Debug */,
+				827A94CA2C462888003E073A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		828BE2B929E7B98A00B0C838 /* Build configuration list for PBXProject "Marketplix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

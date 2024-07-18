@@ -9,10 +9,13 @@ import UIKit
 import ReadMoreTextView
 import MBProgressHUD
 import ImageSlideshow
+import MapKit
 class DetailVC: BaseVC {
     @IBOutlet weak var descriptionTxt: ReadMoreTextView!
     
     @IBOutlet weak var priceTxt: MPUILabel!
+    @IBOutlet weak var categoryTxt: MPUILabel!
+
     @IBOutlet weak var nameTxt: MPUILabel!
     @IBOutlet weak var createdOnTxt: MPUILabel!
     @IBOutlet weak var mileTxt: MPUILabel!
@@ -20,6 +23,8 @@ class DetailVC: BaseVC {
     @IBOutlet weak var imageSideShow: ImageSlideshow!
     var isActivatePreview: Bool = false
     @IBOutlet weak var chatBtn: UIButton!
+    var distance: String = ""
+    @IBOutlet weak var adsIDLbl: MPUILabel!
     @IBOutlet weak var favImg: UIButton!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!{
@@ -35,22 +40,6 @@ class DetailVC: BaseVC {
 
     var postRealEstateArr  = [PostRealEstateModel]()
 
-    @IBOutlet weak var colView: UICollectionView!{
-        didSet{
-            colView.delegate = self
-            colView.dataSource = self
-            colView.register(UINib(nibName: ImageCell.identifire, bundle: nil), forCellWithReuseIdentifier: ImageCell.identifire)
-            let screenSize = CGSize(width: 50, height: 50)
-            let layout1 = UICollectionViewFlowLayout()
-            layout1.scrollDirection = .vertical
-            layout1.itemSize = screenSize
-            layout1.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 20, right: 15)
-            layout1.minimumLineSpacing = 10
-            layout1.minimumInteritemSpacing = 10
-            colView.setCollectionViewLayout(layout1, animated: true)
-            colView.reloadData()
-        }
-    }
     var id = ""
     lazy var viewModel: DetailVM = {
         return DetailVM()
@@ -65,7 +54,12 @@ class DetailVC: BaseVC {
     }()
     @IBOutlet weak var chatView: R_UIView!
     @IBOutlet weak var chatViewBtn: UIButton!
+    
+    @IBOutlet weak var reportBtn: UIButton!
+    @IBOutlet weak var mainScrolllView: UIScrollView!
+    @IBOutlet weak var mapView: MKMapView!
     var imageData = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         chatView.layer.cornerRadius = 20
@@ -83,9 +77,22 @@ class DetailVC: BaseVC {
         descriptionTxt.attributedReadLessText = NSAttributedString(string: " Read less", attributes: attributes)
         initViewModel()
 
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        imageSideShow.addGestureRecognizer(gestureRecognizer)
+        imageSideShow.pageIndicatorPosition = PageIndicatorPosition(horizontal: .center, vertical: .customBottom(padding: 30))
+        
+
     }
-    
+    @objc func didTap() {
+        imageSideShow.presentFullScreenController(from: self)
+    }
     func showPreview(){
+        self.adsIDLbl.isHidden = true
+        self.reportBtn.isHidden = true
+        
+        var lat = ""
+        var lng = ""
+        var sector = ""
         postRealEstateArr.forEach { item in
             
             item.results?.forEach({ content in
@@ -94,24 +101,38 @@ class DetailVC: BaseVC {
                 }
                 
                 if content.name == "Price"{
-                    self.nameTxt.text = "\(Constants.currencySymbol) \(content.value ?? "")"
-
+                    self.priceTxt.text = "\(Constants.currencySymbol) \(content.value ?? "")"
                 }
                 
                 if content.name == "Description"{
-                    self.nameTxt.text = content.value
-
+                    self.descriptionTxt.text = content.value
+                }
+                if content.name == "Sector"{
+                    sector = content.value ?? ""
+                }
+                if content.name == "Lat"{
+                    lat = content.value ?? ""
+                }
+                if content.name == "Long"{
+                    lng = content.value ?? ""
                 }
                 
-                if content.name == "Description"{
-                    self.nameTxt.text = content.value
-
-                }
+                
             })
         }
         
-        var imaged = [ImageSource]()
+        let center = CLLocationCoordinate2D(latitude: Double(lat) ?? 0, longitude: Double(lng) ?? 0)
+             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        self.mapView.setRegion(region, animated: true)
         
+        let london = MKPointAnnotation()
+        london.title = sector
+        london.coordinate = CLLocationCoordinate2D(latitude: Double(lat) ?? 0, longitude: Double(lng) ?? 0)
+        self.mapView.delegate = self
+        self.mapView.addAnnotation(london)
+        
+        var imaged = [ImageSource]()
+        imageData.removeFirst()
         imageData.forEach({ item in
                 imaged.append(ImageSource(image: item))
             }
@@ -122,6 +143,8 @@ class DetailVC: BaseVC {
         self.imageSideShow.contentScaleMode = .scaleAspectFill
         self.imageSideShow.setImageInputs(imaged)
         self.imageSideShow.pageIndicatorPosition = PageIndicatorPosition(vertical: .customBottom(padding: 30))
+        self.mainScrolllView.alpha = 1
+
    
     }
     
@@ -137,6 +160,7 @@ class DetailVC: BaseVC {
     
     // MARK: InitViewModel
     func initViewModel() {
+        self.mainScrolllView.alpha = 0
         self.spec_groups.removeAll()
         viewModel.successClosure = { [weak self] () in
             
@@ -147,7 +171,13 @@ class DetailVC: BaseVC {
                 _self.nameTxt.text = data?.title ?? ""
                 _self.descriptionTxt.text = data?.description ?? ""
                 _self.priceTxt.text = "\(Constants.currencySymbol) \(data?.price ?? "")"
-                _self.createdOnTxt.text = data?.created_at ?? ""
+                let dateFormat = "".dateFormat(data?.created_at ?? "")
+                _self.createdOnTxt.text = "Posted on: \(dateFormat)"
+                _self.adsIDLbl.text = "AD ID  : \(data?.id ?? 0)"
+                
+                _self.categoryTxt.text = data?.category?.name ?? ""
+                _self.mileTxt.text = self?.distance
+
                 
                 let is_fav = data?.is_fav ?? 0
                 if is_fav == 1{
@@ -163,7 +193,10 @@ class DetailVC: BaseVC {
                 
                 data?.classified_images?.forEach({ item in
                     if let urlString = item.image_url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-                        imaged.append(KingfisherSource(urlString: urlString)!)
+                        imaged.append(KingfisherSource(urlString: urlString ,options: [
+                            .loadDiskFileSynchronously,
+                            .cacheOriginalImage
+                        ])!)
 
                     }
                 })
@@ -177,22 +210,34 @@ class DetailVC: BaseVC {
                 _self.spec_groups = _self.viewModel.detailResponsel?.classifield?.spec_groups ?? []
                 let address = data?.addresses
                 var add = ""
-                add = add + (address?.building_name ?? "")
-                add = add + "\n"
-                add += (address?.street_name ?? "")
-                add = add + "\n"
+//                add = add + (address?.building_name ?? "")
+//                add = add + "\n"
+//                add += (address?.street_name ?? "")
+//                add = add + "\n"
                 add += (address?.sector ?? "")
-                add = add + "\n"
-                add += (address?.sub_sector ?? "")
-                add = add + "\n"
-                add += (address?.pincode ?? "")
+//                add = add + "\n"
+//                add += (address?.sub_sector ?? "")
+//                add = add + "\n"
+//                add += (address?.pincode ?? "")
 
                 
                 let specGroup = Spec_items(name: add, value: "")
                 _self.spec_groups.append(Spec_groups(name: "Location", spec_items: [specGroup]))
-                _self.colView.reloadData()
                 _self.tableView.reloadData()
                 
+                let center = CLLocationCoordinate2D(latitude: Double(address?.lat ?? "") ?? 0, longitude: Double(address?.lng ?? "") ?? 0)
+                     let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                     self?.mapView.setRegion(region, animated: true)
+                
+                let london = MKPointAnnotation()
+                london.title = address?.sector ?? ""
+                london.coordinate = CLLocationCoordinate2D(latitude: Double(address?.lat ?? "") ?? 0, longitude: Double(address?.lng ?? "") ?? 0)
+                self?.mapView.delegate = self
+                self?.mapView.addAnnotation(london)
+
+                self?.mainScrolllView.alpha = 1
+                self?.chatView.isHidden = false
+
             }
         }
         
@@ -263,6 +308,7 @@ class DetailVC: BaseVC {
             DispatchQueue.main.async {
                 let storyboard = OpenChatVC.instantiate(fromAppStoryboard: .Main)
                 storyboard.id = data?.chat_details?.id?.description ?? ""
+                storyboard.titleSting = data?.chat_details?.title ?? ""
                 _self.navigationController?.pushViewController(storyboard, animated: true)
                 
                 
@@ -320,6 +366,58 @@ class DetailVC: BaseVC {
         chatHistoryVM.callChatInitiate(["classified_id" : self.id])
     }
     
+    
+    @IBAction func reportBtn(_ sender: Any) {
+        let vc = ReportAdVC.instantiate(fromAppStoryboard: .Main)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.id = self.viewModel.detailResponsel?.classifield?.id?.description ?? ""
+        vc.delegte = self
+        self.navigationController?.present(vc, animated: true)
+    }
+    
+    @IBAction func shareBtn(_ sender: Any) {
+        // Setting description
+        let firstActivityItem = self.viewModel.detailResponsel?.classifield?.description ?? ""
+
+            // Setting url
+             let data = self.viewModel.detailResponsel?.classifield
+
+            let secondActivityItem : NSURL = NSURL(string: data?.share_url ?? "")!
+            
+            // If you want to use an image
+            let activityViewController : UIActivityViewController = UIActivityViewController(
+                activityItems: [secondActivityItem], applicationActivities: nil)
+            
+            // This lines is for the popover you need to show in iPad
+            activityViewController.popoverPresentationController?.sourceView = (sender as! UIButton)
+            
+            // This line remove the arrow of the popover to show in iPad
+            activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
+            activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+            
+            // Pre-configuring activity items
+            activityViewController.activityItemsConfiguration = [
+            UIActivity.ActivityType.message
+            ] as? UIActivityItemsConfigurationReading
+            
+            // Anything you want to exclude
+            activityViewController.excludedActivityTypes = [
+                UIActivity.ActivityType.postToWeibo,
+                UIActivity.ActivityType.print,
+                UIActivity.ActivityType.assignToContact,
+                UIActivity.ActivityType.saveToCameraRoll,
+                UIActivity.ActivityType.addToReadingList,
+                UIActivity.ActivityType.postToFlickr,
+                UIActivity.ActivityType.postToVimeo,
+                UIActivity.ActivityType.postToTencentWeibo,
+                UIActivity.ActivityType.postToFacebook
+            ]
+            
+            activityViewController.isModalInPresentation = true
+            self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension DetailVC: UITableViewDelegate, UITableViewDataSource{
@@ -333,14 +431,13 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 18))
-        let label = UILabel(frame: CGRectMake(25, 0, tableView.frame.size.width, 18))
+        let label = UILabel(frame: CGRectMake(20, 0, tableView.frame.size.width, 18))
         label.font = UIFont.MPfont(.semibold, size: 17)
-        label.backgroundColor = UIColor(named: "BackGroundColor")
+        label.backgroundColor = .clear
         let index = spec_groups[section]
         label.text = index.name ?? ""
         label.textAlignment = .left
         view.addSubview(label)
-        view.backgroundColor = UIColor(named: "BackGroundColor")
             return view
      }
     
@@ -355,7 +452,9 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource{
         let title = index?.name ?? ""
         let value = index?.value ?? ""
 
-        cell.spec_txt?.text = "\(title) \n\(value)"
+        cell.spec_txt?.text = "\(title) :"
+        cell.valueTxt?.text = "\(value)"
+
         return cell
     }
     
@@ -381,4 +480,27 @@ extension DetailVC: UICollectionViewDataSource, UICollectionViewDelegate{
     }
     
     
+}
+extension DetailVC: MKMapViewDelegate, ReportAdDelegate{
+    func showSuccessMessage() {
+        self.showToastLogIn(message: "Your feedback is sumbmited")
+    }
+    
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+
+        return annotationView
+    }
 }

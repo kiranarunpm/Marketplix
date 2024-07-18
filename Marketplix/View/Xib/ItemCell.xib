@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,136 +12,281 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemCell" customModule="Marketplix" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="196" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="196" height="299"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="196" height="250"/>
+                <rect key="frame" x="0.0" y="0.0" width="196" height="299"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMv-aY-EzA" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="188" height="234"/>
+                        <rect key="frame" x="8" y="8" width="188" height="283"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-AP-tDE">
-                                <rect key="frame" x="8" y="8" width="172" height="218"/>
+                                <rect key="frame" x="8" y="8" width="172" height="267"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-g0-BO8">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-g0-BO8" customClass="R_UIImageView" customModule="Marketplix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="172" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="1Re-cM-W4e"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-cX-dKc">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-cX-dKc" customClass="R_UIImageView" customModule="Marketplix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="172" height="125"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.086654974489795922" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="0qA-vb-iLc"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lQp-Qz-iRI">
-                                        <rect key="frame" x="0.0" y="140" width="172" height="76"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-wc-8aU" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="130" width="172" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="dSi-fJ-KmQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10F-c6-2Z0" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="150" width="172" height="14.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14.33" id="Wog-qW-67w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-YR-kHq" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="167.33333333333334" width="100" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="hXz-wh-JSJ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="p3Y-BX-Mg2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-cb-luT">
+                                        <rect key="frame" x="139" y="8" width="25" height="25"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Oq2-sC-wPA"/>
+                                            <constraint firstAttribute="width" constant="25" id="i6S-ay-Kv4"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="favorite-filled"/>
+                                        <connections>
+                                            <action selector="favBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QHr-hD-DHa"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-vu-li6" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="252.66666666666671" width="50" height="14.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Dwa-TB-NrC"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14.33" id="pUR-bU-MeK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uWH-6X-rml">
+                                        <rect key="frame" x="0.0" y="188.33333333333334" width="172" height="18"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUILDING CONTRACTORS in Bangalore A4D " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B7-wc-8aU" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="172" height="33.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="12"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3BHK, Car porch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10F-c6-2Z0" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="38.666666666666657" width="172" height="14.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji7-Gj-OYr" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="53" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="A4H-Qr-EFK"/>
+                                                    <constraint firstAttribute="width" constant="53" id="G6j-hF-YQO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="style">
                                                         <integer key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="9"/>
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm5-hM-v2h" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="56" y="0.0" width="116" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="9Hg-iT-UEh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-gD-eQm">
-                                                <rect key="frame" x="0.0" y="58" width="172" height="18"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13Miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cga-hq-0Oe" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" red="0.0" green="0.69803921568627447" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
-                                                                <integer key="value" value="3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                <real key="value" value="12"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                                <integer key="value" value="0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$30,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-YR-kHq" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                        <rect key="frame" x="86" y="0.0" width="86" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
-                                                                <integer key="value" value="6"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                <real key="value" value="16"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                                <integer key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                         </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-cb-luT">
-                                        <rect key="frame" x="140" y="8" width="24" height="27"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="Oq2-sC-wPA"/>
-                                            <constraint firstAttribute="width" constant="24" id="i6S-ay-Kv4"/>
-                                        </constraints>
-                                        <color key="tintColor" systemColor="systemRedColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="favorite-filled"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9mi-nr-icb">
+                                        <rect key="frame" x="0.0" y="209.33333333333334" width="172" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDM-Ha-B6G" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="2zW-11-EvU"/>
+                                                    <constraint firstAttribute="width" constant="51" id="dpR-a5-9BZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13y-QF-iWN" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="54" y="0.0" width="118" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="N72-BI-sDO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9mi-nr-icb" secondAttribute="trailing" id="0eh-6q-LY3"/>
                                     <constraint firstAttribute="trailing" secondItem="xwi-g0-BO8" secondAttribute="trailing" id="3yU-jD-gk1"/>
+                                    <constraint firstItem="10F-c6-2Z0" firstAttribute="top" secondItem="4B7-wc-8aU" secondAttribute="bottom" constant="3" id="5U2-7N-fy7"/>
                                     <constraint firstItem="lQf-cb-luT" firstAttribute="top" secondItem="6Ru-AP-tDE" secondAttribute="top" constant="8" id="7Kj-rI-xdX"/>
-                                    <constraint firstItem="lQp-Qz-iRI" firstAttribute="top" secondItem="xwi-g0-BO8" secondAttribute="bottom" constant="15" id="BwO-jv-bub"/>
+                                    <constraint firstItem="dFq-vu-li6" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="9ox-92-zFi"/>
+                                    <constraint firstItem="4B7-wc-8aU" firstAttribute="top" secondItem="xwi-g0-BO8" secondAttribute="bottom" constant="5" id="EED-kf-YQ2"/>
+                                    <constraint firstAttribute="trailing" secondItem="10F-c6-2Z0" secondAttribute="trailing" id="Eww-Ku-Aue"/>
+                                    <constraint firstItem="ftX-YR-kHq" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="FvE-i7-2BB"/>
                                     <constraint firstItem="xwi-g0-BO8" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="KW2-qf-h7j"/>
+                                    <constraint firstItem="ftX-YR-kHq" firstAttribute="top" secondItem="10F-c6-2Z0" secondAttribute="bottom" constant="3" id="PZ8-aD-L89"/>
                                     <constraint firstItem="fCv-cX-dKc" firstAttribute="bottom" secondItem="xwi-g0-BO8" secondAttribute="bottom" id="Qpc-up-mVu"/>
+                                    <constraint firstItem="10F-c6-2Z0" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="UYW-gy-JOJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="dFq-vu-li6" secondAttribute="bottom" id="XFn-Sc-a9p"/>
                                     <constraint firstAttribute="trailing" secondItem="lQf-cb-luT" secondAttribute="trailing" constant="8" id="Ym2-0e-7CQ"/>
                                     <constraint firstItem="fCv-cX-dKc" firstAttribute="leading" secondItem="xwi-g0-BO8" secondAttribute="leading" id="ZeG-jX-SHF"/>
+                                    <constraint firstAttribute="trailing" secondItem="4B7-wc-8aU" secondAttribute="trailing" id="ac0-oy-yCz"/>
                                     <constraint firstItem="xwi-g0-BO8" firstAttribute="top" secondItem="6Ru-AP-tDE" secondAttribute="top" id="af8-jQ-gNB"/>
+                                    <constraint firstItem="4B7-wc-8aU" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="bKl-zX-4Dg"/>
                                     <constraint firstItem="fCv-cX-dKc" firstAttribute="top" secondItem="xwi-g0-BO8" secondAttribute="top" id="ig5-rE-bnj"/>
                                     <constraint firstItem="fCv-cX-dKc" firstAttribute="trailing" secondItem="xwi-g0-BO8" secondAttribute="trailing" id="ntK-O8-YBl"/>
-                                    <constraint firstItem="lQp-Qz-iRI" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="wfh-qe-9Wi"/>
-                                    <constraint firstAttribute="trailing" secondItem="lQp-Qz-iRI" secondAttribute="trailing" id="xFx-wJ-o8f"/>
+                                    <constraint firstItem="uWH-6X-rml" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="o0F-YL-495"/>
+                                    <constraint firstItem="9mi-nr-icb" firstAttribute="top" secondItem="uWH-6X-rml" secondAttribute="bottom" constant="3" id="wPu-mw-U6m"/>
+                                    <constraint firstItem="9mi-nr-icb" firstAttribute="leading" secondItem="6Ru-AP-tDE" secondAttribute="leading" id="wjZ-Kz-oju"/>
+                                    <constraint firstItem="uWH-6X-rml" firstAttribute="top" secondItem="ftX-YR-kHq" secondAttribute="bottom" constant="3" id="xah-I0-gvJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="uWH-6X-rml" secondAttribute="trailing" id="zOc-0G-UTE"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,67 +298,71 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="0.0" height="2"/>
+                                <size key="value" width="0.0" height="4"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="0.66666666666666663" alpha="0.59101296768707479" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="10"/>
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="5"/>
+                                <real key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" name="BackGroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="gMv-aY-EzA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="NHq-Pk-bjb"/>
                 <constraint firstAttribute="trailing" secondItem="gMv-aY-EzA" secondAttribute="trailing" id="d6x-Tx-gCk"/>
                 <constraint firstItem="gMv-aY-EzA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="egS-Pc-vLq"/>
                 <constraint firstAttribute="bottom" secondItem="gMv-aY-EzA" secondAttribute="bottom" constant="8" id="y1t-tb-9By"/>
             </constraints>
-            <size key="customSize" width="196" height="352"/>
+            <size key="customSize" width="196" height="401"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bgView" destination="gMv-aY-EzA" id="iW3-9U-sqP"/>
+                <outlet property="categortTxtLbl" destination="Ji7-Gj-OYr" id="StJ-pH-dx9"/>
+                <outlet property="categoryLbl" destination="gm5-hM-v2h" id="cIU-o9-U0w"/>
+                <outlet property="createdAtLbl" destination="dFq-vu-li6" id="ia4-ad-q3R"/>
+                <outlet property="distanceLbl" destination="13y-QF-iWN" id="cRg-BA-5Nn"/>
+                <outlet property="distanceTxtLbl" destination="RDM-Ha-B6G" id="aX6-Ky-2mE"/>
                 <outlet property="favImg" destination="lQf-cb-luT" id="eZy-8u-e5d"/>
                 <outlet property="img" destination="xwi-g0-BO8" id="k31-ad-AEX"/>
-                <outlet property="mileTxt" destination="Cga-hq-0Oe" id="TMl-8B-ymJ"/>
                 <outlet property="nameTxt" destination="4B7-wc-8aU" id="KSP-kh-aZ6"/>
                 <outlet property="priceTxt" destination="ftX-YR-kHq" id="m19-KT-UUL"/>
                 <outlet property="subTxt" destination="10F-c6-2Z0" id="KFA-5W-1pN"/>
             </connections>
-            <point key="canvasLocation" x="229.00763358778624" y="126.05633802816902"/>
+            <point key="canvasLocation" x="229.00763358778624" y="143.3098591549296"/>
         </collectionViewCell>
     </objects>
     <designables>
-        <designable name="10F-c6-2Z0">
-            <size key="intrinsicContentSize" width="95" height="14.333333333333334"/>
-        </designable>
-        <designable name="4B7-wc-8aU">
-            <size key="intrinsicContentSize" width="292" height="17"/>
-        </designable>
-        <designable name="Cga-hq-0Oe">
-            <size key="intrinsicContentSize" width="52" height="18"/>
-        </designable>
-        <designable name="ftX-YR-kHq">
-            <size key="intrinsicContentSize" width="49.333333333333336" height="18"/>
+        <designable name="10F-c6-2Z0"/>
+        <designable name="13y-QF-iWN"/>
+        <designable name="4B7-wc-8aU"/>
+        <designable name="Ji7-Gj-OYr"/>
+        <designable name="RDM-Ha-B6G"/>
+        <designable name="dFq-vu-li6"/>
+        <designable name="ftX-YR-kHq"/>
+        <designable name="gm5-hM-v2h"/>
+        <designable name="xwi-g0-BO8">
+            <size key="intrinsicContentSize" width="1280" height="822"/>
         </designable>
     </designables>
     <resources>
-        <image name="Building-Contractors-in-Bangalore-sample-image-for-residetntial-civil-contractors-" width="821" height="669"/>
         <image name="favorite-filled" width="20" height="20"/>
-        <namedColor name="BackGroundColor">
-            <color red="0.94900000095367432" green="0.95300000905990601" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="no-image" width="1280" height="822"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

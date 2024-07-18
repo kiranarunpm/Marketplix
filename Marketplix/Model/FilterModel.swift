@@ -24,7 +24,6 @@ struct Value: Codable {
 
   var id   : Int?    = nil
   var name : String? = nil
-    
 
 
 }

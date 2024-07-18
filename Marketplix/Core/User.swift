@@ -18,6 +18,14 @@ enum SaveData: String{
     case id
     case skip
     case mobile
+    
+    case location
+    case lat
+    case long
+    
+    case fcmToken
+    
+    case isEnableAllowAccess
 }
 
 class User{
@@ -41,7 +49,7 @@ class User{
 
     var token: String {
         print("token: ",defaults.string(forKey: SaveData.accessToken.rawValue) ?? "")
-        return  "159|fuVDwzMaxVyQ5bLSfYUm68KveUeqFlcIpbyrpTHN"
+        return  defaults.string(forKey: SaveData.accessToken.rawValue) ?? ""
     }
     
     var skiped: String {

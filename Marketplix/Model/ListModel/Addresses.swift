@@ -21,6 +21,7 @@ struct Addresses : Codable {
 	let pincode : String?
 	let sector : String?
 	let sub_sector : String?
+    let distance: String?
 
 	
 

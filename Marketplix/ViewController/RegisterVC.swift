@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import DatePickerDialog
 class RegisterVC: BaseVC {
     var email = ""
 
@@ -17,12 +18,31 @@ class RegisterVC: BaseVC {
         return AuthenticationVM()
     }()
     var request: RegisterRequest?
+    var otpMessage = ""
+    @IBOutlet weak var dateTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailTxt.text = email
         self.emailTxt.isEnabled = false
+        
+        
+        showToastLogIn(message: otpMessage)
     }
     
+
+    @IBAction func datePickerBtn(_ sender: Any) {
+        datePickerTapped()
+    }
+    
+    func datePickerTapped() {
+        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) { date in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                self.dateTxt.text = formatter.string(from: dt)
+            }
+        }
+    }
 
     
     @IBAction func registerBtn(_ sender: Any) {
@@ -42,7 +62,12 @@ class RegisterVC: BaseVC {
             return
         }
         
-        let request = RegisterRequest(first_name: username, otp: "", email: email,dob: "10/02/2002")
+        guard let dob = self.dateTxt.text else {
+            self.showToastLogIn(message: "Please choose date of birth")
+            return
+        }
+        
+        let request = RegisterRequest(first_name: username, otp: "", email: email,dob: dob, phone: mobile)
         
         let storyboard = VerificationVC.instantiate(fromAppStoryboard: .Main)
         storyboard.email = self.emailTxt.text ?? ""

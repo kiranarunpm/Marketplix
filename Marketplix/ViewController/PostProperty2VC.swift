@@ -7,58 +7,96 @@
 
 import UIKit
 import CoreLocation
-import LocationPicker
-class PostProperty2VC: UIViewController, CLLocationManagerDelegate {
+import MapKit
+
+class PostProperty2VC: BaseVC {
 
     var postRealEstateArr  = [PostRealEstateModel]()
 
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
-    let locationManager = CLLocationManager()
-
+    @IBOutlet weak var maps: R_UIView!
+    lazy var cityModel: CityVM = {
+        return CityVM()
+    }()
+    
+    var lat: String = ""
+    var long: String = ""
+    lazy var cityDetail: CityVM = {
+        return CityVM()
+    }()
+    @IBOutlet weak var searchLocation: MPUILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    var predictionsArr: [Predictions] = []
+    
+    @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet weak var tableView: UITableView!{
         didSet{
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.registerCell(ChooseTextCell.identifire)
-            tableView.registerCell(TextCell.identifire)
-            tableView.registerCell(RadioButtonCell.identifire)
-            tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+            tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         }
     }
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == "contentSize"){
-            if let newvalue = change?[.newKey]
-            {
-                let newsize  = newvalue as! CGSize
-                tableViewHeight.constant = newsize.height
-            }
-        }
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        } else {
-            // Handle the error (e.g., location services are disabled)
-        }
-
+        self.searchTxt.delegate = self
+        initViewModel()
         
     }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
+    
+    
+    // MARK: InitViewModel
+    func initViewModel() {
+        
+        cityModel.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                let cityArr = _self.cityModel.predictions
+                self?.predictionsArr = cityArr
+          
+                self?.tableView.reloadData()
+                
+            }
         }
+        
+        
+        cityDetail.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                self?.dismiss(animated: true){
+                    let details = self?.cityDetail.cityDetailResponse
+                    self?.tableView.isHidden = true
+//                    self?.delegate?.getLocation(self?.searchTxt.text ?? "", lat: details?.result?.geometry?.location?.lat?.description ?? "", lng: details?.result?.geometry?.location?.lng?.description ?? "")
+                    self?.searchLocation.text = details?.result?.formatted_address ?? ""
+                    let center = CLLocationCoordinate2D(latitude: Double(details?.result?.geometry?.location?.lat?.description ?? "") ?? 0, longitude: Double(details?.result?.geometry?.location?.lng?.description ?? "") ?? 0)
+                         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                         self?.mapView.setRegion(region, animated: true)
+                    self?.lat = details?.result?.geometry?.location?.lat?.description ?? ""
+                    self?.long = details?.result?.geometry?.location?.lng?.description ?? ""
+
+                    let london = MKPointAnnotation()
+                    london.title = "loc"
+                    london.coordinate = CLLocationCoordinate2D(latitude: Double(details?.result?.geometry?.location?.lat?.description ?? "") ?? 0, longitude: Double(details?.result?.geometry?.location?.lng?.description ?? "") ?? 0)
+                    self?.mapView.delegate = self
+                    self?.mapView.addAnnotation(london)
+                    _self.maps.isHidden = false
+                    _self.searchLocation.isHidden = false
+
+                }
+                
+            }
+        }
+        
+        
+        cityModel.callLocation("", key: Constants.googleApiKey)
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to find user's location: \(error.localizedDescription)")
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -70,250 +108,117 @@ class PostProperty2VC: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func nextBtn(_ sender: Any) {
+        
+        if searchLocation.text == ""{
+            self.showToastLogIn(message: "Please choose address")
+            return
+        }
+        var ind = 0
+        var j = 0
+        self.postRealEstateArr.forEach { item in
+            if item.name == "Location Details"{
+                ind = j
+            }
+            j += 1
+        }
+        var i = 0
+        self.postRealEstateArr[ind].results?.forEach({ item in
+        
+            
+            if item.name == "Sector"{
+                self.postRealEstateArr[ind].results?[i].value = self.searchLocation.text ?? ""
+            }
+            
+            if item.name == "Lat"{
+                self.postRealEstateArr[ind].results?[i].value = self.lat
+            }
+            if item.name == "Long"{
+                self.postRealEstateArr[ind].results?[i].value = self.long
+            }
+
+            i += 1
+        })
+        
         let storyboard = PostImageVC.instantiate(fromAppStoryboard: .Main)
         storyboard.postRealEstateArr = self.postRealEstateArr
         self.navigationController?.pushViewController(storyboard, animated: true)
 
     }
     
-    @IBAction func pickLocation(_ sender: Any) {
-        let locationPicker = LocationPickerViewController()
-
-        // you can optionally set initial location
-        let location = CLLocation(latitude: 35, longitude: 35)
-//        let initialLocation = Location(name: "My home", location: location, placemark: CLPlacemark)
-//        locationPicker.location = initialLocation
-
-        // button placed on right bottom corner
-        locationPicker.showCurrentLocationButton = true // default: true
-
-        // default: navigation bar's `barTintColor` or `UIColor.white`
-        locationPicker.currentLocationButtonBackground = .blue
-
-        // ignored if initial location is given, shows that location instead
-        locationPicker.showCurrentLocationInitially = true // default: true
-
-        locationPicker.mapType = .standard // default: .Hybrid
-
-        // for searching, see `MKLocalSearchRequest`'s `region` property
-        locationPicker.useCurrentLocationAsHint = true // default: false
-
-        locationPicker.searchBarPlaceholder = "Search places" // default: "Search or enter an address"
-
-        locationPicker.searchHistoryLabel = "Previously searched" // default: "Search History"
-
-        // optional region distance to be used for creation region when user selects place from search results
-        locationPicker.resultRegionDistance = 500 // default: 600
-
-        locationPicker.completion = { location in
-        
-            var ind = 0
-            var j = 0
-            self.postRealEstateArr.forEach { item in
-                if item.name == "Location Details"{
-                    ind = j
-                }
-                j += 1
-            }
-            
-            var i = 0
-            self.postRealEstateArr[ind].results?.forEach({ item in
-                if item.name == "Building Name"{
-                    self.postRealEstateArr[ind].results?[i].value = location?.placemark.name ?? ""
-                }
-                
-                if item.name == "Street Name"{
-                    self.postRealEstateArr[ind].results?[i].value = location?.placemark.streetName ?? ""
-                }
-                
-                if item.name == "Sector"{
-                    self.postRealEstateArr[ind].results?[i].value = location?.placemark.locality ?? ""
-                }
-                
-                if item.name == "Sub Sector"{
-                    self.postRealEstateArr[ind].results?[i].value = location?.placemark.subLocality ?? ""
-                }
-                
-                if item.name == "Pincode"{
-                    self.postRealEstateArr[ind].results?[i].value = location?.placemark.postalCode?.description ?? ""
-                }
-                
-                i += 1
-            })
-
-            self.tableView.reloadData()
-
-            
-        }
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.pushViewController(locationPicker, animated: true)
-    }
     
 }
 
 extension PostProperty2VC: UITableViewDataSource, UITableViewDelegate{
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        let filter = postRealEstateArr.filter { item in
-            if item.name == "Location Details"{
-                return true
-            }else{
-                return false
-            }
-        }
-        return filter.count
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let filter = postRealEstateArr.filter { item in
-            if item.name == "Location Details"{
-                return true
-            }else{
-                return false
-            }
-        }
-        
-        let view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 18))
-            let label = UILabel(frame: CGRectMake(0, 0, tableView.frame.size.width, 18))
-        label.font = UIFont.MPfont(.semibold, size: 17)
-            label.text = filter[section].name ?? ""
-        label.textAlignment = .center
-            view.addSubview(label)
-        return view
-     }
-            
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let filter = postRealEstateArr.filter { item in
-            if item.name == "Location Details"{
-                return true
-            }else{
-                return false
-            }
-        }
-        return filter.first?.results?.count ?? 0
+        return cityModel.predictions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let filter = postRealEstateArr.filter { item in
-            if item.name == "Location Details"{
-                return true
-            }else{
-                return false
-            }
-        }
-        let index = filter.first?.results?[indexPath.row]
-        if index?.type == "text"{
-            let cell = tableView.dequeueReusableCell(withIdentifier: TextCell.identifire, for: indexPath) as! TextCell
-            cell.nameTxt.text = index?.name
-            cell.valueTxt.text = index?.value
-            cell.valueTxt.placeholder = index?.name
-            cell.delegate = self
-            cell.valueTxt.keyboardType = index?.type ?? "" == "text" ? .default : .numberPad
-            cell.index = indexPath
-            return cell
-        }
-        else if index?.type == "select"{
-            let cell = tableView.dequeueReusableCell(withIdentifier: ChooseTextCell.identifire, for: indexPath) as! ChooseTextCell
-            cell.nameTxt.text = index?.name
-            cell.valueTxt.text = index?.value
-            cell.valueTxt.placeholder = index?.name
-            return cell
-        }
-        
-        else if index?.type == "radio"{
-            let cell = tableView.dequeueReusableCell(withIdentifier: RadioButtonCell.identifire, for: indexPath) as! RadioButtonCell
-            if index?.value == "1"{
-                cell.sellImg.image = UIImage(named: "radio-active")
-                cell.rentImg.image = UIImage(named: "radio-inactive")
-
-            }else{
-                cell.sellImg.image = UIImage(named: "radio-inactive")
-                cell.rentImg.image = UIImage(named: "radio-active")
-            }
-            cell.index = indexPath
-            cell.delegate = self
-            return cell
-        }
-        
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        cell.textLabel?.text =  cityModel.predictions[indexPath.row].structured_formatting?.main_text ?? ""
+        cell.textLabel?.font = .MPfont(.regular, size: 14)
+        cell.backgroundColor = .clear
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let filter = postRealEstateArr.filter { item in
-            if item.name == "Location Details"{
-                return true
-            }else{
-                return false
-            }
-        }
+        let index = cityModel.predictions[indexPath.row]
+        let val = index.structured_formatting?.main_text ?? ""
+        cityDetail.callLocationDetail(index.place_id ?? "", key: Constants.googleApiKey)
         
+
     }
-    
     
 }
-extension PostProperty2VC: TextCellDelegate, SelectVCDelegate, RadioButtonDelegate{
-    func radioHandler(value: String, index: IndexPath) {
-        print("value", value)
-        var i = 0
-        
-        postRealEstateArr[index.section].results?.forEach { item in
-            if i == index.row{
-                postRealEstateArr[index.section].results?[i].value = value
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            i += 1
-        }
-    }
-    
-    func setvalue(value: String, index: IndexPath) {
-        print("value", value)
-        var ind = 0
-        var j = 0
-        postRealEstateArr.forEach { item in
-            if item.name == "Location Details"{
-                ind = j
-            }
-            j += 1
-        }
-        
-        var i = 0
-        postRealEstateArr[ind].results?.forEach { item in
-            if i == index.row{
-                postRealEstateArr[ind].results?[index.row].value = value
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            
-            i += 1
-        }
-    }
-    
-    
-
-    
-    func selectedIndex(category: Category, index: IndexPath, nameString: String) {
-        print("value", category.name ?? "")
-        
-        postRealEstateArr[index.section].results?.forEach( { item in
-                postRealEstateArr[index.section].results?[index.row].value = category.name ?? ""
-            postRealEstateArr[index.section].results?[index.row].id = category.id?.description ?? ""
 
 
-                
-        })
-        DispatchQueue.main.async {
+
+extension PostProperty2VC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        self.maps.isHidden = true
+        self.searchLocation.isHidden = true
+        tableView.isHidden = false
+        if range.location == 0 && range.length == 1 && string == "" {
+            self.self.predictionsArr.removeAll()
             self.tableView.reloadData()
+        }else {
+            if range.length == 1 {
+                let txt = textField.text!.dropLast()
+                self.cityModel.callLocation(String(txt), key: Constants.googleApiKey)
+            }else {
+                if let text = textField.text, let textRange = Range(range, in: text) {
+                    let updatedText = text.replacingCharacters(in: textRange, with: string)
+                    self.cityModel.callLocation(updatedText, key: Constants.googleApiKey)
+                }
+            }
         }
-      
-
+        return true
     }
-                
-  
     
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        self.tableView.isHidden = false
+        return true
+    }
+}
+
+extension PostProperty2VC: MKMapViewDelegate{
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+
+        return annotationView
+    }
 }

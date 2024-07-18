@@ -96,7 +96,7 @@ extension DetailVM{
     func callListingFav() {
         self.isLoading = true
         
-        ARBusinessServiceHelper.request(router: ARServiceManager.listFavAd) { [weak self] (result : Result<ListItemResponse, ARFetchError>) in
+        ARBusinessServiceHelper.request(router: ARServiceManager.listFavAd) { [weak self] (result : Result<FavListItemResponse, ARFetchError>) in
             
             guard let _self = self else { return }
             
@@ -113,10 +113,10 @@ extension DetailVM{
         
     }
     
-    func callListingRecentlyViewed() {
+    func callListingRecentlyViewed(lat: String, lng: String) {
         self.isLoading = true
         
-        ARBusinessServiceHelper.request(router: ARServiceManager.listRecentlyViewedAd) { [weak self] (result : Result<ListItemResponse, ARFetchError>) in
+        ARBusinessServiceHelper.request(router: ARServiceManager.listRecentlyViewedAd(lat: lat, lng: lng)) { [weak self] (result : Result<ListItemResponse, ARFetchError>) in
             
             guard let _self = self else { return }
             
@@ -137,6 +137,26 @@ extension DetailVM{
         self.isLoading = true
         
         ARBusinessServiceHelper.request(router: ARServiceManager.listSubscription) { [weak self] (result : Result<SubscriptionResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.subscriptionResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    func callReportAds(_ reguest: [String: String]) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.reportAds(reguest)) { [weak self] (result : Result<SubscriptionResponse, ARFetchError>) in
             
             guard let _self = self else { return }
             

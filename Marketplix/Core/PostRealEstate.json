@@ -28,7 +28,7 @@
                 "name": "Description",
                 "key": "description",
                 "value": "",
-                "type": "text",
+                "type": "textView",
                 "required": true,
                 "keyboard" : "text"
 
@@ -110,6 +110,24 @@
             {
                 "name": "Pincode",
                 "key": "pincode",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "number"
+
+            },
+            {
+                "name": "Lat",
+                "key": "lat",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "keyboard" : "number"
+
+            },
+            {
+                "name": "Long",
+                "key": "lng",
                 "value": "",
                 "type": "text",
                 "required": true,

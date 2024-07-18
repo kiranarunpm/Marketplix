@@ -37,13 +37,15 @@ struct Links : Codable {
 struct ListRequest: Codable{
    var lat:String = ""
    var lng:String = ""
-   var building_name:String = ""
-   var street_name:String = ""
-   var pincode:String = ""
-   var sector:String = ""
-   var sub_sector:String = ""
-   var title:String = ""
-   var description:String = ""
-   var type: String = ""
+//   var building_name:String = ""
+//   var street_name:String = ""
+//   var pincode:String = ""
+//   var sector:String = ""
+//   var sub_sector:String = ""
+//   var title:String = ""
+//   var description:String = ""
+//   var type: String = ""
    var category_id: String = ""
+    let search: String?
+    var page: String = ""
 }

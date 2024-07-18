@@ -9,11 +9,12 @@ import Foundation
 
 struct DashboardResponse: Codable{
     let banner1: [Banner]?
-    let new_listing: [NewListing]?
-    let featured_listing : [DataList]?
-    let recommandation: [DataList]?
-    let recently_viewed: [DataList]?
+    var new_listing: [NewListing]?
+    var featured_listing : [DataList]?
+    var recommandation: [DataList]?
+    var recently_viewed: [DataList]?
     let main_categories: [Category]?
+    let chat_count: Int
 
 }
 
@@ -39,6 +40,9 @@ struct NewListing: Codable{
     let classified_images: [ClassifiedImages]?
     let created_at: String?
     let price : String?
+    var is_fav: Int?
+    let category: CategoryItem?
+
 }
 struct Address: Codable{
     let building_name: String?
@@ -46,6 +50,7 @@ struct Address: Codable{
     let pincode: String?
     let sector: String?
     let sub_sector: String?
+    let distance : String?
 }
 
 struct ClassifiedImages:Codable{

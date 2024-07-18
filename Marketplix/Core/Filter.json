@@ -1,21 +1,10 @@
 {
   "flter": [
     {
-      "key": "BedRoom",
+      "key": "Category",
       "type": "Checkbox",
       "value": [
-        {
-          "id": 1,
-          "name": "1"
-        },
-        {
-          "id": 1,
-          "name": "2"
-        },
-        {
-          "id": 1,
-          "name": "3"
-        }
+        
       ]
     },
     {

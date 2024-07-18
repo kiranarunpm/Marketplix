@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="KGk-i7-Jjw" customClass="ChatBubbleRight" customModule="Marketplix">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="161" id="KGk-i7-Jjw" customClass="ChatBubbleRight" customModule="Marketplix">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1L0-Md-diw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-ym-oHc">
-                                <rect key="frame" x="40" y="25" width="230" height="72"/>
+                                <rect key="frame" x="18" y="25" width="227" height="111"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="618-4l-dqz" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -47,10 +46,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7n-tq-xPy" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="0.0" width="170" height="72"/>
+                                        <rect key="frame" x="60" y="0.0" width="167" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="How to reach you location?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jx-9S-CMI" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="15" width="154" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to reach you location?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jx-9S-CMI" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="35" width="151" height="35.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="5rR-Pu-qV7"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -59,16 +61,16 @@
                                                         <integer key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                        <integer key="value" value="1"/>
+                                                        <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="04.44 PM" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-fT-s69" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="44" width="47" height="20"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arun Raj" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAp-ya-jKG" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="10" width="151" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -76,10 +78,27 @@
                                                         <integer key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                        <integer key="value" value="1"/>
+                                                        <integer key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04.44 PM" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-fT-s69" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="82.333333333333329" width="38.333333333333336" height="9.6666666666666714"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
@@ -88,14 +107,16 @@
                                         <constraints>
                                             <constraint firstItem="QNx-fT-s69" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="4rT-Ka-Hjz"/>
                                             <constraint firstItem="6jx-9S-CMI" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="J5J-se-fO5"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="JkU-6g-dJd"/>
+                                            <constraint firstItem="YAp-ya-jKG" firstAttribute="trailing" secondItem="6jx-9S-CMI" secondAttribute="trailing" id="LhG-tg-RiP"/>
+                                            <constraint firstItem="YAp-ya-jKG" firstAttribute="top" secondItem="V7n-tq-xPy" secondAttribute="top" constant="10" id="MAY-qb-V2B"/>
+                                            <constraint firstItem="YAp-ya-jKG" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="MQA-Lo-Tca"/>
                                             <constraint firstAttribute="trailing" secondItem="6jx-9S-CMI" secondAttribute="trailing" constant="8" id="OSe-QC-ZKA"/>
                                             <constraint firstAttribute="trailing" secondItem="6jx-9S-CMI" secondAttribute="trailing" constant="8" id="a7G-yM-u1E"/>
-                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="top" secondItem="V7n-tq-xPy" secondAttribute="top" constant="15" id="clN-Pu-Nkn"/>
+                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="top" secondItem="V7n-tq-xPy" secondAttribute="top" constant="35" id="clN-Pu-Nkn"/>
                                             <constraint firstItem="6jx-9S-CMI" firstAttribute="leading" secondItem="V7n-tq-xPy" secondAttribute="leading" constant="8" id="cnm-cW-lMJ"/>
                                             <constraint firstItem="QNx-fT-s69" firstAttribute="top" secondItem="6jx-9S-CMI" secondAttribute="bottom" constant="12" id="gI2-uf-ZKU"/>
-                                            <constraint firstItem="6jx-9S-CMI" firstAttribute="top" secondItem="V7n-tq-xPy" secondAttribute="top" constant="15" id="l0Y-b1-VrJ"/>
                                             <constraint firstAttribute="bottom" secondItem="QNx-fT-s69" secondAttribute="bottom" constant="8" id="mbB-Ow-fmI"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="ysZ-KY-sgK"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -107,15 +128,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zfu-ym-oHc" firstAttribute="top" secondItem="1L0-Md-diw" secondAttribute="top" constant="25" id="47w-hZ-Zpn"/>
                             <constraint firstAttribute="bottom" secondItem="zfu-ym-oHc" secondAttribute="bottom" constant="25" id="5YO-de-pf4"/>
-                            <constraint firstAttribute="trailing" secondItem="zfu-ym-oHc" secondAttribute="trailing" constant="50" id="E2S-rq-Qsd"/>
-                            <constraint firstItem="zfu-ym-oHc" firstAttribute="leading" secondItem="1L0-Md-diw" secondAttribute="leading" constant="40" id="PDg-Av-0qJ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zfu-ym-oHc" secondAttribute="trailing" constant="75" id="E2S-rq-Qsd"/>
+                            <constraint firstItem="zfu-ym-oHc" firstAttribute="leading" secondItem="1L0-Md-diw" secondAttribute="leading" constant="18" id="PDg-Av-0qJ"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="1L0-Md-diw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="O7b-BV-SqE"/>
                     <constraint firstItem="1L0-Md-diw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PDh-ep-85f"/>
@@ -124,11 +146,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="dateTxt" destination="QNx-fT-s69" id="FGK-8h-HLO"/>
+                <outlet property="nameTxt" destination="YAp-ya-jKG" id="1Mu-fG-4Ld"/>
                 <outlet property="txxt" destination="6jx-9S-CMI" id="QBJ-zT-p0Z"/>
             </connections>
-            <point key="canvasLocation" x="30.534351145038165" y="67.605633802816911"/>
+            <point key="canvasLocation" x="30.534351145038165" y="81.338028169014095"/>
         </tableViewCell>
     </objects>
     <designables>
@@ -136,13 +160,13 @@
             <size key="intrinsicContentSize" width="174.66666666666666" height="17"/>
         </designable>
         <designable name="QNx-fT-s69">
-            <size key="intrinsicContentSize" width="47" height="12"/>
+            <size key="intrinsicContentSize" width="38.333333333333336" height="9.6666666666666661"/>
+        </designable>
+        <designable name="YAp-ya-jKG">
+            <size key="intrinsicContentSize" width="54.333333333333336" height="17"/>
         </designable>
     </designables>
     <resources>
-        <image name="man" width="128" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="man" width="64" height="64"/>
     </resources>
 </document>

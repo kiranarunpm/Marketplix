@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchFilterHeader" customModule="Marketplix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmF-Ng-oWd" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
+                    <rect key="frame" x="5" y="0.0" width="383" height="40"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoS-g2-sbR">
+                            <rect key="frame" x="37" y="8" width="326" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="x9P-6C-MnJ">
+                            <rect key="frame" x="10" y="7.9999999999999964" width="22" height="24.333333333333332"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25.670000000000002" id="0go-l0-LEz"/>
+                                <constraint firstAttribute="width" constant="22" id="gXj-Cm-9i0"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="x9P-6C-MnJ" firstAttribute="leading" secondItem="HmF-Ng-oWd" secondAttribute="leading" constant="10" id="8Oi-u2-jJR"/>
+                        <constraint firstItem="aoS-g2-sbR" firstAttribute="leading" secondItem="x9P-6C-MnJ" secondAttribute="trailing" constant="5" id="Dgv-h2-p98"/>
+                        <constraint firstAttribute="height" constant="40" id="Mo8-2H-mfD"/>
+                        <constraint firstAttribute="bottom" secondItem="aoS-g2-sbR" secondAttribute="bottom" constant="8" id="N79-Na-xFF"/>
+                        <constraint firstItem="x9P-6C-MnJ" firstAttribute="centerY" secondItem="aoS-g2-sbR" secondAttribute="centerY" id="hAB-tn-1Bc"/>
+                        <constraint firstItem="aoS-g2-sbR" firstAttribute="top" secondItem="HmF-Ng-oWd" secondAttribute="top" constant="8" id="sKp-6u-PYi"/>
+                        <constraint firstAttribute="trailing" secondItem="aoS-g2-sbR" secondAttribute="trailing" constant="20" id="t2a-DT-pGp"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HmF-Ng-oWd" secondAttribute="trailing" constant="5" id="Bi0-xx-hKy"/>
+                <constraint firstItem="HmF-Ng-oWd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="KrN-nf-Io9"/>
+                <constraint firstItem="HmF-Ng-oWd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UEJ-5H-pnc"/>
+                <constraint firstAttribute="bottom" secondItem="HmF-Ng-oWd" secondAttribute="bottom" id="wt2-WB-RpF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="searchTxt" destination="aoS-g2-sbR" id="xeZ-FZ-rRw"/>
+            </connections>
+            <point key="canvasLocation" x="32.824427480916029" y="302.11267605633805"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

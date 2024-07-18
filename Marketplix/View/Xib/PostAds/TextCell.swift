@@ -26,10 +26,13 @@ class TextCell: UITableViewCell, UITextFieldDelegate {
         delegate?.setvalue(value: valueTxt.text ?? "", index: index)
     }
    
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.setvalue(value: valueTxt.text ?? "", index: index)
+
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate?.setvalue(value: valueTxt.text ?? "", index: index)
-        return true
+        return false
 
     }
 }

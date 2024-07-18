@@ -10,6 +10,8 @@ import UIKit
 class DetailSpecCell: UITableViewCell {
 
     @IBOutlet weak var spec_txt: MPUILabel!
+    @IBOutlet weak var valueTxt: MPUILabel!
+
     static let identifire = "DetailSpecCell"
     override func awakeFromNib() {
         super.awakeFromNib()

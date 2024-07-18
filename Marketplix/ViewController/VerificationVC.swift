@@ -9,7 +9,7 @@ import UIKit
 import MBProgressHUD
 
 class VerificationVC: BaseVC {
-    var counter = 60
+    var counter = 90
     var request: RegisterRequest?
 
     lazy var viewModel: AuthenticationVM = {
@@ -23,20 +23,45 @@ class VerificationVC: BaseVC {
     var email = ""
     @IBOutlet weak var resendBtn: UIButton!
     @IBOutlet weak var timeTxt: UILabel!
+    var otpMessage = ""
+    lazy var loginVM: AuthenticationVM = {
+        return AuthenticationVM()
+    }()
+    var timer = Timer()
+    var tempCode : Int = 0
+    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        code1.becomeFirstResponder()
         
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-        
-        
-        super.viewDidLoad()
         code1.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         code2.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         code3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         code4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        
+        if email == "demomarketplix@gmail.com"{
+            
+            let string = otpMessage
+            if let number = Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                print(number)
+                tempCode = number
+                self.verifyBtn(self)
+            }
+        }else{
+            showToastLogIn(message: otpMessage)
+        }
+        updateTimer()
         initViewModel()
+    }
+    
+    func updateTimer(){
+        backgroundTask = UIApplication.shared.beginBackgroundTask{
+            UIApplication.shared.endBackgroundTask(self.backgroundTask)
+            self.backgroundTask = .invalid
+        }
+        
+         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -137,10 +162,17 @@ class VerificationVC: BaseVC {
     
     @objc func updateCounter() {
         //example functionality
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.unitsStyle = .positional
+
+        let formattedString = formatter.string(from: TimeInterval(counter))!
+        print(formattedString)
+        
         if counter > 0 {
             counter -= 1
             self.timeTxt.isHidden = false
-            self.timeTxt.text = "0:\(counter)"
+            self.timeTxt.text = "\(formattedString)"
             self.resendBtn.isUserInteractionEnabled = false
             self.resendBtn.setTitleColor(.gray, for: .normal)
         }
@@ -148,6 +180,8 @@ class VerificationVC: BaseVC {
             self.timeTxt.isHidden = true
             self.resendBtn.isUserInteractionEnabled = true
             self.resendBtn.setTitleColor(.systemBlue, for: .normal)
+            timer.invalidate()
+            
         }
     }
 
@@ -165,13 +199,12 @@ class VerificationVC: BaseVC {
             DispatchQueue.main.async {
                 
                 let details = self?.viewModel.loginResponse
+                User.shared.saveData(with: .id, value: details?.user?.user_id?.description ?? "")
                 User.shared.saveData(with: .accessToken, value: details?.token ?? "")
                 User.shared.saveData(with: .name, value: details?.user?.first_name ?? "")
                 User.shared.saveData(with: .email, value: details?.user?.email ?? "")
-                User.shared.saveData(with: .mobile, value: details?.user?.phone ?? "")
+                User.shared.saveData(with: .mobile, value: details?.user?.phone?.description ?? "")
 
-
-                print("Token: : \(details)")
                 guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabVC") as? MainTabVC else {
                     return
                 }
@@ -212,6 +245,55 @@ class VerificationVC: BaseVC {
                 }
             }
         }
+        
+        
+        loginVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                let details = _self.loginVM.getOtpResponse
+                
+                self?.showToastLogIn(message: details?.message ?? "")
+              
+                self?.counter = 90
+                
+                _self.updateTimer()
+
+                
+            }
+        }
+        
+        loginVM.failureClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                if let alertMessage = _self.loginVM.alertMessage {
+                    print("alertMessage", alertMessage)
+                    
+                }
+            }
+        }
+        
+        loginVM.loadingStatus = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                let isLoading = _self.loginVM.isLoading ?? false
+                
+                if isLoading {
+                    MBProgressHUD.showAdded(to: _self.view, animated: true)
+                    
+                }else {
+                    MBProgressHUD.hide(for: _self.view, animated: true)
+                }
+            }
+        }
 
         
     }
@@ -219,10 +301,27 @@ class VerificationVC: BaseVC {
     
     @IBAction func verifyBtn(_ sender: Any) {
         
-        let code = code1.text! + code2.text! + code3.text! + code4.text!
+        var code = code1.text! + code2.text! + code3.text! + code4.text!
+        if self.email == "demomarketplix@gmail.com"{
+            code = String(tempCode)
+        }
         if isFromLogin{
-            let request = LoginRequest(email: self.email, otp: code)
-            viewModel.callLogin(request)
+            
+            let email = self.email
+               
+            var key = "phone"
+            if email.isValidPhone(phone: email){
+                
+            }else{
+                if email.isValidEmail(email: email){
+                    key = "email"
+                }else{
+                    showToastLogIn(message: "Please enter email address")
+
+                }
+            }
+            
+            viewModel.callLogin([key: email, "otp": code, "type": "login"])
         }else{
             request?.otp = code
             if let request = self.request{
@@ -230,6 +329,26 @@ class VerificationVC: BaseVC {
             }
         }
     }
+    @IBAction func resendBtn(_ sender: Any) {
+        let email = self.email
+        
+        var key = "phone"
+        if email.isValidPhone(phone: email){
+            
+        }else{
+            if email.isValidEmail(email: email){
+                key = "email"
+            }else{
+                showToastLogIn(message: "Please enter email address")
+
+            }
+        }
+        
+        let request = [key: email]
+        loginVM.callGenerateOTP(request)
+    }
+    
+    
 }
 
 class MarketField:  UITextField{

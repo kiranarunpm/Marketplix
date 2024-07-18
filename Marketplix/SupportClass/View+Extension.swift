@@ -103,3 +103,19 @@ extension String{
         return emailPred.evaluate(with: self)
     }
 }
+
+
+@IBDesignable class R_UIImageView: UIImageView {
+
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+  
+}
