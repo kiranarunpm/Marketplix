@@ -41,6 +41,18 @@ class HomeVM{
             self.successClosure?()
         }
     }
+    
+    public var getOTPModel : GetOTPModel? {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
+    public var successResponse : SuccessResponse? {
+        didSet{
+            self.successClosure?()
+        }
+    }
 
     
     
@@ -164,10 +176,17 @@ extension HomeVM {
     
     func callUpdatetoken(_ token: String) {
         
-        ARBusinessServiceHelper.request(router: ARServiceManager.update_token(token)) { [weak self] (result : Result<CategoryModels, ARFetchError>) in
+        ARBusinessServiceHelper.request(router: ARServiceManager.update_token(token)) { [weak self] (result : Result<SuccessResponse, ARFetchError>) in
             
             guard let _self = self else { return }
             
+            switch result {
+                
+            case .success(let response): _self.successResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
             
           
         }
@@ -193,6 +212,46 @@ extension HomeVM {
         }
         
     }
+    
+    func callDeleteAccount() {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.deleteAccount) { [weak self] (result : Result<GetOTPModel, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.getOTPModel = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    func callListingFormNewListing(_ type: String, _ request: [String: String]) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.listGroupedAd( type, request)) { [weak self] (result : Result<ListItemResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.classifields = response.classifields
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
 }
 
 struct VersionResponse: Codable{
@@ -201,7 +260,8 @@ struct VersionResponse: Codable{
 struct Versions: Codable{
     let id: Int?
     let os: String?
-    let version: Double?
-    let mandatory: Int
+    let version: String?
+    let mandatory: String?
+    let message: String?
     
 }

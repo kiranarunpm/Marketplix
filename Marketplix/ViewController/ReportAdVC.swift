@@ -63,5 +63,8 @@ class ReportAdVC: BaseVC {
     }
     
     
-
+    @IBAction func closeBttn(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 }

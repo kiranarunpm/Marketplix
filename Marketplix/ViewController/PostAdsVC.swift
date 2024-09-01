@@ -92,16 +92,20 @@ class PostAdsVC: BaseVC {
         specGroupVM.successClosure = { [weak self] () in
             
             guard let _self = self else { return }
-            let data = _self.specGroupVM.specModel?.spec_groups ?? []
+            var data = _self.specGroupVM.specModel?.spec_groups ?? []
+            if _self.isOnEdit{
+                data = _self.editData?.spec_groups ?? []
+                
+            }
             
 
             data.forEach { item in
                 var result = [PostRealEstateModel]()
                 
                 item.spec_items?.forEach({ content in
-                    result.append(PostRealEstateModel(key: "\("specitem")_\(content.id ?? 0)",name: content.name ?? "",value: "", type: "text",required: true, results: []))
+                    result.append(PostRealEstateModel(key: "\("specitem")_\(content.id ?? 0)",name: content.name ?? "",value: content.value ?? "", type: "text",required: true, results: []))
                 })
-                _self.postRealEstateArr.insert(PostRealEstateModel(key: "", name: item.name ?? "", results: result), at: 1)
+                _self.postRealEstateArr.append(PostRealEstateModel(key: "", name: item.name ?? "", results: result))
 
                 
             }
@@ -114,11 +118,27 @@ class PostAdsVC: BaseVC {
         
         categoryVM.callMainCategory(mainCategory: "")
         
+        var i = 0
         postRealEstateArr.first?.results?.forEach({ item in
             if item.name == "Category"{
                 self.specGroupVM.callSpecGroup(item.value ?? "")
-
             }
+            if isOnEdit{
+                if item.name == "Title"{
+                    let title = self.editData?.title ?? ""
+                    self.postRealEstateArr[0].results?[i].value = title
+                }
+                if item.name == "Description" {
+                    let description = self.editData?.description ?? ""
+                    self.postRealEstateArr[0].results?[i].value = description
+                }
+                if item.name == "Price" {
+                    let price = self.editData?.price ?? ""
+                    self.postRealEstateArr[0].results?[i].value = price
+                }
+           
+            }
+            i += 1
         })
         
 
@@ -171,6 +191,8 @@ class PostAdsVC: BaseVC {
         if validation{
             let storyboard = PostProperty2VC.instantiate(fromAppStoryboard: .Main)
             storyboard.postRealEstateArr = self.postRealEstateArr
+            storyboard.editData = self.editData
+            storyboard.isOnEdit = self.isOnEdit
             self.navigationController?.pushViewController(storyboard, animated: true)
         }else{
 //            self.showToastLogIn(message: "Please enter All the fields")
@@ -265,7 +287,7 @@ extension PostAdsVC: UITableViewDataSource, UITableViewDelegate{
             cell.valueTxt.text = index?.value
             cell.valueTxt.placeholder = index?.name
             cell.delegate = self
-            cell.valueTxt.keyboardType = index?.type ?? "" == "text" ? .default : .numberPad
+            cell.valueTxt.keyboardType = index?.keyboard ?? "" == "number" ? .decimalPad : .default
             cell.index = indexPath
             return cell
         }
@@ -355,11 +377,17 @@ extension PostAdsVC: TextCellDelegate, SelectVCDelegate, RadioButtonDelegate, De
     
     func setvalue(value: String, index: IndexPath) {
         print("value", value)
+        var section = 0
+        if index.section == 0{
+            section = 0
+        }else{
+            section = index.section + 1
+        }
         var i = 0
 
-        for _ in postRealEstateArr[index.section].results ?? []{
+        for _ in postRealEstateArr[section].results ?? []{
             if i == index.row{
-                postRealEstateArr[index.section].results?[index.row].value = value
+                postRealEstateArr[section].results?[index.row].value = value
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     

@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO-1024X1024" translatesAutoresizingMaskIntoConstraints="NO" id="Bl5-r2-Vuh">
-                                <rect key="frame" x="76.666666666666686" y="362" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="bgd-9G-tB2"/>
-                                    <constraint firstAttribute="width" constant="240" id="pa7-ho-Gug"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-page-final" translatesAutoresizingMaskIntoConstraints="NO" id="Bl5-r2-Vuh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Bl5-r2-Vuh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4dn-GG-Qfb"/>
+                            <constraint firstAttribute="bottom" secondItem="Bl5-r2-Vuh" secondAttribute="bottom" id="MTr-tZ-keR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bl5-r2-Vuh" secondAttribute="trailing" id="OIH-4G-ECa"/>
+                            <constraint firstItem="Bl5-r2-Vuh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="i8V-ZM-ZWk"/>
+                            <constraint firstItem="Bl5-r2-Vuh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jee-Mf-dMq"/>
                             <constraint firstItem="Bl5-r2-Vuh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xii-2Q-OJC"/>
                         </constraints>
                     </view>
@@ -39,7 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LOGO-1024X1024" width="1024" height="1024"/>
+        <image name="loading-page-final" width="375" height="850"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,12 +10,44 @@ import SideMenu
 import CoreLocation
 class BaseVC: UIViewController {
     let locationManager = CLLocationManager()
+    lazy var chatCountVM: ChatHistoryVM = {
+        return ChatHistoryVM()
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     //   setGradientBackground()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadChatCount(_:)), name: Notification.Name(rawValue: "updateChatCount"), object: nil)
+        initViewModels()
     }
     
+    
+    // MARK: InitViewModel
+    func initViewModels() {
+        
+        chatCountVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                let data =  _self.chatCountVM.chatCountResponse?.chat_count ?? 0
+                if let tabItems = _self.tabBarController?.tabBar.items {
+                    // In this case we want to modify the badge number of the third tab:
+                    let tabItem = tabItems[3]
+                    if data > 0{
+                        tabItem.badgeValue = "\(data)"
+                    }else{
+                        tabItem.badgeValue = nil
+                    }
+
+                }
+                
+                
+                
+            }
+        }
+    }
+    @objc func loadChatCount(_ notification: Notification){
+        chatCountVM.callGetChatCount()
+    }
     //MARK: setupSideMenu
     public func setupSideMenu() {
     }

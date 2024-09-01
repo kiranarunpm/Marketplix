@@ -48,4 +48,15 @@ struct ListRequest: Codable{
    var category_id: String = ""
     let search: String?
     var page: String = ""
+    var groupType = ""
+    var sortby: SortBy = .datepublished
+    var price_min : String = ""
+    var price_max : String = ""
+}
+
+enum SortBy: String, Codable{
+    case datepublished = "datepublished"
+    case lowtohight = "lowtohight"
+    case hightolow = "hightolow"
+
 }

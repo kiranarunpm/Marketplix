@@ -32,7 +32,7 @@ class PostPropertyVC: BaseVC {
             self.colView.register(UINib(nibName: PostMainCatColCell.identifire, bundle: nil), forCellWithReuseIdentifier: PostMainCatColCell.identifire)
             
             
-            let screenSize = CGSize(width: 100, height: 120)
+            let screenSize = CGSize(width: 100, height: 130)
             let layout1 = UICollectionViewFlowLayout()
             layout1.scrollDirection = .horizontal
             layout1.itemSize = screenSize
@@ -53,7 +53,7 @@ class PostPropertyVC: BaseVC {
 
             let screen_width = ScreenSize.SCREEN_WIDTH
 
-            let screenSize = CGSize(width: screen_width / 3 - 20, height: 140)
+            let screenSize = CGSize(width: screen_width / 3 - 20, height: 150)
             let layout1 = UICollectionViewFlowLayout()
             layout1.scrollDirection = .vertical
             layout1.itemSize = screenSize

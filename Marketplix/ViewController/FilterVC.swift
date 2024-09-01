@@ -9,9 +9,23 @@ import UIKit
 
 struct FilterStruct{
     var category_id: String = ""
+    var selectedCategory_id = IndexPath(row: -1, section: -1)
+    
     var location: String = ""
     var lat: String = ""
     var log: String = ""
+    var selectedLocation = -1
+    var selectedPlaceID : String = ""
+
+    var date: String = ""
+    var actualDate = Date()
+
+    var sort: String = ""
+    var selectedSort: Int = -1
+    
+    var price_min = ""
+    var price_max = ""
+
 
 }
 
@@ -28,7 +42,9 @@ class FilterVC: UIViewController {
     var selectedIndex = 0
     var categoryArr = [Category]()
     var selectedIndexPath = IndexPath(row: 0, section: 0)
-    var filterString = ["Category", "Location"]
+    var filterString = ["Category", "Location", "Price range","Date", "Sort By"]
+    var sortArray = ["Date Published", "Price Low to High", "Price High to Low"]
+
     var delegate: FilterStructDelegate?
     var filterVal = [String]()
     var filterData = [Flter]()
@@ -56,6 +72,8 @@ class FilterVC: UIViewController {
             tableView2?.dataSource = self
             tableView2?.registerCell(CheckBoxCell.identifire)
             tableView2?.register(UINib(nibName: SearchFilterHeader.identifire, bundle: nil), forHeaderFooterViewReuseIdentifier: SearchFilterHeader.identifire)
+            tableView2?.registerCell(FilterDatePickerCell.identifire)
+            tableView2?.registerCell(PriceRangeCell.identifire)
 
         }
     }
@@ -140,7 +158,18 @@ class FilterVC: UIViewController {
             self.delegate?.updateFilterAction(filterStruct: self.filterStruct)
         }
     }
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
+    
+    @IBAction func clearBtn(_ sender: Any) {
+        let filterStruct = FilterStruct()
+        self.filterStruct = filterStruct
+        self.dismiss(animated: true){
+            self.delegate?.updateFilterAction(filterStruct: self.filterStruct)
+        }
+    }
     
 }
 
@@ -155,12 +184,22 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource{
             }else{
                 return 1
             }
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if tableView == self.tableView{
             return 0
+        }else{
+            if selectedIndex == 2 || selectedIndex == 3{
+                return 0
+            }
+            return UITableView.automaticDimension
         }
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if tableView == self.tableView{
                 let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            view.backgroundColor = .red
                 return view
         }else{
             if selectedIndex == 0{
@@ -171,9 +210,13 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource{
                 view.addSubview(label)
                 view.backgroundColor = UIColor.white // Set your background color
                 return view
-            }else{
+            }else if selectedIndex == 1{
                 let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SearchFilterHeader.identifire) as! SearchFilterHeader
                 view.delegate = self
+                return view
+            }else{
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+                view.backgroundColor = .red
                 return view
             }
         }
@@ -184,11 +227,14 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource{
         }else{
             if selectedIndex == 0{
                 return categoryArr[section].sub_category?.count ?? 0
-            }else{
+            }else if selectedIndex == 1{
                 return predictionsArr.count
+            }else if selectedIndex == 2 || selectedIndex == 3{
+                return 1
+            }else{
+                return sortArray.count
             }
         }
-        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -202,17 +248,39 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource{
                 let index = self.categoryArr[indexPath.section]
                 let cell = tableView.dequeueReusableCell(withIdentifier: CheckBoxCell.identifire, for: indexPath) as! CheckBoxCell
                 cell.nameTxt.text = index.sub_category?[indexPath.row].name ?? ""
-                if selectedIndexPath == indexPath{
+                if filterStruct.selectedCategory_id == indexPath{
                     cell.img.image = UIImage.checkBox
                 }else{
                     cell.img.image = UIImage.un_checkBox
                 }
                 return cell
-            }else{
+            }else if selectedIndex == 1{
                 let index = self.predictionsArr[indexPath.row]
                 let cell = tableView.dequeueReusableCell(withIdentifier: CheckBoxCell.identifire, for: indexPath) as! CheckBoxCell
                 cell.nameTxt.text = index.structured_formatting?.main_text ?? ""
-                if selectedIndexPath == indexPath{
+                if filterStruct.selectedLocation == indexPath.row{
+                    cell.img.image = UIImage.checkBox
+                }else{
+                    cell.img.image = UIImage.un_checkBox
+                }
+                return cell
+            }else if selectedIndex == 2{
+                let cell = tableView.dequeueReusableCell(withIdentifier: PriceRangeCell.identifire, for: indexPath) as! PriceRangeCell
+                cell.delegate = self
+                cell.minPriceTxt.text = self.filterStruct.price_min
+                cell.maxPriceTxt.text = self.filterStruct.price_max
+                return cell
+            }
+            else if selectedIndex == 3{
+                let cell = tableView.dequeueReusableCell(withIdentifier: FilterDatePickerCell.identifire, for: indexPath) as! FilterDatePickerCell
+                cell.delegate = self
+                cell.datepicker.date = self.filterStruct.actualDate
+                return cell
+            }else{
+                let index = self.sortArray[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: CheckBoxCell.identifire, for: indexPath) as! CheckBoxCell
+                cell.nameTxt.text = index
+                if filterStruct.selectedSort == indexPath.row{
                     cell.img.image = UIImage.checkBox
                 }else{
                     cell.img.image = UIImage.un_checkBox
@@ -229,28 +297,68 @@ extension FilterVC: UITableViewDelegate, UITableViewDataSource{
                 let val  = index.sub_category?[indexPath.row]
                 self.selectedIndexPath = indexPath
                 filterStruct.category_id = val?.id?.description ?? ""
+                filterStruct.selectedCategory_id = indexPath
+
                 DispatchQueue.main.async {
                     self.tableView2?.reloadData()
                 }
-            }else{
+            }else if selectedIndex == 1{
                 let index = self.predictionsArr[indexPath.row]
                 self.cityDetail.callLocationDetail(index.place_id ?? "", key: Constants.googleApiKey)
+                filterStruct.selectedLocation = indexPath.row
+                filterStruct.selectedPlaceID = index.place_id ?? ""
 
+                DispatchQueue.main.async {
+                    self.tableView2?.reloadData()
+                }
+            }else if selectedIndex == 4{
+                let index = self.sortArray[indexPath.row]
+                filterStruct.selectedSort = indexPath.row
+                filterStruct.sort = index
+
+                DispatchQueue.main.async {
+                    self.tableView2?.reloadData()
+                }
             }
         }else{
             selectedIndex = indexPath.row
             self.tableView?.reloadData()
             self.tableView2?.reloadData()
+           
         }
     }
     
 }
 
 extension FilterVC: SearchFilterHeaderDelegate{
+    
     func updateTxt(val: String) {
         self.predictionsArr.removeAll()
         self.tableView2?.reloadData()
         self.cityModel.callLocation(val, key: Constants.googleApiKey)
+    }
+    
+    
+}
+extension FilterVC: FilterDatePickerDelegate{
+    func choosenDate(date: String, actualDate: Date) {
+        self.filterStruct.date = date
+        self.filterStruct.actualDate = actualDate
+
+    }
+    
+    
+}
+
+extension FilterVC: PriceRangeDelegate{
+    func applyMinPriceRange(val: String) {
+        self.filterStruct.price_min = val
+        self.tableView2?.reloadData()
+    }
+    
+    func applyMaxPriceRange(val: String) {
+        self.filterStruct.price_max = val
+        self.tableView2?.reloadData()
     }
     
     

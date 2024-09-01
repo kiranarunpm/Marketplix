@@ -11,13 +11,14 @@ import MBProgressHUD
 import SkeletonView
 import Hero
 import DropDown
+import CoreLocation
+
 class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
     
-    let names = ["Searh Land", "Search Property", "Search Car", "Search Laptops"]
+    let names = ["Search Land", "Search Property", "Search Car", "Search Laptops"]
     var sectionArr = ["header","Main categories"]
-    var commonWordsArr = [String]()
-    var tempCommonWordsArr = [String]()
-    
+    let refreshControl = UIRefreshControl()
+
     lazy var viewModel: HomeVM = {
         return HomeVM()
     }()
@@ -51,7 +52,7 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         return DetailVM()
     }()
     var indexPath = IndexPath(row: 0, section: 0)
-    
+
     @IBOutlet weak var locationTxt: UIButton!
     
     @IBOutlet weak var searchView: R_UIView!
@@ -84,9 +85,9 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         
         self.searchView.hero.modifiers = [.translate(y:100)]
         
-        tableView.isSkeletonable = true
-        
-        tableView.showAnimatedGradientSkeleton(usingGradient: SkeletonGradient(baseColor: .skeletonDefault), transition : .crossDissolve(0.5))
+//        tableView.isSkeletonable = true
+//        
+//        tableView.showAnimatedGradientSkeleton(usingGradient: SkeletonGradient(baseColor: .skeletonDefault), transition : .crossDissolve(0.5))
         
         dropDown.anchorView = dropView // UIView or UIBarButtonItem
         
@@ -99,16 +100,26 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         searchTxt.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(doneButtonClicked))
         let loc = User.shared.getSavedData(with: .location)
         self.locationTxt.setTitle(loc  == "" ? "Bengaluru" : loc , for: .normal)
-
         
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+           tableView.addSubview(refreshControl) // not required when us
         
         
         
     }
+    @objc func refresh(_ sender: AnyObject) {
+        refreshHome()
+    }
+    
     @objc func doneButtonClicked(_ sender: Any) {
+        if self.searchTxt.text ?? "" == ""{
+            self.view.endEditing(true)
+            return
+        }
         let vc = ListingVC.instantiate(fromAppStoryboard: .Main)
         vc.searchString  = self.searchTxt.text ?? ""
-        vc.titleSting  = self.searchTxt.text ?? ""
+        vc.titleSting  = "Listing"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -119,7 +130,6 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
                 self.view.layoutIfNeeded()
             }
         } else {
-            
         }
     }
     
@@ -135,7 +145,6 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         let lat = User.shared.getSavedData(with: .lat)
         let lng = User.shared.getSavedData(with: .long)
         dashboardVM.callDashboard(lat: lat == "" ? "12.956467" : lat, lng: lng == "" ? "77.597915" : lng)
-        
     }
     
     
@@ -158,6 +167,7 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
     
     // MARK: InitViewModel
     func initViewModel() {
+        
         viewModel.successClosure = { [weak self] () in
             
             guard let _self = self else { return }
@@ -272,7 +282,9 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
             DispatchQueue.main.async {
                 
                 _self.tableView.reloadData()
-                
+                self?.tableView.isUserInteractionEnabled = true
+                _self.refreshControl.endRefreshing()
+
             }
         }
         
@@ -290,13 +302,8 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         updateTokenVM.successClosure = { [weak self] () in
             
             guard let _self = self else { return }
-            
-            DispatchQueue.main.async {
-                
-                let details = _self.updateTokenVM.categoryArr
-                _self.tableView.reloadData()
-                
-            }
+            print(_self.updateTokenVM.successResponse?.message ?? "")
+        
         }
         
         
@@ -307,64 +314,95 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
             DispatchQueue.main.async {
                 
                 let details = _self.versionVM.versionResponse?.versions?.first
-                let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-                let mandatory = details?.mandatory ?? 0
-                if Double(appVersion ?? "1") ?? 0 > (details?.version ?? 0){
-                    let vc = UpdateAvailableVC.instantiate(fromAppStoryboard: .Main)
-                    vc.modalPresentationStyle = .overCurrentContext
-                    vc.skipisActive = mandatory == 0 ? false : true
-                    self?.navigationController?.present(vc, animated: true)
+                let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1"
+                let mandatory = Int(details?.mandatory?.description ?? "0")
+                
+                
+                
+                if Double(appVersion) ?? 0 < Double(details?.version ?? "") ?? 0{
+                    if mandatory == 0{
+                        let active = User.shared.getSavedData(with: .updateAvailable)
+                        if active == "" || active == "false"{
+                            let vc = UpdateAvailableVC.instantiate(fromAppStoryboard: .Main)
+                            vc.modalPresentationStyle = .overCurrentContext
+                            vc.skipisActive = mandatory == 0 ? false : true
+                            self?.navigationController?.present(vc, animated: true)
+                        }
+                    }else{
+                        let active = User.shared.getSavedData(with: .updateAvailable)
+                        if active == "" || active == "false"{
+                            let vc = UpdateAvailableVC.instantiate(fromAppStoryboard: .Main)
+                            vc.modalPresentationStyle = .overCurrentContext
+                            vc.skipisActive = mandatory == 0 ? false : true
+                            self?.navigationController?.present(vc, animated: true)
+                        }else{
+                            if mandatory == 1{
+                                let vc = UpdateAvailableVC.instantiate(fromAppStoryboard: .Main)
+                                vc.modalPresentationStyle = .overCurrentContext
+                                vc.skipisActive = mandatory == 0 ? false : true
+                                self?.navigationController?.present(vc, animated: true)
+
+                            }
+                        }
+                    }
+                    
+                    
                 }
                 
                 
             }
         }
         
-        
-        versionVM.callVersionUpdate("ios")
-        
+       
+
         commonWords.successClosure = { [weak self] () in
             
             guard let _self = self else { return }
             
             DispatchQueue.main.async {
                 let data = _self.commonWords.commonWordArray ?? []
-                self?.commonWordsArr = data
-                self?.tableView.reloadData()
+                self?.dropDown.dataSource = data
+                self?.dropDown.show()
             }
         }
-        
-        commonWords.callCommonWords()
-        
+            
         
         viewModel.callFlashBanner()
         categoryVM.callMainCategory(mainCategory: "")
+        
+   
+
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshHome()
+        versionVM.callVersionUpdate("ios")
+
+    }
+    
+    func refreshHome(){
+        tableView.isSkeletonable = true
+        
+        tableView.showAnimatedGradientSkeleton(usingGradient: SkeletonGradient(baseColor: .skeletonDefault), transition : .crossDissolve(0.5))
+        
+        self.tableView.isUserInteractionEnabled = false
+        self.sectionArr.removeAll()
+        self.tableView.reloadData()
+
+        sectionArr = ["header","Main categories"]
         
         let lat = User.shared.getSavedData(with: .lat)
         let lng = User.shared.getSavedData(with: .long)
         
         dashboardVM.callDashboard(lat: lat == "" ? "12.956467" : lat, lng: lng == "" ? "77.597915" : lng)
-        
-        updateTokenVM.callUpdatetoken(User.shared.getSavedData(with: .fcmToken))
-        
-        
     }
     
     @IBAction func openMenuBtn(_ sender: Any) {
         performSegue(withIdentifier: "showMenu", sender: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let value = User.shared.getSavedData(with: .isEnableAllowAccess)
-        if value != "true"{
-            let vc = AllowAccessVC.instantiate(fromAppStoryboard: .Main)
-            vc.modalPresentationStyle = .overCurrentContext
-            self.navigationController?.present(vc, animated: true)
-        }
-        
-    }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
@@ -382,9 +420,11 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    
-    
+    @IBAction func notificationBtn(_ sender: Any) {
+        let vc = NotificationListVC.instantiate(fromAppStoryboard: .Main)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.searchTxt.text = ""
@@ -393,20 +433,23 @@ class HomeVC: BaseVC, UIViewControllerTransitioningDelegate {
     }
     
     func containtWords(word: String){
-        let predicate = NSPredicate(format: "SELF contains %@", word)
-        let searchDataSource = commonWordsArr.filter { predicate.evaluate(with: $0) }
-        self.dropDown.dataSource = searchDataSource
-        if searchDataSource.count <= 0{
-            self.dropDown.hide()
-        }else{
-            self.dropDown.show()
-            
+        commonWords.callCommonWords(word)
+    }
+    
+    func setupLocation(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager.startUpdatingLocation()
+            }
         }
     }
 }
 
 extension HomeVC : UITableViewDelegate, SkeletonTableViewDataSource{
-    
+
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return 5
@@ -536,24 +579,31 @@ extension HomeVC: TitleHeaaderCellDelegate{
         if header == "Featured Listing"{
             let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             storyboard.titleSting = "Featured Listing"
+            storyboard.listingType = .featuredListing
+
             self.navigationController?.pushViewController(storyboard, animated: true)
         }
         
         if header == "New Listing"{
             let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             storyboard.titleSting = "New Listing"
+            storyboard.listingType = .newListing
             self.navigationController?.pushViewController(storyboard, animated: true)
         }
         
         if header == "Recommendations"{
             let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             storyboard.titleSting = "Recommendations"
+            storyboard.listingType = .recommented
+
             self.navigationController?.pushViewController(storyboard, animated: true)
         }
         
         if header == "Recently Viewed"{
             let storyboard = ListingVC.instantiate(fromAppStoryboard: .Main)
             storyboard.titleSting = "Recently Viewed"
+            storyboard.listingType = .recentlyViewed
+
             self.navigationController?.pushViewController(storyboard, animated: true)
         }
     }
@@ -617,6 +667,13 @@ extension HomeVC : HomeCategoryCellDelegate, ItemViewTabDelegate, NewListingBase
     
     
     func favActionHander(indexPath: IndexPath, type: String, id: String) {
+        if !User.shared.hasToken {
+            let vc = LoginVC.instantiate(fromAppStoryboard: .Main)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(vc, animated: true)
+            return
+        }
+        
         self.indexPath = indexPath
         if type == "New Listing"{
             let new_listing = dashboardVM.dashboardResponse?.new_listing ?? []
@@ -682,10 +739,12 @@ extension HomeVC: UITextFieldDelegate, AdsDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if range.location == 0 && range.length == 1 && string == "" {
-            self.tempCommonWordsArr.removeAll()
             self.dropDown.hide()
             
         }else {
+            if range.location < 3{
+                return true
+            }
             if range.length == 1 {
                 let txt = textField.text!.dropLast()
                 self.containtWords(word: String(txt))
@@ -701,12 +760,64 @@ extension HomeVC: UITextFieldDelegate, AdsDelegate{
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.dropDown.hide()
+        if textField.text == ""{
+            self.view.endEditing(true)
+            return true
+        }
         let vc = ListingVC.instantiate(fromAppStoryboard: .Main)
         vc.searchString  = self.searchTxt.text ?? ""
-        vc.titleSting  = self.searchTxt.text ?? ""
+        vc.titleSting  = "Listing"
         self.navigationController?.pushViewController(vc, animated: true)
         return true
     }
 }
 
 
+
+extension HomeVC:  CLLocationManagerDelegate, UNUserNotificationCenterDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation :CLLocation = locations[0] as CLLocation
+        
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+        
+        if  User.shared.getSavedData(with: .location) != ""{
+            self.locationManager.stopUpdatingLocation()
+            return
+        }
+
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
+            if (error != nil){
+                print("error in reverseGeocode")
+            }
+            let placemark = placemarks! as [CLPlacemark]
+            if placemark.count>0{
+                let placemark = placemarks![0]
+                print(placemark.locality!)
+                print(placemark.administrativeArea!)
+                print(placemark.country!)
+                let locality = placemark.locality ?? ""
+                let replaceSpace = locality.replacingOccurrences(of: " ", with: "_")
+   
+                
+                self.locationManager.stopUpdatingLocation()
+                User.shared.saveData(with: .location, value: locality)
+                User.shared.saveData(with: .lat, value: userLocation.coordinate.latitude.description)
+                User.shared.saveData(with: .long, value: userLocation.coordinate.longitude.description)
+
+
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateLocation"), object: nil, userInfo: nil)
+                self.dismiss(animated: true)
+
+               
+            }
+        }
+        
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
+}

@@ -13,8 +13,17 @@ class RootVC: UINavigationController{
     
     
     public func GetRootVC()->UINavigationController{
+        
         if !User.shared.hasToken {
+            let isPressSkip =  User.shared.getSavedData(with: .isPressSkip)
+            if isPressSkip == "true"{
+                let storyboard = MainTabVC.instantiate(fromAppStoryboard: .Main)
+                let rootNC = UINavigationController(rootViewController: storyboard)
+                storyboard.navigationController?.navigationBar.isHidden = true
+                return rootNC
+            }
             let storyboard = LoginVC.instantiate(fromAppStoryboard: .Main)
+            storyboard.isfromMain = true
             let rootNC = UINavigationController(rootViewController: storyboard)
             storyboard.navigationController?.navigationBar.isHidden = true
             return rootNC

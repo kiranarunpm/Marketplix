@@ -11,10 +11,12 @@ import MBProgressHUD
 import ImageSlideshow
 import MapKit
 class DetailVC: BaseVC {
-    @IBOutlet weak var descriptionTxt: ReadMoreTextView!
+    @IBOutlet weak var descriptionTxt: UITextView!
     
+    @IBOutlet weak var viewedCount: MPUILabel!
     @IBOutlet weak var priceTxt: MPUILabel!
     @IBOutlet weak var categoryTxt: MPUILabel!
+    @IBOutlet weak var soldOutImg: UIImageView!
 
     @IBOutlet weak var nameTxt: MPUILabel!
     @IBOutlet weak var createdOnTxt: MPUILabel!
@@ -63,18 +65,9 @@ class DetailVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         chatView.layer.cornerRadius = 20
-        descriptionTxt.shouldTrim = true
-        descriptionTxt.maximumNumberOfLines = 4
+
         descriptionTxt.tintColor = UIColor.primaryColor
-        let font = UIFont.systemFont(ofSize: 14)
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: UIColor.red,
-        ]
-        
-        descriptionTxt.attributedReadMoreText = NSAttributedString(string: " Read more",attributes: attributes)
-        descriptionTxt.attributedReadLessText = NSAttributedString(string: " Read less", attributes: attributes)
+      
         initViewModel()
 
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
@@ -101,7 +94,8 @@ class DetailVC: BaseVC {
                 }
                 
                 if content.name == "Price"{
-                    self.priceTxt.text = "\(Constants.currencySymbol) \(content.value ?? "")"
+                    let price : Double = Double(content.value ?? "0") ?? 0
+                    self.priceTxt.text = Constants.currencySymbol + "\(price.roundedDecimal(to: 0))"
                 }
                 
                 if content.name == "Description"{
@@ -169,10 +163,22 @@ class DetailVC: BaseVC {
             DispatchQueue.main.async {
                 let data = _self.viewModel.detailResponsel?.classifield
                 _self.nameTxt.text = data?.title ?? ""
+                _self.viewedCount.text = data?.view_count?.description ?? ""
+//                let font = UIFont.systemFont(ofSize: 17)
+//
+//                let attributes: [NSAttributedString.Key: Any] = [
+//                    .font: font,
+//                    .foregroundColor: UIColor.red,
+//                ]
+//                
+//                self?.descriptionTxt.attributedReadMoreText = NSAttributedString(string: "...More",attributes: attributes)
+//                self?.descriptionTxt.attributedReadLessText = NSAttributedString(string: "...less", attributes: attributes)
                 _self.descriptionTxt.text = data?.description ?? ""
-                _self.priceTxt.text = "\(Constants.currencySymbol) \(data?.price ?? "")"
-                let dateFormat = "".dateFormat(data?.created_at ?? "")
-                _self.createdOnTxt.text = "Posted on: \(dateFormat)"
+                
+                let price : Double = Double(data?.price ?? "0") ?? 0
+                _self.priceTxt.text = Constants.currencySymbol + "\(price.roundedDecimal(to: 0))"
+                
+                _self.createdOnTxt.text = "Posted on: \(data?.time_diff ?? "1 day ago")"
                 _self.adsIDLbl.text = "AD ID  : \(data?.id ?? 0)"
                 
                 _self.categoryTxt.text = data?.category?.name ?? ""
@@ -237,6 +243,21 @@ class DetailVC: BaseVC {
 
                 self?.mainScrolllView.alpha = 1
                 self?.chatView.isHidden = false
+                
+                let status = Int(data?.status?.description ?? "0")
+                if status == 2{
+                    _self.soldOutImg.isHidden = false
+                    _self.chatView.isHidden = true
+                }else{
+                    _self.soldOutImg.isHidden = true
+                    _self.chatView.isHidden = false
+
+                }
+                
+                let userid = data?.user?.id ?? 0
+                if User.shared.getSavedData(with: .id) == String(userid){
+                    _self.chatView.isHidden = true
+                }
 
             }
         }
@@ -354,6 +375,12 @@ class DetailVC: BaseVC {
     }
     
     @IBAction func favBtn(_ sender: Any) {
+        if !User.shared.hasToken {
+            let vc = LoginVC.instantiate(fromAppStoryboard: .Main)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(vc, animated: true)
+            return
+        }
         favVM.callAddFav(self.id)
     }
     
@@ -362,12 +389,24 @@ class DetailVC: BaseVC {
     }
     
     @IBAction func chatViewBtn(_ sender: Any) {
+        if !User.shared.hasToken {
+            let vc = LoginVC.instantiate(fromAppStoryboard: .Main)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(vc, animated: true)
+            return
+        }
         
         chatHistoryVM.callChatInitiate(["classified_id" : self.id])
     }
     
     
     @IBAction func reportBtn(_ sender: Any) {
+        if !User.shared.hasToken {
+            let vc = LoginVC.instantiate(fromAppStoryboard: .Main)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(vc, animated: true)
+            return
+        }
         let vc = ReportAdVC.instantiate(fromAppStoryboard: .Main)
         vc.modalPresentationStyle = .overCurrentContext
         vc.id = self.viewModel.detailResponsel?.classifield?.id?.description ?? ""
@@ -450,7 +489,8 @@ extension DetailVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailSpecCell.identifire, for: indexPath) as! DetailSpecCell
         let index =  spec_groups[indexPath.section].spec_items?[indexPath.row]
         let title = index?.name ?? ""
-        let value = index?.value ?? ""
+        let valueTxt = index?.value ?? ""
+        let value = valueTxt == "" ? "--" : valueTxt
 
         cell.spec_txt?.text = "\(title) :"
         cell.valueTxt?.text = "\(value)"

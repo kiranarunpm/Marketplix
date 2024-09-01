@@ -36,7 +36,7 @@ class HomeCategoryCell: UITableViewCell {
             screenSize =  CGSize(width: screen_width / 6 - 20, height: 100)
         }
         else{
-            screenSize = CGSize(width: screen_width / 4 - 10 , height: 100)
+            screenSize = CGSize(width: screen_width / 4 - 10 , height: 130)
         }
         let layout1 = UICollectionViewFlowLayout()
         layout1.scrollDirection = .horizontal

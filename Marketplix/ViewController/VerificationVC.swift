@@ -7,13 +7,20 @@
 
 import UIKit
 import MBProgressHUD
-
+import Messages
+import FirebaseMessaging
+protocol VerificationDelegate {
+    func dismissLoginPage()
+}
 class VerificationVC: BaseVC {
     var counter = 90
     var request: RegisterRequest?
-
+    var delegate: VerificationDelegate?
     lazy var viewModel: AuthenticationVM = {
         return AuthenticationVM()
+    }()
+    lazy var updateTokenVM: HomeVM = {
+        return HomeVM()
     }()
     var isFromLogin: Bool = true
     @IBOutlet weak var code1: MarketField!
@@ -30,7 +37,8 @@ class VerificationVC: BaseVC {
     var timer = Timer()
     var tempCode : Int = 0
     var backgroundTask: UIBackgroundTaskIdentifier = .invalid
-    
+    var isfromMain: Bool = false
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +48,11 @@ class VerificationVC: BaseVC {
         code2.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         code3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         code4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        if email == "demomarketplix@gmail.com"{
-            
-            let string = otpMessage
-            if let number = Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
-                print(number)
-                tempCode = number
+        if email == "9074281505"{
+    
+                tempCode = 9048
                 self.verifyBtn(self)
-            }
+        
         }else{
             showToastLogIn(message: otpMessage)
         }
@@ -186,6 +191,11 @@ class VerificationVC: BaseVC {
     }
 
     @IBAction func backBtn(_ sender: Any) {
+        timer.invalidate()
+        if !(self.isfromMain){
+            self.dismiss(animated: true)
+            return
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -197,13 +207,31 @@ class VerificationVC: BaseVC {
             guard self != nil else { return }
             
             DispatchQueue.main.async {
-                
+                self?.timer.invalidate()
                 let details = self?.viewModel.loginResponse
                 User.shared.saveData(with: .id, value: details?.user?.user_id?.description ?? "")
                 User.shared.saveData(with: .accessToken, value: details?.token ?? "")
                 User.shared.saveData(with: .name, value: details?.user?.first_name ?? "")
                 User.shared.saveData(with: .email, value: details?.user?.email ?? "")
                 User.shared.saveData(with: .mobile, value: details?.user?.phone?.description ?? "")
+                
+                Messaging.messaging().token { token, error in
+                      if let error = error {
+                        print("Error fetching remote FCM registration token: \(error)")
+                      } else if let token = token {
+                        print("Remote instance ID token: \(token)")
+                          self?.updateTokenVM.callUpdatetoken(token)
+                      }
+                    }
+            
+                
+                
+                if !(self?.isfromMain ?? false){
+                    self?.dismiss(animated: true){
+                        self?.delegate?.dismissLoginPage()
+                    }
+                    return
+                }
 
                 guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabVC") as? MainTabVC else {
                     return
@@ -294,6 +322,13 @@ class VerificationVC: BaseVC {
                 }
             }
         }
+        
+        updateTokenVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            print(_self.updateTokenVM.successResponse?.message ?? "")
+        
+        }
 
         
     }
@@ -302,7 +337,7 @@ class VerificationVC: BaseVC {
     @IBAction func verifyBtn(_ sender: Any) {
         
         var code = code1.text! + code2.text! + code3.text! + code4.text!
-        if self.email == "demomarketplix@gmail.com"{
+        if self.email == "9074281505"{
             code = String(tempCode)
         }
         if isFromLogin{

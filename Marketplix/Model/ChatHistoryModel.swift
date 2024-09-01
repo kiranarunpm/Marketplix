@@ -9,22 +9,22 @@ import Foundation
 
 struct ChatHistoryResponse : Codable {
     let chats : [Chats]?
+    let blocked : Int?
 }
 
 struct Chats : Codable {
     let id : Int?
-    let type : Int?
     let title : String?
-    let classified_id : Int?
-    let participant_a : Int?
-    let participant_b : Int?
+    let participant_a : String?
+    let participant_b : String?
     let created_at : String?
     let updated_at : String?
     let message : String?
     let classifieds : Classifieds?
     let chats : [Chats]?
     let sender : Sender?
-    let chats_count: Int?
+    let chats_count: String?
+    let blocked: String?
     
 }
 
@@ -32,6 +32,8 @@ struct Classifieds : Codable {
     let id : Int?
     let title : String?
     let is_fav : Int?
+    let time_diff : String?
+
 }
 
 struct Sender : Codable {
@@ -46,11 +48,7 @@ struct ChatIniateResponse : Codable {
 }
 
 struct Chat_details : Codable {
-    let type : Int?
     let title : String?
-    let classified_id : Int?
-    let participant_a : Int?
-    let participant_b : Int?
     let updated_at : String?
     let created_at : String?
     let id : Int?
@@ -59,6 +57,17 @@ struct Chat_details : Codable {
 
 struct ChatDetailsResponse : Codable {
     let chat_details : Chats?
+    let blocked : String?
 }
 
 
+
+struct ChatCountResponse : Codable {
+    let chat_count : Int?
+}
+struct BlockResponse: Codable{
+    let chat : BlockResponseChat?
+}
+struct BlockResponseChat: Codable{
+    let blocked : Int?
+}

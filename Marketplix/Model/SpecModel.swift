@@ -17,4 +17,5 @@ struct SpecGroup: Codable {
     let order: Int?
     let spec_group_id: Int?
     let spec_items: [SpecGroup]?
+    let value : String?
 }

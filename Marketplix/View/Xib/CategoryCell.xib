@@ -11,34 +11,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCell" customModule="Marketplix" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
+            <rect key="frame" x="0.0" y="0.0" width="94" height="118"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
+                <rect key="frame" x="0.0" y="0.0" width="94" height="118"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opd-XI-OYY" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="94" height="118"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-bJ-O5z">
-                                <rect key="frame" x="10" y="7" width="74" height="78"/>
+                                <rect key="frame" x="0.0" y="7" width="94" height="94"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-ou-vN2" customClass="R_UIView" customModule="Marketplix" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="17" y="0.0" width="60" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="899-Ou-knw">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="899-Ou-knw">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="899-Ou-knw" secondAttribute="trailing" id="H5l-LA-Yfn"/>
-                                            <constraint firstItem="899-Ou-knw" firstAttribute="top" secondItem="nxa-ou-vN2" secondAttribute="top" id="IbB-zX-ulM"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="cbq-lJ-Dfu"/>
-                                            <constraint firstItem="899-Ou-knw" firstAttribute="leading" secondItem="nxa-ou-vN2" secondAttribute="leading" id="kut-Cs-7FI"/>
-                                            <constraint firstAttribute="bottom" secondItem="899-Ou-knw" secondAttribute="bottom" id="mnU-SA-SUL"/>
+                                            <constraint firstAttribute="height" constant="60" id="O2x-St-GUn"/>
+                                            <constraint firstAttribute="width" constant="60" id="QiZ-bw-6s2"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -48,30 +46,30 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0D6-Ae-nEV" customClass="MPUILabel" customModule="Marketplix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="74" height="14"/>
+                                        <rect key="frame" x="0.0" y="64" width="94" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="RW7-Pl-7TI"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="pEX-R9-bu6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="13"/>
+                                                <real key="value" value="11"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="style">
                                                 <integer key="value" value="0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="fontStyle">
-                                                <integer key="value" value="2"/>
+                                                <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0D6-Ae-nEV" secondAttribute="trailing" id="Ar3-bR-fj9"/>
-                                    <constraint firstItem="0D6-Ae-nEV" firstAttribute="leading" secondItem="eEb-bJ-O5z" secondAttribute="leading" id="WrO-C8-jTS"/>
+                                    <constraint firstAttribute="trailing" secondItem="0D6-Ae-nEV" secondAttribute="trailing" id="W4Y-ap-z8O"/>
+                                    <constraint firstItem="0D6-Ae-nEV" firstAttribute="leading" secondItem="eEb-bJ-O5z" secondAttribute="leading" id="eCW-vv-zv2"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -80,11 +78,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eEb-bJ-O5z" firstAttribute="top" secondItem="opd-XI-OYY" secondAttribute="top" constant="7" id="0ff-Yo-1mg"/>
-                            <constraint firstItem="eEb-bJ-O5z" firstAttribute="centerX" secondItem="opd-XI-OYY" secondAttribute="centerX" id="63j-dh-Z4N"/>
-                            <constraint firstItem="eEb-bJ-O5z" firstAttribute="leading" secondItem="opd-XI-OYY" secondAttribute="leading" constant="10" id="XJK-kO-nFG"/>
-                            <constraint firstItem="eEb-bJ-O5z" firstAttribute="centerY" secondItem="opd-XI-OYY" secondAttribute="centerY" id="eG7-HS-dpV"/>
-                            <constraint firstAttribute="trailing" secondItem="eEb-bJ-O5z" secondAttribute="trailing" constant="10" id="sgL-KQ-uUe"/>
+                            <constraint firstItem="eEb-bJ-O5z" firstAttribute="leading" secondItem="opd-XI-OYY" secondAttribute="leading" id="16g-H3-cUW"/>
+                            <constraint firstAttribute="trailing" secondItem="eEb-bJ-O5z" secondAttribute="trailing" id="MHt-aI-dOl"/>
+                            <constraint firstItem="eEb-bJ-O5z" firstAttribute="top" secondItem="opd-XI-OYY" secondAttribute="top" constant="7" id="kGz-ld-yXS"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -97,12 +93,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="opd-XI-OYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7LG-Cl-M3V"/>
-                <constraint firstItem="opd-XI-OYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8mq-EM-Kfy"/>
-                <constraint firstAttribute="bottom" secondItem="opd-XI-OYY" secondAttribute="bottom" id="iqI-wB-hqq"/>
-                <constraint firstAttribute="trailing" secondItem="opd-XI-OYY" secondAttribute="trailing" id="oax-mM-wEw"/>
+                <constraint firstItem="opd-XI-OYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EG7-ti-QXM"/>
+                <constraint firstItem="opd-XI-OYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FtV-aA-may"/>
+                <constraint firstAttribute="bottom" secondItem="opd-XI-OYY" secondAttribute="bottom" id="MMT-RG-YVU"/>
+                <constraint firstAttribute="trailing" secondItem="opd-XI-OYY" secondAttribute="trailing" id="edY-Uf-UFO"/>
             </constraints>
-            <size key="customSize" width="94" height="92"/>
+            <size key="customSize" width="94" height="118"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
@@ -110,7 +106,7 @@
                 <outlet property="img" destination="899-Ou-knw" id="vO3-6t-mMm"/>
                 <outlet property="nameTxt" destination="0D6-Ae-nEV" id="8AS-MN-urX"/>
             </connections>
-            <point key="canvasLocation" x="271.75572519083971" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="271.75572519083971" y="12.67605633802817"/>
         </collectionViewCell>
     </objects>
     <designables>

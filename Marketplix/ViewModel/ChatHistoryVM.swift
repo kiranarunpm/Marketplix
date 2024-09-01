@@ -18,6 +18,11 @@ class ChatHistoryVM{
             self.successClosure?()
         }
     }
+    public var blockResponse: BlockResponse? {
+        didSet{
+            self.successClosure?()
+        }
+    }
     
     public var chatIniateResponse: ChatIniateResponse? {
         didSet{
@@ -27,6 +32,18 @@ class ChatHistoryVM{
     
     
     public var chatDetailsResponse: ChatDetailsResponse? {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
+    public var notificationsReponse: NotificationsReponse? {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
+    public var chatCountResponse: ChatCountResponse? {
         didSet{
             self.successClosure?()
         }
@@ -131,4 +148,66 @@ extension ChatHistoryVM {
         
     }
     
+    func callNotification() {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.notification) { [weak self] (result : Result<NotificationsReponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.notificationsReponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    
+    func callGetChatCount() {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.chatCount) { [weak self] (result : Result<ChatCountResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.chatCountResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    func callBlockOrUnblockUser(id: String) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.chatBlock(id)) { [weak self] (result : Result<BlockResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.blockResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
 }
+
+

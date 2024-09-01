@@ -16,7 +16,7 @@ class NotificationService: UNNotificationServiceExtension {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         if let bestAttemptContent = bestAttemptContent {
-            guard let  imageUrl = bestAttemptContent.userInfo["url"] as? String else { fatalError("Image Link not found") }
+            guard let  imageUrl = bestAttemptContent.userInfo["url"] as? String else { return }
             downloadImageFrom(url: imageUrl) { (attachment) in
                 if let attachment = attachment {
                     bestAttemptContent.attachments = [attachment]

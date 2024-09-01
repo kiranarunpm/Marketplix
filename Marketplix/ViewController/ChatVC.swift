@@ -33,6 +33,11 @@ class ChatVC: BaseVC {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateChatCount"), object: nil)
+
+    }
     // MARK: InitViewModel
     func initViewModel() {
         viewModel.successClosure = { [weak self] () in
@@ -100,12 +105,15 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource{
         cell.msgTxt.text = index.chats?.last?.message ?? ""
         cell.selectionStyle = .none
         cell.dateLbl.text = index.chats?.last?.created_at?.convertDateFormat(dateFormat: "dd MMM yyyy")
-        let chatCount = index.chats_count ?? 0
+        let chatCount = Int(index.chats_count?.description ?? "0") ?? 0
         if chatCount > 0{
             cell.countlbl.text = chatCount.description
             cell.countBase.isHidden = false
         }
-        
+        else{
+            cell.countBase.isHidden = true
+
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

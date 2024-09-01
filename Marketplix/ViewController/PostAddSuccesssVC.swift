@@ -11,7 +11,9 @@ import CircleProgressBar
 class PostAddSuccesssVC: BaseVC {
     var postRealEstateArr  = [PostRealEstateModel]()
     var imageData = [UIImage]()
-    
+    var isOnEdit = false
+    var editData : DataList?
+
     @IBOutlet weak var progress: CircleProgressBar!
     @IBOutlet weak var messageTxt: UILabel!
     @IBOutlet weak var thankyoLbl: UILabel!
@@ -43,6 +45,13 @@ class PostAddSuccesssVC: BaseVC {
         
         if var image = images{
             var parameters = [String: String]()
+            if !isOnEdit {
+                parameters.updateValue("new", forKey: "savetype")
+            }else{
+                parameters.updateValue("update", forKey: "savetype")
+                parameters.updateValue(self.editData?.id?.description ?? "", forKey: "id")
+
+            }
             self.postRealEstateArr.forEach { item in
                 item.results?.forEach({ content in
                     if content.key != ""{
@@ -73,7 +82,7 @@ class PostAddSuccesssVC: BaseVC {
                     multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                 } //Optional for extra parameters
             },
-                             to:"https://marketplix.com/api/post-ad",method: .post,headers: headers)
+                             to:"https://marketplix.in/api/post-ad",method: .post,headers: headers)
             { (result) in
                 switch result {
                 case .success(let upload, _, _):
@@ -84,17 +93,18 @@ class PostAddSuccesssVC: BaseVC {
                             self.progress.setProgress(progress.fractionCompleted, animated: true)
                         }
                         self.thankyoLbl.isHidden = true
-                        self.messageTxt.text = "Please wail, Uploading you Ad. "
+                        self.messageTxt.text = "Please wait, your ad is uploading..."
                         self.backBtn.isHidden = true
                     })
                     
                     upload.responseJSON { response in
                         switch response.result {
+                            
                         case .success(let JSON):
                             self.progress.isHidden = true
                             self.backBtn.isHidden = false
                             self.thankyoLbl.isHidden = false
-                            self.messageTxt.text = "Your Ad Successfully Uploaded"
+                            self.messageTxt.text = "You have successfully added your ad. It will take up to 1-2hrs hours for the review process to be completed."
                             break
                         case .failure(let error):
                             print(error)

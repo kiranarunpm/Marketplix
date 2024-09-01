@@ -15,8 +15,16 @@ class HalfSizePresentationController: UIPresentationController {
     }
 }
 
+enum ListingType: String{
+    case newListing = "new_listing"
+    case recentlyViewed = "recently_viewed"
+    case featuredListing = "featured_listing"
+    case recommented = "recommandations"
+    case normal
+}
+
 class ListingVC: BaseVC {
-    
+    var isFormCommonListing: Bool = true
     @IBOutlet weak var noDataView: UIStackView!
     var categoryArr = [Category]()
     @IBOutlet weak var filterBtn: UIButton!
@@ -24,6 +32,7 @@ class ListingVC: BaseVC {
     lazy var viewModel: HomeVM = {
         return HomeVM()
     }()
+    var listingType : ListingType = .normal
     var filterStruct = FilterStruct(category_id: "")
 
     
@@ -77,6 +86,11 @@ class ListingVC: BaseVC {
 //        colView.isSkeletonable = true
 //        colView.showAnimatedGradientSkeleton(animation: nil, transition: .crossDissolve(0.25))
         
+        let lat = User.shared.getSavedData(with: .lat)
+        let long = User.shared.getSavedData(with: .long)
+
+        self.filterStruct.lat = lat
+        self.filterStruct.log = long
         initViewModel()
         
     }
@@ -91,7 +105,6 @@ class ListingVC: BaseVC {
             let total = data?.total ?? 0
             
             self?.dataListArr.append(contentsOf: data?.data ?? [])
-            self?.dataListArr = self?.dataListArr.sorted { $0.id  ?? 0 > $1.id ?? 0 } ?? []
             if self?.dataListArr.count == total{
                 self?.isDonePagination = true
             }else{
@@ -176,12 +189,18 @@ class ListingVC: BaseVC {
     }
     
     func loadList(page: String){
+        
         let lat = User.shared.getSavedData(with: .lat)
         let long = User.shared.getSavedData(with: .long)
-
-        let request = ListRequest(lat: self.filterStruct.lat, lng: self.filterStruct.log, category_id: self.filterStruct.category_id, search: self.searchString, page: self.page.description)
         
-        viewModel.callListing(request)
+        if listingType == .normal{
+            let request = ListRequest(lat: self.filterStruct.lat, lng: self.filterStruct.log, category_id: self.filterStruct.category_id, search: self.searchString, page: self.page.description)
+            viewModel.callListing(request)
+        }else{
+            let request = ListRequest(lat: self.filterStruct.lat, lng: self.filterStruct.log, category_id: self.filterStruct.category_id, search: self.searchString, page: self.page.description, groupType: listingType.rawValue, sortby: SortBy(rawValue: self.filterStruct.sort) ?? .datepublished, price_min: self.filterStruct.price_min, price_max: self.filterStruct.price_max)
+            viewModel.callListing(request)
+
+        }
     }
     
     
@@ -205,6 +224,7 @@ class ListingVC: BaseVC {
             }
             storyboard.delegate = self
             storyboard.categoryArr = self.categoryArr
+            storyboard.filterStruct = self.filterStruct
             storyboard.modalPresentationStyle = .fullScreen
             self.navigationController?.present(storyboard, animated: true)
         }
@@ -259,7 +279,15 @@ extension ListingVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
 
 
 extension ListingVC: ItemDelegate{
+    
     func favActionHander(indexPath: IndexPath, type: String, id: String) {
+        if !User.shared.hasToken {
+            let vc = LoginVC.instantiate(fromAppStoryboard: .Main)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(vc, animated: true)
+            return
+        }
+        
         self.indexPath = indexPath
         
         for i in 0...self.dataListArr.count{

@@ -20,7 +20,7 @@ struct LoginModel: Codable{
 struct UserModel: Codable{
     let first_name: String?
     let email: String?
-    let phone: Int?
+    let phone: String?
     let user_id: Int?
     
 }
@@ -46,6 +46,16 @@ struct RegisterRequest: Codable{
     let first_name: String
     var otp: String
     let email: String
-    let dob: String
     let phone: String
+}
+
+
+
+
+struct PageResponse: Codable{
+    let page: ContentResponse?
+}
+
+struct ContentResponse : Codable{
+    let content: String?
 }

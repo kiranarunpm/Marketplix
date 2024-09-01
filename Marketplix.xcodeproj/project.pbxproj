@@ -48,6 +48,10 @@
 		8262EFC82A89D9E8002C66AE /* CheckBoxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8262EFC62A89D9E8002C66AE /* CheckBoxCell.xib */; };
 		8262EFCA2A89EDD7002C66AE /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8262EFC92A89EDD7002C66AE /* Image+Extension.swift */; };
 		8262EFCD2A8A278B002C66AE /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8262EFCC2A8A278B002C66AE /* ViewController+Extension.swift */; };
+		826A28D62C67CD03008C1F11 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826A28D52C67CD03008C1F11 /* WebVC.swift */; };
+		826E2F282C51768C0029B51C /* NotificationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E2F272C51768C0029B51C /* NotificationListVC.swift */; };
+		826E2F2B2C517AA80029B51C /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E2F292C517AA80029B51C /* NotificationCell.swift */; };
+		826E2F2C2C517AA80029B51C /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 826E2F2A2C517AA80029B51C /* NotificationCell.xib */; };
 		8276391729FB9961009D6CFA /* AR-Extenstion+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */; };
 		8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8276392629FBEC37009D6CFA /* CategoryCell.swift */; };
 		8276392929FBEC37009D6CFA /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8276392729FBEC37009D6CFA /* CategoryCell.xib */; };
@@ -73,7 +77,14 @@
 		828BE2DC29E7B98B00B0C838 /* MarketplixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2DB29E7B98B00B0C838 /* MarketplixTests.swift */; };
 		828BE2E629E7B98B00B0C838 /* MarketplixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */; };
 		828BE2E829E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */; };
+		829063852C54BF7F00E89434 /* FilterDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829063832C54BF7F00E89434 /* FilterDatePickerCell.swift */; };
+		829063862C54BF7F00E89434 /* FilterDatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829063842C54BF7F00E89434 /* FilterDatePickerCell.xib */; };
 		82A05E502C3F05A1005ACE94 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 82A05E4F2C3F05A0005ACE94 /* PrivacyInfo.xcprivacy */; };
+		82C304F92C80258B00E2FAF5 /* PriceRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C304F72C80258B00E2FAF5 /* PriceRangeCell.swift */; };
+		82C304FA2C80258B00E2FAF5 /* PriceRangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C304F82C80258B00E2FAF5 /* PriceRangeCell.xib */; };
+		82C304FE2C8026C300E2FAF5 /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C304FC2C8026C200E2FAF5 /* TapticEngine.swift */; };
+		82C304FF2C8026C300E2FAF5 /* RangeSeekSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C304FD2C8026C200E2FAF5 /* RangeSeekSliderDelegate.swift */; };
+		82C305012C80295F00E2FAF5 /* RangeSeekSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C305002C80295F00E2FAF5 /* RangeSeekSlider.swift */; };
 		82D1C59C2A85EBAD00A10F02 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C59B2A85EBAD00A10F02 /* CityModel.swift */; };
 		82D1C59E2A85ECA300A10F02 /* CityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C59D2A85ECA300A10F02 /* CityVM.swift */; };
 		82D1C5A32A85EF4A00A10F02 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C5A12A85EF4A00A10F02 /* CityCell.swift */; };
@@ -144,7 +155,6 @@
 		9F6C91A52AD2901F00B0AE9F /* SubscriptionPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C91A32AD2901F00B0AE9F /* SubscriptionPlanCell.swift */; };
 		9F6C91A62AD2901F00B0AE9F /* SubscriptionPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C91A42AD2901F00B0AE9F /* SubscriptionPlanCell.xib */; };
 		9F6C91A82AD29B5D00B0AE9F /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C91A72AD29B5D00B0AE9F /* SubscriptionModel.swift */; };
-		9F724C112C1427EB00596E3E /* AllowAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F724C102C1427EB00596E3E /* AllowAccessVC.swift */; };
 		9F7E157D2A9BCA280094DAFE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7E157B2A9BCA280094DAFE /* ImageCell.swift */; };
 		9F7E157E2A9BCA280094DAFE /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7E157C2A9BCA280094DAFE /* ImageCell.xib */; };
 		9FE5DCBF2AD1D35B00C28507 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE5DCBE2AD1D35B00C28507 /* Constants.swift */; };
@@ -449,6 +459,10 @@
 		8262EFC92A89EDD7002C66AE /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		8262EFCB2A89FE91002C66AE /* sort.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sort.json; sourceTree = "<group>"; };
 		8262EFCC2A8A278B002C66AE /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		826A28D52C67CD03008C1F11 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
+		826E2F272C51768C0029B51C /* NotificationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListVC.swift; sourceTree = "<group>"; };
+		826E2F292C517AA80029B51C /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		826E2F2A2C517AA80029B51C /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
 		8276391629FB9961009D6CFA /* AR-Extenstion+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AR-Extenstion+Storyboard.swift"; sourceTree = "<group>"; };
 		8276392629FBEC37009D6CFA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8276392729FBEC37009D6CFA /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
@@ -479,7 +493,14 @@
 		828BE2E129E7B98B00B0C838 /* MarketplixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BE2E529E7B98B00B0C838 /* MarketplixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITests.swift; sourceTree = "<group>"; };
 		828BE2E729E7B98B00B0C838 /* MarketplixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		829063832C54BF7F00E89434 /* FilterDatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDatePickerCell.swift; sourceTree = "<group>"; };
+		829063842C54BF7F00E89434 /* FilterDatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDatePickerCell.xib; sourceTree = "<group>"; };
 		82A05E4F2C3F05A0005ACE94 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		82C304F72C80258B00E2FAF5 /* PriceRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRangeCell.swift; sourceTree = "<group>"; };
+		82C304F82C80258B00E2FAF5 /* PriceRangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceRangeCell.xib; sourceTree = "<group>"; };
+		82C304FC2C8026C200E2FAF5 /* TapticEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapticEngine.swift; sourceTree = "<group>"; };
+		82C304FD2C8026C200E2FAF5 /* RangeSeekSliderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSeekSliderDelegate.swift; sourceTree = "<group>"; };
+		82C305002C80295F00E2FAF5 /* RangeSeekSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSeekSlider.swift; sourceTree = "<group>"; };
 		82D0BD4C2C30673A00769810 /* Marketplix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Marketplix.entitlements; sourceTree = "<group>"; };
 		82D1C59B2A85EBAD00A10F02 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		82D1C59D2A85ECA300A10F02 /* CityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityVM.swift; sourceTree = "<group>"; };
@@ -556,7 +577,6 @@
 		9F6C91A32AD2901F00B0AE9F /* SubscriptionPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPlanCell.swift; sourceTree = "<group>"; };
 		9F6C91A42AD2901F00B0AE9F /* SubscriptionPlanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionPlanCell.xib; sourceTree = "<group>"; };
 		9F6C91A72AD29B5D00B0AE9F /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
-		9F724C102C1427EB00596E3E /* AllowAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowAccessVC.swift; sourceTree = "<group>"; };
 		9F7E157B2A9BCA280094DAFE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		9F7E157C2A9BCA280094DAFE /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		9FE5DCBE2AD1D35B00C28507 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -1830,6 +1850,12 @@
 				04BDAF8F2BE68F3E00A5D611 /* NewListingBaseTabCell.xib */,
 				82DF46B62C2ED59500AB1666 /* SearchFilterHeader.xib */,
 				82DF46B42C2ED58A00AB1666 /* SearchFilterHeader.swift */,
+				826E2F292C517AA80029B51C /* NotificationCell.swift */,
+				826E2F2A2C517AA80029B51C /* NotificationCell.xib */,
+				829063832C54BF7F00E89434 /* FilterDatePickerCell.swift */,
+				829063842C54BF7F00E89434 /* FilterDatePickerCell.xib */,
+				82C304F72C80258B00E2FAF5 /* PriceRangeCell.swift */,
+				82C304F82C80258B00E2FAF5 /* PriceRangeCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -1889,6 +1915,7 @@
 		82831B6529EBD8DB00ABC75B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				82C304FB2C8026A800E2FAF5 /* RangeSeekSlider */,
 				82831B6629EBD90600ABC75B /* MPUILabel.swift */,
 				82831B6C29EBE98A00ABC75B /* MPUIButton.swift */,
 				04BDAF942BE7C83300A5D611 /* CircularProgressView.swift */,
@@ -1964,6 +1991,16 @@
 			path = MarketplixUITests;
 			sourceTree = "<group>";
 		};
+		82C304FB2C8026A800E2FAF5 /* RangeSeekSlider */ = {
+			isa = PBXGroup;
+			children = (
+				82C304FD2C8026C200E2FAF5 /* RangeSeekSliderDelegate.swift */,
+				82C304FC2C8026C200E2FAF5 /* TapticEngine.swift */,
+				82C305002C80295F00E2FAF5 /* RangeSeekSlider.swift */,
+			);
+			path = RangeSeekSlider;
+			sourceTree = "<group>";
+		};
 		82D1C5A52A85F08A00A10F02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1996,8 +2033,9 @@
 				0401EE542B4A960C0096CA78 /* PostImageVC.swift */,
 				04BDAF922BE7B90000A5D611 /* PostAddSuccesssVC.swift */,
 				0477AC8E2C0CE736009F2698 /* ReportAdVC.swift */,
-				9F724C102C1427EB00596E3E /* AllowAccessVC.swift */,
 				824A017C2C35D71E003D902B /* UpdateAvailableVC.swift */,
+				826E2F272C51768C0029B51C /* NotificationListVC.swift */,
+				826A28D52C67CD03008C1F11 /* WebVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2228,6 +2266,7 @@
 				9F6248952ACD319B005DF450 /* GalleryPickerCell.xib in Resources */,
 				9FEBD9CC2ACB0867001FB339 /* PostRealEstate.json in Resources */,
 				824506D42A55426D0099331F /* ChatBubbleRight.xib in Resources */,
+				82C304FA2C80258B00E2FAF5 /* PriceRangeCell.xib in Resources */,
 				82A05E502C3F05A1005ACE94 /* PrivacyInfo.xcprivacy in Resources */,
 				82DF46B72C2ED59500AB1666 /* SearchFilterHeader.xib in Resources */,
 				9FEBD9D02ACB08DF001FB339 /* TextCell.xib in Resources */,
@@ -2255,6 +2294,8 @@
 				9F6248922ACD30B6005DF450 /* ImageTabCell.xib in Resources */,
 				82F3CDB52A836B3500120BB7 /* SearchHeaderView.xib in Resources */,
 				82D2ADE42A15E5D9003AA0E8 /* HomeBannerCell.xib in Resources */,
+				829063862C54BF7F00E89434 /* FilterDatePickerCell.xib in Resources */,
+				826E2F2C2C517AA80029B51C /* NotificationCell.xib in Resources */,
 				82F3CDB92A837D9700120BB7 /* HomeNewItems.xib in Resources */,
 				82D2ADEE2A15F58C003AA0E8 /* HomeCategoryCell.xib in Resources */,
 				828BE2D129E7B98B00B0C838 /* LaunchScreen.storyboard in Resources */,
@@ -2453,6 +2494,7 @@
 				82D1C5BB2A85F0AA00A10F02 /* OpenChatVC.swift in Sources */,
 				82D1C5D02A863A6F00A10F02 /* FilterMainItems.swift in Sources */,
 				82D1C5BA2A85F0AA00A10F02 /* VerificationVC.swift in Sources */,
+				82C305012C80295F00E2FAF5 /* RangeSeekSlider.swift in Sources */,
 				9FEBD9C12ACAFCCE001FB339 /* MyAdsVC.swift in Sources */,
 				82D2ADF32A15F9D5003AA0E8 /* ItemCell.swift in Sources */,
 				04FC32A62BCAE10500E72964 /* LocationResponse.swift in Sources */,
@@ -2470,11 +2512,14 @@
 				0401EE512B4A6BB30096CA78 /* PostPropertyVC.swift in Sources */,
 				82D1C5CD2A86260D00A10F02 /* FilterVC.swift in Sources */,
 				9F44035A2A9A515600F5A652 /* ListItemResponse.swift in Sources */,
+				829063852C54BF7F00E89434 /* FilterDatePickerCell.swift in Sources */,
 				82831B6929EBD96B00ABC75B /* Color+Extension.swift in Sources */,
 				82F1B0302A6FC4E700E7DE1B /* AuthenticationVM.swift in Sources */,
 				9F4403582A9A515600F5A652 /* Classifields.swift in Sources */,
 				8262EFCA2A89EDD7002C66AE /* Image+Extension.swift in Sources */,
 				82D2ADED2A15F58C003AA0E8 /* HomeCategoryCell.swift in Sources */,
+				826E2F282C51768C0029B51C /* NotificationListVC.swift in Sources */,
+				82C304F92C80258B00E2FAF5 /* PriceRangeCell.swift in Sources */,
 				82DF46B52C2ED58A00AB1666 /* SearchFilterHeader.swift in Sources */,
 				9FEBD9C52ACAFF47001FB339 /* ChooseTextCell.swift in Sources */,
 				0477AC8F2C0CE736009F2698 /* ReportAdVC.swift in Sources */,
@@ -2492,6 +2537,7 @@
 				82D1C5C42A85F0AA00A10F02 /* RegisterVC.swift in Sources */,
 				82831B6729EBD90600ABC75B /* MPUILabel.swift in Sources */,
 				824506D72A55643B0099331F /* ARServiceManager.swift in Sources */,
+				82C304FE2C8026C300E2FAF5 /* TapticEngine.swift in Sources */,
 				828BE2C229E7B98A00B0C838 /* AppDelegate.swift in Sources */,
 				0401EE4E2B4A69950096CA78 /* PostMainCatColCell.swift in Sources */,
 				82F1B02E2A6FC3C500E7DE1B /* User.swift in Sources */,
@@ -2502,6 +2548,7 @@
 				9FEBD9BF2ACAFAD5001FB339 /* PostAdsVC.swift in Sources */,
 				9F6BA63D2A7E276D002E685E /* HomeVM.swift in Sources */,
 				8249F9E22A84B92B00FB1C0E /* loaderCell.swift in Sources */,
+				826E2F2B2C517AA80029B51C /* NotificationCell.swift in Sources */,
 				82D1C5BE2A85F0AA00A10F02 /* AccountVC.swift in Sources */,
 				82831B6B29EBDA2B00ABC75B /* Font+Extension.swift in Sources */,
 				9FEBD9CF2ACB08DF001FB339 /* TextCell.swift in Sources */,
@@ -2523,6 +2570,7 @@
 				82D1C5BF2A85F0AA00A10F02 /* ChatVC.swift in Sources */,
 				8262EFCD2A8A278B002C66AE /* ViewController+Extension.swift in Sources */,
 				82D1C59E2A85ECA300A10F02 /* CityVM.swift in Sources */,
+				826A28D62C67CD03008C1F11 /* WebVC.swift in Sources */,
 				82D1C5C62A85F0AA00A10F02 /* ListingVC.swift in Sources */,
 				9F6248962ACD319B005DF450 /* GalleryPickerCell.swift in Sources */,
 				824E4FFC2A93579100C64F37 /* BannerModel.swift in Sources */,
@@ -2545,7 +2593,7 @@
 				822F7CE32A08F0FF00898465 /* HomeHeaderCell.swift in Sources */,
 				9F6248912ACD30B6005DF450 /* ImageTabCell.swift in Sources */,
 				8276392829FBEC37009D6CFA /* CategoryCell.swift in Sources */,
-				9F724C112C1427EB00596E3E /* AllowAccessVC.swift in Sources */,
+				82C304FF2C8026C300E2FAF5 /* RangeSeekSliderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2628,8 +2676,9 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix.Service;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix.Services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2660,8 +2709,9 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix.Service;
+				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix.Services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2793,16 +2843,16 @@
 				CODE_SIGN_ENTITLEMENTS = Marketplix/Marketplix.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FZ2VF3S38W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marketplix/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Description;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Will you allow this app to always know your location?";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do you allow this app to know your current location?";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Marketplix app requires access to your camera in order to post ads.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "For better user experience, Marketplix requires the user's location to locate nearby products and services";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "For better user experience, Marketplix requires the user's location to locate nearby products and services";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For better user experience, Marketplix requires the user's location to locate nearby products and services";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app does not require access to the microphone.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to choose the Ads photos, Marketplix requires access your photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2814,7 +2864,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2838,16 +2888,16 @@
 				CODE_SIGN_ENTITLEMENTS = Marketplix/Marketplix.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FZ2VF3S38W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Marketplix/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Description;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Will you allow this app to always know your location?";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do you allow this app to know your current location?";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Marketplix app requires access to your camera in order to post ads.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "For better user experience, Marketplix requires the user's location to locate nearby products and services";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "For better user experience, Marketplix requires the user's location to locate nearby products and services";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "For better user experience, Marketplix requires the user's location to locate nearby products and services";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app does not require access to the microphone.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to choose the Ads photos, Marketplix requires access your photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2859,7 +2909,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.market.Marketplix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

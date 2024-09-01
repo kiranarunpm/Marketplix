@@ -53,6 +53,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="colView" destination="K5l-mI-huW" id="Xtx-6g-4jm"/>
+                <outlet property="heighttt" destination="dGZ-Js-dyO" id="puj-Da-TWG"/>
             </connections>
             <point key="canvasLocation" x="117.55725190839694" y="110.91549295774648"/>
         </tableViewCell>

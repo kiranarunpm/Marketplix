@@ -8,6 +8,7 @@
 import UIKit
 import MBProgressHUD
 class OpenChatVC: BaseVC,UITextViewDelegate {
+    var isUserBlocked: String = "0"
 
     @IBOutlet weak var placeHolder: MPUILabel!
     @IBOutlet weak var msgTxt: UITextView!
@@ -15,6 +16,15 @@ class OpenChatVC: BaseVC,UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var titleSting : String = ""
     lazy var viewModel: ChatHistoryVM = {
+        return ChatHistoryVM()
+    }()
+    
+    var receiverName : String = ""
+    
+    
+    @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
+    lazy var blockUserVM: ChatHistoryVM = {
         return ChatHistoryVM()
     }()
     
@@ -56,6 +66,25 @@ class OpenChatVC: BaseVC,UITextViewDelegate {
         viewModel.successClosure = { [weak self] () in
             
             guard let _self = self else { return }
+            let senderCount = _self.viewModel.chatDetailsResponse?.chat_details?.chats?.filter({ item in
+                return item.sender?.id?.description != User.shared.getSavedData(with: .id)
+            })
+            
+            _self.receiverName = senderCount?.first?.sender?.first_name ?? ""
+
+            if senderCount?.count ?? 0 <= 0 {
+                self?.menuBtn.isHidden = true
+            }else{
+                self?.menuBtn.isHidden = false
+            }
+            _self.isUserBlocked = _self.viewModel.chatDetailsResponse?.chat_details?.blocked ?? ""
+            
+            if _self.isUserBlocked == "0"{
+                self?.bottom.constant = 0
+            }else{
+                self?.bottom.constant = -90
+
+            }
 
             DispatchQueue.main.async {
                 
@@ -122,6 +151,38 @@ class OpenChatVC: BaseVC,UITextViewDelegate {
             }
         }
         
+        blockUserVM.successClosure = { [weak self] () in
+            
+            guard let _self = self else { return }
+            _self.isUserBlocked = _self.blockUserVM.blockResponse?.chat?.blocked?.description ?? ""
+            if _self.isUserBlocked == "0"{
+                self?.bottom.constant = 0
+            }else{
+                self?.bottom.constant = -90
+
+            }
+            DispatchQueue.main.async {
+                
+            }
+        }
+        
+        blockUserVM.loadingStatus = { [weak self] () in
+            
+            guard let _self = self else { return }
+            
+            DispatchQueue.main.async {
+                
+                let isLoading = _self.blockUserVM.isLoading ?? false
+                
+                if isLoading {
+                    MBProgressHUD.showAdded(to: _self.view, animated: true)
+                    
+                }else {
+                    MBProgressHUD.hide(for: _self.view, animated: true)
+                }
+            }
+        }
+        
         viewModel.callChatDetails(self.id)
     }
     
@@ -130,6 +191,44 @@ class OpenChatVC: BaseVC,UITextViewDelegate {
         
         let request = ["channel_id":self.id, "message": self.msgTxt.text ?? ""]
         sendChat.callSendBtn(request)
+    }
+    
+    
+    @IBAction func menuBtn(_ sender: Any) {
+        if self.isUserBlocked == "0"{
+            let alert = UIAlertController(title: "Block \(receiverName)?", message: "Blocked user will no longer be able to send you messages.", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Block", style: .destructive , handler:{ (UIAlertAction)in
+                self.blockUserVM.callBlockOrUnblockUser(id: self.id)
+            }))
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+                print("User click Dismiss button")
+            }))
+
+            
+            //uncomment for iPad Support
+            //alert.popoverPresentationController?.sourceView = self.view
+
+            self.present(alert, animated: true, completion: {
+                print("completion block")
+            })
+        }else{
+            let alert = UIAlertController(title: "UnBlock \"\(titleSting)\" ?", message: "Un-blocked user will able to send you messages.", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Unblock", style: .default , handler:{ (UIAlertAction)in
+                self.blockUserVM.callBlockOrUnblockUser(id: self.id)
+            }))
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+                print("User click Dismiss button")
+            }))
+
+            
+            //uncomment for iPad Support
+            //alert.popoverPresentationController?.sourceView = self.view
+
+            self.present(alert, animated: true, completion: {
+                print("completion block")
+            })
+        }
+    
     }
     
 }
@@ -143,7 +242,7 @@ extension OpenChatVC : UITableViewDelegate, UITableViewDataSource{
         let count = self.viewModel.chatDetailsResponse?.chat_details?.chats?.count ?? 0
 
         let index = self.viewModel.chatDetailsResponse?.chat_details?.chats?[(count - 1) - indexPath.row]
-        if index?.sender?.first_name == User.shared.getSavedData(with: .name){
+        if index?.sender?.id?.description == User.shared.getSavedData(with: .id){
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatBubbleLeft.identifire, for:indexPath) as! ChatBubbleLeft
             cell.selectionStyle = .none
             cell.txxt.text = index?.message ?? ""

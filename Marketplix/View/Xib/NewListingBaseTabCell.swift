@@ -50,11 +50,16 @@ extension NewListingBaseTabCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.name.text = index?.title ?? ""
         cell.id = index?.id.description ?? ""
         cell.descriptions.text = index?.addresses?.sector ?? ""
-        let dateFormat = "".dateFormat(index?.created_at ?? "")
-        cell.createdAtLbl.text = "Posted on: \(dateFormat)"
+        cell.createdAtLbl.text = "Posted on: \(index?.time_diff ?? "1 day ago")"
         if let url = URL(string:  index?.classified_images?.first?.image_url ?? ""){
             cell.loadImage(url: url)
 
+        }
+        let status = Int(index?.status?.description ?? "0")
+        if status == 2{
+            cell.soldOutImg.isHidden = false
+        }else{
+            cell.soldOutImg.isHidden = true
         }
         let isFav = index?.is_fav ?? 0
         if isFav == 1{
@@ -84,6 +89,15 @@ extension NewListingBaseTabCell: UICollectionViewDelegate, UICollectionViewDataS
 }
 
 extension NewListingBaseTabCell: HomeNewItemsDelegate{
+    func editAction(dataList: DataList?) {
+
+    }
+ 
+    
+    func deleteAction() {
+        
+    }
+    
     func favActionHander(indexPath: IndexPath, type: String, id: String) {
         self.delegate?.favActionHander(indexPath: indexPath, type: type, id: id)
     }

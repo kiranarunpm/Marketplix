@@ -26,6 +26,13 @@ enum SaveData: String{
     case fcmToken
     
     case isEnableAllowAccess
+    
+    case showLocation
+    
+    case updateAvailable
+    
+    case isPressSkip
+
 }
 
 class User{
@@ -78,8 +85,10 @@ class User{
     
     func deleteUserData(){
         saveData(with: .accessToken, value: "")
-        saveData(with: .accessToken, value: "")
         saveData(with: .name, value: "")
+        saveData(with: .email, value: "")
+        saveData(with: .mobile, value: "")
+        saveData(with: .image, value: "")
 
     }
 }

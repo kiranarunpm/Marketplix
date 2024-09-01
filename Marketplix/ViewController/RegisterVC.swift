@@ -8,6 +8,9 @@
 import UIKit
 import MBProgressHUD
 import DatePickerDialog
+protocol RegisterDelegate{
+    func dismissRegistationPage()
+}
 class RegisterVC: BaseVC {
     var email = ""
 
@@ -17,13 +20,22 @@ class RegisterVC: BaseVC {
     lazy var viewModel: AuthenticationVM = {
         return AuthenticationVM()
     }()
+    var delegate: RegisterDelegate?
+    var isfromMain: Bool = false
+
     var request: RegisterRequest?
     var otpMessage = ""
     @IBOutlet weak var dateTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emailTxt.text = email
-        self.emailTxt.isEnabled = false
+        if email.isValidPhone(phone: email){
+            self.mobileTxt.text = email
+            self.mobileTxt.isEnabled = false
+        }else{
+            self.emailTxt.text = email
+            self.emailTxt.isEnabled = false
+        }
+      
         
         
         showToastLogIn(message: otpMessage)
@@ -62,24 +74,40 @@ class RegisterVC: BaseVC {
             return
         }
         
-        guard let dob = self.dateTxt.text else {
-            self.showToastLogIn(message: "Please choose date of birth")
-            return
-        }
         
-        let request = RegisterRequest(first_name: username, otp: "", email: email,dob: dob, phone: mobile)
+        let request = RegisterRequest(first_name: username, otp: "", email: email, phone: mobile)
         
         let storyboard = VerificationVC.instantiate(fromAppStoryboard: .Main)
         storyboard.email = self.emailTxt.text ?? ""
         storyboard.isFromLogin = false
         storyboard.request = request
-        self.navigationController?.pushViewController(storyboard, animated: true)
-        
+        storyboard.isfromMain = isfromMain
+        storyboard.delegate = self
+        if !self.isfromMain{
+             storyboard.modalPresentationStyle = .overCurrentContext
+            self.present(storyboard, animated: true)
+
+        }else{
+            self.navigationController?.pushViewController(storyboard, animated: true)
+        }
     }
     
     @IBAction func backBtn(_ sender: Any) {
+        
+        if !(self.isfromMain){
+            self.dismiss(animated: true)
+            return
+        }
         self.navigationController?.popViewController(animated: true)
     }
 
 
+}
+extension RegisterVC: VerificationDelegate{
+    func dismissLoginPage() {
+        self.dismiss(animated: false)
+        self.delegate?.dismissRegistationPage()
+    }
+    
+    
 }

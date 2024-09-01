@@ -37,6 +37,7 @@ class PostAdsVM{
     }
     
     
+    
     public var alertMessage: String? {
         didSet{
             self.failureClosure?()
@@ -109,15 +110,18 @@ extension PostAdsVM {
     }
     
     
-    func callCommonWords() {
-        self.isLoading = true
-        
-        ConvertJsonFile.call(filename: "common-words") { [weak self] (result : Result<[String], ARFetchError>) in
+    func callCommonWords(_ keyword: String) {
+        ARBusinessServiceHelper.request(router: ARServiceManager.adSuggestions(keyword)) { [weak self] (result : Result<[String], ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
             switch result {
                 
-            case .success(let response): self?.commonWordArray = response
+            case .success(let response): _self.commonWordArray = response
                 
-            case .failure(let errorMessage): self?.alertMessage = "\(errorMessage)"
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
                 
             }
         }

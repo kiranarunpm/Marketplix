@@ -26,7 +26,9 @@ class PostProperty2VC: BaseVC {
     @IBOutlet weak var searchLocation: MPUILabel!
     @IBOutlet weak var mapView: MKMapView!
     var predictionsArr: [Predictions] = []
-    
+    var isOnEdit = false
+    var editData : DataList?
+
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet weak var tableView: UITableView!{
         didSet{
@@ -42,6 +44,8 @@ class PostProperty2VC: BaseVC {
         super.viewDidLoad()
         self.searchTxt.delegate = self
         initViewModel()
+        
+        
         
     }
     
@@ -81,7 +85,7 @@ class PostProperty2VC: BaseVC {
                     self?.long = details?.result?.geometry?.location?.lng?.description ?? ""
 
                     let london = MKPointAnnotation()
-                    london.title = "loc"
+                    london.title = self?.searchLocation.text ?? ""
                     london.coordinate = CLLocationCoordinate2D(latitude: Double(details?.result?.geometry?.location?.lat?.description ?? "") ?? 0, longitude: Double(details?.result?.geometry?.location?.lng?.description ?? "") ?? 0)
                     self?.mapView.delegate = self
                     self?.mapView.addAnnotation(london)
@@ -95,6 +99,46 @@ class PostProperty2VC: BaseVC {
         
         
         cityModel.callLocation("", key: Constants.googleApiKey)
+        
+        if isOnEdit{
+            var j = 0
+            for item in self.postRealEstateArr{
+                if item.name == "Location Details"{
+                    var i = 0
+                    item.results?.forEach({ item in
+                        if item.name == "Sector"{
+                            self.postRealEstateArr[j].results?[i].value = editData?.addresses?.sector ?? ""
+                            self.searchLocation.text = editData?.addresses?.sector ?? ""
+                        }
+                        if item.name == "Lat"{
+                            self.postRealEstateArr[j].results?[i].value = editData?.addresses?.lat ?? ""
+                        }
+                        if item.name == "Long"{
+                            self.postRealEstateArr[j].results?[i].value = editData?.addresses?.lng ?? ""
+                        }
+                        i += 1
+                    })
+                    
+                    let center = CLLocationCoordinate2D(latitude: Double(editData?.addresses?.lat ?? "") ?? 0, longitude: Double(editData?.addresses?.lng ?? "") ?? 0)
+                         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                         self.mapView.setRegion(region, animated: true)
+                    self.lat = editData?.addresses?.lat ?? ""
+                    self.long = editData?.addresses?.lng ?? ""
+
+                    let london = MKPointAnnotation()
+                    london.title = editData?.addresses?.sector ?? ""
+                    london.coordinate = CLLocationCoordinate2D(latitude: Double(editData?.addresses?.lat ?? "") ?? 0, longitude: Double(editData?.addresses?.lng ?? "") ?? 0)
+                    self.mapView.delegate = self
+                    self.mapView.addAnnotation(london)
+                }
+                j += 1
+            }
+            
+
+
+        }
+        
+        
     }
 
     
@@ -141,6 +185,8 @@ class PostProperty2VC: BaseVC {
         
         let storyboard = PostImageVC.instantiate(fromAppStoryboard: .Main)
         storyboard.postRealEstateArr = self.postRealEstateArr
+        storyboard.isOnEdit = self.isOnEdit
+        storyboard.editData = self.editData
         self.navigationController?.pushViewController(storyboard, animated: true)
 
     }
@@ -163,6 +209,9 @@ extension PostProperty2VC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
+        
         let index = cityModel.predictions[indexPath.row]
         let val = index.structured_formatting?.main_text ?? ""
         cityDetail.callLocationDetail(index.place_id ?? "", key: Constants.googleApiKey)

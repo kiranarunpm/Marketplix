@@ -27,6 +27,12 @@ class AuthenticationVM: AuthenticationDelegate {
         }
     }
     
+    public var pageResponse: PageResponse? {
+        didSet{
+            self.successClosure?()
+        }
+    }
+    
     public var getOtpResponse: GetOTPModel? {
         didSet{
             self.successClosure?()
@@ -133,6 +139,26 @@ extension AuthenticationVM {
                
            case .success(let response):
            _self.loginResponse = response
+               
+           case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+               
+           }
+       }
+   }
+    
+    func callWebType(type: String) {
+       self.isLoading = true
+
+      ARBusinessServiceHelper.request(router: ARServiceManager.webPage(type)) { [weak self] (result : Result<PageResponse, ARFetchError>) in
+           
+           guard let _self = self else { return }
+           
+           _self.isLoading = false
+           
+           switch result {
+               
+           case .success(let response):
+           _self.pageResponse = response
                
            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
                

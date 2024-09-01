@@ -17,12 +17,14 @@ class PostImageVC: BaseVC {
             self.colView.delegate = self
             self.colView.dataSource = self
             self.colView.register(UINib(nibName: GalleryPickerCell.identifire, bundle: nil), forCellWithReuseIdentifier: GalleryPickerCell.identifire)
-
-          
+            
+            
         }
     }
     var SelectedAssets = [PHAsset]()
-
+    var isOnEdit = false
+    var editData : DataList?
+    
     var postRealEstateArr  = [PostRealEstateModel]()
     private lazy var imagePicker: ImagePicker = {
         let imagePicker = ImagePicker()
@@ -31,7 +33,30 @@ class PostImageVC: BaseVC {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.imageData.append(UIImage(named: "plus-icon")!)
+        
+        if isOnEdit{
+            let image = editData?.classified_images ?? []
+            for item in image {
+                guard let convertUrl  = URL(string: item.image_url ?? "") else {return}
+                DispatchQueue.global(qos: .background).async {
+                    do
+                    {
+                        let data = try Data.init(contentsOf: convertUrl)
+                        DispatchQueue.main.async {
+                            let image: UIImage = UIImage(data: data) ?? UIImage()
+                            self.imageData.append(image)
+                            self.colView.reloadData()
+
+                        }
+                    }
+                    catch {
+                        // error
+                    }
+                }
+            }
+        }
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
@@ -41,10 +66,12 @@ class PostImageVC: BaseVC {
         colView.setCollectionViewLayout(layout, animated: true)
         colView.reloadData()
         
+        
+        
     }
     var imageData = [UIImage]()
-
-   
+    
+    
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.goBack()
@@ -75,13 +102,14 @@ class PostImageVC: BaseVC {
         let storyboard = PostAddSuccesssVC.instantiate(fromAppStoryboard: .Main)
         storyboard.postRealEstateArr = self.postRealEstateArr
         storyboard.imageData = imageData
-        
+        storyboard.isOnEdit = self.isOnEdit
+        storyboard.editData = editData
         self.navigationController?.pushViewController(storyboard, animated: true)
     }
     
     func loadImagePicker(){
         let imagePicker = ImagePickerController()
-
+        
         presentImagePicker(imagePicker, select: { (asset) in
             // User selected an asset. Do something with it. Perhaps begin processing/upload?
         }, deselect: { (asset) in
@@ -91,41 +119,41 @@ class PostImageVC: BaseVC {
         }, finish: { (assets) in
             for i in 0..<assets.count
             {
-                                self.SelectedAssets.append(assets[i])
-                        }
-                        self.convertAssetToImages()
-
+                self.SelectedAssets.append(assets[i])
+            }
+            self.convertAssetToImages()
+            
         })
     }
     
     
     func convertAssetToImages() -> Void {
-
+        
         if SelectedAssets.count != 0{
-
+            
             for i in 0..<SelectedAssets.count{
-
+                
                 let manager = PHImageManager.default()
                 let option = PHImageRequestOptions()
-
+                
                 var thumbnail = UIImage()
-
+                
                 option.isSynchronous = true
-
-                manager.requestImage(for: SelectedAssets[i], targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: option, resultHandler: {(result,info) -> Void in
+                
+                manager.requestImage(for: SelectedAssets[i], targetSize: .zero, contentMode: .aspectFill, options: option, resultHandler: {(result,info) -> Void in
                     thumbnail = result!
                 })
-
+                
                 let data = thumbnail.pngData()
                 let newImage = UIImage(data: data!)
                 self.imageData.append(newImage! as UIImage)
                 self.colView.reloadData()
                 self.colView.isHidden = false
-
+                
             }
-
+            
         }
-
+        
     }
 }
 extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -143,28 +171,28 @@ extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource, UICo
             cell.imageVeiw.contentMode = .scaleAspectFit
         }else{
             cell.close_btn.isHidden = false
-
+            
             cell.imageVeiw.contentMode = .scaleAspectFill
         }
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.imageData.count > 5{
             return
-
+            
         }
         self.SelectedAssets.removeAll()
         let alert = UIAlertController(title: "Select Media", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
             switch action.style{
-                case .default:
+            case .default:
                 print("default")
                 self.imagePicker.cameraAsscessRequest()
-                case .cancel:
+            case .cancel:
                 print("cancel")
                 
-                case .destructive:
+            case .destructive:
                 print("destructive")
                 
             }
@@ -172,13 +200,13 @@ extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource, UICo
         
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { action in
             switch action.style{
-                case .default:
+            case .default:
                 print("default")
                 self.loadImagePicker()
-                case .cancel:
+            case .cancel:
                 print("cancel")
                 
-                case .destructive:
+            case .destructive:
                 print("destructive")
                 
             }
@@ -187,7 +215,7 @@ extension PostImageVC: UICollectionViewDelegate,UICollectionViewDataSource, UICo
         self.present(alert, animated: true, completion: nil)
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.colView.frame.width / 3
         return CGSize(width: width, height: width)
@@ -214,7 +242,7 @@ extension PostImageVC: ImagePickerDelegate {
     func imagePicker(_ imagePicker: ImagePicker, didSelect image: UIImage) {
         self.imageData.append(image)
         
-        let imageData = image.jpegData(compressionQuality: 1)
+        let imageData = image.jpegData(compressionQuality: 0)
         if imageData != nil {
         }
         imagePicker.dismiss()

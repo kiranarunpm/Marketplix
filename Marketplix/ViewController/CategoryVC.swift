@@ -39,7 +39,7 @@ class CategoryVC: BaseVC {
             screenSize =  CGSize(width: screen_width / 6 - 20, height: 100)
         }
         else{
-            screenSize = CGSize(width: screen_width / 3 - 0, height: 200)
+            screenSize = CGSize(width: screen_width / 3 - 0, height: 130)
         }
         let layout1 = UICollectionViewFlowLayout()
         layout1.scrollDirection = .vertical

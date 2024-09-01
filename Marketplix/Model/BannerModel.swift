@@ -35,13 +35,15 @@ struct NewListing: Codable{
     let id :Int
     let title:String?
     let description:String?
-    let type:Int?
     let addresses: Address?
     let classified_images: [ClassifiedImages]?
     let created_at: String?
     let price : String?
     var is_fav: Int?
     let category: CategoryItem?
+    let status: String?
+    let time_diff : String?
+
 
 }
 struct Address: Codable{

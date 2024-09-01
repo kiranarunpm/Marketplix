@@ -17,20 +17,17 @@ struct DataList : Codable {
 	let title : String?
 	let description : String?
     let price: String?
-	let type : Int?
-	let order : Int?
-	let user_id : Int?
-	let category_id : Int?
-	let address_id : Int?
-	let ad_type : Int?
-	let status : Int?
+	let user_id : String?
+	let category_id : String?
+	let status : String?
 	let created_at : String?
 	let updated_at : String?
-	let spec_groups : [Spec_groups]?
+	let spec_groups : [SpecGroup]?
 	let addresses : Addresses?
 	let classified_images : [Classified_images]?
     let classifieds: NewListing?
     var is_fav: Int?
+    let time_diff : String?
     let category: CategoryItem?
     
 }
@@ -42,7 +39,6 @@ struct Spec_groups : Codable {
     let id : Int?
     var name : String?
     let category_id : Int?
-    let order : Int?
     let status : String?
     var spec_items : [Spec_items]?
     
@@ -53,7 +49,6 @@ struct Spec_groups : Codable {
         self.spec_items = spec_items
         self.category_id = 0
         self.id = 0
-        self.order = 0
         self.status = ""
     }
 
@@ -62,7 +57,6 @@ struct Spec_groups : Codable {
         case id = "id"
         case name = "name"
         case category_id = "category_id"
-        case order = "order"
         case status = "status"
         case spec_items = "spec_items"
     }
@@ -72,7 +66,6 @@ struct Spec_groups : Codable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)
         category_id = try values.decodeIfPresent(Int.self, forKey: .category_id)
-        order = try values.decodeIfPresent(Int.self, forKey: .order)
         status = try values.decodeIfPresent(String.self, forKey: .status)
         spec_items = try values.decodeIfPresent([Spec_items].self, forKey: .spec_items)
     }

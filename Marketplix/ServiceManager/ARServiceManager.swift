@@ -11,7 +11,7 @@ import Foundation
 struct API {
     static var scheme = "https"
     
-    static var baseURL = "marketplix.com" //dev
+    static var baseURL = "marketplix.in" //dev
 
     static var mapURl = "maps.googleapis.com"
     static var path = ""
@@ -25,7 +25,6 @@ enum HttpMethod: String {
     case PATCH
     case delete
 }
-
 enum ContentType : String {
     case formData = "multipart/form-data"
     case json = "application/json"
@@ -62,6 +61,14 @@ enum ARServiceManager {
     case reportAds(_ request: [String: String])
     case update_token(_ request: String)
     case versionUpdate(_ request: String)
+    case updatePostStatus(_ id: String, status: String)
+    case deleteAccount
+    case notification
+    case listGroupedAd(_ type: String, _ request: [String: String])
+    case adSuggestions(_ keyword: String)
+    case chatCount
+    case webPage(_ type: String)
+    case chatBlock(_ id: String)
 
 
     var scheme: String {
@@ -92,6 +99,14 @@ enum ARServiceManager {
         case .reportAds: return API.scheme
         case .update_token: return API.scheme
         case .versionUpdate: return API.scheme
+        case .updatePostStatus: return API.scheme
+        case .deleteAccount: return API.scheme
+        case .notification: return API.scheme
+        case .listGroupedAd: return API.scheme
+        case .adSuggestions: return API.scheme
+        case .chatCount: return API.scheme
+        case .webPage: return API.scheme
+        case .chatBlock: return API.scheme
 
         }
     }
@@ -118,6 +133,14 @@ enum ARServiceManager {
         case .reportAds: return API.baseURL
         case .update_token: return API.baseURL
         case .versionUpdate: return API.baseURL
+        case .updatePostStatus: return API.baseURL
+        case .deleteAccount: return API.baseURL
+        case .notification: return API.baseURL
+        case .listGroupedAd: return API.baseURL
+        case .adSuggestions: return API.baseURL
+        case .chatCount: return API.baseURL
+        case .webPage: return API.baseURL
+        case .chatBlock: return API.baseURL
 
         }
     }
@@ -151,6 +174,14 @@ enum ARServiceManager {
         case .reportAds: return "/api/report-ad"
         case .update_token: return "/api/update-token"
         case .versionUpdate(let type): return "/api/app-version/\(type)"
+        case .updatePostStatus(let id, let status): return "/api/update-ad/\(id)/change-status/\(status)"
+        case .deleteAccount: return "/api/delete-user"
+        case .notification: return "/api/notification"
+        case .listGroupedAd(let type, _): return "/api/list-grouped-ad/\(type)"
+        case .adSuggestions(let keyword): return "/api/ad-suggestions/\(keyword)"
+        case .chatCount: return "/api/chat-count"
+        case .webPage(let type): return "/api/page/\(type)"
+        case .chatBlock(let id): return "/api/chat-block/\(id)"
 
         }
     }
@@ -181,8 +212,17 @@ enum ARServiceManager {
         case .queryautocomplete: return HttpMethod.get.rawValue
         case .placeDetail: return HttpMethod.get.rawValue
         case .reportAds: return HttpMethod.post.rawValue
-        case .update_token: return HttpMethod.post.rawValue
+        case .update_token: return HttpMethod.get.rawValue
         case .versionUpdate: return HttpMethod.get.rawValue
+        case .updatePostStatus: return HttpMethod.get.rawValue
+        case .deleteAccount: return HttpMethod.get.rawValue
+        case .notification: return HttpMethod.get.rawValue
+        case .listGroupedAd: return HttpMethod.get.rawValue
+        case .adSuggestions: return HttpMethod.get.rawValue
+        case .chatCount: return HttpMethod.get.rawValue
+        case .webPage: return HttpMethod.get.rawValue
+        case .chatBlock: return HttpMethod.get.rawValue
+
 
         }
     }
@@ -197,7 +237,7 @@ enum ARServiceManager {
         case .flashBanner: return nil
         case .mainCategory(let mainCategory): return [URLQueryItem(name: "main_category", value: mainCategory)]
         case .dashboard(let lat, let lng):  return [URLQueryItem(name: "lat", value: lat), URLQueryItem(name: "lng", value: lng)]
-        case .listAdds(let list): return [URLQueryItem(name: "page", value: list.page), URLQueryItem(name: "search", value: list.search ?? ""), URLQueryItem(name: "category_id", value: list.category_id  ), URLQueryItem(name: "lat", value: list.lat  ), URLQueryItem(name: "lng", value: list.lng)]
+        case .listAdds(let list): return [URLQueryItem(name: "page", value: list.page), URLQueryItem(name: "search", value: list.search ?? ""), URLQueryItem(name: "category_id", value: list.category_id  ), URLQueryItem(name: "lat", value: list.lat  ), URLQueryItem(name: "lng", value: list.lng), URLQueryItem(name: "group_type", value: list.groupType), URLQueryItem(name: "sortby", value: ""), URLQueryItem(name: "sortby", value: list.sortby.rawValue), URLQueryItem(name: "price_min", value: list.price_min), URLQueryItem(name: "price_max", value: list.price_max)]
         case .category(let main_category) : return  [URLQueryItem(name: "main_category", value: main_category)]
         case .specGroup(let category) : return  [URLQueryItem(name: "category", value: category)]
         case .myAds: return nil
@@ -217,7 +257,14 @@ enum ARServiceManager {
         case .reportAds: return nil
         case .update_token(let device_token): return  [URLQueryItem(name: "device_token", value: device_token)]
         case .versionUpdate: return nil
-
+        case .updatePostStatus: return nil
+        case .deleteAccount: return nil
+        case .notification: return nil
+        case .listGroupedAd(_ , let listGroupedAd): return [URLQueryItem(name: "page", value: listGroupedAd["page"]), URLQueryItem(name: "lat", value: listGroupedAd["lat"]), URLQueryItem(name: "lng", value: listGroupedAd["lng"]),]
+        case .adSuggestions: return nil
+        case .chatCount: return nil
+        case .webPage: return nil
+        case .chatBlock: return nil
 
         }
         
@@ -272,6 +319,14 @@ enum ARServiceManager {
             return try? encoder.encode(request)
         case .update_token: return nil
         case .versionUpdate: return nil
+        case .updatePostStatus: return nil
+        case .deleteAccount: return nil
+        case .notification: return nil
+        case .listGroupedAd: return nil
+        case .adSuggestions: return nil
+        case .chatCount: return nil
+        case .webPage: return nil
+        case .chatBlock: return nil
 
         }
     }
@@ -305,6 +360,14 @@ enum ARServiceManager {
         case .reportAds : return nil
         case .update_token : return nil
         case .versionUpdate : return nil
+        case .updatePostStatus : return nil
+        case .deleteAccount : return nil
+        case .notification : return nil
+        case .listGroupedAd : return nil
+        case .adSuggestions : return nil
+        case .chatCount : return nil
+        case .webPage : return nil
+        case .chatBlock : return nil
 
         }
     }
@@ -318,7 +381,7 @@ enum ARServiceManager {
         case .getOtp: return ["content-type": ContentType.json.rawValue, "Accept":"application/json"]
         case .flashBanner: return commonHeader
         case .mainCategory: return commonHeader
-        case .dashboard: return commonHeader
+        case .dashboard: return User.shared.token != "" ? commonHeader : ["content-type": ContentType.json.rawValue, "Accept":"application/json"]
         case .listAdds: return commonHeader
         case .category: return commonHeader
         case .specGroup: return commonHeader
@@ -339,6 +402,14 @@ enum ARServiceManager {
         case .reportAds: return commonHeader
         case .update_token: return commonHeader
         case .versionUpdate: return commonHeader
+        case .updatePostStatus: return commonHeader
+        case .deleteAccount: return commonHeader
+        case .notification: return commonHeader
+        case .listGroupedAd: return commonHeader
+        case .adSuggestions: return commonHeader
+        case .chatCount: return commonHeader
+        case .webPage: return commonHeader
+        case .chatBlock: return commonHeader
 
         }
     }

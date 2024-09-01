@@ -24,5 +24,12 @@ struct Coordinate: Decodable{
 }
 
 
+struct NotificationsReponse: Codable {
+    let notifications: [Notifications]?
+}
 
-
+struct Notifications: Codable {
+    let title: String?
+    let content: String?
+    let created_at : String?
+}

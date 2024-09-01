@@ -9,6 +9,7 @@ import Foundation
 
 struct SubscriptionResponse: Codable {
     let subscription_plans : [Subscription_plans]?
+    let message: String?
 }
 
 struct Subscription_plans : Codable {

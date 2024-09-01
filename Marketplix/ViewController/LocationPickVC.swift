@@ -12,8 +12,9 @@ protocol LocationPickDelegate{
     func getLocation(_ location: String, lat: String, lng: String)
 }
 
-class LocationPickVC: BaseVC {
-
+class LocationPickVC: UIViewController {
+    let locationManager = CLLocationManager()
+    var pressedLocation : Bool = false
     lazy var cityModel: CityVM = {
         return CityVM()
     }()
@@ -72,13 +73,11 @@ class LocationPickVC: BaseVC {
             
             guard let _self = self else { return }
             
-            DispatchQueue.main.async {
                 self?.dismiss(animated: true){
                     let details = self?.cityDetail.cityDetailResponse
                     self?.delegate?.getLocation(details?.result?.name ?? "", lat: details?.result?.geometry?.location?.lat?.description ?? "", lng: details?.result?.geometry?.location?.lng?.description ?? "")
                 }
                 
-            }
         }
         
         
@@ -136,7 +135,7 @@ extension LocationPickVC: UITableViewDataSource, UITableViewDelegate{
 extension LocationPickVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if range.location == 0 && range.length == 1 && string == "" {
-            self.self.predictionsArr.removeAll()
+            self.predictionsArr.removeAll()
             self.tabView.reloadData()
         }else {
             if range.length == 1 {
@@ -162,7 +161,8 @@ extension LocationPickVC: CLLocationManagerDelegate{
         print("user latitude = \(userLocation.coordinate.latitude)")
         print("user longitude = \(userLocation.coordinate.longitude)")
         
-        
+        self.locationManager.stopUpdatingLocation()
+
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
@@ -178,10 +178,14 @@ extension LocationPickVC: CLLocationManagerDelegate{
                 let locality = placemark.locality ?? ""
                 let replaceSpace = locality.replacingOccurrences(of: " ", with: "_")
    
+                if self.pressedLocation == true{
                 
-                self.locationManager.stopUpdatingLocation()
-                self.dismiss(animated: true){
-                    self.delegate?.getLocation(locality, lat: userLocation.coordinate.latitude.description, lng: userLocation.coordinate.longitude.description)
+                }else{
+                    self.pressedLocation = true
+                    self.dismiss(animated: true){
+                    
+                        self.delegate?.getLocation(locality, lat: userLocation.coordinate.latitude.description, lng: userLocation.coordinate.longitude.description)
+                    }
                 }
                
             }

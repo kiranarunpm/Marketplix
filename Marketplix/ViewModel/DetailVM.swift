@@ -172,4 +172,26 @@ extension DetailVM{
         }
         
     }
+    
+    func callAdStatusUpdate(_ id: String,  _ status: String) {
+        self.isLoading = true
+        
+        ARBusinessServiceHelper.request(router: ARServiceManager.updatePostStatus(id, status: status)) { [weak self] (result : Result<SubscriptionResponse, ARFetchError>) in
+            
+            guard let _self = self else { return }
+            
+            _self.isLoading = false
+            
+            switch result {
+                
+            case .success(let response): _self.subscriptionResponse = response
+                
+            case .failure(let errorMessage): _self.alertMessage = "\(errorMessage)"
+                
+            }
+        }
+        
+    }
+    
+    
 }

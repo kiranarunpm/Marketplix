@@ -44,8 +44,8 @@ class ItemCell: UICollectionViewCell {
             subTxt.text = indexVal?.addresses?.sector ?? ""
             let price : Double = Double(indexVal?.price ?? "") ?? 0
             priceTxt.text = Constants.currencySymbol + "\(price.roundedDecimal(to: 0))"
-            let dateFormat = "".dateFormat(indexVal?.created_at ?? "")
-            createdAtLbl.text = "Posted on: \(dateFormat)"
+
+            createdAtLbl.text = "Posted on: \(indexVal?.time_diff ?? "1 day ago")"
             self.categoryLbl.text = "\(indexVal?.category?.name ?? "")"
 
             let isFav = indexVal?.is_fav ?? 0
@@ -68,8 +68,7 @@ class ItemCell: UICollectionViewCell {
             self.img.kf.setImage(with: convertUrl)
             nameTxt.text = homeIndexList?.classifieds?.title ?? ""
             subTxt.text = homeIndexList?.classifieds?.addresses?.sector ?? ""
-            let dateFormat = "".dateFormat(homeIndexList?.created_at ?? "")
-            createdAtLbl.text = "Posted on: \(dateFormat)"
+            createdAtLbl.text = "Posted on: \(homeIndexList?.classifieds?.time_diff ?? "1 day ago")"
             self.categoryLbl.text = "\(homeIndexList?.classifieds?.category?.name ?? "")"
             favImg.isHidden = false
             let price : Double = Double(homeIndexList?.classifieds?.price ?? "") ?? 0
@@ -88,6 +87,32 @@ class ItemCell: UICollectionViewCell {
         }
     }
     
+    var recentlyViewed : DataList?{
+        didSet{
+            let image = recentlyViewed?.classifieds?.classified_images?.first?.image_url ?? ""
+            let convertUrl  = URL(string: image)
+            self.img.kf.setImage(with: convertUrl)
+            nameTxt.text = recentlyViewed?.classifieds?.title ?? ""
+            subTxt.text = recentlyViewed?.classifieds?.addresses?.sector ?? ""
+            createdAtLbl.text = "Posted on: \(recentlyViewed?.time_diff ?? "1 day ago")"
+            self.categoryLbl.text = "\(recentlyViewed?.classifieds?.category?.name ?? "")"
+            favImg.isHidden = false
+            let price : Double = Double(recentlyViewed?.classifieds?.price ?? "") ?? 0
+            priceTxt.text = Constants.currencySymbol + "\(price.roundedDecimal(to: 0))"
+            self.distanceLbl.text = recentlyViewed?.classifieds?.addresses?.distance ?? ""
+            self.categortTxtLbl.text = "Category : "
+            self.distanceTxtLbl.text = "Distance : "
+            
+            let isFav = recentlyViewed?.is_fav ?? 0
+            if isFav == 1{
+                self.favImg.setImage(UIImage(named: "favorite-filled"), for: .normal)
+            }else{
+                self.favImg.setImage(UIImage(named: "favorite"), for: .normal)
+            }
+            favImg.isHidden = false
+        }
+    }
+    
     var recommentedList : DataList?{
         didSet{
             let image = recommentedList?.classified_images?.first?.image_url ?? ""
@@ -95,8 +120,7 @@ class ItemCell: UICollectionViewCell {
             self.img.kf.setImage(with: convertUrl)
             nameTxt.text = recommentedList?.title ?? ""
             subTxt.text = recommentedList?.addresses?.sector ?? ""
-            let dateFormat = "".dateFormat(recommentedList?.created_at ?? "")
-            createdAtLbl.text = "Posted on: \(dateFormat)"
+            createdAtLbl.text = "Posted on: \(recommentedList?.time_diff ?? "1 day ago")"
       
             favImg.isHidden = false
             self.categoryLbl.text = "\(recommentedList?.category?.name ?? "")"
@@ -145,5 +169,17 @@ extension Double {
         var result = Decimal()
         NSDecimalRound(&result, &decimalValue, scale, mode)
         return result
+    }
+    
+    func convertCourrencyFomat() -> String{
+        let rounded = self.roundedDecimal(to: 0)
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
+        formatter.numberStyle = .currency
+        if let formattedTipAmount = formatter.string(from: rounded as NSNumber) {
+            return formattedTipAmount
+        }else{
+            return "0.0"
+        }
     }
 }

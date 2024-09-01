@@ -13,8 +13,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Classified_images : Codable {
-	let id : Int?
-	let classified_id : Int?
 	let image : String?
 	let image_url : String?
 

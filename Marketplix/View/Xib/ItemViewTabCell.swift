@@ -10,19 +10,21 @@ import SkeletonView
 protocol ItemViewTabDelegate {
     func toDetail(_ id: Int, distance: String)
     func favActionHander(indexPath: IndexPath, type: String, id: String)
-
+    
 }
 
 class ItemViewTabCell: UITableViewCell, ItemDelegate {
     static let identifire = "ItemViewTabCell"
     var type: String = ""
+    
+    @IBOutlet weak var heighttt: NSLayoutConstraint!
     @IBOutlet weak var colView: UICollectionView!
     var new_listing: [NewListing]?
     var featuredListingArr = [DataList]()
     var recommendationArr = [DataList]()
     var recentlyViewArr = [DataList]()
     var delegate: ItemViewTabDelegate?
-var selectedIndex = IndexPath(row: 0, section: 0)
+    var selectedIndex = IndexPath(row: 0, section: 0)
     override func awakeFromNib() {
         super.awakeFromNib()
         colView.register(UINib(nibName: ItemCell.identifire, bundle: nil), forCellWithReuseIdentifier: ItemCell.identifire)
@@ -30,20 +32,33 @@ var selectedIndex = IndexPath(row: 0, section: 0)
         
         colView.dataSource = self
         colView.delegate = self
-        
-//        colView.isSkeletonable = true
-//        colView.showAnimatedGradientSkeleton(animation: nil, transition: .crossDissolve(0.25))
+       
+        //        colView.isSkeletonable = true
+        //        colView.showAnimatedGradientSkeleton(animation: nil, transition: .crossDissolve(0.25))
         
         
     }
-
+    
     
     func getScreenSize() -> CGSize {
         let screenSize = UIScreen.main.bounds.size
         return screenSize
     }
-
+    
     func reloadData(){
+        let layout1 = UICollectionViewFlowLayout()
+        layout1.scrollDirection = .vertical
+        if !User.shared.hasToken{
+            heighttt.constant = 580
+            layout1.scrollDirection = .vertical
+            colView.setCollectionViewLayout(layout1, animated: true)
+        }else{
+            heighttt.constant = 280
+            layout1.scrollDirection = .horizontal
+            colView.setCollectionViewLayout(layout1, animated: true)
+
+        }
+
         colView.reloadData()
     }
     
@@ -51,6 +66,20 @@ var selectedIndex = IndexPath(row: 0, section: 0)
 
 
 extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
+        let cell = skeletonView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
+        cell.nameTxt.text = ""
+        cell.priceTxt.text = ""
+        cell.categortTxtLbl.text = ""
+        cell.distanceLbl.text = ""
+        cell.distanceTxtLbl.text = ""
+        cell.createdAtLbl.text = ""
+        cell.subTxt.text = ""
+        cell.categoryLbl.text = ""
+        cell.favImg.isHidden = true
+        return cell
+        
+    }
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -60,18 +89,25 @@ extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if type == "New Listing"{
+            
             return new_listing?.count ?? 0
-
+            
         }else if type == "Featured Listing"{
+            if !User.shared.hasToken{
+                return featuredListingArr.count <= 4 ? featuredListingArr.count : 4
+            }
             return featuredListingArr.count
-
+            
         }else if type == "Recommendations"{
+            if !User.shared.hasToken{
+                return recommendationArr.count <= 4 ? recommendationArr.count : 4
+            }
             return recommendationArr.count
-
+            
         }
         else if type == "Recently Viewed"{
             return recentlyViewArr.count
-
+            
         }
         return 0
     }
@@ -83,12 +119,16 @@ extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataS
             cell.name.text = index?.title ?? ""
             cell.id = index?.id.description ?? ""
             cell.descriptions.text = index?.addresses?.sector ?? ""
-           
-            let dateFormat = "".dateFormat(index?.created_at ?? "")
-            cell.createdAtLbl.text = "Posted on: \(dateFormat)"
+            let status = Int(index?.status?.description ?? "0")
+            if status == 2{
+                cell.soldOutImg.isHidden = false
+            }else{
+                cell.soldOutImg.isHidden = true
+            }
+            cell.createdAtLbl.text = "Posted on: \(index?.time_diff ?? "1 day ago")"
             if let url = URL(string:  index?.classified_images?.first?.image_url ?? ""){
                 cell.loadImage(url: url)
-
+                
             }
             let isFav = index?.is_fav ?? 0
             if isFav == 1{
@@ -121,7 +161,7 @@ extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataS
             cell.delegete = self
             cell.indexPath = indexPath
             cell.id = index.id?.description ?? "0"
-
+            
             return cell
             
         }else if type == "Recently Viewed"{
@@ -132,17 +172,17 @@ extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataS
             cell.delegete = self
             cell.indexPath = indexPath
             cell.id = index.id?.description ?? "0"
-
+            
             return cell
             
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifire, for: indexPath) as! ItemCell
             cell.delegete = self
             cell.indexPath = indexPath
-
+            
             return cell
         }
-
+        
     }
     
     
@@ -157,7 +197,7 @@ extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataS
                 return CGSize(width: screen_width / 4 - 20, height: 280)
             }
             else{
-
+                
                 return CGSize(width: screen_width / 2 - 20, height: 280)
             }
         }
@@ -186,6 +226,14 @@ extension ItemViewTabCell: UICollectionViewDelegate, SkeletonCollectionViewDataS
 }
 
 extension ItemViewTabCell: HomeNewItemsDelegate{
+    func editAction(dataList: DataList?) {
+        
+    }
+    
+    func deleteAction() {
+        
+    }
+    
     func favActionHander(indexPath: IndexPath, type: String, id: String) {
         self.delegate?.favActionHander(indexPath: indexPath, type: type, id: id)
     }

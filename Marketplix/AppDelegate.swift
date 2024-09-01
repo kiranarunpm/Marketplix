@@ -23,10 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     let gcmMessageIDKey = "gcm.Message_ID"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Messaging.messaging().delegate = self
         DropDown.appearance().textColor = UIColor.black
         DropDown.appearance().selectedTextColor = UIColor.primaryColor
-        DropDown.appearance().textFont = UIFont.MPfont(.medium, size: 17)
+        DropDown.appearance().textFont = UIFont.MPfont(.regular, size: 15)
         DropDown.appearance().backgroundColor = UIColor.white
         DropDown.appearance().selectionBackgroundColor = UIColor.lightGray
         DropDown.appearance().cellHeight = 35
@@ -34,20 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         IQKeyboardManager.shared.enable = true
 
         FirebaseApp.configure()
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().delegate = self
-            Messaging.messaging().delegate = self
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+          options: authOptions,
+          completionHandler: { _, _ in }
+        )
+
         application.registerForRemoteNotifications()
-        
+
         return true
     }
     
@@ -79,8 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
           print("Firebase registration token: \(fcmToken ?? "")")
 
           let dataDict:[String: String] = ["token": fcmToken ?? ""]
-        User.shared.saveData(with: .fcmToken, value: fcmToken ?? "")
           NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+          User.shared.saveData(with: .fcmToken, value: fcmToken ?? "")
+
         }
     
     // MARK: - Core Data stack
